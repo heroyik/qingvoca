@@ -1,5 +1,22 @@
 import type { ChineseDifficultyBand, ChineseVocabEntry, SupportedLocale } from "../types/chinese-vocab";
 import { DEFAULT_LOCALE } from "../types/chinese-vocab";
+import vocabJson from "@/data/vocab.json";
+
+export type VocabEntry = ChineseVocabEntry;
+
+export type POS = "noun" | "verb" | "adjective" | "adverb" | "onomatopoeia" | "other";
+
+export interface LearningUnit {
+  id: string;
+  title: string;
+  source: string;
+  words: VocabEntry[];
+  step: number;
+  lessonIds: number[];
+  hsk: "HSK4";
+}
+
+const defaultVocabEntries = vocabJson.data as VocabEntry[];
 
 export type StepSummary = {
   step: number;
@@ -40,6 +57,37 @@ export function getDisplayMeaning(
   return translations.ko || entry.meaning || translations.en || entry.word;
 }
 
+export function normalizeVocabWordKey(word: string): string {
+  return word
+    .normalize("NFKC")
+    .replace(/[\u301c\uff5e]/g, "~")
+    .replace(/\s+/g, "")
+    .trim()
+    .toLowerCase();
+}
+
+export function filterDeletedWords<T extends Pick<VocabEntry, "word">>(
+  entries: T[],
+  deletedWordKeys: Iterable<string> = [],
+): T[] {
+  const deletedSet = new Set(deletedWordKeys);
+  if (deletedSet.size === 0) return entries;
+  return entries.filter((entry) => !deletedSet.has(normalizeVocabWordKey(entry.word)));
+}
+
+export function normalizeDisplayFurigana(entry: Pick<VocabEntry, "pinyin" | "reading" | "furigana">): string {
+  return getReading(entry);
+}
+
+export function inferPOS(entry: Pick<VocabEntry, "pos">): POS {
+  const pos = entry.pos.toLowerCase();
+  if (/\bn\.|noun|명사|名詞/.test(pos)) return "noun";
+  if (/\bv\.|verb|동사|動詞/.test(pos)) return "verb";
+  if (/adj|형용사|形容詞/.test(pos)) return "adjective";
+  if (/adv|부사|副詞/.test(pos)) return "adverb";
+  return "other";
+}
+
 export function getWordsForStep(entries: ChineseVocabEntry[], step: number): ChineseVocabEntry[] {
   return entries.filter((entry) => entry.step === step);
 }
@@ -61,6 +109,66 @@ export function getStepSummaries(entries: ChineseVocabEntry[]): StepSummary[] {
       band: getBandForStep(step),
     };
   });
+}
+
+export function parseUnitId(unitId: string | number): number {
+  if (typeof unitId === "number") return unitId;
+  const normalized = unitId.startsWith("unit-") ? unitId.slice("unit-".length) : unitId;
+  return Number(normalized);
+}
+
+export function getAllVocabData(
+  deletedWordKeys: Iterable<string> = [],
+  entries: VocabEntry[] = defaultVocabEntries,
+): VocabEntry[] {
+  return sortByStepThenWord(filterDeletedWords(entries, deletedWordKeys));
+}
+
+export function getUnits(
+  deletedWordKeys: Iterable<string> = [],
+  entries: VocabEntry[] = defaultVocabEntries,
+): LearningUnit[] {
+  const allWords = getAllVocabData(deletedWordKeys, entries);
+
+  return getAvailableSteps(allWords).map((step) => {
+    const words = allWords.filter((entry) => entry.step === step);
+    const lessonIds = [...new Set(words.map((entry) => entry.lessonId))].sort((a, b) => a - b);
+
+    return {
+      id: `unit-${step}`,
+      title: `Step ${step}`,
+      source: `Lesson ${lessonIds[0]}-${lessonIds[lessonIds.length - 1]}`,
+      words,
+      step,
+      lessonIds,
+      hsk: "HSK4",
+    };
+  });
+}
+
+export function getRandomWords(
+  count: number,
+  targetPOS?: POS,
+  excludeWordIds: string[] = [],
+  deletedWordKeys: Iterable<string> = [],
+  entries: VocabEntry[] = defaultVocabEntries,
+): VocabEntry[] {
+  const allWords = getAllVocabData(deletedWordKeys, entries);
+  let candidates = allWords.filter((entry) => !excludeWordIds.includes(entry.id));
+
+  if (targetPOS) {
+    const posCandidates = candidates.filter((entry) => inferPOS(entry) === targetPOS);
+    if (posCandidates.length >= count) candidates = posCandidates;
+  }
+
+  return [...candidates].sort(() => Math.random() - 0.5).slice(0, count);
+}
+
+export function getTotalWordCount(
+  deletedWordKeys: Iterable<string> = [],
+  entries: VocabEntry[] = defaultVocabEntries,
+): number {
+  return getAllVocabData(deletedWordKeys, entries).length;
 }
 
 export function sortByStepThenWord(entries: ChineseVocabEntry[]): ChineseVocabEntry[] {

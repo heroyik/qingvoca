@@ -53,6 +53,14 @@ for (const scriptName of [
   "validate:step10",
   "validate:step11",
   "validate:step12",
+  "validate:frontend:step2",
+  "validate:frontend:step3",
+  "validate:frontend:step4",
+  "validate:frontend:step5",
+  "validate:frontend:step6",
+  "validate:frontend:step7",
+  "validate:frontend:step8",
+  "validate:frontend:step9",
 ]) {
   if (!packageJson.scripts?.[scriptName]) errors.push(`missing package script ${scriptName}`);
 }
@@ -77,6 +85,14 @@ const validationScripts = [
   "validate:step10",
   "validate:step11",
   "validate:step12",
+  "validate:frontend:step2",
+  "validate:frontend:step3",
+  "validate:frontend:step4",
+  "validate:frontend:step5",
+  "validate:frontend:step6",
+  "validate:frontend:step7",
+  "validate:frontend:step8",
+  "validate:frontend:step9",
 ];
 
 for (const scriptName of validationScripts) {
@@ -88,4 +104,4 @@ for (const scriptName of validationScripts) {
   }
 }
 
-console.log("[step13] all step validation scripts passed");
+console.log("[step13] all core and frontend validation scripts passed");

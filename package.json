@@ -1,5 +1,12 @@
 {
+  "name": "qingvoca",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/generate-offline-manifest.mjs",
+    "start": "next start",
+    "lint": "eslint",
     "data:transform:zh": "node scripts/transform_chinese_data.mjs",
     "data:refresh:zh": "node scripts/transform_chinese_data.mjs data/vocab.json src/data/vocab.json",
     "validate:step4": "node scripts/validate_step4_utils.mjs",
@@ -15,7 +22,36 @@
     "validate:step11": "node scripts/validate_step11_ui.mjs",
     "validate:step12": "node scripts/validate_step12_speech.mjs",
     "validate:step13": "node scripts/validate_step13_regression.mjs",
+    "validate:frontend:step2": "node scripts/validate_frontend_step2_vocab_adapter.mjs",
+    "validate:frontend:step3": "node scripts/validate_frontend_step3_home.mjs",
+    "validate:frontend:step4": "node scripts/validate_frontend_step4_quiz_components.mjs",
+    "validate:frontend:step5": "node scripts/validate_frontend_step5_gamification.mjs",
+    "validate:frontend:step6": "node scripts/validate_frontend_step6_firebase.mjs",
+    "validate:frontend:step7": "node scripts/validate_frontend_step7_admin_edit.mjs",
+    "validate:frontend:step8": "node scripts/validate_frontend_step8_offline.mjs",
+    "validate:frontend:step9": "node scripts/validate_frontend_step9_ui_polish.mjs",
+    "validate:frontend:step10": "node scripts/validate_frontend_step10_regression.mjs",
     "test:regression": "node scripts/validate_step13_regression.mjs",
-    "test": "node scripts/validate_step13_regression.mjs"
+    "test:frontend": "node scripts/validate_frontend_step10_regression.mjs",
+    "test": "node scripts/validate_step13_regression.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
+  },
+  "dependencies": {
+    "firebase": "^12.9.0",
+    "lucide-react": "^0.563.0",
+    "next": "16.1.6",
+    "next-auth": "^5.0.0-beta.30",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "typescript": "^5"
   }
 }
