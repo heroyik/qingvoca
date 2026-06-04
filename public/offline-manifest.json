@@ -1,0 +1,23 @@
+{
+  "language": "zh",
+  "hsk": "HSK4",
+  "datasetVersion": "zh-HSK4-v1",
+  "generatedAt": "2026-06-04T14:07:10.974Z",
+  "assets": [
+    {
+      "path": "src/data/vocab.json",
+      "type": "vocab-data",
+      "hashAlgorithm": "sha256",
+      "hash": "35d7bd01ea00f296aa4c8c9bfc4a672ebb692fb02db1cfa07e79171831918ab5",
+      "bytes": 325465,
+      "totalCount": 636,
+      "stepCount": 10,
+      "lessonCount": 20
+    }
+  ],
+  "routes": [
+    "/",
+    "/quiz/[unitId]",
+    "/quiz/review"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "data:transform:zh": "node scripts/transform_chinese_data.mjs",
+    "data:refresh:zh": "node scripts/transform_chinese_data.mjs data/vocab.json src/data/vocab.json",
+    "validate:step4": "node scripts/validate_step4_utils.mjs",
+    "validate:step5": "node scripts/validate_step5_quiz.mjs",
+    "validate:step6": "node scripts/validate_step6_gamification.mjs",
+    "validate:step7": "node scripts/validate_step7_no_cognite.mjs",
+    "admin:sync-edits:local": "node scripts/sync-admin-edits-to-local.mjs",
+    "validate:step8": "node scripts/validate_step8_admin_edit.mjs",
+    "firestore:payload:zh": "node scripts/sync-firestore-chinese-vocab.mjs",
+    "validate:step9": "node scripts/validate_step9_firestore.mjs",
+    "offline:manifest": "node scripts/generate-offline-manifest.mjs",
+    "validate:step10": "node scripts/validate_step10_offline.mjs",
+    "validate:step11": "node scripts/validate_step11_ui.mjs",
+    "validate:step12": "node scripts/validate_step12_speech.mjs",
+    "validate:step13": "node scripts/validate_step13_regression.mjs",
+    "test:regression": "node scripts/validate_step13_regression.mjs",
+    "test": "node scripts/validate_step13_regression.mjs"
+  }
+}

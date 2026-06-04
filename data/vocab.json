@@ -1,0 +1,7639 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-06-04T12:19:28.320Z",
+  "totalCount": 636,
+  "words": [
+    {
+      "word": "法律",
+      "pinyin": "fǎlǜ",
+      "meaning": "law",
+      "partOfSpeech": "n.",
+      "lessonId": 1,
+      "translations": {
+        "en": "law",
+        "ko": "법률",
+        "ja": "法律"
+      }
+    },
+    {
+      "word": "俩",
+      "pinyin": "liǎ",
+      "meaning": "two, both",
+      "partOfSpeech": "num.-m.",
+      "lessonId": 1,
+      "translations": {
+        "en": "two",
+        "ko": "둘, 두 사람",
+        "ja": "二人、両方"
+      }
+    },
+    {
+      "word": "印象",
+      "pinyin": "yìnxiàng",
+      "meaning": "impression",
+      "partOfSpeech": "n.",
+      "lessonId": 1,
+      "translations": {
+        "en": "impression",
+        "ko": "인상",
+        "ja": "印象"
+      }
+    },
+    {
+      "word": "深",
+      "pinyin": "shēn",
+      "meaning": "deep",
+      "partOfSpeech": "adj.",
+      "lessonId": 1,
+      "translations": {
+        "en": "deep",
+        "ko": "깊다",
+        "ja": "深い"
+      }
+    },
+    {
+      "word": "熟悉",
+      "pinyin": "shúxi",
+      "meaning": "to be familiar with",
+      "partOfSpeech": "v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "be familiar with",
+        "ko": "익숙하다, 잘 알다",
+        "ja": "慣れている、よく知っている"
+      }
+    },
+    {
+      "word": "不仅",
+      "pinyin": "bùjǐn",
+      "meaning": "not only",
+      "partOfSpeech": "conj.",
+      "lessonId": 1,
+      "translations": {
+        "en": "not only",
+        "ko": "~뿐만 아니라",
+        "ja": "〜だけでなく"
+      }
+    },
+    {
+      "word": "性格",
+      "pinyin": "xìnggé",
+      "meaning": "character, personality",
+      "partOfSpeech": "n.",
+      "lessonId": 1,
+      "translations": {
+        "en": "personality",
+        "ko": "성격",
+        "ja": "性格"
+      }
+    },
+    {
+      "word": "开玩笑",
+      "pinyin": "kāi wánxiào",
+      "meaning": "to joke",
+      "partOfSpeech": "v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "to joke",
+        "ko": "농담하다",
+        "ja": "冗談を言う"
+      }
+    },
+    {
+      "word": "从来",
+      "pinyin": "cónglái",
+      "meaning": "always, all along",
+      "partOfSpeech": "adv.",
+      "lessonId": 1,
+      "translations": {
+        "en": "always",
+        "ko": "여태, 줄곧",
+        "ja": "これまでずっと"
+      }
+    },
+    {
+      "word": "最好",
+      "pinyin": "zuìhǎo",
+      "meaning": "had better",
+      "partOfSpeech": "adv.",
+      "lessonId": 1,
+      "translations": {
+        "en": "had better",
+        "ko": "~하는 게 가장 좋다",
+        "ja": "〜したほうがよい"
+      }
+    },
+    {
+      "word": "共同",
+      "pinyin": "gòngtóng",
+      "meaning": "common, shared",
+      "partOfSpeech": "adj.",
+      "lessonId": 1,
+      "translations": {
+        "en": "common",
+        "ko": "공통의, 함께하는",
+        "ja": "共通の、共同の"
+      }
+    },
+    {
+      "word": "适合",
+      "pinyin": "shìhé",
+      "meaning": "to suit, to fit",
+      "partOfSpeech": "v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "to suit",
+        "ko": "잘 맞다, 적합하다",
+        "ja": "合う、ふさわしい"
+      }
+    },
+    {
+      "word": "生活",
+      "pinyin": "shēnghuó",
+      "meaning": "life; to live",
+      "partOfSpeech": "n./v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "life",
+        "ko": "생활; 살아가다",
+        "ja": "生活; 暮らす"
+      }
+    },
+    {
+      "word": "刚",
+      "pinyin": "gāng",
+      "meaning": "just, not long",
+      "partOfSpeech": "adv.",
+      "lessonId": 1,
+      "translations": {
+        "en": "just",
+        "ko": "막, 방금",
+        "ja": "ちょうど、〜したばかり"
+      }
+    },
+    {
+      "word": "浪漫",
+      "pinyin": "làngmàn",
+      "meaning": "romantic",
+      "partOfSpeech": "adj.",
+      "lessonId": 1,
+      "translations": {
+        "en": "romantic",
+        "ko": "낭만적이다",
+        "ja": "ロマンチックだ"
+      }
+    },
+    {
+      "word": "够",
+      "pinyin": "gòu",
+      "meaning": "to be enough",
+      "partOfSpeech": "v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "enough",
+        "ko": "충분하다",
+        "ja": "十分である"
+      }
+    },
+    {
+      "word": "缺点",
+      "pinyin": "quēdiǎn",
+      "meaning": "shortcoming",
+      "partOfSpeech": "n.",
+      "lessonId": 1,
+      "translations": {
+        "en": "shortcoming",
+        "ko": "단점",
+        "ja": "短所"
+      }
+    },
+    {
+      "word": "接受",
+      "pinyin": "jiēshòu",
+      "meaning": "to accept",
+      "partOfSpeech": "v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "to accept",
+        "ko": "받아들이다",
+        "ja": "受け入れる"
+      }
+    },
+    {
+      "word": "羡慕",
+      "pinyin": "xiànmù",
+      "meaning": "to envy, to admire",
+      "partOfSpeech": "v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "to envy",
+        "ko": "부러워하다",
+        "ja": "うらやましがる"
+      }
+    },
+    {
+      "word": "爱情",
+      "pinyin": "àiqíng",
+      "meaning": "love (between a man and a woman)",
+      "partOfSpeech": "n.",
+      "lessonId": 1,
+      "translations": {
+        "en": "love",
+        "ko": "사랑",
+        "ja": "恋愛、愛情"
+      }
+    },
+    {
+      "word": "星星",
+      "pinyin": "xīngxing",
+      "meaning": "star",
+      "partOfSpeech": "n.",
+      "lessonId": 1,
+      "translations": {
+        "en": "star",
+        "ko": "별",
+        "ja": "星"
+      }
+    },
+    {
+      "word": "即使",
+      "pinyin": "jíshǐ",
+      "meaning": "even if",
+      "partOfSpeech": "conj.",
+      "lessonId": 1,
+      "translations": {
+        "en": "even if",
+        "ko": "설령 ~하더라도",
+        "ja": "たとえ〜でも"
+      }
+    },
+    {
+      "word": "加班",
+      "pinyin": "jiā bān",
+      "meaning": "to work overtime",
+      "partOfSpeech": "v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "to work overtime",
+        "ko": "야근하다",
+        "ja": "残業する"
+      }
+    },
+    {
+      "word": "亮",
+      "pinyin": "liàng",
+      "meaning": "to shine, to be lit",
+      "partOfSpeech": "v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "to shine",
+        "ko": "밝다, 불이 켜져 있다",
+        "ja": "明るい、灯りがついている"
+      }
+    },
+    {
+      "word": "感动",
+      "pinyin": "gǎndòng",
+      "meaning": "to touch, to move",
+      "partOfSpeech": "v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "to touch",
+        "ko": "감동시키다, 감동하다",
+        "ja": "感動させる、心を動かす"
+      }
+    },
+    {
+      "word": "自然",
+      "pinyin": "zìrán",
+      "meaning": "naturally, certainly",
+      "partOfSpeech": "adv.",
+      "lessonId": 1,
+      "translations": {
+        "en": "naturally",
+        "ko": "자연히, 당연히",
+        "ja": "自然に、当然"
+      }
+    },
+    {
+      "word": "原因",
+      "pinyin": "yuányīn",
+      "meaning": "reason",
+      "partOfSpeech": "n.",
+      "lessonId": 1,
+      "translations": {
+        "en": "reason",
+        "ko": "이유",
+        "ja": "理由"
+      }
+    },
+    {
+      "word": "互相",
+      "pinyin": "hùxiāng",
+      "meaning": "mutually",
+      "partOfSpeech": "adv.",
+      "lessonId": 1,
+      "translations": {
+        "en": "mutually",
+        "ko": "서로",
+        "ja": "互いに"
+      }
+    },
+    {
+      "word": "吸引",
+      "pinyin": "xīyǐn",
+      "meaning": "to attract",
+      "partOfSpeech": "v.",
+      "lessonId": 1,
+      "translations": {
+        "en": "to attract",
+        "ko": "끌어당기다",
+        "ja": "引きつける"
+      }
+    },
+    {
+      "word": "幽默",
+      "pinyin": "yōumò",
+      "meaning": "humorous",
+      "partOfSpeech": "adj.",
+      "lessonId": 1,
+      "translations": {
+        "en": "humorous",
+        "ko": "유머러스하다",
+        "ja": "ユーモアがある"
+      }
+    },
+    {
+      "word": "脾气",
+      "pinyin": "píqi",
+      "meaning": "temper, disposition",
+      "partOfSpeech": "n.",
+      "lessonId": 1,
+      "translations": {
+        "en": "temper",
+        "ko": "성미, 성격",
+        "ja": "気質、気性"
+      }
+    },
+    {
+      "word": "适应",
+      "pinyin": "shìyìng",
+      "meaning": "to get used to",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to get used to",
+        "ko": "적응하다",
+        "ja": "適応する、慣れる"
+      }
+    },
+    {
+      "word": "交",
+      "pinyin": "jiāo",
+      "meaning": "to make (friends)",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to make (friends)",
+        "ko": "사귀다",
+        "ja": "交わる、(友達を)作る"
+      }
+    },
+    {
+      "word": "平时",
+      "pinyin": "píngshí",
+      "meaning": "normal times",
+      "partOfSpeech": "n.",
+      "lessonId": 2,
+      "translations": {
+        "en": "normal times",
+        "ko": "평소",
+        "ja": "平生、普段"
+      }
+    },
+    {
+      "word": "逛",
+      "pinyin": "guàng",
+      "meaning": "to stroll, to roam",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to stroll, to roam",
+        "ko": "거닐다, 구경하다",
+        "ja": "ぶらぶら歩く、見て回る"
+      }
+    },
+    {
+      "word": "短信",
+      "pinyin": "duǎnxìn",
+      "meaning": "text message",
+      "partOfSpeech": "n.",
+      "lessonId": 2,
+      "translations": {
+        "en": "text message",
+        "ko": "문자 메시지",
+        "ja": "ショートメール"
+      }
+    },
+    {
+      "word": "正好",
+      "pinyin": "zhènghǎo",
+      "meaning": "just in time, just right",
+      "partOfSpeech": "adv.",
+      "lessonId": 2,
+      "translations": {
+        "en": "just in time, just right",
+        "ko": "마침, 알맞다",
+        "ja": "ちょうどよい"
+      }
+    },
+    {
+      "word": "聚会",
+      "pinyin": "jùhuì",
+      "meaning": "party, get-together",
+      "partOfSpeech": "n.",
+      "lessonId": 2,
+      "translations": {
+        "en": "party, get-together",
+        "ko": "모임, 파티",
+        "ja": "集まり、パーティー"
+      }
+    },
+    {
+      "word": "联系",
+      "pinyin": "liánxì",
+      "meaning": "to contact",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to contact",
+        "ko": "연락하다",
+        "ja": "連絡する"
+      }
+    },
+    {
+      "word": "差不多",
+      "pinyin": "chàbuduō",
+      "meaning": "almost",
+      "partOfSpeech": "adv.",
+      "lessonId": 2,
+      "translations": {
+        "en": "almost",
+        "ko": "거의 비슷하다",
+        "ja": "ほとんど同じ、だいたい"
+      }
+    },
+    {
+      "word": "专门",
+      "pinyin": "zhuānmén",
+      "meaning": "specially",
+      "partOfSpeech": "adv.",
+      "lessonId": 2,
+      "translations": {
+        "en": "specially",
+        "ko": "전문적으로, 특별히",
+        "ja": "専門的に、わざわざ"
+      }
+    },
+    {
+      "word": "毕业",
+      "pinyin": "bìyè",
+      "meaning": "to graduate",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to graduate",
+        "ko": "졸업하다",
+        "ja": "卒業する"
+      }
+    },
+    {
+      "word": "麻烦",
+      "pinyin": "máfan",
+      "meaning": "to bother",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to bother",
+        "ko": "번거롭게 하다",
+        "ja": "面倒をかける、お手数ですが"
+      }
+    },
+    {
+      "word": "好像",
+      "pinyin": "hǎoxiàng",
+      "meaning": "as if",
+      "partOfSpeech": "adv.",
+      "lessonId": 2,
+      "translations": {
+        "en": "as if",
+        "ko": "마치 ~인 것 같다",
+        "ja": "まるで〜のようだ"
+      }
+    },
+    {
+      "word": "重新",
+      "pinyin": "chóngxīn",
+      "meaning": "again, once more",
+      "partOfSpeech": "adv.",
+      "lessonId": 2,
+      "translations": {
+        "en": "again, once more",
+        "ko": "다시, 새로이",
+        "ja": "改めて、再び"
+      }
+    },
+    {
+      "word": "尽管",
+      "pinyin": "jǐn'guǎn",
+      "meaning": "although",
+      "partOfSpeech": "conj.",
+      "lessonId": 2,
+      "translations": {
+        "en": "although",
+        "ko": "비록 ~일지라도",
+        "ja": "たとえ〜でも、〜にもかかわらず"
+      }
+    },
+    {
+      "word": "真正",
+      "pinyin": "zhēnzhèng",
+      "meaning": "true, real",
+      "partOfSpeech": "adj.",
+      "lessonId": 2,
+      "translations": {
+        "en": "true, real",
+        "ko": "진짜의, 진정한",
+        "ja": "本物の、真の"
+      }
+    },
+    {
+      "word": "友谊",
+      "pinyin": "yǒuyì",
+      "meaning": "friendship",
+      "partOfSpeech": "n.",
+      "lessonId": 2,
+      "translations": {
+        "en": "friendship",
+        "ko": "우정",
+        "ja": "友情"
+      }
+    },
+    {
+      "word": "丰富",
+      "pinyin": "fēngfù",
+      "meaning": "to enrich",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to enrich",
+        "ko": "풍부하게 하다, 풍부하다",
+        "ja": "豊かにする、豊富な"
+      }
+    },
+    {
+      "word": "无聊",
+      "pinyin": "wúliáo",
+      "meaning": "boring",
+      "partOfSpeech": "adj.",
+      "lessonId": 2,
+      "translations": {
+        "en": "boring",
+        "ko": "무료하다, 심심하다",
+        "ja": "退屈だ"
+      }
+    },
+    {
+      "word": "讨厌",
+      "pinyin": "tǎoyàn",
+      "meaning": "to dislike",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to dislike",
+        "ko": "싫어하다",
+        "ja": "嫌う、嫌な"
+      }
+    },
+    {
+      "word": "却",
+      "pinyin": "què",
+      "meaning": "but, yet",
+      "partOfSpeech": "adv.",
+      "lessonId": 2,
+      "translations": {
+        "en": "but, yet",
+        "ko": "오히려, 도리어",
+        "ja": "かえって、しかし"
+      }
+    },
+    {
+      "word": "周围",
+      "pinyin": "zhōuwéi",
+      "meaning": "surrounding",
+      "partOfSpeech": "n.",
+      "lessonId": 2,
+      "translations": {
+        "en": "surrounding",
+        "ko": "주위",
+        "ja": "周囲"
+      }
+    },
+    {
+      "word": "交流",
+      "pinyin": "jiāoliú",
+      "meaning": "to communicate",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to communicate",
+        "ko": "교류하다, 소통하다",
+        "ja": "交流する、やり取りする"
+      }
+    },
+    {
+      "word": "理解",
+      "pinyin": "lǐjiě",
+      "meaning": "to understand",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to understand",
+        "ko": "이해하다",
+        "ja": "理解する"
+      }
+    },
+    {
+      "word": "镜子",
+      "pinyin": "jìngzi",
+      "meaning": "mirror",
+      "partOfSpeech": "n.",
+      "lessonId": 2,
+      "translations": {
+        "en": "mirror",
+        "ko": "거울",
+        "ja": "鏡"
+      }
+    },
+    {
+      "word": "而",
+      "pinyin": "ér",
+      "meaning": "while, yet",
+      "partOfSpeech": "conj.",
+      "lessonId": 2,
+      "translations": {
+        "en": "while, yet",
+        "ko": "그러나, 그런데",
+        "ja": "しかも、しかし"
+      }
+    },
+    {
+      "word": "当",
+      "pinyin": "dāng",
+      "meaning": "when",
+      "partOfSpeech": "prep.",
+      "lessonId": 2,
+      "translations": {
+        "en": "when",
+        "ko": "~할 때",
+        "ja": "〜の時"
+      }
+    },
+    {
+      "word": "困难",
+      "pinyin": "kùnnan",
+      "meaning": "difficulty",
+      "partOfSpeech": "n.",
+      "lessonId": 2,
+      "translations": {
+        "en": "difficulty",
+        "ko": "곤란, 어려움",
+        "ja": "困難"
+      }
+    },
+    {
+      "word": "及时",
+      "pinyin": "jíshí",
+      "meaning": "in time",
+      "partOfSpeech": "adv.",
+      "lessonId": 2,
+      "translations": {
+        "en": "in time",
+        "ko": "제때에, 즉시",
+        "ja": "タイミングよく、すぐに"
+      }
+    },
+    {
+      "word": "陪",
+      "pinyin": "péi",
+      "meaning": "to accompany",
+      "partOfSpeech": "v.",
+      "lessonId": 2,
+      "translations": {
+        "en": "to accompany",
+        "ko": "동반하다, 함께 있다",
+        "ja": "付き添う、一緒にいる"
+      }
+    },
+    {
+      "word": "挺",
+      "pinyin": "tǐng",
+      "meaning": "quite, rather",
+      "partOfSpeech": "adv.",
+      "lessonId": 3,
+      "translations": {
+        "en": "quite, rather",
+        "ko": "꽤, 제법",
+        "ja": "かなり、結構"
+      }
+    },
+    {
+      "word": "紧张",
+      "pinyin": "jǐnzhāng",
+      "meaning": "nervous",
+      "partOfSpeech": "adj.",
+      "lessonId": 3,
+      "translations": {
+        "en": "nervous",
+        "ko": "긴장하다",
+        "ja": "緊張する"
+      }
+    },
+    {
+      "word": "信心",
+      "pinyin": "xìnxīn",
+      "meaning": "confidence",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "confidence",
+        "ko": "자신, 신념",
+        "ja": "自信"
+      }
+    },
+    {
+      "word": "能力",
+      "pinyin": "nénglì",
+      "meaning": "ability, competence",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "ability",
+        "ko": "능력",
+        "ja": "能力"
+      }
+    },
+    {
+      "word": "招聘",
+      "pinyin": "zhāopìn",
+      "meaning": "to recruit",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to recruit",
+        "ko": "채용하다",
+        "ja": "募集する"
+      }
+    },
+    {
+      "word": "提供",
+      "pinyin": "tígōng",
+      "meaning": "to provide",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to provide",
+        "ko": "제공하다",
+        "ja": "提供する"
+      }
+    },
+    {
+      "word": "决定",
+      "pinyin": "juédìng",
+      "meaning": "to decide",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to decide",
+        "ko": "결정하다",
+        "ja": "決める"
+      }
+    },
+    {
+      "word": "机会",
+      "pinyin": "jīhuì",
+      "meaning": "opportunity",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "opportunity",
+        "ko": "기회",
+        "ja": "機会"
+      }
+    },
+    {
+      "word": "负责",
+      "pinyin": "fùzé",
+      "meaning": "to be responsible for",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to be responsible for",
+        "ko": "책임지다",
+        "ja": "担当する"
+      }
+    },
+    {
+      "word": "本来",
+      "pinyin": "běnlái",
+      "meaning": "originally",
+      "partOfSpeech": "adv.",
+      "lessonId": 3,
+      "translations": {
+        "en": "originally",
+        "ko": "원래",
+        "ja": "元々"
+      }
+    },
+    {
+      "word": "突然",
+      "pinyin": "tūrán",
+      "meaning": "suddenly",
+      "partOfSpeech": "adv.",
+      "lessonId": 3,
+      "translations": {
+        "en": "suddenly",
+        "ko": "갑자기",
+        "ja": "突然"
+      }
+    },
+    {
+      "word": "生病",
+      "pinyin": "shēngbìng",
+      "meaning": "to get sick",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to get sick",
+        "ko": "병에 걸리다",
+        "ja": "病気になる"
+      }
+    },
+    {
+      "word": "住院",
+      "pinyin": "zhùyuàn",
+      "meaning": "to be hospitalized",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to be hospitalized",
+        "ko": "입원하다",
+        "ja": "入院する"
+      }
+    },
+    {
+      "word": "应聘",
+      "pinyin": "yìngpìn",
+      "meaning": "to apply for a job",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to apply for a job",
+        "ko": "지원하다, 응모하다",
+        "ja": "応募する"
+      }
+    },
+    {
+      "word": "经过",
+      "pinyin": "jīngguò",
+      "meaning": "after, through",
+      "partOfSpeech": "prep.",
+      "lessonId": 3,
+      "translations": {
+        "en": "after, through",
+        "ko": "거쳐, 통과하여",
+        "ja": "経て、通して"
+      }
+    },
+    {
+      "word": "笔试",
+      "pinyin": "bǐshì",
+      "meaning": "written test",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "written test",
+        "ko": "필기시험",
+        "ja": "筆記試験"
+      }
+    },
+    {
+      "word": "面试",
+      "pinyin": "miànshì",
+      "meaning": "interview",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "interview",
+        "ko": "면접",
+        "ja": "面接"
+      }
+    },
+    {
+      "word": "材料",
+      "pinyin": "cáiliào",
+      "meaning": "materials, documents",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "materials",
+        "ko": "서류, 자료",
+        "ja": "書類、資料"
+      }
+    },
+    {
+      "word": "比较",
+      "pinyin": "bǐjiào",
+      "meaning": "relatively, quite",
+      "partOfSpeech": "adv.",
+      "lessonId": 3,
+      "translations": {
+        "en": "relatively",
+        "ko": "비교적, 꽤",
+        "ja": "比較的"
+      }
+    },
+    {
+      "word": "符合",
+      "pinyin": "fúhé",
+      "meaning": "to conform to, to meet",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to meet (requirements)",
+        "ko": "부합하다, 맞다",
+        "ja": "合致する"
+      }
+    },
+    {
+      "word": "要求",
+      "pinyin": "yāoqiú",
+      "meaning": "requirement, demand",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "requirement",
+        "ko": "요구",
+        "ja": "要求"
+      }
+    },
+    {
+      "word": "通知",
+      "pinyin": "tōngzhī",
+      "meaning": "to notify",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to notify",
+        "ko": "통지하다, 알리다",
+        "ja": "通知する"
+      }
+    },
+    {
+      "word": "律师",
+      "pinyin": "lǜshī",
+      "meaning": "lawyer",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "lawyer",
+        "ko": "변호사",
+        "ja": "弁護士"
+      }
+    },
+    {
+      "word": "满意",
+      "pinyin": "mǎnyì",
+      "meaning": "to be satisfied",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to be satisfied",
+        "ko": "만족하다",
+        "ja": "満足する"
+      }
+    },
+    {
+      "word": "专业",
+      "pinyin": "zhuānyè",
+      "meaning": "specialty, major",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "major, specialty",
+        "ko": "전공, 전문",
+        "ja": "専門"
+      }
+    },
+    {
+      "word": "另外",
+      "pinyin": "lìngwài",
+      "meaning": "besides, in addition",
+      "partOfSpeech": "conj.",
+      "lessonId": 3,
+      "translations": {
+        "en": "besides, in addition",
+        "ko": "게다가, 그 밖에",
+        "ja": "その他に、さらに"
+      }
+    },
+    {
+      "word": "收入",
+      "pinyin": "shōurù",
+      "meaning": "income",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "income",
+        "ko": "수입",
+        "ja": "収入"
+      }
+    },
+    {
+      "word": "咱们",
+      "pinyin": "zánmen",
+      "meaning": "we, us (including listener)",
+      "partOfSpeech": "pron.",
+      "lessonId": 3,
+      "translations": {
+        "en": "we, us",
+        "ko": "우리 (듣는 사람 포함)",
+        "ja": "私たち（聞き手含む）"
+      }
+    },
+    {
+      "word": "安排",
+      "pinyin": "ānpái",
+      "meaning": "to arrange",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to arrange",
+        "ko": "안배하다, 계획하다",
+        "ja": "手配する、計画する"
+      }
+    },
+    {
+      "word": "首先",
+      "pinyin": "shǒuxiān",
+      "meaning": "first, firstly",
+      "partOfSpeech": "pron.",
+      "lessonId": 3,
+      "translations": {
+        "en": "first",
+        "ko": "첫째, 먼저",
+        "ja": "まず、最初に"
+      }
+    },
+    {
+      "word": "正式",
+      "pinyin": "zhèngshì",
+      "meaning": "formal",
+      "partOfSpeech": "adj.",
+      "lessonId": 3,
+      "translations": {
+        "en": "formal",
+        "ko": "정식, 공식적인",
+        "ja": "正式な"
+      }
+    },
+    {
+      "word": "留",
+      "pinyin": "liú",
+      "meaning": "to leave, to remain",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to leave",
+        "ko": "남기다, 머무르다",
+        "ja": "残す、留める"
+      }
+    },
+    {
+      "word": "其次",
+      "pinyin": "qícì",
+      "meaning": "second, next",
+      "partOfSpeech": "pron.",
+      "lessonId": 3,
+      "translations": {
+        "en": "second, next",
+        "ko": "둘째, 다음으로",
+        "ja": "次に、第二に"
+      }
+    },
+    {
+      "word": "诚实",
+      "pinyin": "chéngshí",
+      "meaning": "honest",
+      "partOfSpeech": "adj.",
+      "lessonId": 3,
+      "translations": {
+        "en": "honest",
+        "ko": "정직하다",
+        "ja": "誠実である"
+      }
+    },
+    {
+      "word": "顺利",
+      "pinyin": "shùnlì",
+      "meaning": "smooth, successful",
+      "partOfSpeech": "adj.",
+      "lessonId": 3,
+      "translations": {
+        "en": "smooth",
+        "ko": "순조롭다, 잘 되다",
+        "ja": "順調である"
+      }
+    },
+    {
+      "word": "注意",
+      "pinyin": "zhùyì",
+      "meaning": "to pay attention to",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to pay attention to",
+        "ko": "주의하다",
+        "ja": "注意する"
+      }
+    },
+    {
+      "word": "改变",
+      "pinyin": "gǎibiàn",
+      "meaning": "to change",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to change",
+        "ko": "바꾸다, 변화하다",
+        "ja": "変える、変化する"
+      }
+    },
+    {
+      "word": "感觉",
+      "pinyin": "gǎnjué",
+      "meaning": "feeling",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "feeling",
+        "ko": "느낌, 감정",
+        "ja": "感じ、感情"
+      }
+    },
+    {
+      "word": "判断",
+      "pinyin": "pànduàn",
+      "meaning": "to judge, to decide",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to judge",
+        "ko": "판단하다",
+        "ja": "判断する"
+      }
+    },
+    {
+      "word": "顾客",
+      "pinyin": "gùkè",
+      "meaning": "customer, client",
+      "partOfSpeech": "n.",
+      "lessonId": 3,
+      "translations": {
+        "en": "customer",
+        "ko": "고객",
+        "ja": "顧客"
+      }
+    },
+    {
+      "word": "准时",
+      "pinyin": "zhǔnshí",
+      "meaning": "punctual, on time",
+      "partOfSpeech": "adj.",
+      "lessonId": 3,
+      "translations": {
+        "en": "punctual",
+        "ko": "시간을 지키다, 정각",
+        "ja": "時間を守る、正確な"
+      }
+    },
+    {
+      "word": "不管",
+      "pinyin": "bùguǎn",
+      "meaning": "no matter (what, how, etc.)",
+      "partOfSpeech": "conj.",
+      "lessonId": 3,
+      "translations": {
+        "en": "no matter",
+        "ko": "~에 관계없이",
+        "ja": "〜に関わらず"
+      }
+    },
+    {
+      "word": "与",
+      "pinyin": "yǔ",
+      "meaning": "with",
+      "partOfSpeech": "prep.",
+      "lessonId": 3,
+      "translations": {
+        "en": "with",
+        "ko": "~와/과",
+        "ja": "〜と"
+      }
+    },
+    {
+      "word": "约会",
+      "pinyin": "yuēhuì",
+      "meaning": "to date, to go to an appointment",
+      "partOfSpeech": "v.",
+      "lessonId": 3,
+      "translations": {
+        "en": "to date",
+        "ko": "약속, 데이트",
+        "ja": "デート、約束"
+      }
+    },
+    {
+      "word": "提",
+      "pinyin": "tí",
+      "meaning": "to mention",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to mention",
+        "ko": "언급하다",
+        "ja": "言及する"
+      }
+    },
+    {
+      "word": "以为",
+      "pinyin": "yǐwéi",
+      "meaning": "to think, to believe",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to think, to believe",
+        "ko": "~인 줄 알다",
+        "ja": "〜と思う"
+      }
+    },
+    {
+      "word": "份",
+      "pinyin": "fèn",
+      "meaning": "used for jobs among other things",
+      "partOfSpeech": "m.",
+      "lessonId": 4,
+      "translations": {
+        "en": "measure word used for jobs among other things",
+        "ko": "일자리 등에 쓰는 양사",
+        "ja": "仕事などに用いる量詞"
+      }
+    },
+    {
+      "word": "完全",
+      "pinyin": "wánquán",
+      "meaning": "completely",
+      "partOfSpeech": "adv.",
+      "lessonId": 4,
+      "translations": {
+        "en": "completely",
+        "ko": "완전히",
+        "ja": "完全に"
+      }
+    },
+    {
+      "word": "赚",
+      "pinyin": "zhuàn",
+      "meaning": "to earn",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to earn",
+        "ko": "벌다",
+        "ja": "稼ぐ"
+      }
+    },
+    {
+      "word": "着急",
+      "pinyin": "zhāojí",
+      "meaning": "to be in a hurry / anxious",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to be in a hurry; anxious",
+        "ko": "조급해하다; 초조해하다",
+        "ja": "焦る、急ぐ"
+      }
+    },
+    {
+      "word": "重要",
+      "pinyin": "zhòngyào",
+      "meaning": "important",
+      "partOfSpeech": "adj.",
+      "lessonId": 4,
+      "translations": {
+        "en": "important",
+        "ko": "중요한",
+        "ja": "重要な"
+      }
+    },
+    {
+      "word": "调查",
+      "pinyin": "diàochá",
+      "meaning": "to survey, to investigate",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to survey, to investigate",
+        "ko": "조사하다",
+        "ja": "調査する"
+      }
+    },
+    {
+      "word": "原来",
+      "pinyin": "yuánlái",
+      "meaning": "original",
+      "partOfSpeech": "adj.",
+      "lessonId": 4,
+      "translations": {
+        "en": "original; formerly; as it turns out",
+        "ko": "원래; 알고 보니",
+        "ja": "もともと、実は"
+      }
+    },
+    {
+      "word": "计划",
+      "pinyin": "jìhuà",
+      "meaning": "plan; to intend",
+      "partOfSpeech": "n./v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "plan; to intend to",
+        "ko": "계획; 계획하다",
+        "ja": "計画、計画する"
+      }
+    },
+    {
+      "word": "提前",
+      "pinyin": "tíqián",
+      "meaning": "to do something in advance or ahead of time",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to do something in advance or ahead of time",
+        "ko": "앞당기다; 미리 하다",
+        "ja": "前倒しする、事前に行う"
+      }
+    },
+    {
+      "word": "保证",
+      "pinyin": "bǎozhèng",
+      "meaning": "to guarantee",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to guarantee",
+        "ko": "보장하다; 반드시 ~하다",
+        "ja": "保証する"
+      }
+    },
+    {
+      "word": "提醒",
+      "pinyin": "tíxǐng",
+      "meaning": "to remind",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to remind",
+        "ko": "상기시키다",
+        "ja": "注意を促す、思い出させる"
+      }
+    },
+    {
+      "word": "乱",
+      "pinyin": "luàn",
+      "meaning": "hurry-scurry, confused",
+      "partOfSpeech": "adj.",
+      "lessonId": 4,
+      "translations": {
+        "en": "confused; disorderly",
+        "ko": "어지러운; 혼란스러운",
+        "ja": "乱れている、混乱した"
+      }
+    },
+    {
+      "word": "生意",
+      "pinyin": "shēngyi",
+      "meaning": "business, trade",
+      "partOfSpeech": "n.",
+      "lessonId": 4,
+      "translations": {
+        "en": "business, trade",
+        "ko": "사업; 장사",
+        "ja": "商売、取引"
+      }
+    },
+    {
+      "word": "谈",
+      "pinyin": "tán",
+      "meaning": "to talk, to discuss",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to talk, to discuss",
+        "ko": "이야기하다; 논의하다",
+        "ja": "話す、相談する"
+      }
+    },
+    {
+      "word": "并",
+      "pinyin": "bìng",
+      "meaning": "used before a negative for emphasis",
+      "partOfSpeech": "adv.",
+      "lessonId": 4,
+      "translations": {
+        "en": "used before a negative for emphasis",
+        "ko": "부정어 앞에서 강조하는 부사",
+        "ja": "否定語の前で強調する副詞"
+      }
+    },
+    {
+      "word": "积累",
+      "pinyin": "jīlěi",
+      "meaning": "to accumulate",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to accumulate",
+        "ko": "쌓다; 축적하다",
+        "ja": "積み重ねる、蓄積する"
+      }
+    },
+    {
+      "word": "经验",
+      "pinyin": "jīngyàn",
+      "meaning": "experience",
+      "partOfSpeech": "n.",
+      "lessonId": 4,
+      "translations": {
+        "en": "experience",
+        "ko": "경험",
+        "ja": "経験"
+      }
+    },
+    {
+      "word": "一切",
+      "pinyin": "yíqiè",
+      "meaning": "all, every",
+      "partOfSpeech": "pron.",
+      "lessonId": 4,
+      "translations": {
+        "en": "all, every",
+        "ko": "모든 것",
+        "ja": "すべて"
+      }
+    },
+    {
+      "word": "按照",
+      "pinyin": "ànzhào",
+      "meaning": "according to",
+      "partOfSpeech": "prep.",
+      "lessonId": 4,
+      "translations": {
+        "en": "according to",
+        "ko": "~에 따라",
+        "ja": "〜に従って"
+      }
+    },
+    {
+      "word": "成功",
+      "pinyin": "chénggōng",
+      "meaning": "successful",
+      "partOfSpeech": "adj.",
+      "lessonId": 4,
+      "translations": {
+        "en": "successful",
+        "ko": "성공적인",
+        "ja": "成功した"
+      }
+    },
+    {
+      "word": "感谢",
+      "pinyin": "gǎnxiè",
+      "meaning": "to thank",
+      "partOfSpeech": "v.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to thank",
+        "ko": "감사하다",
+        "ja": "感謝する"
+      }
+    },
+    {
+      "word": "消息",
+      "pinyin": "xiāoxi",
+      "meaning": "news",
+      "partOfSpeech": "n.",
+      "lessonId": 4,
+      "translations": {
+        "en": "news",
+        "ko": "소식",
+        "ja": "知らせ、ニュース"
+      }
+    },
+    {
+      "word": "按时",
+      "pinyin": "ànshí",
+      "meaning": "on time, on schedule",
+      "partOfSpeech": "adv.",
+      "lessonId": 4,
+      "translations": {
+        "en": "on time, on schedule",
+        "ko": "제시간에",
+        "ja": "時間どおりに"
+      }
+    },
+    {
+      "word": "奖金",
+      "pinyin": "jiǎngjīn",
+      "meaning": "money award, bonus",
+      "partOfSpeech": "n.",
+      "lessonId": 4,
+      "translations": {
+        "en": "money award, bonus",
+        "ko": "상금; 보너스",
+        "ja": "賞金、ボーナス"
+      }
+    },
+    {
+      "word": "工资",
+      "pinyin": "gōngzī",
+      "meaning": "pay, salary",
+      "partOfSpeech": "n.",
+      "lessonId": 4,
+      "translations": {
+        "en": "pay, salary",
+        "ko": "임금; 월급",
+        "ja": "給料"
+      }
+    },
+    {
+      "word": "方法",
+      "pinyin": "fāngfǎ",
+      "meaning": "method, way",
+      "partOfSpeech": "n.",
+      "lessonId": 4,
+      "translations": {
+        "en": "method, way",
+        "ko": "방법",
+        "ja": "方法"
+      }
+    },
+    {
+      "word": "办法",
+      "pinyin": "bànfǎ",
+      "meaning": "method, way",
+      "partOfSpeech": "n.",
+      "lessonId": 4,
+      "translations": {
+        "en": "method, way",
+        "ko": "방법; 방안",
+        "ja": "方法、手段"
+      }
+    },
+    {
+      "word": "知识",
+      "pinyin": "zhīshi",
+      "meaning": "knowledge",
+      "partOfSpeech": "n.",
+      "lessonId": 4,
+      "translations": {
+        "en": "knowledge",
+        "ko": "지식",
+        "ja": "知識"
+      }
+    },
+    {
+      "word": "不得不",
+      "pinyin": "bùdébù",
+      "meaning": "to have to",
+      "partOfSpeech": "adv.",
+      "lessonId": 4,
+      "translations": {
+        "en": "to have to, to have no choice but",
+        "ko": "어쩔 수 없이 ~해야 하다",
+        "ja": "〜せざるを得ない"
+      }
+    },
+    {
+      "word": "甚至",
+      "pinyin": "shènzhì",
+      "meaning": "even, so far as to",
+      "partOfSpeech": "conj.",
+      "lessonId": 4,
+      "translations": {
+        "en": "even, so far as to",
+        "ko": "심지어",
+        "ja": "さらには、〜さえ"
+      }
+    },
+    {
+      "word": "责任",
+      "pinyin": "zérèn",
+      "meaning": "responsibility, duty",
+      "partOfSpeech": "n.",
+      "lessonId": 4,
+      "translations": {
+        "en": "responsibility, duty",
+        "ko": "책임",
+        "ja": "責任"
+      }
+    },
+    {
+      "word": "家具",
+      "pinyin": "jiājù",
+      "meaning": "furniture",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. furniture",
+        "ko": "명. 가구",
+        "ja": "名. 家具"
+      }
+    },
+    {
+      "word": "沙发",
+      "pinyin": "shāfā",
+      "meaning": "sofa",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. sofa",
+        "ko": "명. 소파",
+        "ja": "名. ソファ"
+      }
+    },
+    {
+      "word": "打折",
+      "pinyin": "dǎ zhé",
+      "meaning": "to give a discount",
+      "partOfSpeech": "v.",
+      "lessonId": 5,
+      "translations": {
+        "en": "v. to give a discount",
+        "ko": "동. 할인하다",
+        "ja": "動. 割引する"
+      }
+    },
+    {
+      "word": "价格",
+      "pinyin": "jiàgé",
+      "meaning": "price",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. price",
+        "ko": "명. 가격",
+        "ja": "名. 価格"
+      }
+    },
+    {
+      "word": "质量",
+      "pinyin": "zhìliàng",
+      "meaning": "quality",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. quality",
+        "ko": "명. 품질",
+        "ja": "名. 品質"
+      }
+    },
+    {
+      "word": "肯定",
+      "pinyin": "kěndìng",
+      "meaning": "surely, certainly",
+      "partOfSpeech": "adv.",
+      "lessonId": 5,
+      "translations": {
+        "en": "adv. surely, certainly",
+        "ko": "부. 틀림없이, 분명히",
+        "ja": "副. きっと, 間違いなく"
+      }
+    },
+    {
+      "word": "流行",
+      "pinyin": "liúxíng",
+      "meaning": "to be popular",
+      "partOfSpeech": "v.",
+      "lessonId": 5,
+      "translations": {
+        "en": "v. to be popular",
+        "ko": "동. 유행하다",
+        "ja": "動. 流行する"
+      }
+    },
+    {
+      "word": "顺便",
+      "pinyin": "shùnbiàn",
+      "meaning": "in passing",
+      "partOfSpeech": "adv.",
+      "lessonId": 5,
+      "translations": {
+        "en": "adv. in passing",
+        "ko": "부. 하는 김에, 겸사겸사",
+        "ja": "副. ついでに"
+      }
+    },
+    {
+      "word": "台",
+      "pinyin": "tái",
+      "meaning": "used for machines",
+      "partOfSpeech": "m.",
+      "lessonId": 5,
+      "translations": {
+        "en": "m. used for machines",
+        "ko": "양. 기계류를 세는 단위",
+        "ja": "量. 機械などを数える量詞"
+      }
+    },
+    {
+      "word": "光",
+      "pinyin": "guāng",
+      "meaning": "only, merely",
+      "partOfSpeech": "adv.",
+      "lessonId": 5,
+      "translations": {
+        "en": "adv. only, merely",
+        "ko": "부. 단지, ~만",
+        "ja": "副. ただ, だけ"
+      }
+    },
+    {
+      "word": "实在",
+      "pinyin": "shízài",
+      "meaning": "really",
+      "partOfSpeech": "adv.",
+      "lessonId": 5,
+      "translations": {
+        "en": "adv. really",
+        "ko": "부. 정말, 참으로",
+        "ja": "副. 本当に"
+      }
+    },
+    {
+      "word": "制冷",
+      "pinyin": "zhìlěng",
+      "meaning": "to refrigerate",
+      "partOfSpeech": "v.",
+      "lessonId": 5,
+      "translations": {
+        "en": "v. to refrigerate",
+        "ko": "동. 냉각하다, 냉방하다",
+        "ja": "動. 冷却する"
+      }
+    },
+    {
+      "word": "效果",
+      "pinyin": "xiàoguǒ",
+      "meaning": "effect",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. effect",
+        "ko": "명. 효과",
+        "ja": "名. 効果"
+      }
+    },
+    {
+      "word": "现金",
+      "pinyin": "xiànjīn",
+      "meaning": "cash",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. cash",
+        "ko": "명. 현금",
+        "ja": "名. 現金"
+      }
+    },
+    {
+      "word": "邀请",
+      "pinyin": "yāoqǐng",
+      "meaning": "to invite",
+      "partOfSpeech": "v.",
+      "lessonId": 5,
+      "translations": {
+        "en": "v. to invite",
+        "ko": "동. 초대하다",
+        "ja": "動. 招待する"
+      }
+    },
+    {
+      "word": "葡萄",
+      "pinyin": "pútao",
+      "meaning": "grape",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. grape",
+        "ko": "명. 포도",
+        "ja": "名. ぶどう"
+      }
+    },
+    {
+      "word": "艺术",
+      "pinyin": "yìshù",
+      "meaning": "art",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. art",
+        "ko": "명. 예술",
+        "ja": "名. 芸術"
+      }
+    },
+    {
+      "word": "广告",
+      "pinyin": "guǎnggào",
+      "meaning": "advertisement",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. advertisement",
+        "ko": "명. 광고",
+        "ja": "名. 広告"
+      }
+    },
+    {
+      "word": "味道",
+      "pinyin": "wèidào",
+      "meaning": "taste",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. taste",
+        "ko": "명. 맛",
+        "ja": "名. 味"
+      }
+    },
+    {
+      "word": "优点",
+      "pinyin": "yōudiǎn",
+      "meaning": "merit",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. merit",
+        "ko": "명. 장점",
+        "ja": "名. 長所"
+      }
+    },
+    {
+      "word": "实际",
+      "pinyin": "shíjì",
+      "meaning": "reality",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. reality",
+        "ko": "명. 실제, 현실",
+        "ja": "名. 実際, 現実"
+      }
+    },
+    {
+      "word": "考虑",
+      "pinyin": "kǎolǜ",
+      "meaning": "to consider",
+      "partOfSpeech": "v.",
+      "lessonId": 5,
+      "translations": {
+        "en": "v. to consider",
+        "ko": "동. 고려하다",
+        "ja": "動. 考える, 考慮する"
+      }
+    },
+    {
+      "word": "标准",
+      "pinyin": "biāozhǔn",
+      "meaning": "standard",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. standard",
+        "ko": "명. 기준",
+        "ja": "名. 基準"
+      }
+    },
+    {
+      "word": "样子",
+      "pinyin": "yàngzi",
+      "meaning": "look, appearance",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. look, appearance",
+        "ko": "명. 모양, 외관",
+        "ja": "名. 様子, 見た目"
+      }
+    },
+    {
+      "word": "年龄",
+      "pinyin": "niánlíng",
+      "meaning": "age",
+      "partOfSpeech": "n.",
+      "lessonId": 5,
+      "translations": {
+        "en": "n. age",
+        "ko": "명. 나이",
+        "ja": "名. 年齢"
+      }
+    },
+    {
+      "word": "浪费",
+      "pinyin": "làngfèi",
+      "meaning": "to waste",
+      "partOfSpeech": "v.",
+      "lessonId": 5,
+      "translations": {
+        "en": "v. to waste",
+        "ko": "동. 낭비하다",
+        "ja": "動. 無駄にする"
+      }
+    },
+    {
+      "word": "购物",
+      "pinyin": "gòuwù",
+      "meaning": "to shop, to buy things",
+      "partOfSpeech": "v.",
+      "lessonId": 5,
+      "translations": {
+        "en": "v. to shop, to buy things",
+        "ko": "동. 쇼핑하다, 물건을 사다",
+        "ja": "動. 買い物をする"
+      }
+    },
+    {
+      "word": "尤其",
+      "pinyin": "yóuqí",
+      "meaning": "especially",
+      "partOfSpeech": "adv.",
+      "lessonId": 5,
+      "translations": {
+        "en": "adv. especially",
+        "ko": "부. 특히",
+        "ja": "副. 特に"
+      }
+    },
+    {
+      "word": "受到",
+      "pinyin": "shòudào",
+      "meaning": "to receive",
+      "partOfSpeech": "v.",
+      "lessonId": 5,
+      "translations": {
+        "en": "v. to receive",
+        "ko": "동. 받다",
+        "ja": "動. 受ける"
+      }
+    },
+    {
+      "word": "任何",
+      "pinyin": "rènhé",
+      "meaning": "any, whatever",
+      "partOfSpeech": "pron.",
+      "lessonId": 5,
+      "translations": {
+        "en": "pron. any, whatever",
+        "ko": "대. 어떤, 어떠한",
+        "ja": "代. どんな, いかなる"
+      }
+    },
+    {
+      "word": "寄",
+      "pinyin": "jì",
+      "meaning": "to mail, to send",
+      "partOfSpeech": "v.",
+      "lessonId": 5,
+      "translations": {
+        "en": "v. to mail, to send",
+        "ko": "동. 부치다, 보내다",
+        "ja": "動. 郵送する, 送る"
+      }
+    },
+    {
+      "word": "准备",
+      "pinyin": "zhǔnbèi",
+      "meaning": "to prepare",
+      "partOfSpeech": "v.",
+      "lessonId": 5,
+      "translations": {
+        "en": "v. to prepare",
+        "ko": "동. 준비하다",
+        "ja": "動. 準備する"
+      }
+    },
+    {
+      "word": "果汁",
+      "pinyin": "guǒzhī",
+      "meaning": "fruit juice",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "fruit juice",
+        "ko": "과일 주스",
+        "ja": "果汁、フルーツジュース"
+      }
+    },
+    {
+      "word": "售货员",
+      "pinyin": "shòuhuòyuán",
+      "meaning": "salesperson",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "salesperson",
+        "ko": "판매원",
+        "ja": "販売員"
+      }
+    },
+    {
+      "word": "袜子",
+      "pinyin": "wàzi",
+      "meaning": "socks",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "socks",
+        "ko": "양말",
+        "ja": "靴下"
+      }
+    },
+    {
+      "word": "打扰",
+      "pinyin": "dǎrǎo",
+      "meaning": "to disturb, to bother",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to disturb, to bother",
+        "ko": "방해하다, 귀찮게 하다",
+        "ja": "邪魔する、迷惑をかける"
+      }
+    },
+    {
+      "word": "竟然",
+      "pinyin": "jìngrán",
+      "meaning": "indicating unexpectedness",
+      "partOfSpeech": "adv.",
+      "lessonId": 6,
+      "translations": {
+        "en": "unexpectedly, actually",
+        "ko": "뜻밖에도, 의외로",
+        "ja": "意外にも、なんと"
+      }
+    },
+    {
+      "word": "西红柿",
+      "pinyin": "xīhóngshì",
+      "meaning": "tomato",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "tomato",
+        "ko": "토마토",
+        "ja": "トマト"
+      }
+    },
+    {
+      "word": "百分之",
+      "pinyin": "bǎi fēn zhī",
+      "meaning": "percent",
+      "partOfSpeech": "num.",
+      "lessonId": 6,
+      "translations": {
+        "en": "percent",
+        "ko": "퍼센트",
+        "ja": "パーセント"
+      }
+    },
+    {
+      "word": "倍",
+      "pinyin": "bèi",
+      "meaning": "times, -fold",
+      "partOfSpeech": "m.",
+      "lessonId": 6,
+      "translations": {
+        "en": "times, -fold",
+        "ko": "배",
+        "ja": "倍"
+      }
+    },
+    {
+      "word": "皮肤",
+      "pinyin": "pífū",
+      "meaning": "skin",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "skin",
+        "ko": "피부",
+        "ja": "皮膚"
+      }
+    },
+    {
+      "word": "好处",
+      "pinyin": "hǎochù",
+      "meaning": "benefit, advantage",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "benefit, advantage",
+        "ko": "장점, 이점",
+        "ja": "利点、メリット"
+      }
+    },
+    {
+      "word": "尝",
+      "pinyin": "cháng",
+      "meaning": "to taste",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to taste",
+        "ko": "맛보다",
+        "ja": "味見する"
+      }
+    },
+    {
+      "word": "轻",
+      "pinyin": "qīng",
+      "meaning": "light, of little weight",
+      "partOfSpeech": "adj.",
+      "lessonId": 6,
+      "translations": {
+        "en": "light, of little weight",
+        "ko": "가볍다",
+        "ja": "軽い"
+      }
+    },
+    {
+      "word": "方面",
+      "pinyin": "fāngmiàn",
+      "meaning": "aspect",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "aspect",
+        "ko": "방면, 측면",
+        "ja": "方面、側面"
+      }
+    },
+    {
+      "word": "值得",
+      "pinyin": "zhídé",
+      "meaning": "to be worth",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to be worth",
+        "ko": "가치가 있다",
+        "ja": "値する、価値がある"
+      }
+    },
+    {
+      "word": "活动",
+      "pinyin": "huódòng",
+      "meaning": "activity, event",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "activity, event",
+        "ko": "행사, 활동",
+        "ja": "活動、イベント"
+      }
+    },
+    {
+      "word": "内",
+      "pinyin": "nèi",
+      "meaning": "in, within",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "in, within",
+        "ko": "안, 이내",
+        "ja": "内、以内"
+      }
+    },
+    {
+      "word": "免费",
+      "pinyin": "miǎnfèi",
+      "meaning": "to be free of charge",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to be free of charge",
+        "ko": "무료이다",
+        "ja": "無料である"
+      }
+    },
+    {
+      "word": "修理",
+      "pinyin": "xiūlǐ",
+      "meaning": "to repair, to mend",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to repair, to mend",
+        "ko": "수리하다",
+        "ja": "修理する"
+      }
+    },
+    {
+      "word": "支持",
+      "pinyin": "zhīchí",
+      "meaning": "to support",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to support",
+        "ko": "지지하다, 성원하다",
+        "ja": "支持する"
+      }
+    },
+    {
+      "word": "举行",
+      "pinyin": "jǔxíng",
+      "meaning": "to hold (a meeting, event, etc.)",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to hold an event",
+        "ko": "개최하다, 열다",
+        "ja": "開催する、行う"
+      }
+    },
+    {
+      "word": "满",
+      "pinyin": "mǎn",
+      "meaning": "to reach a quota or limit",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to reach a quota or limit",
+        "ko": "차다, 일정 금액/기준에 이르다",
+        "ja": "満たす、一定額に達する"
+      }
+    },
+    {
+      "word": "其中",
+      "pinyin": "qízhōng",
+      "meaning": "among (which, them, etc.)",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "among them",
+        "ko": "그중, 그 가운데",
+        "ja": "その中で"
+      }
+    },
+    {
+      "word": "小说",
+      "pinyin": "xiǎoshuō",
+      "meaning": "novel, fiction",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "novel, fiction",
+        "ko": "소설",
+        "ja": "小説"
+      }
+    },
+    {
+      "word": "会员卡",
+      "pinyin": "huìyuánkǎ",
+      "meaning": "membership card",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "membership card",
+        "ko": "회원 카드",
+        "ja": "会員カード"
+      }
+    },
+    {
+      "word": "所有",
+      "pinyin": "suǒyǒu",
+      "meaning": "all",
+      "partOfSpeech": "adj.",
+      "lessonId": 6,
+      "translations": {
+        "en": "all",
+        "ko": "모든",
+        "ja": "すべての"
+      }
+    },
+    {
+      "word": "获得",
+      "pinyin": "huòdé",
+      "meaning": "to get, to obtain",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to get, to obtain",
+        "ko": "얻다, 획득하다",
+        "ja": "得る、獲得する"
+      }
+    },
+    {
+      "word": "情况",
+      "pinyin": "qíngkuàng",
+      "meaning": "situation, circumstances",
+      "partOfSpeech": "n.",
+      "lessonId": 6,
+      "translations": {
+        "en": "situation, circumstances",
+        "ko": "상황, 형편",
+        "ja": "状況、事情"
+      }
+    },
+    {
+      "word": "例如",
+      "pinyin": "lìrú",
+      "meaning": "for example",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "for example",
+        "ko": "예를 들면",
+        "ja": "例えば"
+      }
+    },
+    {
+      "word": "举办",
+      "pinyin": "jǔbàn",
+      "meaning": "to hold, to conduct",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to hold, to conduct",
+        "ko": "개최하다, 열다",
+        "ja": "開催する、行う"
+      }
+    },
+    {
+      "word": "各",
+      "pinyin": "gè",
+      "meaning": "various, different",
+      "partOfSpeech": "pron.",
+      "lessonId": 6,
+      "translations": {
+        "en": "various, different",
+        "ko": "각각의, 여러 가지의",
+        "ja": "各、さまざまな"
+      }
+    },
+    {
+      "word": "降低",
+      "pinyin": "jiàngdī",
+      "meaning": "to lower, to reduce",
+      "partOfSpeech": "v.",
+      "lessonId": 6,
+      "translations": {
+        "en": "to lower, to reduce",
+        "ko": "낮추다, 내리다",
+        "ja": "下げる、低下させる"
+      }
+    },
+    {
+      "word": "流血",
+      "pinyin": "liú xiě",
+      "meaning": "to bleed",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to bleed",
+        "ko": "피가 나다",
+        "ja": "出血する"
+      }
+    },
+    {
+      "word": "擦",
+      "pinyin": "cā",
+      "meaning": "to wipe",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to wipe",
+        "ko": "닦다",
+        "ja": "拭く"
+      }
+    },
+    {
+      "word": "气候",
+      "pinyin": "qìhòu",
+      "meaning": "climate",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "climate",
+        "ko": "기후",
+        "ja": "気候"
+      }
+    },
+    {
+      "word": "估计",
+      "pinyin": "gūjì",
+      "meaning": "to estimate, to reckon",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to estimate, to reckon",
+        "ko": "추정하다, 짐작하다",
+        "ja": "推測する、見積もる"
+      }
+    },
+    {
+      "word": "咳嗽",
+      "pinyin": "késou",
+      "meaning": "to cough",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to cough",
+        "ko": "기침하다",
+        "ja": "咳をする"
+      }
+    },
+    {
+      "word": "严重",
+      "pinyin": "yánzhòng",
+      "meaning": "serious, grave",
+      "partOfSpeech": "adj.",
+      "lessonId": 7,
+      "translations": {
+        "en": "serious, grave",
+        "ko": "심각하다",
+        "ja": "深刻である、重い"
+      }
+    },
+    {
+      "word": "窗户",
+      "pinyin": "chuānghu",
+      "meaning": "window",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "window",
+        "ko": "창문",
+        "ja": "窓"
+      }
+    },
+    {
+      "word": "空气",
+      "pinyin": "kōngqì",
+      "meaning": "air",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "air",
+        "ko": "공기",
+        "ja": "空気"
+      }
+    },
+    {
+      "word": "抽烟",
+      "pinyin": "chōu yān",
+      "meaning": "to smoke",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to smoke",
+        "ko": "담배를 피우다",
+        "ja": "タバコを吸う"
+      }
+    },
+    {
+      "word": "动作",
+      "pinyin": "dòngzuò",
+      "meaning": "action, movement",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "action, movement",
+        "ko": "동작, 움직임",
+        "ja": "動作、動き"
+      }
+    },
+    {
+      "word": "帅",
+      "pinyin": "shuài",
+      "meaning": "handsome",
+      "partOfSpeech": "adj.",
+      "lessonId": 7,
+      "translations": {
+        "en": "handsome, cool",
+        "ko": "멋있다, 잘생기다",
+        "ja": "かっこいい、ハンサムである"
+      }
+    },
+    {
+      "word": "出现",
+      "pinyin": "chūxiàn",
+      "meaning": "to appear, to emerge",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to appear, to emerge",
+        "ko": "나타나다, 생기다",
+        "ja": "現れる、発生する"
+      }
+    },
+    {
+      "word": "后悔",
+      "pinyin": "hòuhuǐ",
+      "meaning": "to regret",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to regret",
+        "ko": "후회하다",
+        "ja": "後悔する"
+      }
+    },
+    {
+      "word": "来不及",
+      "pinyin": "láibují",
+      "meaning": "to have not enough time to, to be too late to",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to have not enough time to, to be too late to",
+        "ko": "시간이 늦어 ~할 수 없다, 늦다",
+        "ja": "間に合わない、遅すぎる"
+      }
+    },
+    {
+      "word": "反对",
+      "pinyin": "fǎnduì",
+      "meaning": "to oppose, to object to",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to oppose, to object to",
+        "ko": "반대하다",
+        "ja": "反対する"
+      }
+    },
+    {
+      "word": "大夫",
+      "pinyin": "dàifu",
+      "meaning": "doctor",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "doctor",
+        "ko": "의사",
+        "ja": "医者"
+      }
+    },
+    {
+      "word": "植物",
+      "pinyin": "zhíwù",
+      "meaning": "plant",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "plant",
+        "ko": "식물",
+        "ja": "植物"
+      }
+    },
+    {
+      "word": "研究",
+      "pinyin": "yánjiū",
+      "meaning": "to study, to do research",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to study, to do research",
+        "ko": "연구하다",
+        "ja": "研究する"
+      }
+    },
+    {
+      "word": "超过",
+      "pinyin": "chāoguò",
+      "meaning": "to exceed, to surpass",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to exceed, to surpass",
+        "ko": "초과하다, 넘다",
+        "ja": "超える、上回る"
+      }
+    },
+    {
+      "word": "散步",
+      "pinyin": "sàn bù",
+      "meaning": "to take a walk",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to take a walk",
+        "ko": "산책하다",
+        "ja": "散歩する"
+      }
+    },
+    {
+      "word": "指",
+      "pinyin": "zhǐ",
+      "meaning": "to refer to",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to refer to",
+        "ko": "가리키다, 뜻하다",
+        "ja": "指す、意味する"
+      }
+    },
+    {
+      "word": "精神",
+      "pinyin": "jīngshén",
+      "meaning": "spirit, mind",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "spirit, mind",
+        "ko": "정신",
+        "ja": "精神、心"
+      }
+    },
+    {
+      "word": "教授",
+      "pinyin": "jiàoshòu",
+      "meaning": "professor",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "professor",
+        "ko": "교수",
+        "ja": "教授"
+      }
+    },
+    {
+      "word": "数字",
+      "pinyin": "shùzì",
+      "meaning": "number",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "number",
+        "ko": "숫자",
+        "ja": "数字"
+      }
+    },
+    {
+      "word": "说明",
+      "pinyin": "shuōmíng",
+      "meaning": "to explain, to show",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to explain, to show",
+        "ko": "설명하다, 보여 주다",
+        "ja": "説明する、示す"
+      }
+    },
+    {
+      "word": "要是",
+      "pinyin": "yàoshi",
+      "meaning": "if, supposing",
+      "partOfSpeech": "conj.",
+      "lessonId": 7,
+      "translations": {
+        "en": "if, supposing",
+        "ko": "만약, 만일",
+        "ja": "もし、仮に"
+      }
+    },
+    {
+      "word": "既",
+      "pinyin": "jì",
+      "meaning": "used together with “又”: both...and...",
+      "partOfSpeech": "adv.",
+      "lessonId": 7,
+      "translations": {
+        "en": "used with “又”: both...and...",
+        "ko": "이미, 또; “又”와 함께 쓰여 “~이기도 하고 ~이기도 하다”",
+        "ja": "すでに、また; 「又」と共に使い「〜でもあり〜でもある」"
+      }
+    },
+    {
+      "word": "减肥",
+      "pinyin": "jiǎn féi",
+      "meaning": "to lose weight",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "to lose weight",
+        "ko": "살을 빼다, 다이어트하다",
+        "ja": "ダイエットする、減量する"
+      }
+    },
+    {
+      "word": "辛苦",
+      "pinyin": "xīnkǔ",
+      "meaning": "hard, toilsome",
+      "partOfSpeech": "adj.",
+      "lessonId": 7,
+      "translations": {
+        "en": "hard, toilsome",
+        "ko": "힘들다, 고생스럽다",
+        "ja": "つらい、骨が折れる"
+      }
+    },
+    {
+      "word": "肚子",
+      "pinyin": "dùzi",
+      "meaning": "belly, stomach",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "belly, stomach",
+        "ko": "배, 복부",
+        "ja": "お腹、腹"
+      }
+    },
+    {
+      "word": "感情",
+      "pinyin": "gǎnqíng",
+      "meaning": "affection, love",
+      "partOfSpeech": "n.",
+      "lessonId": 7,
+      "translations": {
+        "en": "affection, love",
+        "ko": "감정, 애정",
+        "ja": "感情、愛情"
+      }
+    },
+    {
+      "word": "烦恼",
+      "pinyin": "fánnǎo",
+      "meaning": "worried, vexed",
+      "partOfSpeech": "adj.",
+      "lessonId": 7,
+      "translations": {
+        "en": "worried, vexed",
+        "ko": "걱정스럽다, 고민스럽다",
+        "ja": "悩ましい、心配である"
+      }
+    },
+    {
+      "word": "掉",
+      "pinyin": "diào",
+      "meaning": "used after certain verbs, indicating the result of an action",
+      "partOfSpeech": "v.",
+      "lessonId": 7,
+      "translations": {
+        "en": "used after certain verbs, indicating the result of an action",
+        "ko": "동사 뒤에서 결과를 나타냄",
+        "ja": "動詞の後ろで結果を表す"
+      }
+    },
+    {
+      "word": "巧克力",
+      "pinyin": "qiǎokèlì",
+      "meaning": "chocolate",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "chocolate",
+        "ko": "초콜릿",
+        "ja": "チョコレート"
+      }
+    },
+    {
+      "word": "亲戚",
+      "pinyin": "qīnqi",
+      "meaning": "relative, kinsfolk",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "relative, kinsfolk",
+        "ko": "친척",
+        "ja": "親戚"
+      }
+    },
+    {
+      "word": "伤心",
+      "pinyin": "shāngxīn",
+      "meaning": "sad, sorrowful",
+      "partOfSpeech": "adj.",
+      "lessonId": 8,
+      "translations": {
+        "en": "sad, sorrowful",
+        "ko": "슬프다, 마음이 아프다",
+        "ja": "悲しい、心が痛む"
+      }
+    },
+    {
+      "word": "使",
+      "pinyin": "shǐ",
+      "meaning": "to make, to cause",
+      "partOfSpeech": "v.",
+      "lessonId": 8,
+      "translations": {
+        "en": "to make, to cause",
+        "ko": "~하게 하다",
+        "ja": "〜させる"
+      }
+    },
+    {
+      "word": "心情",
+      "pinyin": "xīnqíng",
+      "meaning": "mood, state of mind",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "mood, state of mind",
+        "ko": "기분, 마음 상태",
+        "ja": "気分、心の状態"
+      }
+    },
+    {
+      "word": "愉快",
+      "pinyin": "yúkuài",
+      "meaning": "glad, cheerful",
+      "partOfSpeech": "adj.",
+      "lessonId": 8,
+      "translations": {
+        "en": "glad, cheerful",
+        "ko": "즐겁다, 유쾌하다",
+        "ja": "愉快である、楽しい"
+      }
+    },
+    {
+      "word": "景色",
+      "pinyin": "jǐngsè",
+      "meaning": "scene, view",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "scene, view",
+        "ko": "경치, 풍경",
+        "ja": "景色、眺め"
+      }
+    },
+    {
+      "word": "放松",
+      "pinyin": "fàngsōng",
+      "meaning": "to relax",
+      "partOfSpeech": "v.",
+      "lessonId": 8,
+      "translations": {
+        "en": "to relax",
+        "ko": "긴장을 풀다, 편안해지다",
+        "ja": "リラックスする"
+      }
+    },
+    {
+      "word": "压力",
+      "pinyin": "yālì",
+      "meaning": "pressure, stress",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "pressure, stress",
+        "ko": "압력, 스트레스",
+        "ja": "プレッシャー、ストレス"
+      }
+    },
+    {
+      "word": "回忆",
+      "pinyin": "huíyì",
+      "meaning": "to call to mind, to recall",
+      "partOfSpeech": "v.",
+      "lessonId": 8,
+      "translations": {
+        "en": "to call to mind, to recall",
+        "ko": "회상하다, 떠올리다",
+        "ja": "思い出す、回想する"
+      }
+    },
+    {
+      "word": "发生",
+      "pinyin": "fāshēng",
+      "meaning": "to happen, to take place",
+      "partOfSpeech": "v.",
+      "lessonId": 8,
+      "translations": {
+        "en": "to happen, to take place",
+        "ko": "발생하다, 일어나다",
+        "ja": "起こる、発生する"
+      }
+    },
+    {
+      "word": "成为",
+      "pinyin": "chéngwéi",
+      "meaning": "to become",
+      "partOfSpeech": "v.",
+      "lessonId": 8,
+      "translations": {
+        "en": "to become",
+        "ko": "~이 되다",
+        "ja": "〜になる"
+      }
+    },
+    {
+      "word": "只要",
+      "pinyin": "zhǐyào",
+      "meaning": "as long as, provided",
+      "partOfSpeech": "conj.",
+      "lessonId": 8,
+      "translations": {
+        "en": "as long as, provided",
+        "ko": "~하기만 하면",
+        "ja": "〜さえすれば"
+      }
+    },
+    {
+      "word": "师傅",
+      "pinyin": "shīfu",
+      "meaning": "a polite title for one with accomplished skills in a trade or handicraft",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "polite title for a skilled worker or driver",
+        "ko": "기사님, 스승/장인에 대한 공손한 호칭",
+        "ja": "師傅、職人や運転手への丁寧な呼び方"
+      }
+    },
+    {
+      "word": "大使馆",
+      "pinyin": "dàshǐguǎn",
+      "meaning": "embassy",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "embassy",
+        "ko": "대사관",
+        "ja": "大使館"
+      }
+    },
+    {
+      "word": "堵车",
+      "pinyin": "dǔ chē",
+      "meaning": "traffic jam",
+      "partOfSpeech": "v.",
+      "lessonId": 8,
+      "translations": {
+        "en": "traffic jam",
+        "ko": "교통이 막히다",
+        "ja": "渋滞する"
+      }
+    },
+    {
+      "word": "距离",
+      "pinyin": "jùlí",
+      "meaning": "distance",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "distance",
+        "ko": "거리",
+        "ja": "距離"
+      }
+    },
+    {
+      "word": "耐心",
+      "pinyin": "nàixīn",
+      "meaning": "patience",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "patience",
+        "ko": "인내심",
+        "ja": "忍耐、辛抱強さ"
+      }
+    },
+    {
+      "word": "生命",
+      "pinyin": "shēngmìng",
+      "meaning": "life",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "life",
+        "ko": "생명",
+        "ja": "生命"
+      }
+    },
+    {
+      "word": "缺少",
+      "pinyin": "quēshǎo",
+      "meaning": "to lack",
+      "partOfSpeech": "v.",
+      "lessonId": 8,
+      "translations": {
+        "en": "to lack",
+        "ko": "부족하다, 결핍되다",
+        "ja": "欠ける、不足する"
+      }
+    },
+    {
+      "word": "到处",
+      "pinyin": "dàochù",
+      "meaning": "everywhere",
+      "partOfSpeech": "adv.",
+      "lessonId": 8,
+      "translations": {
+        "en": "everywhere",
+        "ko": "곳곳에, 어디에나",
+        "ja": "至るところに、どこでも"
+      }
+    },
+    {
+      "word": "态度",
+      "pinyin": "tàidù",
+      "meaning": "attitude",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "attitude",
+        "ko": "태도",
+        "ja": "態度"
+      }
+    },
+    {
+      "word": "因此",
+      "pinyin": "yīncǐ",
+      "meaning": "therefore, so",
+      "partOfSpeech": "conj.",
+      "lessonId": 8,
+      "translations": {
+        "en": "therefore, so",
+        "ko": "그러므로, 따라서",
+        "ja": "したがって、それゆえ"
+      }
+    },
+    {
+      "word": "科学",
+      "pinyin": "kēxué",
+      "meaning": "science",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "science",
+        "ko": "과학",
+        "ja": "科学"
+      }
+    },
+    {
+      "word": "证明",
+      "pinyin": "zhèngmíng",
+      "meaning": "to prove",
+      "partOfSpeech": "v.",
+      "lessonId": 8,
+      "translations": {
+        "en": "to prove",
+        "ko": "증명하다",
+        "ja": "証明する"
+      }
+    },
+    {
+      "word": "往往",
+      "pinyin": "wǎngwǎng",
+      "meaning": "often, usually",
+      "partOfSpeech": "adv.",
+      "lessonId": 8,
+      "translations": {
+        "en": "often, usually",
+        "ko": "왕왕, 흔히, 보통",
+        "ja": "往々にして、しばしば、たいてい"
+      }
+    },
+    {
+      "word": "阳光",
+      "pinyin": "yángguāng",
+      "meaning": "optimistic, cheerful",
+      "partOfSpeech": "adj.",
+      "lessonId": 8,
+      "translations": {
+        "en": "optimistic, cheerful",
+        "ko": "밝고 긍정적인",
+        "ja": "明るい、前向きな"
+      }
+    },
+    {
+      "word": "积极",
+      "pinyin": "jījí",
+      "meaning": "positive",
+      "partOfSpeech": "adj.",
+      "lessonId": 8,
+      "translations": {
+        "en": "positive",
+        "ko": "적극적인, 긍정적인",
+        "ja": "積極的な、前向きな"
+      }
+    },
+    {
+      "word": "特点",
+      "pinyin": "tèdiǎn",
+      "meaning": "characteristic",
+      "partOfSpeech": "n.",
+      "lessonId": 8,
+      "translations": {
+        "en": "characteristic",
+        "ko": "특징",
+        "ja": "特徴"
+      }
+    },
+    {
+      "word": "饼干",
+      "pinyin": "bǐnggān",
+      "meaning": "biscuit",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "biscuit",
+        "ko": "비스킷",
+        "ja": "ビスケット"
+      }
+    },
+    {
+      "word": "难道",
+      "pinyin": "nándào",
+      "meaning": "used in a rhetorical question for emphasis",
+      "partOfSpeech": "adv.",
+      "lessonId": 9,
+      "translations": {
+        "en": "used in a rhetorical question for emphasis",
+        "ko": "설의문에서 강조할 때 쓰는 부사",
+        "ja": "反語疑問で強調に使う副詞"
+      }
+    },
+    {
+      "word": "得",
+      "pinyin": "děi",
+      "meaning": "must, have to",
+      "partOfSpeech": "mod.",
+      "lessonId": 9,
+      "translations": {
+        "en": "must, have to",
+        "ko": "~해야 하다",
+        "ja": "〜しなければならない"
+      }
+    },
+    {
+      "word": "坚持",
+      "pinyin": "jiānchí",
+      "meaning": "to insist, to persist",
+      "partOfSpeech": "v.",
+      "lessonId": 9,
+      "translations": {
+        "en": "to insist, to persist",
+        "ko": "견지하다, 꾸준히 하다",
+        "ja": "やり通す、堅持する"
+      }
+    },
+    {
+      "word": "放弃",
+      "pinyin": "fàngqì",
+      "meaning": "to give up",
+      "partOfSpeech": "v.",
+      "lessonId": 9,
+      "translations": {
+        "en": "to give up",
+        "ko": "포기하다",
+        "ja": "諦める、放棄する"
+      }
+    },
+    {
+      "word": "主意",
+      "pinyin": "zhǔyi",
+      "meaning": "idea, plan",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "idea, plan",
+        "ko": "생각, 방법",
+        "ja": "考え、案"
+      }
+    },
+    {
+      "word": "网球",
+      "pinyin": "wǎngqiú",
+      "meaning": "tennis",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "tennis",
+        "ko": "테니스",
+        "ja": "テニス"
+      }
+    },
+    {
+      "word": "国际",
+      "pinyin": "guójì",
+      "meaning": "international",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "international",
+        "ko": "국제",
+        "ja": "国際"
+      }
+    },
+    {
+      "word": "轻松",
+      "pinyin": "qīngsōng",
+      "meaning": "relaxed, effortless",
+      "partOfSpeech": "adj.",
+      "lessonId": 9,
+      "translations": {
+        "en": "relaxed, effortless",
+        "ko": "가볍다, 수월하다",
+        "ja": "気楽な、楽な"
+      }
+    },
+    {
+      "word": "赢",
+      "pinyin": "yíng",
+      "meaning": "to win",
+      "partOfSpeech": "v.",
+      "lessonId": 9,
+      "translations": {
+        "en": "to win",
+        "ko": "이기다",
+        "ja": "勝つ"
+      }
+    },
+    {
+      "word": "随便",
+      "pinyin": "suíbiàn",
+      "meaning": "casual, at random",
+      "partOfSpeech": "adj.",
+      "lessonId": 9,
+      "translations": {
+        "en": "casual, at random",
+        "ko": "마음대로, 아무렇게나",
+        "ja": "適当に、気ままに"
+      }
+    },
+    {
+      "word": "汗",
+      "pinyin": "hàn",
+      "meaning": "sweat, perspiration",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "sweat, perspiration",
+        "ko": "땀",
+        "ja": "汗"
+      }
+    },
+    {
+      "word": "通过",
+      "pinyin": "tōngguò",
+      "meaning": "through, by means of",
+      "partOfSpeech": "prep.",
+      "lessonId": 9,
+      "translations": {
+        "en": "through, by means of",
+        "ko": "~을 통해",
+        "ja": "〜を通じて、〜によって"
+      }
+    },
+    {
+      "word": "篇",
+      "pinyin": "piān",
+      "meaning": "used for writings, papers or articles",
+      "partOfSpeech": "m.",
+      "lessonId": 9,
+      "translations": {
+        "en": "used for writings, papers or articles",
+        "ko": "편, 글을 세는 양사",
+        "ja": "編、文章を数える量詞"
+      }
+    },
+    {
+      "word": "作家",
+      "pinyin": "zuòjiā",
+      "meaning": "writer",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "writer",
+        "ko": "작가",
+        "ja": "作家"
+      }
+    },
+    {
+      "word": "当时",
+      "pinyin": "dāngshí",
+      "meaning": "then, at that time",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "then, at that time",
+        "ko": "당시, 그때",
+        "ja": "当時、その時"
+      }
+    },
+    {
+      "word": "可是",
+      "pinyin": "kěshì",
+      "meaning": "but, however",
+      "partOfSpeech": "conj.",
+      "lessonId": 9,
+      "translations": {
+        "en": "but, however",
+        "ko": "하지만, 그러나",
+        "ja": "しかし、でも"
+      }
+    },
+    {
+      "word": "正确",
+      "pinyin": "zhèngquè",
+      "meaning": "right, correct",
+      "partOfSpeech": "adj.",
+      "lessonId": 9,
+      "translations": {
+        "en": "right, correct",
+        "ko": "정확하다, 옳다",
+        "ja": "正しい、正確な"
+      }
+    },
+    {
+      "word": "理想",
+      "pinyin": "lǐxiǎng",
+      "meaning": "ideal",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "ideal",
+        "ko": "이상",
+        "ja": "理想"
+      }
+    },
+    {
+      "word": "勇敢",
+      "pinyin": "yǒnggǎn",
+      "meaning": "brave, courageous",
+      "partOfSpeech": "adj.",
+      "lessonId": 9,
+      "translations": {
+        "en": "brave, courageous",
+        "ko": "용감하다",
+        "ja": "勇敢な"
+      }
+    },
+    {
+      "word": "结果",
+      "pinyin": "jiéguǒ",
+      "meaning": "result",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "result",
+        "ko": "결과",
+        "ja": "結果"
+      }
+    },
+    {
+      "word": "失败",
+      "pinyin": "shībài",
+      "meaning": "to fail",
+      "partOfSpeech": "v.",
+      "lessonId": 9,
+      "translations": {
+        "en": "to fail",
+        "ko": "실패하다",
+        "ja": "失敗する"
+      }
+    },
+    {
+      "word": "过程",
+      "pinyin": "guòchéng",
+      "meaning": "course, process",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "course, process",
+        "ko": "과정",
+        "ja": "過程、プロセス"
+      }
+    },
+    {
+      "word": "至少",
+      "pinyin": "zhìshǎo",
+      "meaning": "at least",
+      "partOfSpeech": "adv.",
+      "lessonId": 9,
+      "translations": {
+        "en": "at least",
+        "ko": "적어도",
+        "ja": "少なくとも"
+      }
+    },
+    {
+      "word": "总结",
+      "pinyin": "zǒngjié",
+      "meaning": "to sum up",
+      "partOfSpeech": "v.",
+      "lessonId": 9,
+      "translations": {
+        "en": "to sum up",
+        "ko": "총괄하다, 정리하다",
+        "ja": "総括する、まとめる"
+      }
+    },
+    {
+      "word": "取",
+      "pinyin": "qǔ",
+      "meaning": "to gain, to seek",
+      "partOfSpeech": "v.",
+      "lessonId": 9,
+      "translations": {
+        "en": "to gain, to seek",
+        "ko": "얻다, 구하다",
+        "ja": "得る、求める"
+      }
+    },
+    {
+      "word": "经历",
+      "pinyin": "jīnglì",
+      "meaning": "to go through, to experience",
+      "partOfSpeech": "v.",
+      "lessonId": 9,
+      "translations": {
+        "en": "to go through, to experience",
+        "ko": "겪다, 경험하다",
+        "ja": "経験する、経る"
+      }
+    },
+    {
+      "word": "许多",
+      "pinyin": "xǔduō",
+      "meaning": "many, plenty of",
+      "partOfSpeech": "num.",
+      "lessonId": 9,
+      "translations": {
+        "en": "many, plenty of",
+        "ko": "많은, 허다한",
+        "ja": "多くの、たくさんの"
+      }
+    },
+    {
+      "word": "区别",
+      "pinyin": "qūbié",
+      "meaning": "difference, distinction",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "difference, distinction",
+        "ko": "차이, 구별",
+        "ja": "違い、区別"
+      }
+    },
+    {
+      "word": "暂时",
+      "pinyin": "zànshí",
+      "meaning": "temporary, for the time being",
+      "partOfSpeech": "n.",
+      "lessonId": 9,
+      "translations": {
+        "en": "temporary, for the time being",
+        "ko": "일시적인, 잠시",
+        "ja": "一時的な、しばらく"
+      }
+    },
+    {
+      "word": "面对",
+      "pinyin": "miànduì",
+      "meaning": "to face, to confront",
+      "partOfSpeech": "v.",
+      "lessonId": 9,
+      "translations": {
+        "en": "to face, to confront",
+        "ko": "마주하다, 직면하다",
+        "ja": "向き合う、直面する"
+      }
+    },
+    {
+      "word": "礼拜天",
+      "pinyin": "lǐbàitiān",
+      "meaning": "Sunday",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "Sunday",
+        "ko": "일요일",
+        "ja": "日曜日"
+      }
+    },
+    {
+      "word": "空儿",
+      "pinyin": "kòngr",
+      "meaning": "free time, spare time",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "free time, spare time",
+        "ko": "빈 시간, 여유 시간",
+        "ja": "空き時間、暇"
+      }
+    },
+    {
+      "word": "母亲",
+      "pinyin": "mǔqīn",
+      "meaning": "mother",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "mother",
+        "ko": "어머니",
+        "ja": "母親"
+      }
+    },
+    {
+      "word": "不过",
+      "pinyin": "búguò",
+      "meaning": "but, yet",
+      "partOfSpeech": "conj.",
+      "lessonId": 10,
+      "translations": {
+        "en": "but, yet",
+        "ko": "하지만, 그러나",
+        "ja": "しかし、ただし"
+      }
+    },
+    {
+      "word": "永远",
+      "pinyin": "yǒngyuǎn",
+      "meaning": "forever",
+      "partOfSpeech": "adv.",
+      "lessonId": 10,
+      "translations": {
+        "en": "forever",
+        "ko": "영원히",
+        "ja": "永遠に"
+      }
+    },
+    {
+      "word": "方向",
+      "pinyin": "fāngxiàng",
+      "meaning": "direction, orientation",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "direction, orientation",
+        "ko": "방향",
+        "ja": "方向"
+      }
+    },
+    {
+      "word": "优秀",
+      "pinyin": "yōuxiù",
+      "meaning": "excellent, outstanding",
+      "partOfSpeech": "adj.",
+      "lessonId": 10,
+      "translations": {
+        "en": "excellent, outstanding",
+        "ko": "우수하다, 뛰어나다",
+        "ja": "優秀な、優れた"
+      }
+    },
+    {
+      "word": "硕士",
+      "pinyin": "shuòshì",
+      "meaning": "Master, person who has a master’s degree",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "Master, person who has a master’s degree",
+        "ko": "석사, 석사 학위자",
+        "ja": "修士、修士号を持つ人"
+      }
+    },
+    {
+      "word": "翻译",
+      "pinyin": "fānyì",
+      "meaning": "translator, interpreter",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "translator, interpreter",
+        "ko": "번역가, 통역사",
+        "ja": "翻訳者、通訳者"
+      }
+    },
+    {
+      "word": "确实",
+      "pinyin": "quèshí",
+      "meaning": "truly, indeed",
+      "partOfSpeech": "adv.",
+      "lessonId": 10,
+      "translations": {
+        "en": "truly, indeed",
+        "ko": "확실히, 정말로",
+        "ja": "確かに、本当に"
+      }
+    },
+    {
+      "word": "兴奋",
+      "pinyin": "xīngfèn",
+      "meaning": "excited",
+      "partOfSpeech": "adj.",
+      "lessonId": 10,
+      "translations": {
+        "en": "excited",
+        "ko": "흥분하다, 신나다",
+        "ja": "興奮した"
+      }
+    },
+    {
+      "word": "拉",
+      "pinyin": "lā",
+      "meaning": "to pull, to drag",
+      "partOfSpeech": "v.",
+      "lessonId": 10,
+      "translations": {
+        "en": "to pull, to drag",
+        "ko": "끌다, 당기다",
+        "ja": "引っ張る"
+      }
+    },
+    {
+      "word": "建议",
+      "pinyin": "jiànyì",
+      "meaning": "suggestion, advice",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "suggestion, advice",
+        "ko": "건의, 조언",
+        "ja": "提案、アドバイス"
+      }
+    },
+    {
+      "word": "职业",
+      "pinyin": "zhíyè",
+      "meaning": "occupation, profession",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "occupation, profession",
+        "ko": "직업",
+        "ja": "職業"
+      }
+    },
+    {
+      "word": "关键",
+      "pinyin": "guānjiàn",
+      "meaning": "hinge, crux",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "hinge, crux",
+        "ko": "관건, 핵심",
+        "ja": "鍵、要点"
+      }
+    },
+    {
+      "word": "将来",
+      "pinyin": "jiānglái",
+      "meaning": "future",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "future",
+        "ko": "장래, 미래",
+        "ja": "将来"
+      }
+    },
+    {
+      "word": "发展",
+      "pinyin": "fāzhǎn",
+      "meaning": "to develop, to promote",
+      "partOfSpeech": "v.",
+      "lessonId": 10,
+      "translations": {
+        "en": "to develop, to promote",
+        "ko": "발전하다, 발전시키다",
+        "ja": "発展する、発展させる"
+      }
+    },
+    {
+      "word": "躺",
+      "pinyin": "tǎng",
+      "meaning": "to lie on one’s back",
+      "partOfSpeech": "v.",
+      "lessonId": 10,
+      "translations": {
+        "en": "to lie on one’s back",
+        "ko": "눕다",
+        "ja": "横になる"
+      }
+    },
+    {
+      "word": "困",
+      "pinyin": "kùn",
+      "meaning": "sleepy",
+      "partOfSpeech": "adj.",
+      "lessonId": 10,
+      "translations": {
+        "en": "sleepy",
+        "ko": "졸리다",
+        "ja": "眠い"
+      }
+    },
+    {
+      "word": "经济",
+      "pinyin": "jīngjì",
+      "meaning": "economy",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "economy",
+        "ko": "경제",
+        "ja": "経済"
+      }
+    },
+    {
+      "word": "条件",
+      "pinyin": "tiáojiàn",
+      "meaning": "condition",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "condition",
+        "ko": "조건",
+        "ja": "条件"
+      }
+    },
+    {
+      "word": "富",
+      "pinyin": "fù",
+      "meaning": "rich, wealthy",
+      "partOfSpeech": "adj.",
+      "lessonId": 10,
+      "translations": {
+        "en": "rich, wealthy",
+        "ko": "부유하다",
+        "ja": "豊かな、裕福な"
+      }
+    },
+    {
+      "word": "穷",
+      "pinyin": "qióng",
+      "meaning": "poor, impoverished",
+      "partOfSpeech": "adj.",
+      "lessonId": 10,
+      "translations": {
+        "en": "poor, impoverished",
+        "ko": "가난하다",
+        "ja": "貧しい"
+      }
+    },
+    {
+      "word": "等",
+      "pinyin": "děng",
+      "meaning": "etc., and so on",
+      "partOfSpeech": "part.",
+      "lessonId": 10,
+      "translations": {
+        "en": "etc., and so on",
+        "ko": "등, 따위",
+        "ja": "など"
+      }
+    },
+    {
+      "word": "由于",
+      "pinyin": "yóuyú",
+      "meaning": "because, since",
+      "partOfSpeech": "conj.",
+      "lessonId": 10,
+      "translations": {
+        "en": "because, since",
+        "ko": "~ 때문에, ~로 인해",
+        "ja": "〜のため、〜によって"
+      }
+    },
+    {
+      "word": "比如",
+      "pinyin": "bǐrú",
+      "meaning": "for example, such as",
+      "partOfSpeech": "v.",
+      "lessonId": 10,
+      "translations": {
+        "en": "for example, such as",
+        "ko": "예를 들면",
+        "ja": "例えば"
+      }
+    },
+    {
+      "word": "橡皮",
+      "pinyin": "xiàngpí",
+      "meaning": "eraser, rubber",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "eraser, rubber",
+        "ko": "지우개",
+        "ja": "消しゴム"
+      }
+    },
+    {
+      "word": "糖",
+      "pinyin": "táng",
+      "meaning": "sugar, candy",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "sugar, candy",
+        "ko": "사탕, 설탕",
+        "ja": "砂糖、キャンディー"
+      }
+    },
+    {
+      "word": "低",
+      "pinyin": "dī",
+      "meaning": "low",
+      "partOfSpeech": "adj.",
+      "lessonId": 10,
+      "translations": {
+        "en": "low",
+        "ko": "낮다",
+        "ja": "低い"
+      }
+    },
+    {
+      "word": "答案",
+      "pinyin": "dá’àn",
+      "meaning": "answer, key",
+      "partOfSpeech": "n.",
+      "lessonId": 10,
+      "translations": {
+        "en": "answer, key",
+        "ko": "답안, 해답",
+        "ja": "答え、解答"
+      }
+    },
+    {
+      "word": "流利",
+      "pinyin": "liúlì",
+      "meaning": "fluent",
+      "partOfSpeech": "adj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "fluent",
+        "ko": "유창한",
+        "ja": "流暢な"
+      }
+    },
+    {
+      "word": "厉害",
+      "pinyin": "lìhai",
+      "meaning": "awesome, serious",
+      "partOfSpeech": "adj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "awesome, serious",
+        "ko": "대단한, 심한",
+        "ja": "すごい、ひどい"
+      }
+    },
+    {
+      "word": "语法",
+      "pinyin": "yǔfǎ",
+      "meaning": "grammar",
+      "partOfSpeech": "n.",
+      "lessonId": 11,
+      "translations": {
+        "en": "grammar",
+        "ko": "문법",
+        "ja": "文法"
+      }
+    },
+    {
+      "word": "准确",
+      "pinyin": "zhǔnquè",
+      "meaning": "accurate, precise",
+      "partOfSpeech": "adj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "accurate, precise",
+        "ko": "정확한",
+        "ja": "正確な"
+      }
+    },
+    {
+      "word": "词语",
+      "pinyin": "cíyǔ",
+      "meaning": "word, expression",
+      "partOfSpeech": "n.",
+      "lessonId": 11,
+      "translations": {
+        "en": "word, expression",
+        "ko": "단어, 표현",
+        "ja": "語句、表現"
+      }
+    },
+    {
+      "word": "连",
+      "pinyin": "lián",
+      "meaning": "even",
+      "partOfSpeech": "prep.",
+      "lessonId": 11,
+      "translations": {
+        "en": "even",
+        "ko": "~조차, ~까지도",
+        "ja": "〜さえ、〜までも"
+      }
+    },
+    {
+      "word": "阅读",
+      "pinyin": "yuèdú",
+      "meaning": "to read",
+      "partOfSpeech": "v.",
+      "lessonId": 11,
+      "translations": {
+        "en": "to read",
+        "ko": "읽다, 독해하다",
+        "ja": "読む"
+      }
+    },
+    {
+      "word": "来得及",
+      "pinyin": "láidejí",
+      "meaning": "there is still time (to do sth.)",
+      "partOfSpeech": "v.",
+      "lessonId": 11,
+      "translations": {
+        "en": "there is still time",
+        "ko": "시간이 되다, 늦지 않다",
+        "ja": "まだ間に合う"
+      }
+    },
+    {
+      "word": "复杂",
+      "pinyin": "fùzá",
+      "meaning": "complicated",
+      "partOfSpeech": "adj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "complicated",
+        "ko": "복잡한",
+        "ja": "複雑な"
+      }
+    },
+    {
+      "word": "只好",
+      "pinyin": "zhǐhǎo",
+      "meaning": "cannot but, to be forced to",
+      "partOfSpeech": "adv.",
+      "lessonId": 11,
+      "translations": {
+        "en": "to have no choice but to",
+        "ko": "어쩔 수 없이 ~하다",
+        "ja": "仕方なく〜する"
+      }
+    },
+    {
+      "word": "填空",
+      "pinyin": "tián kòng",
+      "meaning": "to fill in a blank",
+      "partOfSpeech": "v.",
+      "lessonId": 11,
+      "translations": {
+        "en": "to fill in a blank",
+        "ko": "빈칸을 채우다",
+        "ja": "空欄を埋める"
+      }
+    },
+    {
+      "word": "猜",
+      "pinyin": "cāi",
+      "meaning": "to guess",
+      "partOfSpeech": "v.",
+      "lessonId": 11,
+      "translations": {
+        "en": "to guess",
+        "ko": "추측하다, 찍다",
+        "ja": "推測する、当てずっぽうで答える"
+      }
+    },
+    {
+      "word": "否则",
+      "pinyin": "fǒuzé",
+      "meaning": "or, otherwise",
+      "partOfSpeech": "conj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "or, otherwise",
+        "ko": "그렇지 않으면",
+        "ja": "そうでなければ"
+      }
+    },
+    {
+      "word": "客厅",
+      "pinyin": "kètīng",
+      "meaning": "living room",
+      "partOfSpeech": "n.",
+      "lessonId": 11,
+      "translations": {
+        "en": "living room",
+        "ko": "거실",
+        "ja": "リビング、居間"
+      }
+    },
+    {
+      "word": "无论",
+      "pinyin": "wúlùn",
+      "meaning": "regardless of, no matter",
+      "partOfSpeech": "conj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "regardless of, no matter",
+        "ko": "~든지, 무엇이든",
+        "ja": "〜であろうと、〜にかかわらず"
+      }
+    },
+    {
+      "word": "杂志",
+      "pinyin": "zázhì",
+      "meaning": "magazine",
+      "partOfSpeech": "n.",
+      "lessonId": 11,
+      "translations": {
+        "en": "magazine",
+        "ko": "잡지",
+        "ja": "雑誌"
+      }
+    },
+    {
+      "word": "著名",
+      "pinyin": "zhùmíng",
+      "meaning": "famous, well-known",
+      "partOfSpeech": "adj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "famous, well-known",
+        "ko": "저명한, 유명한",
+        "ja": "有名な、著名な"
+      }
+    },
+    {
+      "word": "页",
+      "pinyin": "yè",
+      "meaning": "page",
+      "partOfSpeech": "m.",
+      "lessonId": 11,
+      "translations": {
+        "en": "page",
+        "ko": "쪽, 페이지",
+        "ja": "ページ"
+      }
+    },
+    {
+      "word": "增加",
+      "pinyin": "zēngjiā",
+      "meaning": "to increase, to add",
+      "partOfSpeech": "v.",
+      "lessonId": 11,
+      "translations": {
+        "en": "to increase, to add",
+        "ko": "늘리다, 증가하다",
+        "ja": "増やす、増加する"
+      }
+    },
+    {
+      "word": "文章",
+      "pinyin": "wénzhāng",
+      "meaning": "essay, article",
+      "partOfSpeech": "n.",
+      "lessonId": 11,
+      "translations": {
+        "en": "essay, article",
+        "ko": "글, 문장, 기사",
+        "ja": "文章、記事"
+      }
+    },
+    {
+      "word": "之",
+      "pinyin": "zhī",
+      "meaning": "connecting the modifier and the word modified",
+      "partOfSpeech": "part.",
+      "lessonId": 11,
+      "translations": {
+        "en": "particle connecting a modifier and the word modified",
+        "ko": "수식어와 피수식어를 연결하는 조사",
+        "ja": "修飾語と被修飾語をつなぐ助詞"
+      }
+    },
+    {
+      "word": "内容",
+      "pinyin": "nèiróng",
+      "meaning": "content",
+      "partOfSpeech": "n.",
+      "lessonId": 11,
+      "translations": {
+        "en": "content",
+        "ko": "내용",
+        "ja": "内容"
+      }
+    },
+    {
+      "word": "然而",
+      "pinyin": "rán’ér",
+      "meaning": "but, however",
+      "partOfSpeech": "conj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "but, however",
+        "ko": "그러나, 하지만",
+        "ja": "しかし、けれども"
+      }
+    },
+    {
+      "word": "看法",
+      "pinyin": "kànfǎ",
+      "meaning": "viewpoint, opinion",
+      "partOfSpeech": "n.",
+      "lessonId": 11,
+      "translations": {
+        "en": "viewpoint, opinion",
+        "ko": "견해, 의견",
+        "ja": "見方、意見"
+      }
+    },
+    {
+      "word": "相同",
+      "pinyin": "xiāngtóng",
+      "meaning": "same",
+      "partOfSpeech": "adj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "same",
+        "ko": "같은, 동일한",
+        "ja": "同じ"
+      }
+    },
+    {
+      "word": "顺序",
+      "pinyin": "shùnxù",
+      "meaning": "order, sequence",
+      "partOfSpeech": "n.",
+      "lessonId": 11,
+      "translations": {
+        "en": "order, sequence",
+        "ko": "순서",
+        "ja": "順序"
+      }
+    },
+    {
+      "word": "表示",
+      "pinyin": "biǎoshì",
+      "meaning": "to express, to indicate",
+      "partOfSpeech": "v.",
+      "lessonId": 11,
+      "translations": {
+        "en": "to express, to indicate",
+        "ko": "나타내다, 표시하다",
+        "ja": "表す、示す"
+      }
+    },
+    {
+      "word": "养成",
+      "pinyin": "yǎngchéng",
+      "meaning": "to develop, to form",
+      "partOfSpeech": "v.",
+      "lessonId": 11,
+      "translations": {
+        "en": "to develop, to form",
+        "ko": "기르다, 형성하다",
+        "ja": "身につける、形成する"
+      }
+    },
+    {
+      "word": "同时",
+      "pinyin": "tóngshí",
+      "meaning": "at the same time, meanwhile",
+      "partOfSpeech": "conj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "at the same time, meanwhile",
+        "ko": "동시에",
+        "ja": "同時に"
+      }
+    },
+    {
+      "word": "精彩",
+      "pinyin": "jīngcǎi",
+      "meaning": "wonderful, splendid",
+      "partOfSpeech": "adj.",
+      "lessonId": 11,
+      "translations": {
+        "en": "wonderful, splendid",
+        "ko": "멋진, 훌륭한",
+        "ja": "すばらしい、精彩な"
+      }
+    },
+    {
+      "word": "规定",
+      "pinyin": "guīdìng",
+      "meaning": "rule, regulation",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "rule, regulation",
+        "ko": "규정, 규칙",
+        "ja": "規定、規則"
+      }
+    },
+    {
+      "word": "死",
+      "pinyin": "sǐ",
+      "meaning": "rigid, inflexible",
+      "partOfSpeech": "adj.",
+      "lessonId": 12,
+      "translations": {
+        "en": "rigid, inflexible",
+        "ko": "융통성 없는, 고정된",
+        "ja": "融通が利かない、固定的な"
+      }
+    },
+    {
+      "word": "可惜",
+      "pinyin": "kěxī",
+      "meaning": "pitiful, regretful",
+      "partOfSpeech": "adj.",
+      "lessonId": 12,
+      "translations": {
+        "en": "pitiful, regretful",
+        "ko": "아쉬운, 안타까운",
+        "ja": "惜しい、残念な"
+      }
+    },
+    {
+      "word": "全部",
+      "pinyin": "quánbù",
+      "meaning": "all, whole",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "all, whole",
+        "ko": "전부, 전체",
+        "ja": "全部、全体"
+      }
+    },
+    {
+      "word": "也许",
+      "pinyin": "yěxǔ",
+      "meaning": "maybe, perhaps",
+      "partOfSpeech": "adv.",
+      "lessonId": 12,
+      "translations": {
+        "en": "maybe, perhaps",
+        "ko": "아마, 어쩌면",
+        "ja": "もしかすると、たぶん"
+      }
+    },
+    {
+      "word": "商量",
+      "pinyin": "shāngliang",
+      "meaning": "to discuss, to consult",
+      "partOfSpeech": "v.",
+      "lessonId": 12,
+      "translations": {
+        "en": "to discuss, to consult",
+        "ko": "상의하다, 의논하다",
+        "ja": "相談する、話し合う"
+      }
+    },
+    {
+      "word": "并且",
+      "pinyin": "bìngqiě",
+      "meaning": "and",
+      "partOfSpeech": "conj.",
+      "lessonId": 12,
+      "translations": {
+        "en": "and",
+        "ko": "그리고, 또한",
+        "ja": "そして、かつ"
+      }
+    },
+    {
+      "word": "盐",
+      "pinyin": "yán",
+      "meaning": "salt",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "salt",
+        "ko": "소금",
+        "ja": "塩"
+      }
+    },
+    {
+      "word": "勺子",
+      "pinyin": "sháozi",
+      "meaning": "spoon",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "spoon",
+        "ko": "숟가락",
+        "ja": "スプーン"
+      }
+    },
+    {
+      "word": "保护",
+      "pinyin": "bǎohù",
+      "meaning": "to protect",
+      "partOfSpeech": "v.",
+      "lessonId": 12,
+      "translations": {
+        "en": "to protect",
+        "ko": "보호하다",
+        "ja": "保護する"
+      }
+    },
+    {
+      "word": "作用",
+      "pinyin": "zuòyòng",
+      "meaning": "function",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "function, effect",
+        "ko": "작용, 효과",
+        "ja": "作用、効果"
+      }
+    },
+    {
+      "word": "无法",
+      "pinyin": "wúfǎ",
+      "meaning": "cannot, to be unable (to do sth.)",
+      "partOfSpeech": "v.",
+      "lessonId": 12,
+      "translations": {
+        "en": "cannot, to be unable",
+        "ko": "할 수 없다, 불가능하다",
+        "ja": "できない、不可能である"
+      }
+    },
+    {
+      "word": "无",
+      "pinyin": "wú",
+      "meaning": "not to have, to be without",
+      "partOfSpeech": "v.",
+      "lessonId": 12,
+      "translations": {
+        "en": "not to have, to be without",
+        "ko": "없다, ~이 없다",
+        "ja": "ない、〜がない"
+      }
+    },
+    {
+      "word": "节",
+      "pinyin": "jié",
+      "meaning": "section, length",
+      "partOfSpeech": "m.",
+      "lessonId": 12,
+      "translations": {
+        "en": "section, length",
+        "ko": "수업 단위, 마디",
+        "ja": "節、一区切り"
+      }
+    },
+    {
+      "word": "详细",
+      "pinyin": "xiángxì",
+      "meaning": "detailed",
+      "partOfSpeech": "adj.",
+      "lessonId": 12,
+      "translations": {
+        "en": "detailed",
+        "ko": "상세한",
+        "ja": "詳しい"
+      }
+    },
+    {
+      "word": "解释",
+      "pinyin": "jiěshì",
+      "meaning": "to explain",
+      "partOfSpeech": "v.",
+      "lessonId": 12,
+      "translations": {
+        "en": "to explain",
+        "ko": "설명하다",
+        "ja": "説明する"
+      }
+    },
+    {
+      "word": "对于",
+      "pinyin": "duìyú",
+      "meaning": "for, to, with regard to",
+      "partOfSpeech": "prep.",
+      "lessonId": 12,
+      "translations": {
+        "en": "for, to, with regard to",
+        "ko": "~에 대해, ~에게",
+        "ja": "〜に対して、〜について"
+      }
+    },
+    {
+      "word": "叶子",
+      "pinyin": "yèzi",
+      "meaning": "leaf",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "leaf",
+        "ko": "잎",
+        "ja": "葉"
+      }
+    },
+    {
+      "word": "教育",
+      "pinyin": "jiàoyù",
+      "meaning": "to educate",
+      "partOfSpeech": "v.",
+      "lessonId": 12,
+      "translations": {
+        "en": "to educate",
+        "ko": "교육하다",
+        "ja": "教育する"
+      }
+    },
+    {
+      "word": "使用",
+      "pinyin": "shǐyòng",
+      "meaning": "to use",
+      "partOfSpeech": "v.",
+      "lessonId": 12,
+      "translations": {
+        "en": "to use",
+        "ko": "사용하다",
+        "ja": "使用する"
+      }
+    },
+    {
+      "word": "语言",
+      "pinyin": "yǔyán",
+      "meaning": "language",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "language",
+        "ko": "언어",
+        "ja": "言語"
+      }
+    },
+    {
+      "word": "直接",
+      "pinyin": "zhíjiē",
+      "meaning": "direct, straight",
+      "partOfSpeech": "adj.",
+      "lessonId": 12,
+      "translations": {
+        "en": "direct, straight",
+        "ko": "직접적인",
+        "ja": "直接の、まっすぐな"
+      }
+    },
+    {
+      "word": "引起",
+      "pinyin": "yǐnqǐ",
+      "meaning": "to cause, to lead to",
+      "partOfSpeech": "v.",
+      "lessonId": 12,
+      "translations": {
+        "en": "to cause, to lead to",
+        "ko": "일으키다, 초래하다",
+        "ja": "引き起こす"
+      }
+    },
+    {
+      "word": "误会",
+      "pinyin": "wùhuì",
+      "meaning": "misunderstanding",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "misunderstanding",
+        "ko": "오해",
+        "ja": "誤解"
+      }
+    },
+    {
+      "word": "友好",
+      "pinyin": "yǒuhǎo",
+      "meaning": "friendly",
+      "partOfSpeech": "adj.",
+      "lessonId": 12,
+      "translations": {
+        "en": "friendly",
+        "ko": "우호적인, 친절한",
+        "ja": "友好的な"
+      }
+    },
+    {
+      "word": "事半功倍",
+      "pinyin": "shì bàn gōng bèi",
+      "meaning": "to achieve twice the result with half the effort",
+      "partOfSpeech": "",
+      "lessonId": 12,
+      "translations": {
+        "en": "to achieve twice the result with half the effort",
+        "ko": "적은 노력으로 큰 성과를 거두다",
+        "ja": "半分の努力で倍の成果を得る"
+      }
+    },
+    {
+      "word": "节约",
+      "pinyin": "jiéyuē",
+      "meaning": "to economize, to save",
+      "partOfSpeech": "v.",
+      "lessonId": 12,
+      "translations": {
+        "en": "to economize, to save",
+        "ko": "절약하다",
+        "ja": "節約する"
+      }
+    },
+    {
+      "word": "力气",
+      "pinyin": "lìqi",
+      "meaning": "physical strength, effort",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "physical strength, effort",
+        "ko": "힘, 노력",
+        "ja": "力、労力"
+      }
+    },
+    {
+      "word": "相反",
+      "pinyin": "xiāngfǎn",
+      "meaning": "on the contrary",
+      "partOfSpeech": "conj.",
+      "lessonId": 12,
+      "translations": {
+        "en": "on the contrary",
+        "ko": "반대로",
+        "ja": "反対に"
+      }
+    },
+    {
+      "word": "任务",
+      "pinyin": "rènwu",
+      "meaning": "task, mission",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "task, mission",
+        "ko": "임무, 과제",
+        "ja": "任務、課題"
+      }
+    },
+    {
+      "word": "意见",
+      "pinyin": "yìjiàn",
+      "meaning": "opinion, suggestion",
+      "partOfSpeech": "n.",
+      "lessonId": 12,
+      "translations": {
+        "en": "opinion, suggestion",
+        "ko": "의견, 건의",
+        "ja": "意見、提案"
+      }
+    },
+    {
+      "word": "仔细",
+      "pinyin": "zǐxì",
+      "meaning": "careful, meticulous",
+      "partOfSpeech": "adj.",
+      "lessonId": 12,
+      "translations": {
+        "en": "careful, meticulous",
+        "ko": "세심한, 꼼꼼한",
+        "ja": "細かい、入念な"
+      }
+    },
+    {
+      "word": "达到",
+      "pinyin": "dádào",
+      "meaning": "to reach, to attain",
+      "partOfSpeech": "v.",
+      "lessonId": 12,
+      "translations": {
+        "en": "to reach, to attain",
+        "ko": "도달하다, 달성하다",
+        "ja": "達する、到達する"
+      }
+    },
+    {
+      "word": "京剧",
+      "pinyin": "jīngjù",
+      "meaning": "Beijing opera",
+      "partOfSpeech": "n.",
+      "lessonId": 13,
+      "translations": {
+        "en": "n. Beijing opera",
+        "ko": "명. 경극",
+        "ja": "名. 京劇"
+      }
+    },
+    {
+      "word": "演员",
+      "pinyin": "yǎnyuán",
+      "meaning": "actor/actress",
+      "partOfSpeech": "n.",
+      "lessonId": 13,
+      "translations": {
+        "en": "n. actor/actress",
+        "ko": "명. 배우",
+        "ja": "名. 俳優、女優"
+      }
+    },
+    {
+      "word": "观众",
+      "pinyin": "guānzhòng",
+      "meaning": "audience",
+      "partOfSpeech": "n.",
+      "lessonId": 13,
+      "translations": {
+        "en": "n. audience",
+        "ko": "명. 관중, 관객",
+        "ja": "名. 観客"
+      }
+    },
+    {
+      "word": "厚",
+      "pinyin": "hòu",
+      "meaning": "deep, profound",
+      "partOfSpeech": "adj.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adj. deep, profound",
+        "ko": "형. 깊은, 두터운",
+        "ja": "形. 深い、厚い"
+      }
+    },
+    {
+      "word": "演出",
+      "pinyin": "yǎnchū",
+      "meaning": "to perform, to put on a show",
+      "partOfSpeech": "v.",
+      "lessonId": 13,
+      "translations": {
+        "en": "v. to perform, to put on a show",
+        "ko": "동. 공연하다",
+        "ja": "動. 公演する、出演する"
+      }
+    },
+    {
+      "word": "大概",
+      "pinyin": "dàgài",
+      "meaning": "roughly, approximately",
+      "partOfSpeech": "adv.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adv. roughly, approximately",
+        "ko": "부. 대략, 아마",
+        "ja": "副. おおよそ、たぶん"
+      }
+    },
+    {
+      "word": "来自",
+      "pinyin": "láizì",
+      "meaning": "to be from",
+      "partOfSpeech": "v.",
+      "lessonId": 13,
+      "translations": {
+        "en": "v. to be from",
+        "ko": "동. ~에서 오다, ~출신이다",
+        "ja": "動. 〜から来る、〜出身である"
+      }
+    },
+    {
+      "word": "遍",
+      "pinyin": "biàn",
+      "meaning": "denoting an action from beginning to end",
+      "partOfSpeech": "m.",
+      "lessonId": 13,
+      "translations": {
+        "en": "m. denoting an action from beginning to end",
+        "ko": "양. 처음부터 끝까지 한 번 하는 횟수",
+        "ja": "量. 初めから終わりまで行う回数"
+      }
+    },
+    {
+      "word": "偶尔",
+      "pinyin": "ǒu’ěr",
+      "meaning": "occasionally, once in a while",
+      "partOfSpeech": "adv.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adv. occasionally, once in a while",
+        "ko": "부. 가끔, 이따금",
+        "ja": "副. たまに、時々"
+      }
+    },
+    {
+      "word": "吃惊",
+      "pinyin": "chī jīng",
+      "meaning": "to be surprised, to be shocked",
+      "partOfSpeech": "v.",
+      "lessonId": 13,
+      "translations": {
+        "en": "v. to be surprised, to be shocked",
+        "ko": "동. 놀라다",
+        "ja": "動. 驚く"
+      }
+    },
+    {
+      "word": "基础",
+      "pinyin": "jīchǔ",
+      "meaning": "basis, foundation",
+      "partOfSpeech": "n.",
+      "lessonId": 13,
+      "translations": {
+        "en": "n. basis, foundation",
+        "ko": "명. 기초, 기반",
+        "ja": "名. 基礎、土台"
+      }
+    },
+    {
+      "word": "表演",
+      "pinyin": "biǎoyǎn",
+      "meaning": "to act, to perform",
+      "partOfSpeech": "v.",
+      "lessonId": 13,
+      "translations": {
+        "en": "v. to act, to perform",
+        "ko": "동. 공연하다, 연기하다",
+        "ja": "動. 演じる、上演する"
+      }
+    },
+    {
+      "word": "正常",
+      "pinyin": "zhèngcháng",
+      "meaning": "normal, regular",
+      "partOfSpeech": "adj.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adj. normal, regular",
+        "ko": "형. 정상적인, 보통의",
+        "ja": "形. 正常な、通常の"
+      }
+    },
+    {
+      "word": "申请",
+      "pinyin": "shēnqǐng",
+      "meaning": "to apply for",
+      "partOfSpeech": "v.",
+      "lessonId": 13,
+      "translations": {
+        "en": "v. to apply for",
+        "ko": "동. 신청하다",
+        "ja": "動. 申請する"
+      }
+    },
+    {
+      "word": "有趣",
+      "pinyin": "yǒuqù",
+      "meaning": "interesting, fun",
+      "partOfSpeech": "adj.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adj. interesting, fun",
+        "ko": "형. 재미있는",
+        "ja": "形. 面白い、興味深い"
+      }
+    },
+    {
+      "word": "开心",
+      "pinyin": "kāixīn",
+      "meaning": "happy, glad",
+      "partOfSpeech": "adj.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adj. happy, glad",
+        "ko": "형. 즐거운, 기쁜",
+        "ja": "形. 楽しい、うれしい"
+      }
+    },
+    {
+      "word": "继续",
+      "pinyin": "jìxù",
+      "meaning": "to go on, to continue",
+      "partOfSpeech": "v.",
+      "lessonId": 13,
+      "translations": {
+        "en": "v. to go on, to continue",
+        "ko": "동. 계속하다",
+        "ja": "動. 続ける"
+      }
+    },
+    {
+      "word": "由",
+      "pinyin": "yóu",
+      "meaning": "by (sb.)",
+      "partOfSpeech": "prep.",
+      "lessonId": 13,
+      "translations": {
+        "en": "prep. by (sb.)",
+        "ko": "전. ~가 맡아서, ~에 의해",
+        "ja": "前. 〜によって、〜が担当して"
+      }
+    },
+    {
+      "word": "讨论",
+      "pinyin": "tǎolùn",
+      "meaning": "to discuss, to talk over",
+      "partOfSpeech": "v.",
+      "lessonId": 13,
+      "translations": {
+        "en": "v. to discuss, to talk over",
+        "ko": "동. 토론하다, 의논하다",
+        "ja": "動. 討論する、話し合う"
+      }
+    },
+    {
+      "word": "大约",
+      "pinyin": "dàyuē",
+      "meaning": "approximately, about",
+      "partOfSpeech": "adv.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adv. approximately, about",
+        "ko": "부. 대략, 약",
+        "ja": "副. おおよそ、約"
+      }
+    },
+    {
+      "word": "餐厅",
+      "pinyin": "cāntīng",
+      "meaning": "restaurant",
+      "partOfSpeech": "n.",
+      "lessonId": 13,
+      "translations": {
+        "en": "n. restaurant",
+        "ko": "명. 식당, 레스토랑",
+        "ja": "名. レストラン、食堂"
+      }
+    },
+    {
+      "word": "纸袋",
+      "pinyin": "zhǐdài",
+      "meaning": "paper bag",
+      "partOfSpeech": "n.",
+      "lessonId": 13,
+      "translations": {
+        "en": "n. paper bag",
+        "ko": "명. 종이봉투",
+        "ja": "名. 紙袋"
+      }
+    },
+    {
+      "word": "袋子",
+      "pinyin": "dài zi",
+      "meaning": "bag, sack",
+      "partOfSpeech": "n.",
+      "lessonId": 13,
+      "translations": {
+        "en": "n. bag, sack",
+        "ko": "명. 봉지, 자루",
+        "ja": "名. 袋"
+      }
+    },
+    {
+      "word": "互联网",
+      "pinyin": "hùliánwǎng",
+      "meaning": "Internet",
+      "partOfSpeech": "n.",
+      "lessonId": 13,
+      "translations": {
+        "en": "n. Internet",
+        "ko": "명. 인터넷",
+        "ja": "名. インターネット"
+      }
+    },
+    {
+      "word": "进行",
+      "pinyin": "jìnxíng",
+      "meaning": "to conduct, to carry out",
+      "partOfSpeech": "v.",
+      "lessonId": 13,
+      "translations": {
+        "en": "v. to conduct, to carry out",
+        "ko": "동. 진행하다, 실시하다",
+        "ja": "動. 行う、実施する"
+      }
+    },
+    {
+      "word": "错误",
+      "pinyin": "cuòwù",
+      "meaning": "wrong",
+      "partOfSpeech": "adj.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adj. wrong",
+        "ko": "형. 잘못된, 틀린",
+        "ja": "形. 間違った、誤った"
+      }
+    },
+    {
+      "word": "随着",
+      "pinyin": "suízhe",
+      "meaning": "along with, as",
+      "partOfSpeech": "prep.",
+      "lessonId": 13,
+      "translations": {
+        "en": "prep. along with, as",
+        "ko": "전. ~에 따라, ~와 함께",
+        "ja": "前. 〜につれて、〜に伴って"
+      }
+    },
+    {
+      "word": "十分",
+      "pinyin": "shífēn",
+      "meaning": "very, extremely",
+      "partOfSpeech": "adv.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adv. very, extremely",
+        "ko": "부. 매우, 아주",
+        "ja": "副. とても、非常に"
+      }
+    },
+    {
+      "word": "普遍",
+      "pinyin": "pǔbiàn",
+      "meaning": "universal, common",
+      "partOfSpeech": "adj.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adj. universal, common",
+        "ko": "형. 보편적인, 흔한",
+        "ja": "形. 普遍的な、一般的な"
+      }
+    },
+    {
+      "word": "部分",
+      "pinyin": "bùfen",
+      "meaning": "part",
+      "partOfSpeech": "n.",
+      "lessonId": 13,
+      "translations": {
+        "en": "n. part",
+        "ko": "명. 부분",
+        "ja": "名. 部分"
+      }
+    },
+    {
+      "word": "稍微",
+      "pinyin": "shāowēi",
+      "meaning": "a little, slightly",
+      "partOfSpeech": "adv.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adv. a little, slightly",
+        "ko": "부. 조금, 약간",
+        "ja": "副. 少し、わずかに"
+      }
+    },
+    {
+      "word": "苦",
+      "pinyin": "kǔ",
+      "meaning": "bitter",
+      "partOfSpeech": "adj.",
+      "lessonId": 13,
+      "translations": {
+        "en": "adj. bitter",
+        "ko": "형. 쓴",
+        "ja": "形. 苦い"
+      }
+    },
+    {
+      "word": "省",
+      "pinyin": "shěng",
+      "meaning": "province",
+      "partOfSpeech": "n.",
+      "lessonId": 13,
+      "translations": {
+        "en": "n. province",
+        "ko": "명. 성, 행정구역",
+        "ja": "名. 省"
+      }
+    },
+    {
+      "word": "出差",
+      "pinyin": "chūchāi",
+      "meaning": "to go on a business trip",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to go on a business trip",
+        "ko": "동. 출장 가다",
+        "ja": "動. 出張する"
+      }
+    },
+    {
+      "word": "毛巾",
+      "pinyin": "máojīn",
+      "meaning": "towel",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. towel",
+        "ko": "명. 수건",
+        "ja": "名. タオル"
+      }
+    },
+    {
+      "word": "牙膏",
+      "pinyin": "yágāo",
+      "meaning": "toothpaste",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. toothpaste",
+        "ko": "명. 치약",
+        "ja": "名. 歯磨き粉"
+      }
+    },
+    {
+      "word": "重",
+      "pinyin": "zhòng",
+      "meaning": "heavy, weighty",
+      "partOfSpeech": "adj.",
+      "lessonId": 14,
+      "translations": {
+        "en": "adj. heavy, weighty",
+        "ko": "형. 무거운",
+        "ja": "形. 重い"
+      }
+    },
+    {
+      "word": "行",
+      "pinyin": "xíng",
+      "meaning": "to be OK, to be all right",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to be OK, to be all right",
+        "ko": "동. 괜찮다, 문제없다",
+        "ja": "動. よい、大丈夫である"
+      }
+    },
+    {
+      "word": "污染",
+      "pinyin": "wūrǎn",
+      "meaning": "to pollute",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to pollute",
+        "ko": "동. 오염시키다",
+        "ja": "動. 汚染する"
+      }
+    },
+    {
+      "word": "卫生间",
+      "pinyin": "wèishēngjiān",
+      "meaning": "restroom, bathroom",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. restroom, bathroom",
+        "ko": "명. 화장실",
+        "ja": "名. トイレ、洗面所"
+      }
+    },
+    {
+      "word": "脏",
+      "pinyin": "zāng",
+      "meaning": "dirty",
+      "partOfSpeech": "adj.",
+      "lessonId": 14,
+      "translations": {
+        "en": "adj. dirty",
+        "ko": "형. 더러운",
+        "ja": "形. 汚い"
+      }
+    },
+    {
+      "word": "抱歉",
+      "pinyin": "bàoqiàn",
+      "meaning": "to be sorry",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to be sorry",
+        "ko": "동. 미안해하다, 죄송하다",
+        "ja": "動. 申し訳なく思う"
+      }
+    },
+    {
+      "word": "空",
+      "pinyin": "kōng",
+      "meaning": "empty",
+      "partOfSpeech": "adj.",
+      "lessonId": 14,
+      "translations": {
+        "en": "adj. empty",
+        "ko": "형. 빈",
+        "ja": "形. 空の"
+      }
+    },
+    {
+      "word": "盒子",
+      "pinyin": "hézi",
+      "meaning": "box, case",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. box, case",
+        "ko": "명. 상자, 케이스",
+        "ja": "名. 箱、ケース"
+      }
+    },
+    {
+      "word": "扔",
+      "pinyin": "rēng",
+      "meaning": "to throw away",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to throw away",
+        "ko": "동. 버리다, 던지다",
+        "ja": "動. 捨てる、投げる"
+      }
+    },
+    {
+      "word": "以",
+      "pinyin": "yǐ",
+      "meaning": "via, by means of",
+      "partOfSpeech": "prep.",
+      "lessonId": 14,
+      "translations": {
+        "en": "prep. via, by means of",
+        "ko": "전. ~로, ~의 방식으로",
+        "ja": "前. 〜で、〜によって"
+      }
+    },
+    {
+      "word": "速度",
+      "pinyin": "sùdù",
+      "meaning": "speed",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. speed",
+        "ko": "명. 속도",
+        "ja": "名. 速度"
+      }
+    },
+    {
+      "word": "地球",
+      "pinyin": "dìqiú",
+      "meaning": "earth, globe",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. earth, globe",
+        "ko": "명. 지구",
+        "ja": "名. 地球"
+      }
+    },
+    {
+      "word": "既然",
+      "pinyin": "jìrán",
+      "meaning": "since, as, now that",
+      "partOfSpeech": "conj.",
+      "lessonId": 14,
+      "translations": {
+        "en": "conj. since, as, now that",
+        "ko": "접. 기왕, 이미 ~인 이상",
+        "ja": "接. 〜である以上、せっかく"
+      }
+    },
+    {
+      "word": "停",
+      "pinyin": "tíng",
+      "meaning": "to stop, to cease",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to stop, to cease",
+        "ko": "동. 멈추다, 중지하다",
+        "ja": "動. 止まる、止める"
+      }
+    },
+    {
+      "word": "得意",
+      "pinyin": "déyì",
+      "meaning": "complacent, gloating",
+      "partOfSpeech": "adj.",
+      "lessonId": 14,
+      "translations": {
+        "en": "adj. complacent, gloating",
+        "ko": "형. 우쭐한, 득의양양한",
+        "ja": "形. 得意げな、うぬぼれた"
+      }
+    },
+    {
+      "word": "目的",
+      "pinyin": "mùdì",
+      "meaning": "aim, purpose",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. aim, purpose",
+        "ko": "명. 목적",
+        "ja": "名. 目的"
+      }
+    },
+    {
+      "word": "暖",
+      "pinyin": "nuǎn",
+      "meaning": "warm",
+      "partOfSpeech": "adj.",
+      "lessonId": 14,
+      "translations": {
+        "en": "adj. warm",
+        "ko": "형. 따뜻한",
+        "ja": "形. 暖かい"
+      }
+    },
+    {
+      "word": "塑料袋",
+      "pinyin": "sùliàodài",
+      "meaning": "plastic bag",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. plastic bag",
+        "ko": "명. 비닐봉지, 플라스틱 봉투",
+        "ja": "名. ビニール袋、プラスチック袋"
+      }
+    },
+    {
+      "word": "于是",
+      "pinyin": "yúshì",
+      "meaning": "hence, therefore",
+      "partOfSpeech": "conj.",
+      "lessonId": 14,
+      "translations": {
+        "en": "conj. hence, therefore",
+        "ko": "접. 그래서, 이에",
+        "ja": "接. そこで、それで"
+      }
+    },
+    {
+      "word": "鼓励",
+      "pinyin": "gǔlì",
+      "meaning": "to encourage",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to encourage",
+        "ko": "동. 격려하다, 장려하다",
+        "ja": "動. 励ます、奨励する"
+      }
+    },
+    {
+      "word": "拒绝",
+      "pinyin": "jùjué",
+      "meaning": "to refuse, to reject",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to refuse, to reject",
+        "ko": "동. 거절하다",
+        "ja": "動. 拒絶する、断る"
+      }
+    },
+    {
+      "word": "减少",
+      "pinyin": "jiǎnshǎo",
+      "meaning": "to reduce, to decrease",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to reduce, to decrease",
+        "ko": "동. 줄이다, 감소하다",
+        "ja": "動. 減らす、減少する"
+      }
+    },
+    {
+      "word": "数量",
+      "pinyin": "shùliàng",
+      "meaning": "quantity, amount",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. quantity, amount",
+        "ko": "명. 수량",
+        "ja": "名. 数量"
+      }
+    },
+    {
+      "word": "温度",
+      "pinyin": "wēndù",
+      "meaning": "temperature",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. temperature",
+        "ko": "명. 온도",
+        "ja": "名. 温度"
+      }
+    },
+    {
+      "word": "乘坐",
+      "pinyin": "chéngzuò",
+      "meaning": "to take (a vehicle), to ride (in a vehicle)",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to take (a vehicle), to ride (in a vehicle)",
+        "ko": "동. 타다, 탑승하다",
+        "ja": "動. 乗る、乗車する"
+      }
+    },
+    {
+      "word": "丢",
+      "pinyin": "diū",
+      "meaning": "to throw, to cast",
+      "partOfSpeech": "v.",
+      "lessonId": 14,
+      "translations": {
+        "en": "v. to throw, to cast",
+        "ko": "동. 버리다, 던지다",
+        "ja": "動. 捨てる、投げる"
+      }
+    },
+    {
+      "word": "垃圾桶",
+      "pinyin": "lājītǒng",
+      "meaning": "dustbin, trash can",
+      "partOfSpeech": "n.",
+      "lessonId": 14,
+      "translations": {
+        "en": "n. dustbin, trash can",
+        "ko": "명. 쓰레기통",
+        "ja": "名. ごみ箱"
+      }
+    },
+    {
+      "word": "美丽",
+      "pinyin": "měilì",
+      "meaning": "beautiful",
+      "partOfSpeech": "adj.",
+      "lessonId": 14,
+      "translations": {
+        "en": "adj. beautiful",
+        "ko": "형. 아름다운",
+        "ja": "形. 美しい"
+      }
+    },
+    {
+      "word": "弹钢琴",
+      "pinyin": "tán gāngqín",
+      "meaning": "to play the piano",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "to play the piano",
+        "ko": "피아노를 치다",
+        "ja": "ピアノを弾く"
+      }
+    },
+    {
+      "word": "棒",
+      "pinyin": "bàng",
+      "meaning": "excellent, amazing",
+      "partOfSpeech": "adj.",
+      "lessonId": 15,
+      "translations": {
+        "en": "adj. excellent, amazing",
+        "ko": "형. 훌륭한, 대단한",
+        "ja": "形. すばらしい、すごい"
+      }
+    },
+    {
+      "word": "孙子",
+      "pinyin": "sūnzi",
+      "meaning": "grandson",
+      "partOfSpeech": "n.",
+      "lessonId": 15,
+      "translations": {
+        "en": "n. grandson",
+        "ko": "명. 손자",
+        "ja": "名. 孫息子"
+      }
+    },
+    {
+      "word": "寒假",
+      "pinyin": "hánjià",
+      "meaning": "winter vacation",
+      "partOfSpeech": "n.",
+      "lessonId": 15,
+      "translations": {
+        "en": "n. winter vacation",
+        "ko": "명. 겨울방학",
+        "ja": "名. 冬休み"
+      }
+    },
+    {
+      "word": "父亲",
+      "pinyin": "fùqīn",
+      "meaning": "father",
+      "partOfSpeech": "n.",
+      "lessonId": 15,
+      "translations": {
+        "en": "n. father",
+        "ko": "명. 아버지",
+        "ja": "名. 父親"
+      }
+    },
+    {
+      "word": "闹钟",
+      "pinyin": "nàozhōng",
+      "meaning": "alarm clock",
+      "partOfSpeech": "n.",
+      "lessonId": 15,
+      "translations": {
+        "en": "n. alarm clock",
+        "ko": "명. 알람시계",
+        "ja": "名. 目覚まし時計"
+      }
+    },
+    {
+      "word": "响",
+      "pinyin": "xiǎng",
+      "meaning": "to sound, to ring",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to sound, to ring",
+        "ko": "동. 울리다, 소리 나다",
+        "ja": "動. 鳴る、響く"
+      }
+    },
+    {
+      "word": "醒",
+      "pinyin": "xǐng",
+      "meaning": "to wake up, to be awake",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to wake up, to be awake",
+        "ko": "동. 깨다, 깨어 있다",
+        "ja": "動. 目が覚める、起きている"
+      }
+    },
+    {
+      "word": "赶",
+      "pinyin": "gǎn",
+      "meaning": "to rush for, to hurry",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to rush for, to hurry",
+        "ko": "동. 서두르다, 시간에 맞추다",
+        "ja": "動. 急ぐ、間に合わせる"
+      }
+    },
+    {
+      "word": "厕所",
+      "pinyin": "cèsuǒ",
+      "meaning": "lavatory, toilet",
+      "partOfSpeech": "n.",
+      "lessonId": 15,
+      "translations": {
+        "en": "n. lavatory, toilet",
+        "ko": "명. 화장실",
+        "ja": "名. トイレ"
+      }
+    },
+    {
+      "word": "批评",
+      "pinyin": "pīpíng",
+      "meaning": "to criticize",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to criticize",
+        "ko": "동. 비판하다, 꾸짖다",
+        "ja": "動. 批判する、叱る"
+      }
+    },
+    {
+      "word": "弄",
+      "pinyin": "nòng",
+      "meaning": "to do, to make",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to do, to make",
+        "ko": "동. 하다, 만들다",
+        "ja": "動. する、いじる"
+      }
+    },
+    {
+      "word": "管理",
+      "pinyin": "guǎnlǐ",
+      "meaning": "to manage, to administer",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to manage, to administer",
+        "ko": "동. 관리하다",
+        "ja": "動. 管理する"
+      }
+    },
+    {
+      "word": "打针",
+      "pinyin": "dǎ zhēn",
+      "meaning": "to give or have an injection",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to give or have an injection",
+        "ko": "동. 주사를 맞다/놓다",
+        "ja": "動. 注射をする、注射を受ける"
+      }
+    },
+    {
+      "word": "护士",
+      "pinyin": "hùshi",
+      "meaning": "nurse",
+      "partOfSpeech": "n.",
+      "lessonId": 15,
+      "translations": {
+        "en": "n. nurse",
+        "ko": "명. 간호사",
+        "ja": "名. 看護師"
+      }
+    },
+    {
+      "word": "表扬",
+      "pinyin": "biǎoyáng",
+      "meaning": "to praise, to commend",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to praise, to commend",
+        "ko": "동. 칭찬하다",
+        "ja": "動. 褒める、表彰する"
+      }
+    },
+    {
+      "word": "千万",
+      "pinyin": "qiānwàn",
+      "meaning": "must, to be sure to",
+      "partOfSpeech": "adv.",
+      "lessonId": 15,
+      "translations": {
+        "en": "adv. must, to be sure to",
+        "ko": "부. 반드시, 꼭",
+        "ja": "副. 必ず、くれぐれも"
+      }
+    },
+    {
+      "word": "怀疑",
+      "pinyin": "huáiyí",
+      "meaning": "to suspect, to doubt",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to suspect, to doubt",
+        "ko": "동. 의심하다",
+        "ja": "動. 疑う"
+      }
+    },
+    {
+      "word": "故意",
+      "pinyin": "gùyì",
+      "meaning": "intentionally, on purpose",
+      "partOfSpeech": "adv.",
+      "lessonId": 15,
+      "translations": {
+        "en": "adv. intentionally, on purpose",
+        "ko": "부. 고의로, 일부러",
+        "ja": "副. わざと、故意に"
+      }
+    },
+    {
+      "word": "敲",
+      "pinyin": "qiāo",
+      "meaning": "to knock, to beat, to strike",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to knock, to beat, to strike",
+        "ko": "동. 두드리다, 치다",
+        "ja": "動. たたく、打つ"
+      }
+    },
+    {
+      "word": "整理",
+      "pinyin": "zhěnglǐ",
+      "meaning": "to tidy up, to arrange",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to tidy up, to arrange",
+        "ko": "동. 정리하다",
+        "ja": "動. 整理する、片づける"
+      }
+    },
+    {
+      "word": "合适",
+      "pinyin": "héshì",
+      "meaning": "fit, suitable",
+      "partOfSpeech": "adj.",
+      "lessonId": 15,
+      "translations": {
+        "en": "adj. fit, suitable",
+        "ko": "형. 알맞은, 적합한",
+        "ja": "形. 適切な、ふさわしい"
+      }
+    },
+    {
+      "word": "骗",
+      "pinyin": "piàn",
+      "meaning": "to cheat, to deceive",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to cheat, to deceive",
+        "ko": "동. 속이다",
+        "ja": "動. だます"
+      }
+    },
+    {
+      "word": "儿童",
+      "pinyin": "értóng",
+      "meaning": "children",
+      "partOfSpeech": "n.",
+      "lessonId": 15,
+      "translations": {
+        "en": "n. children",
+        "ko": "명. 아동, 어린이",
+        "ja": "名. 児童、子ども"
+      }
+    },
+    {
+      "word": "假",
+      "pinyin": "jiǎ",
+      "meaning": "false, fake",
+      "partOfSpeech": "adj.",
+      "lessonId": 15,
+      "translations": {
+        "en": "adj. false, fake",
+        "ko": "형. 거짓의, 가짜의",
+        "ja": "形. 偽の、うその"
+      }
+    },
+    {
+      "word": "左右",
+      "pinyin": "zuǒyòu",
+      "meaning": "around, or so",
+      "partOfSpeech": "n.",
+      "lessonId": 15,
+      "translations": {
+        "en": "n. around, or so",
+        "ko": "명. 정도, 쯤",
+        "ja": "名. 前後、くらい"
+      }
+    },
+    {
+      "word": "懒",
+      "pinyin": "lǎn",
+      "meaning": "lazy",
+      "partOfSpeech": "adj.",
+      "lessonId": 15,
+      "translations": {
+        "en": "adj. lazy",
+        "ko": "형. 게으른",
+        "ja": "形. 怠けている"
+      }
+    },
+    {
+      "word": "笨",
+      "pinyin": "bèn",
+      "meaning": "stupid, foolish",
+      "partOfSpeech": "adj.",
+      "lessonId": 15,
+      "translations": {
+        "en": "adj. stupid, foolish",
+        "ko": "형. 어리석은, 둔한",
+        "ja": "形. 愚かな、不器用な"
+      }
+    },
+    {
+      "word": "粗心",
+      "pinyin": "cūxīn",
+      "meaning": "careless, thoughtless",
+      "partOfSpeech": "adj.",
+      "lessonId": 15,
+      "translations": {
+        "en": "adj. careless, thoughtless",
+        "ko": "형. 부주의한, 덤벙대는",
+        "ja": "形. 不注意な、そそっかしい"
+      }
+    },
+    {
+      "word": "骄傲",
+      "pinyin": "jiāo'ào",
+      "meaning": "arrogant, conceited",
+      "partOfSpeech": "adj.",
+      "lessonId": 15,
+      "translations": {
+        "en": "adj. arrogant, conceited",
+        "ko": "형. 교만한, 자만하는",
+        "ja": "形. 傲慢な、思い上がった"
+      }
+    },
+    {
+      "word": "害羞",
+      "pinyin": "hàixiū",
+      "meaning": "to be shy, to be timid",
+      "partOfSpeech": "v.",
+      "lessonId": 15,
+      "translations": {
+        "en": "v. to be shy, to be timid",
+        "ko": "동. 부끄러워하다, 수줍어하다",
+        "ja": "動. 恥ずかしがる、内気である"
+      }
+    },
+    {
+      "word": "博士",
+      "pinyin": "bóshì",
+      "meaning": "doctor (academic degree)",
+      "partOfSpeech": "n.",
+      "lessonId": 16,
+      "translations": {
+        "en": "n. doctor (academic degree)",
+        "ko": "명. 박사",
+        "ja": "名. 博士"
+      }
+    },
+    {
+      "word": "签证",
+      "pinyin": "qiānzhèng",
+      "meaning": "visa",
+      "partOfSpeech": "n.",
+      "lessonId": 16,
+      "translations": {
+        "en": "n. visa",
+        "ko": "명. 비자",
+        "ja": "名. ビザ"
+      }
+    },
+    {
+      "word": "报名",
+      "pinyin": "bào míng",
+      "meaning": "to apply, to sign up",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to apply, to sign up",
+        "ko": "동. 신청하다, 등록하다",
+        "ja": "動. 申し込む、登録する"
+      }
+    },
+    {
+      "word": "表格",
+      "pinyin": "biǎogé",
+      "meaning": "form, table",
+      "partOfSpeech": "n.",
+      "lessonId": 16,
+      "translations": {
+        "en": "n. form, table",
+        "ko": "명. 양식, 표",
+        "ja": "名. フォーム、表"
+      }
+    },
+    {
+      "word": "传真",
+      "pinyin": "chuánzhēn",
+      "meaning": "to send by fax",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to send by fax",
+        "ko": "동. 팩스로 보내다",
+        "ja": "動. ファックスで送る"
+      }
+    },
+    {
+      "word": "号码",
+      "pinyin": "hàomǎ",
+      "meaning": "number",
+      "partOfSpeech": "n.",
+      "lessonId": 16,
+      "translations": {
+        "en": "n. number",
+        "ko": "명. 번호",
+        "ja": "名. 番号"
+      }
+    },
+    {
+      "word": "参观",
+      "pinyin": "cānguān",
+      "meaning": "to visit, to look around",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to visit, to look around",
+        "ko": "동. 참관하다, 둘러보다",
+        "ja": "動. 見学する、見て回る"
+      }
+    },
+    {
+      "word": "激动",
+      "pinyin": "jīdòng",
+      "meaning": "excited, emotional",
+      "partOfSpeech": "adj.",
+      "lessonId": 16,
+      "translations": {
+        "en": "adj. excited, emotional",
+        "ko": "형. 감격한, 흥분한",
+        "ja": "形. 感激した、興奮した"
+      }
+    },
+    {
+      "word": "小伙子",
+      "pinyin": "xiǎohuǒzi",
+      "meaning": "young man",
+      "partOfSpeech": "n.",
+      "lessonId": 16,
+      "translations": {
+        "en": "n. young man",
+        "ko": "명. 젊은이, 청년",
+        "ja": "名. 若者、青年"
+      }
+    },
+    {
+      "word": "记者",
+      "pinyin": "jìzhě",
+      "meaning": "journalist, reporter",
+      "partOfSpeech": "n.",
+      "lessonId": 16,
+      "translations": {
+        "en": "n. journalist, reporter",
+        "ko": "명. 기자",
+        "ja": "名. 記者"
+      }
+    },
+    {
+      "word": "代表",
+      "pinyin": "dàibiǎo",
+      "meaning": "to represent, to stand for",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to represent, to stand for",
+        "ko": "동. 대표하다, 나타내다",
+        "ja": "動. 代表する、表す"
+      }
+    },
+    {
+      "word": "恐怕",
+      "pinyin": "kǒngpà",
+      "meaning": "I guess, perhaps",
+      "partOfSpeech": "adv.",
+      "lessonId": 16,
+      "translations": {
+        "en": "adv. I guess, perhaps",
+        "ko": "부. 아마, 어쩌면",
+        "ja": "副. おそらく、たぶん"
+      }
+    },
+    {
+      "word": "失望",
+      "pinyin": "shīwàng",
+      "meaning": "to be disappointed",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to be disappointed",
+        "ko": "동. 실망하다",
+        "ja": "動. 失望する"
+      }
+    },
+    {
+      "word": "郊区",
+      "pinyin": "jiāoqū",
+      "meaning": "suburb, outskirts",
+      "partOfSpeech": "n.",
+      "lessonId": 16,
+      "translations": {
+        "en": "n. suburb, outskirts",
+        "ko": "명. 교외, 외곽",
+        "ja": "名. 郊外"
+      }
+    },
+    {
+      "word": "到底",
+      "pinyin": "dàodǐ",
+      "meaning": "on earth, after all",
+      "partOfSpeech": "adv.",
+      "lessonId": 16,
+      "translations": {
+        "en": "adv. on earth, after all",
+        "ko": "부. 도대체, 결국",
+        "ja": "副. いったい、結局"
+      }
+    },
+    {
+      "word": "呀",
+      "pinyin": "ya",
+      "meaning": "used at the end of a question to soften the tone",
+      "partOfSpeech": "part.",
+      "lessonId": 16,
+      "translations": {
+        "en": "part. used at the end of a question to soften the tone",
+        "ko": "조. 의문문 끝에서 어기를 부드럽게 하는 말",
+        "ja": "助. 疑問文の末尾で語気を和らげる語"
+      }
+    },
+    {
+      "word": "导游",
+      "pinyin": "dǎoyóu",
+      "meaning": "tour guide",
+      "partOfSpeech": "n.",
+      "lessonId": 16,
+      "translations": {
+        "en": "n. tour guide",
+        "ko": "명. 관광 가이드",
+        "ja": "名. ガイド"
+      }
+    },
+    {
+      "word": "礼貌",
+      "pinyin": "lǐmào",
+      "meaning": "politeness",
+      "partOfSpeech": "n.",
+      "lessonId": 16,
+      "translations": {
+        "en": "n. politeness",
+        "ko": "명. 예의, 예절",
+        "ja": "名. 礼儀、礼貌"
+      }
+    },
+    {
+      "word": "原谅",
+      "pinyin": "yuánliàng",
+      "meaning": "to forgive",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to forgive",
+        "ko": "동. 용서하다",
+        "ja": "動. 許す"
+      }
+    },
+    {
+      "word": "挂",
+      "pinyin": "guà",
+      "meaning": "to hang, to put up",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to hang, to put up",
+        "ko": "동. 걸다, 붙이다",
+        "ja": "動. 掛ける、掲げる"
+      }
+    },
+    {
+      "word": "同情",
+      "pinyin": "tóngqíng",
+      "meaning": "to show sympathy for",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to show sympathy for",
+        "ko": "동. 동정하다",
+        "ja": "動. 同情する"
+      }
+    },
+    {
+      "word": "推",
+      "pinyin": "tuī",
+      "meaning": "to put off, to postpone",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to put off, to postpone",
+        "ko": "동. 미루다",
+        "ja": "動. 延ばす、延期する"
+      }
+    },
+    {
+      "word": "预习",
+      "pinyin": "yùxí",
+      "meaning": "to prepare lessons before class",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to prepare lessons before class",
+        "ko": "동. 예습하다",
+        "ja": "動. 予習する"
+      }
+    },
+    {
+      "word": "重点",
+      "pinyin": "zhòngdiǎn",
+      "meaning": "focal point, emphasis",
+      "partOfSpeech": "n.",
+      "lessonId": 16,
+      "translations": {
+        "en": "n. focal point, emphasis",
+        "ko": "명. 중점, 핵심",
+        "ja": "名. 重点、要点"
+      }
+    },
+    {
+      "word": "马虎",
+      "pinyin": "mǎhu",
+      "meaning": "careless, slipshod",
+      "partOfSpeech": "adj.",
+      "lessonId": 16,
+      "translations": {
+        "en": "adj. careless, slipshod",
+        "ko": "형. 대충 하는, 부주의한",
+        "ja": "形. いい加減な、不注意な"
+      }
+    },
+    {
+      "word": "自信",
+      "pinyin": "zìxìn",
+      "meaning": "self-confident",
+      "partOfSpeech": "adj.",
+      "lessonId": 16,
+      "translations": {
+        "en": "adj. self-confident",
+        "ko": "형. 자신 있는",
+        "ja": "形. 自信がある"
+      }
+    },
+    {
+      "word": "冷静",
+      "pinyin": "lěngjìng",
+      "meaning": "calm, composed",
+      "partOfSpeech": "adj.",
+      "lessonId": 16,
+      "translations": {
+        "en": "adj. calm, composed",
+        "ko": "형. 냉정한, 침착한",
+        "ja": "形. 冷静な、落ち着いた"
+      }
+    },
+    {
+      "word": "输",
+      "pinyin": "shū",
+      "meaning": "to lose, to suffer defeat",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to lose, to suffer defeat",
+        "ko": "동. 지다, 패하다",
+        "ja": "動. 負ける"
+      }
+    },
+    {
+      "word": "重视",
+      "pinyin": "zhòngshì",
+      "meaning": "to attach importance to",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to attach importance to",
+        "ko": "동. 중시하다",
+        "ja": "動. 重視する"
+      }
+    },
+    {
+      "word": "敢",
+      "pinyin": "gǎn",
+      "meaning": "to dare",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to dare",
+        "ko": "동. 감히 하다, 용기 내다",
+        "ja": "動. あえてする、勇気がある"
+      }
+    },
+    {
+      "word": "尊重",
+      "pinyin": "zūnzhòng",
+      "meaning": "to respect",
+      "partOfSpeech": "v.",
+      "lessonId": 16,
+      "translations": {
+        "en": "v. to respect",
+        "ko": "동. 존중하다",
+        "ja": "動. 尊重する"
+      }
+    },
+    {
+      "word": "凉快",
+      "pinyin": "liángkuai",
+      "meaning": "pleasantly cool",
+      "partOfSpeech": "adj.",
+      "lessonId": 17,
+      "translations": {
+        "en": "adj. pleasantly cool",
+        "ko": "형. 시원하다, 서늘하다",
+        "ja": "形. 涼しい、心地よく涼しい"
+      }
+    },
+    {
+      "word": "热闹",
+      "pinyin": "rènao",
+      "meaning": "busy, bustling",
+      "partOfSpeech": "adj.",
+      "lessonId": 17,
+      "translations": {
+        "en": "adj. busy, bustling",
+        "ko": "형. 떠들썩하다, 번화하다",
+        "ja": "形. にぎやかだ"
+      }
+    },
+    {
+      "word": "云",
+      "pinyin": "yún",
+      "meaning": "cloud",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. cloud",
+        "ko": "명. 구름",
+        "ja": "名. 雲"
+      }
+    },
+    {
+      "word": "广播",
+      "pinyin": "guǎngbō",
+      "meaning": "broadcast, radio program",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. broadcast, radio program",
+        "ko": "명. 방송, 라디오 프로그램",
+        "ja": "名. 放送、ラジオ番組"
+      }
+    },
+    {
+      "word": "照",
+      "pinyin": "zhào",
+      "meaning": "to take a picture, to photograph",
+      "partOfSpeech": "v.",
+      "lessonId": 17,
+      "translations": {
+        "en": "v. to take a picture, to photograph",
+        "ko": "동. 사진을 찍다",
+        "ja": "動. 写真を撮る"
+      }
+    },
+    {
+      "word": "倒",
+      "pinyin": "dào",
+      "meaning": "yet, actually; used to indicate contrast",
+      "partOfSpeech": "adv.",
+      "lessonId": 17,
+      "translations": {
+        "en": "adv. yet, actually; used to indicate contrast",
+        "ko": "부. 오히려, 뜻밖에도; 대조를 나타냄",
+        "ja": "副. かえって、意外にも; 対比を表す"
+      }
+    },
+    {
+      "word": "毛",
+      "pinyin": "máo",
+      "meaning": "hair, fur",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. hair, fur",
+        "ko": "명. 털, 모발",
+        "ja": "名. 毛、毛皮"
+      }
+    },
+    {
+      "word": "抱",
+      "pinyin": "bào",
+      "meaning": "to hold in the arms, to hug",
+      "partOfSpeech": "v.",
+      "lessonId": 17,
+      "translations": {
+        "en": "v. to hold in the arms, to hug",
+        "ko": "동. 안다, 껴안다",
+        "ja": "動. 抱く、抱きしめる"
+      }
+    },
+    {
+      "word": "干",
+      "pinyin": "gàn",
+      "meaning": "to do, to act",
+      "partOfSpeech": "v.",
+      "lessonId": 17,
+      "translations": {
+        "en": "v. to do, to act",
+        "ko": "동. 하다, 행동하다",
+        "ja": "動. する、やる"
+      }
+    },
+    {
+      "word": "严格",
+      "pinyin": "yángé",
+      "meaning": "strict, rigorous",
+      "partOfSpeech": "adj.",
+      "lessonId": 17,
+      "translations": {
+        "en": "adj. strict, rigorous",
+        "ko": "형. 엄격하다",
+        "ja": "形. 厳格だ、厳しい"
+      }
+    },
+    {
+      "word": "难受",
+      "pinyin": "nánshòu",
+      "meaning": "sad, unhappy; uncomfortable",
+      "partOfSpeech": "adj.",
+      "lessonId": 17,
+      "translations": {
+        "en": "adj. sad, unhappy; uncomfortable",
+        "ko": "형. 괴롭다, 마음이 힘들다; 불편하다",
+        "ja": "形. つらい、気分が悪い、悲しい"
+      }
+    },
+    {
+      "word": "趟",
+      "pinyin": "tàng",
+      "meaning": "time; used for a round trip",
+      "partOfSpeech": "m.",
+      "lessonId": 17,
+      "translations": {
+        "en": "m. time; used for a round trip",
+        "ko": "양. 왕복이나 이동 횟수를 세는 말",
+        "ja": "量. 往復や移動の回数を数える語"
+      }
+    },
+    {
+      "word": "放暑假",
+      "pinyin": "fàng shǔjià",
+      "meaning": "to be on summer vacation",
+      "partOfSpeech": "v.",
+      "lessonId": 17,
+      "translations": {
+        "en": "to be on summer vacation",
+        "ko": "여름방학을 하다",
+        "ja": "夏休みになる、夏休みを過ごす"
+      }
+    },
+    {
+      "word": "老虎",
+      "pinyin": "lǎohǔ",
+      "meaning": "tiger",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. tiger",
+        "ko": "명. 호랑이",
+        "ja": "名. トラ"
+      }
+    },
+    {
+      "word": "入口",
+      "pinyin": "rùkǒu",
+      "meaning": "entrance",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. entrance",
+        "ko": "명. 입구",
+        "ja": "名. 入口"
+      }
+    },
+    {
+      "word": "排队",
+      "pinyin": "pái duì",
+      "meaning": "to form a line, to line up",
+      "partOfSpeech": "v.",
+      "lessonId": 17,
+      "translations": {
+        "en": "v. to form a line, to line up",
+        "ko": "동. 줄을 서다",
+        "ja": "動. 列に並ぶ"
+      }
+    },
+    {
+      "word": "活泼",
+      "pinyin": "huópo",
+      "meaning": "lively, vivacious",
+      "partOfSpeech": "adj.",
+      "lessonId": 17,
+      "translations": {
+        "en": "adj. lively, vivacious",
+        "ko": "형. 활발하다, 생기 있다",
+        "ja": "形. 活発だ、生き生きしている"
+      }
+    },
+    {
+      "word": "社会",
+      "pinyin": "shèhuì",
+      "meaning": "society",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. society",
+        "ko": "명. 사회",
+        "ja": "名. 社会"
+      }
+    },
+    {
+      "word": "竞争",
+      "pinyin": "jìngzhēng",
+      "meaning": "to compete",
+      "partOfSpeech": "v.",
+      "lessonId": 17,
+      "translations": {
+        "en": "v. to compete",
+        "ko": "동. 경쟁하다",
+        "ja": "動. 競争する"
+      }
+    },
+    {
+      "word": "森林",
+      "pinyin": "sēnlín",
+      "meaning": "forest",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. forest",
+        "ko": "명. 숲, 삼림",
+        "ja": "名. 森林"
+      }
+    },
+    {
+      "word": "剩",
+      "pinyin": "shèng",
+      "meaning": "to be left over, to remain",
+      "partOfSpeech": "v.",
+      "lessonId": 17,
+      "translations": {
+        "en": "v. to be left over, to remain",
+        "ko": "동. 남다",
+        "ja": "動. 残る"
+      }
+    },
+    {
+      "word": "暖和",
+      "pinyin": "nuǎnhuo",
+      "meaning": "warm",
+      "partOfSpeech": "adj.",
+      "lessonId": 17,
+      "translations": {
+        "en": "adj. warm",
+        "ko": "형. 따뜻하다",
+        "ja": "形. 暖かい"
+      }
+    },
+    {
+      "word": "海洋",
+      "pinyin": "hǎiyáng",
+      "meaning": "sea, ocean",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. sea, ocean",
+        "ko": "명. 바다, 해양",
+        "ja": "名. 海洋、海"
+      }
+    },
+    {
+      "word": "底",
+      "pinyin": "dǐ",
+      "meaning": "bottom, base",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. bottom, base",
+        "ko": "명. 바닥, 밑",
+        "ja": "名. 底、基部"
+      }
+    },
+    {
+      "word": "美人鱼",
+      "pinyin": "měirényú",
+      "meaning": "mermaid",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. mermaid",
+        "ko": "명. 인어",
+        "ja": "名. 人魚"
+      }
+    },
+    {
+      "word": "公里",
+      "pinyin": "gōnglǐ",
+      "meaning": "kilometer",
+      "partOfSpeech": "m.",
+      "lessonId": 17,
+      "translations": {
+        "en": "m. kilometer",
+        "ko": "양. 킬로미터",
+        "ja": "量. キロメートル"
+      }
+    },
+    {
+      "word": "仍然",
+      "pinyin": "réngrán",
+      "meaning": "still, yet",
+      "partOfSpeech": "adv.",
+      "lessonId": 17,
+      "translations": {
+        "en": "adv. still, yet",
+        "ko": "부. 여전히, 아직도",
+        "ja": "副. 依然として、なお"
+      }
+    },
+    {
+      "word": "排列",
+      "pinyin": "páiliè",
+      "meaning": "to put in order, to arrange",
+      "partOfSpeech": "v.",
+      "lessonId": 17,
+      "translations": {
+        "en": "v. to put in order, to arrange",
+        "ko": "동. 배열하다, 정렬하다",
+        "ja": "動. 配列する、並べる"
+      }
+    },
+    {
+      "word": "梦",
+      "pinyin": "mèng",
+      "meaning": "dream",
+      "partOfSpeech": "n.",
+      "lessonId": 17,
+      "translations": {
+        "en": "n. dream",
+        "ko": "명. 꿈",
+        "ja": "名. 夢"
+      }
+    },
+    {
+      "word": "降落",
+      "pinyin": "jiàngluò",
+      "meaning": "to descend, to land",
+      "partOfSpeech": "v.",
+      "lessonId": 18,
+      "translations": {
+        "en": "v. to descend, to land",
+        "ko": "착륙하다",
+        "ja": "降下する、着陸する"
+      }
+    },
+    {
+      "word": "火",
+      "pinyin": "huǒ",
+      "meaning": "hot, popular",
+      "partOfSpeech": "adj.",
+      "lessonId": 18,
+      "translations": {
+        "en": "adj. hot, popular",
+        "ko": "인기 있다",
+        "ja": "人気がある"
+      }
+    },
+    {
+      "word": "作者",
+      "pinyin": "zuòzhě",
+      "meaning": "author",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. author",
+        "ko": "저자",
+        "ja": "作者"
+      }
+    },
+    {
+      "word": "交通",
+      "pinyin": "jiāotōng",
+      "meaning": "traffic, communication",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. traffic, communication",
+        "ko": "교통, 통신",
+        "ja": "交通、通信"
+      }
+    },
+    {
+      "word": "技术",
+      "pinyin": "jìshù",
+      "meaning": "technology",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. technology",
+        "ko": "기술",
+        "ja": "技術"
+      }
+    },
+    {
+      "word": "是否",
+      "pinyin": "shìfǒu",
+      "meaning": "if, whether",
+      "partOfSpeech": "adv.",
+      "lessonId": 18,
+      "translations": {
+        "en": "adv. if, whether",
+        "ko": "~인지 아닌지, 여부",
+        "ja": "〜かどうか"
+      }
+    },
+    {
+      "word": "秒",
+      "pinyin": "miǎo",
+      "meaning": "second, 1/60 minute",
+      "partOfSpeech": "m.",
+      "lessonId": 18,
+      "translations": {
+        "en": "m. second, 1/60 minute",
+        "ko": "초",
+        "ja": "秒"
+      }
+    },
+    {
+      "word": "方式",
+      "pinyin": "fāngshì",
+      "meaning": "way, mode",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. way, mode",
+        "ko": "방식",
+        "ja": "方式"
+      }
+    },
+    {
+      "word": "受不了",
+      "pinyin": "shòu bu liǎo",
+      "meaning": "cannot stand, cannot bear",
+      "partOfSpeech": "v.",
+      "lessonId": 18,
+      "translations": {
+        "en": "cannot stand, cannot bear",
+        "ko": "견딜 수 없다",
+        "ja": "耐えられない"
+      }
+    },
+    {
+      "word": "日记",
+      "pinyin": "rìjì",
+      "meaning": "diary, journal",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. diary, journal",
+        "ko": "일기",
+        "ja": "日記"
+      }
+    },
+    {
+      "word": "安全",
+      "pinyin": "ānquán",
+      "meaning": "safe, secure",
+      "partOfSpeech": "adj.",
+      "lessonId": 18,
+      "translations": {
+        "en": "adj. safe, secure",
+        "ko": "안전하다",
+        "ja": "安全な"
+      }
+    },
+    {
+      "word": "密码",
+      "pinyin": "mìmǎ",
+      "meaning": "password",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. password",
+        "ko": "비밀번호",
+        "ja": "パスワード"
+      }
+    },
+    {
+      "word": "允许",
+      "pinyin": "yǔnxǔ",
+      "meaning": "to allow, to permit",
+      "partOfSpeech": "v.",
+      "lessonId": 18,
+      "translations": {
+        "en": "v. to allow, to permit",
+        "ko": "허락하다",
+        "ja": "許可する"
+      }
+    },
+    {
+      "word": "座",
+      "pinyin": "zuò",
+      "meaning": "used for bridges, mountains, buildings, etc.",
+      "partOfSpeech": "m.",
+      "lessonId": 18,
+      "translations": {
+        "en": "m. used for bridges, mountains, buildings, etc.",
+        "ko": "다리/산/건물 등에 쓰는 양사",
+        "ja": "橋・山・建物などに使う量詞"
+      }
+    },
+    {
+      "word": "桥",
+      "pinyin": "qiáo",
+      "meaning": "bridge",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. bridge",
+        "ko": "다리",
+        "ja": "橋"
+      }
+    },
+    {
+      "word": "危险",
+      "pinyin": "wēixiǎn",
+      "meaning": "dangerous",
+      "partOfSpeech": "adj.",
+      "lessonId": 18,
+      "translations": {
+        "en": "adj. dangerous",
+        "ko": "위험하다",
+        "ja": "危険な"
+      }
+    },
+    {
+      "word": "接着",
+      "pinyin": "jiēzhe",
+      "meaning": "then, immediately after that",
+      "partOfSpeech": "adv.",
+      "lessonId": 18,
+      "translations": {
+        "en": "adv. then, immediately after that",
+        "ko": "이어서, 바로 그다음",
+        "ja": "続いて、その次に"
+      }
+    },
+    {
+      "word": "警察",
+      "pinyin": "jǐngchá",
+      "meaning": "police",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. police",
+        "ko": "경찰",
+        "ja": "警察"
+      }
+    },
+    {
+      "word": "抓",
+      "pinyin": "zhuā",
+      "meaning": "to catch, to arrest",
+      "partOfSpeech": "v.",
+      "lessonId": 18,
+      "translations": {
+        "en": "v. to catch, to arrest",
+        "ko": "붙잡다, 체포하다",
+        "ja": "捕まえる、逮捕する"
+      }
+    },
+    {
+      "word": "咸",
+      "pinyin": "xián",
+      "meaning": "salty",
+      "partOfSpeech": "adj.",
+      "lessonId": 18,
+      "translations": {
+        "en": "adj. salty",
+        "ko": "짜다",
+        "ja": "塩辛い"
+      }
+    },
+    {
+      "word": "矿泉水",
+      "pinyin": "kuàngquánshuǐ",
+      "meaning": "mineral water",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. mineral water",
+        "ko": "생수, 미네랄워터",
+        "ja": "ミネラルウォーター"
+      }
+    },
+    {
+      "word": "付款",
+      "pinyin": "fù kuǎn",
+      "meaning": "to pay a sum of money",
+      "partOfSpeech": "v.",
+      "lessonId": 18,
+      "translations": {
+        "en": "to pay a sum of money",
+        "ko": "돈을 지불하다",
+        "ja": "支払う"
+      }
+    },
+    {
+      "word": "举",
+      "pinyin": "jǔ",
+      "meaning": "to give, to enumerate",
+      "partOfSpeech": "v.",
+      "lessonId": 18,
+      "translations": {
+        "en": "v. to give, to enumerate",
+        "ko": "예를 들다, 열거하다",
+        "ja": "挙げる、列挙する"
+      }
+    },
+    {
+      "word": "迷路",
+      "pinyin": "mí lù",
+      "meaning": "to lose one's way",
+      "partOfSpeech": "v.",
+      "lessonId": 18,
+      "translations": {
+        "en": "v. to lose one's way",
+        "ko": "길을 잃다",
+        "ja": "道に迷う"
+      }
+    },
+    {
+      "word": "地址",
+      "pinyin": "dìzhǐ",
+      "meaning": "address",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. address",
+        "ko": "주소",
+        "ja": "住所"
+      }
+    },
+    {
+      "word": "地点",
+      "pinyin": "dìdiǎn",
+      "meaning": "place, site",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. place, site",
+        "ko": "장소",
+        "ja": "場所"
+      }
+    },
+    {
+      "word": "世纪",
+      "pinyin": "shìjì",
+      "meaning": "century",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. century",
+        "ko": "세기",
+        "ja": "世紀"
+      }
+    },
+    {
+      "word": "邮局",
+      "pinyin": "yóujú",
+      "meaning": "post office",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. post office",
+        "ko": "우체국",
+        "ja": "郵便局"
+      }
+    },
+    {
+      "word": "收",
+      "pinyin": "shōu",
+      "meaning": "to receive",
+      "partOfSpeech": "v.",
+      "lessonId": 18,
+      "translations": {
+        "en": "v. to receive",
+        "ko": "받다",
+        "ja": "受け取る"
+      }
+    },
+    {
+      "word": "信封",
+      "pinyin": "xìnfēng",
+      "meaning": "envelope",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. envelope",
+        "ko": "봉투",
+        "ja": "封筒"
+      }
+    },
+    {
+      "word": "网站",
+      "pinyin": "wǎngzhàn",
+      "meaning": "website",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. website",
+        "ko": "웹사이트",
+        "ja": "ウェブサイト"
+      }
+    },
+    {
+      "word": "信息",
+      "pinyin": "xìnxī",
+      "meaning": "news, information",
+      "partOfSpeech": "n.",
+      "lessonId": 18,
+      "translations": {
+        "en": "n. news, information",
+        "ko": "소식, 정보",
+        "ja": "情報"
+      }
+    },
+    {
+      "word": "学期",
+      "pinyin": "xuéqī",
+      "meaning": "term, semester",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. term, semester",
+        "ko": "학기",
+        "ja": "学期"
+      }
+    },
+    {
+      "word": "出生",
+      "pinyin": "chūshēng",
+      "meaning": "to be born",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to be born",
+        "ko": "태어나다",
+        "ja": "生まれる"
+      }
+    },
+    {
+      "word": "性别",
+      "pinyin": "xìngbié",
+      "meaning": "sex, gender",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. sex, gender",
+        "ko": "성별",
+        "ja": "性別"
+      }
+    },
+    {
+      "word": "道歉",
+      "pinyin": "dào qiàn",
+      "meaning": "to apologize",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to apologize",
+        "ko": "사과하다",
+        "ja": "謝る"
+      }
+    },
+    {
+      "word": "打印",
+      "pinyin": "dǎyìn",
+      "meaning": "to print out",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to print out",
+        "ko": "인쇄하다",
+        "ja": "印刷する"
+      }
+    },
+    {
+      "word": "复印",
+      "pinyin": "fùyìn",
+      "meaning": "to photocopy, to xerox",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to photocopy, to xerox",
+        "ko": "복사하다",
+        "ja": "コピーする"
+      }
+    },
+    {
+      "word": "饺子",
+      "pinyin": "jiǎozi",
+      "meaning": "jiaozi, dumpling",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. jiaozi, dumpling",
+        "ko": "만두",
+        "ja": "餃子"
+      }
+    },
+    {
+      "word": "刀",
+      "pinyin": "dāo",
+      "meaning": "knife",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. knife",
+        "ko": "칼",
+        "ja": "ナイフ、包丁"
+      }
+    },
+    {
+      "word": "破",
+      "pinyin": "pò",
+      "meaning": "broken, torn",
+      "partOfSpeech": "adj.",
+      "lessonId": 19,
+      "translations": {
+        "en": "adj. broken, torn",
+        "ko": "찢어진, 깨진",
+        "ja": "破れた、壊れた"
+      }
+    },
+    {
+      "word": "脱",
+      "pinyin": "tuō",
+      "meaning": "to take off",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to take off",
+        "ko": "벗다",
+        "ja": "脱ぐ"
+      }
+    },
+    {
+      "word": "理发",
+      "pinyin": "lǐfà",
+      "meaning": "to get a haircut",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to get a haircut",
+        "ko": "이발하다",
+        "ja": "散髪する"
+      }
+    },
+    {
+      "word": "包子",
+      "pinyin": "bāozi",
+      "meaning": "steamed stuffed bun",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. steamed stuffed bun",
+        "ko": "찐빵, 바오쯔",
+        "ja": "肉まん、包子"
+      }
+    },
+    {
+      "word": "零钱",
+      "pinyin": "língqián",
+      "meaning": "small change",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. small change",
+        "ko": "잔돈",
+        "ja": "小銭"
+      }
+    },
+    {
+      "word": "打招呼",
+      "pinyin": "dǎ zhāohu",
+      "meaning": "to greet, to say hello",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "to greet, to say hello",
+        "ko": "인사하다",
+        "ja": "挨拶する"
+      }
+    },
+    {
+      "word": "戴",
+      "pinyin": "dài",
+      "meaning": "to wear (accessories)",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to wear (accessories)",
+        "ko": "착용하다",
+        "ja": "身につける"
+      }
+    },
+    {
+      "word": "眼镜",
+      "pinyin": "yǎnjìng",
+      "meaning": "glasses, spectacles",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. glasses, spectacles",
+        "ko": "안경",
+        "ja": "眼鏡"
+      }
+    },
+    {
+      "word": "舞蹈",
+      "pinyin": "wǔdǎo",
+      "meaning": "dance",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. dance",
+        "ko": "춤, 무용",
+        "ja": "舞踊、ダンス"
+      }
+    },
+    {
+      "word": "国籍",
+      "pinyin": "guójí",
+      "meaning": "nationality, citizenship",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. nationality, citizenship",
+        "ko": "국적",
+        "ja": "国籍"
+      }
+    },
+    {
+      "word": "抬",
+      "pinyin": "tái",
+      "meaning": "to lift, to raise",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to lift, to raise",
+        "ko": "들다, 올리다",
+        "ja": "持ち上げる"
+      }
+    },
+    {
+      "word": "胳膊",
+      "pinyin": "gēbo",
+      "meaning": "arm",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. arm",
+        "ko": "팔",
+        "ja": "腕"
+      }
+    },
+    {
+      "word": "转",
+      "pinyin": "zhuǎn",
+      "meaning": "to turn, to shift",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to turn, to shift",
+        "ko": "돌리다, 바꾸다",
+        "ja": "回す、移す"
+      }
+    },
+    {
+      "word": "租",
+      "pinyin": "zū",
+      "meaning": "to rent, to lease",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to rent, to lease",
+        "ko": "빌리다, 임대하다",
+        "ja": "借りる、賃貸する"
+      }
+    },
+    {
+      "word": "吵",
+      "pinyin": "chǎo",
+      "meaning": "noisy",
+      "partOfSpeech": "adj.",
+      "lessonId": 19,
+      "translations": {
+        "en": "adj. noisy",
+        "ko": "시끄럽다",
+        "ja": "うるさい"
+      }
+    },
+    {
+      "word": "厨房",
+      "pinyin": "chúfáng",
+      "meaning": "kitchen",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. kitchen",
+        "ko": "부엌",
+        "ja": "台所"
+      }
+    },
+    {
+      "word": "房东",
+      "pinyin": "fángdōng",
+      "meaning": "landlord/landlady",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. landlord/landlady",
+        "ko": "집주인",
+        "ja": "大家、家主"
+      }
+    },
+    {
+      "word": "占线",
+      "pinyin": "zhànxiàn",
+      "meaning": "(of a telephone line) to be busy, to be engaged",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. (of a telephone line) to be busy, to be engaged",
+        "ko": "통화 중이다",
+        "ja": "話し中である"
+      }
+    },
+    {
+      "word": "功夫",
+      "pinyin": "gōngfu",
+      "meaning": "kung fu",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. kung fu",
+        "ko": "쿵푸",
+        "ja": "カンフー"
+      }
+    },
+    {
+      "word": "乒乓球",
+      "pinyin": "pīngpāngqiú",
+      "meaning": "table tennis, ping-pong",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. table tennis, ping-pong",
+        "ko": "탁구",
+        "ja": "卓球"
+      }
+    },
+    {
+      "word": "羽毛球",
+      "pinyin": "yǔmáoqiú",
+      "meaning": "badminton",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. badminton",
+        "ko": "배드민턴",
+        "ja": "バドミントン"
+      }
+    },
+    {
+      "word": "场",
+      "pinyin": "chǎng",
+      "meaning": "used for sports or recreational events, etc.",
+      "partOfSpeech": "m.",
+      "lessonId": 19,
+      "translations": {
+        "en": "m. used for sports or recreational events, etc.",
+        "ko": "경기/행사 등에 쓰는 양사",
+        "ja": "試合・催しなどに使う量詞"
+      }
+    },
+    {
+      "word": "禁止",
+      "pinyin": "jìnzhǐ",
+      "meaning": "to prohibit, to forbid",
+      "partOfSpeech": "v.",
+      "lessonId": 19,
+      "translations": {
+        "en": "v. to prohibit, to forbid",
+        "ko": "금지하다",
+        "ja": "禁止する"
+      }
+    },
+    {
+      "word": "座位",
+      "pinyin": "zuòwèi",
+      "meaning": "seat",
+      "partOfSpeech": "n.",
+      "lessonId": 19,
+      "translations": {
+        "en": "n. seat",
+        "ko": "좌석",
+        "ja": "座席"
+      }
+    },
+    {
+      "word": "加油站",
+      "pinyin": "jiāyóuzhàn",
+      "meaning": "gas station",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "gas station",
+        "ko": "주유소",
+        "ja": "ガソリンスタンド"
+      }
+    },
+    {
+      "word": "航班",
+      "pinyin": "hángbān",
+      "meaning": "scheduled flight",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "scheduled flight",
+        "ko": "항공편",
+        "ja": "定期便、フライト"
+      }
+    },
+    {
+      "word": "推迟",
+      "pinyin": "tuīchí",
+      "meaning": "to postpone, to delay",
+      "partOfSpeech": "v.",
+      "lessonId": 20,
+      "translations": {
+        "en": "to postpone, to delay",
+        "ko": "연기하다, 지연하다",
+        "ja": "延期する、遅らせる"
+      }
+    },
+    {
+      "word": "高速公路",
+      "pinyin": "gāosù gōnglù",
+      "meaning": "expressway",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "expressway",
+        "ko": "고속도로",
+        "ja": "高速道路"
+      }
+    },
+    {
+      "word": "登机牌",
+      "pinyin": "dēngjīpái",
+      "meaning": "boarding pass",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "boarding pass",
+        "ko": "탑승권",
+        "ja": "搭乗券"
+      }
+    },
+    {
+      "word": "首都",
+      "pinyin": "shǒudū",
+      "meaning": "capital (of a country)",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "capital (of a country)",
+        "ko": "수도",
+        "ja": "首都"
+      }
+    },
+    {
+      "word": "旅行",
+      "pinyin": "lǚxíng",
+      "meaning": "to travel, to tour",
+      "partOfSpeech": "v.",
+      "lessonId": 20,
+      "translations": {
+        "en": "to travel, to tour",
+        "ko": "여행하다",
+        "ja": "旅行する"
+      }
+    },
+    {
+      "word": "怪",
+      "pinyin": "guài",
+      "meaning": "rather, quite",
+      "partOfSpeech": "adv.",
+      "lessonId": 20,
+      "translations": {
+        "en": "rather, quite",
+        "ko": "꽤, 상당히",
+        "ja": "かなり、ずいぶん"
+      }
+    },
+    {
+      "word": "可怜",
+      "pinyin": "kělián",
+      "meaning": "pitiable, poor",
+      "partOfSpeech": "adj.",
+      "lessonId": 20,
+      "translations": {
+        "en": "pitiable, poor",
+        "ko": "불쌍하다, 가엾다",
+        "ja": "かわいそうな、気の毒な"
+      }
+    },
+    {
+      "word": "对面",
+      "pinyin": "duìmiàn",
+      "meaning": "opposite, across",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "opposite, across",
+        "ko": "맞은편, 건너편",
+        "ja": "向かい、反対側"
+      }
+    },
+    {
+      "word": "烤鸭",
+      "pinyin": "kǎoyā",
+      "meaning": "roast duck",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "roast duck",
+        "ko": "오리구이",
+        "ja": "ローストダック"
+      }
+    },
+    {
+      "word": "祝贺",
+      "pinyin": "zhùhè",
+      "meaning": "to congratulate",
+      "partOfSpeech": "v.",
+      "lessonId": 20,
+      "translations": {
+        "en": "to congratulate",
+        "ko": "축하하다",
+        "ja": "祝う、祝賀する"
+      }
+    },
+    {
+      "word": "合格",
+      "pinyin": "hégé",
+      "meaning": "qualified, up to standard",
+      "partOfSpeech": "adj.",
+      "lessonId": 20,
+      "translations": {
+        "en": "qualified, up to standard",
+        "ko": "합격이다, 기준에 맞다",
+        "ja": "合格している、基準に達している"
+      }
+    },
+    {
+      "word": "干杯",
+      "pinyin": "gānbēi",
+      "meaning": "to drink a toast",
+      "partOfSpeech": "v.",
+      "lessonId": 20,
+      "translations": {
+        "en": "to drink a toast",
+        "ko": "건배하다",
+        "ja": "乾杯する"
+      }
+    },
+    {
+      "word": "民族",
+      "pinyin": "mínzú",
+      "meaning": "nationality, ethnic group",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "nationality, ethnic group",
+        "ko": "민족, 종족 집단",
+        "ja": "民族、エスニックグループ"
+      }
+    },
+    {
+      "word": "打扮",
+      "pinyin": "dǎban",
+      "meaning": "to dress up, to deck out",
+      "partOfSpeech": "v.",
+      "lessonId": 20,
+      "translations": {
+        "en": "to dress up, to deck out",
+        "ko": "꾸미다, 차려입다",
+        "ja": "着飾る、装う"
+      }
+    },
+    {
+      "word": "笑话",
+      "pinyin": "xiàohua",
+      "meaning": "joke",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "joke",
+        "ko": "농담, 우스갯소리",
+        "ja": "冗談、笑い話"
+      }
+    },
+    {
+      "word": "存",
+      "pinyin": "cún",
+      "meaning": "to store, to keep",
+      "partOfSpeech": "v.",
+      "lessonId": 20,
+      "translations": {
+        "en": "to store, to keep",
+        "ko": "보관하다, 저장하다",
+        "ja": "預ける、保存する"
+      }
+    },
+    {
+      "word": "钥匙",
+      "pinyin": "yàoshi",
+      "meaning": "key",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "key",
+        "ko": "열쇠",
+        "ja": "鍵"
+      }
+    },
+    {
+      "word": "究竟",
+      "pinyin": "jiūjìng",
+      "meaning": "exactly (used in questions for emphasis)",
+      "partOfSpeech": "adv.",
+      "lessonId": 20,
+      "translations": {
+        "en": "exactly (used in questions for emphasis)",
+        "ko": "도대체, 정확히",
+        "ja": "いったい、結局"
+      }
+    },
+    {
+      "word": "棵",
+      "pinyin": "kē",
+      "meaning": "used for plants",
+      "partOfSpeech": "m.",
+      "lessonId": 20,
+      "translations": {
+        "en": "measure word for plants",
+        "ko": "그루, 포기",
+        "ja": "本、株（植物を数える量詞）"
+      }
+    },
+    {
+      "word": "汤",
+      "pinyin": "tāng",
+      "meaning": "soup",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "soup",
+        "ko": "국, 탕",
+        "ja": "スープ"
+      }
+    },
+    {
+      "word": "对话",
+      "pinyin": "duìhuà",
+      "meaning": "to have a dialogue",
+      "partOfSpeech": "v.",
+      "lessonId": 20,
+      "translations": {
+        "en": "to have a dialogue",
+        "ko": "대화하다",
+        "ja": "対話する、会話する"
+      }
+    },
+    {
+      "word": "普通话",
+      "pinyin": "pǔtōnghuà",
+      "meaning": "Mandarin Chinese",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "Mandarin Chinese",
+        "ko": "표준 중국어, 보통화",
+        "ja": "普通話、標準中国語"
+      }
+    },
+    {
+      "word": "小吃",
+      "pinyin": "xiǎochī",
+      "meaning": "small and cheap dishes",
+      "partOfSpeech": "n.",
+      "lessonId": 20,
+      "translations": {
+        "en": "small and cheap dishes",
+        "ko": "간단하고 값싼 음식, 간식거리",
+        "ja": "軽食、安くて小さな料理"
+      }
+    },
+    {
+      "word": "收拾",
+      "pinyin": "shōushi",
+      "meaning": "to put in order, to pack",
+      "partOfSpeech": "v.",
+      "lessonId": 20,
+      "translations": {
+        "en": "to put in order, to pack",
+        "ko": "정리하다, 챙기다",
+        "ja": "片づける、荷造りする"
+      }
+    },
+    {
+      "word": "出发",
+      "pinyin": "chūfā",
+      "meaning": "to depart, to set off",
+      "partOfSpeech": "v.",
+      "lessonId": 20,
+      "translations": {
+        "en": "to depart, to set off",
+        "ko": "출발하다",
+        "ja": "出発する"
+      }
+    },
+    {
+      "word": "辣",
+      "pinyin": "là",
+      "meaning": "hot, spicy",
+      "partOfSpeech": "adj.",
+      "lessonId": 20,
+      "translations": {
+        "en": "hot, spicy",
+        "ko": "맵다",
+        "ja": "辛い"
+      }
+    },
+    {
+      "word": "香",
+      "pinyin": "xiāng",
+      "meaning": "fragrant, scented",
+      "partOfSpeech": "adj.",
+      "lessonId": 20,
+      "translations": {
+        "en": "fragrant, scented",
+        "ko": "향기롭다, 고소하다",
+        "ja": "香りがよい"
+      }
+    },
+    {
+      "word": "酸",
+      "pinyin": "suān",
+      "meaning": "sour, tart",
+      "partOfSpeech": "adj.",
+      "lessonId": 20,
+      "translations": {
+        "en": "sour, tart",
+        "ko": "시다, 새콤하다",
+        "ja": "酸っぱい"
+      }
+    }
+  ]
+}
