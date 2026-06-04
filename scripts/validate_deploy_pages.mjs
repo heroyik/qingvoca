@@ -7,6 +7,7 @@ const errors = [];
 
 for (const marker of [
   "actions/configure-pages@v5",
+  "enablement: true",
   "actions/upload-pages-artifact@v4",
   "actions/deploy-pages@v4",
   "path: out",
