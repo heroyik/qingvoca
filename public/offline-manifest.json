@@ -2,7 +2,7 @@
   "language": "zh",
   "hsk": "HSK4",
   "datasetVersion": "zh-HSK4-v1",
-  "generatedAt": "2026-06-04T15:18:34.266Z",
+  "generatedAt": "2026-06-04T15:21:43.231Z",
   "basePath": "/qingvoca",
   "assets": [
     {
@@ -60,10 +60,10 @@
     "/qingvoca/_next/static/chunks/f2f58a7e93290fbb.js",
     "/qingvoca/_next/static/chunks/ff1a16fafef87110.js",
     "/qingvoca/_next/static/chunks/turbopack-121c83f084bc93b6.js",
-    "/qingvoca/_next/static/jXY9tt6ETr4j7pGoC5Ucm/_buildManifest.js",
-    "/qingvoca/_next/static/jXY9tt6ETr4j7pGoC5Ucm/_clientMiddlewareManifest.json",
-    "/qingvoca/_next/static/jXY9tt6ETr4j7pGoC5Ucm/_ssgManifest.js",
     "/qingvoca/_next/static/media/favicon.0b3bf435.ico",
+    "/qingvoca/_next/static/sINIzG6aKbo5d-oHFWlpc/_buildManifest.js",
+    "/qingvoca/_next/static/sINIzG6aKbo5d-oHFWlpc/_clientMiddlewareManifest.json",
+    "/qingvoca/_next/static/sINIzG6aKbo5d-oHFWlpc/_ssgManifest.js",
     "/qingvoca/favicon.ico",
     "/qingvoca/offline-manifest.json",
     "/qingvoca/quiz/1",

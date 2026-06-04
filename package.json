@@ -31,6 +31,7 @@
     "validate:frontend:step8": "node scripts/validate_frontend_step8_offline.mjs",
     "validate:frontend:step9": "node scripts/validate_frontend_step9_ui_polish.mjs",
     "validate:frontend:step10": "node scripts/validate_frontend_step10_regression.mjs",
+    "validate:deploy": "node scripts/validate_deploy_pages.mjs",
     "test:regression": "node scripts/validate_step13_regression.mjs",
     "test:frontend": "node scripts/validate_frontend_step10_regression.mjs",
     "test": "node scripts/validate_step13_regression.mjs",
