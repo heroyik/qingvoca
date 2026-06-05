@@ -18,7 +18,7 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 ### Features
 
 - **Step-based progression** — Words are grouped into 10 Steps, each covering 2 lessons. Clear one, unlock the next. Simple.
-- **Quiz engine** — Multiple-choice questions with smart distractors pulled from the same HSK4 pool. No easy outs.
+- **Quiz engine** — Multiple-choice questions with randomized question order and smart same-part-of-speech distractors pulled from the full HSK4 pool. No easy outs.
 - **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Because motivation is a feature.
 - **Offline-first, quota-safe sync** — Service worker + Firestore local cache keep study flows available offline, while leaderboard and admin reads are cached or loaded only when needed.
 - **Kamivoca-style mobile UX** — LEARN, REVIEW, LEADER, and ME tabs use compact mobile-first cards, path nodes, ranking rows, profile stats, and review controls inspired by Kamivoca.
@@ -129,10 +129,13 @@ The REVIEW tab highlights local tricky words, lets you clear individual or all m
 
 ### 🔍 Quiz engine
 
-The quiz presents a Chinese word (with pinyin) and asks you to pick the correct meaning from **4 options**. Distractors are intelligently pulled from the same HSK4 pool — specifically from nearby Steps — so they feel relevant, not random.
+The quiz presents a Chinese word (with pinyin) and asks you to pick the correct meaning from **4 options**. Each quiz session randomizes the order of words for the selected Step, and Retry reshuffles the session again.
+
+Distractors are intelligently pulled from the full HSK4 pool, prioritizing the same part of speech as the answer. Verbs compete with verbs, adverbs with adverbs, nouns with nouns, and compound tags such as `n./v.` can match either side. Nearby Steps are still preferred inside that same-pos pool, so the options feel relevant without becoming obvious.
 
 Features:
-- **Smart wrong answers** — Distractors are from the same difficulty band
+- **Smart wrong answers** — Distractors prioritize the same part of speech across all HSK4 lessons
+- **Randomized word order** — Each Step quiz and Retry uses a fresh client-side question order
 - **Pinyin display** — Toggle on/off in ME; OFF hides pinyin across quiz, review, Wall of Pain, and list previews
 - **Audio playback** — Hear the word via Web Speech API
 - **Instant feedback** — Correct/wrong indicators with word highlighting

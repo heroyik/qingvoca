@@ -69,12 +69,14 @@ export function getDistractors(
 ): string[] {
   const answer = getDisplayMeaning(entry, locale);
   const seen = new Set([normalizeMeaning(answer), ""]);
+  const targetPos = getPosTokens(entry.pos);
 
   return entries
     .filter((candidate) => candidate.id !== entry.id && candidate.hsk === entry.hsk)
     .map((candidate) => ({
       candidate,
       meaning: getDisplayMeaning(candidate, locale),
+      posMatch: hasSharedPos(targetPos, candidate.pos),
       distance: Math.abs(candidate.step - entry.step),
     }))
     .filter(({ meaning }) => {
@@ -84,6 +86,7 @@ export function getDistractors(
       return true;
     })
     .sort((a, b) => {
+      if (a.posMatch !== b.posMatch) return a.posMatch ? -1 : 1;
       const distanceDelta = a.distance - b.distance;
       if (distanceDelta !== 0) return distanceDelta;
       const stepDelta = a.candidate.step - b.candidate.step;
@@ -120,6 +123,25 @@ export function validateQuizQuestions(questions: QuizQuestion[], optionCount = 4
 
 function normalizeMeaning(meaning: string): string {
   return meaning.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+function getPosTokens(pos: string): Set<string> {
+  return new Set(
+    pos
+      .toLowerCase()
+      .replace(/\./g, "")
+      .split(/[^a-z]+/)
+      .map((token) => token.trim())
+      .filter(Boolean),
+  );
+}
+
+function hasSharedPos(targetPos: Set<string>, candidatePos: string): boolean {
+  if (targetPos.size === 0) return false;
+  for (const token of getPosTokens(candidatePos)) {
+    if (targetPos.has(token)) return true;
+  }
+  return false;
 }
 
 function stableShuffle(values: string[], seed: string): string[] {

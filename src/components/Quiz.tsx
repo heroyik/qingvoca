@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useGamification } from "@/hooks/useGamification";
 import type { ChineseVocabEntry, SupportedLocale } from "@/types/chinese-vocab";
@@ -34,15 +34,35 @@ export default function Quiz({
   const [score, setScore] = useState(0);
   const [mistakeIds, setMistakeIds] = useState<string[]>([]);
   const [showResult, setShowResult] = useState(false);
+  const [questionSeed, setQuestionSeed] = useState<string | null>(null);
   const { addGem, addXP, clearMistake, completeUnit, recordMistake, stats } = useGamification();
+  const wordOrderKey = useMemo(() => unitWords.map((entry) => entry.id).join("|"), [unitWords]);
 
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setCurrentIndex(0);
+      setSelectedOption(null);
+      setAnswerState(null);
+      setScore(0);
+      setMistakeIds([]);
+      setShowResult(false);
+      setQuestionSeed(createQuestionSeed(unitId));
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [unitId, wordOrderKey]);
+
+  const shuffledUnitWords = useMemo(
+    () => (questionSeed ? stableShuffleEntries(unitWords, questionSeed) : []),
+    [questionSeed, unitWords],
+  );
   const questions = useMemo(
-    () => unitWords.map((entry) => createQuizQuestion(entry, allWords, { locale })),
-    [allWords, locale, unitWords],
+    () => shuffledUnitWords.map((entry) => createQuizQuestion(entry, allWords, { locale })),
+    [allWords, locale, shuffledUnitWords],
   );
   const validationErrors = useMemo(() => validateQuizQuestions(questions), [questions]);
   const currentQuestion = questions[currentIndex];
-  const currentEntry = unitWords[currentIndex];
+  const currentEntry = shuffledUnitWords[currentIndex];
 
   const handleSelect = (option: string) => {
     if (!currentQuestion || selectedOption) return;
@@ -82,6 +102,14 @@ export default function Quiz({
   };
 
   if (questions.length === 0) {
+    if (unitWords.length > 0 && !questionSeed) {
+      return (
+        <main className="container min-h-screen flex-center flex-col gap-16">
+          <h1 className="text-title">Loading...</h1>
+        </main>
+      );
+    }
+
     return (
       <main className="container min-h-screen flex-center flex-col gap-16">
         <h1 className="text-title">{t("noQuizWords", locale)}</h1>
@@ -129,6 +157,7 @@ export default function Quiz({
                 setScore(0);
                 setMistakeIds([]);
                 setShowResult(false);
+                setQuestionSeed(createQuestionSeed(unitId));
               }}
             >
               {t("retry", locale)}
@@ -215,4 +244,28 @@ export default function Quiz({
       )}
     </main>
   );
+}
+
+function createQuestionSeed(unitId: string): string {
+  const randomPart =
+    typeof window !== "undefined" && window.crypto
+      ? window.crypto.getRandomValues(new Uint32Array(1))[0].toString(36)
+      : Date.now().toString(36);
+  return `${unitId}:${Date.now().toString(36)}:${randomPart}`;
+}
+
+function stableShuffleEntries(entries: ChineseVocabEntry[], seed: string): ChineseVocabEntry[] {
+  return [...entries]
+    .map((entry, index) => ({ entry, score: hash(`${seed}:${index}:${entry.id}`) }))
+    .sort((a, b) => a.score - b.score)
+    .map(({ entry }) => entry);
+}
+
+function hash(value: string): number {
+  let result = 2166136261;
+  for (let index = 0; index < value.length; index += 1) {
+    result ^= value.charCodeAt(index);
+    result = Math.imul(result, 16777619);
+  }
+  return result >>> 0;
 }
