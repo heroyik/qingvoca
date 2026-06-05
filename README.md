@@ -282,29 +282,234 @@ npm run test
 
 ---
 
-## Firebase setup
+## Firebase setup (detailed)
 
-QingVoca uses **Firebase** for:
+QingVoca uses **Firebase** for authentication (Google sign-in) and Firestore (user progress, leaderboard, admin edits, deleted words). This section walks you through every single setting you need to touch after creating a Firebase project.
 
-| Service | Purpose |
+### Step 1 — Create a Firebase project
+
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Click **Add project**
+3. Enter project name (e.g. `qingvoca-app`)
+4. Google Analytics is optional — up to you
+5. Click **Create project** and wait for it to finish
+
+### Step 2 — Register a Web App
+
+1. In the Firebase Console, click the **Web** icon (`</>`) on the project overview page
+2. Enter app nickname: `qingvoca-web`
+3. **Uncheck** "Set up Firebase Hosting" (we use GitHub Pages)
+4. Click **Register app**
+5. Copy the `firebaseConfig` object — you'll need every field:
+
+```js
+const firebaseConfig = {
+  apiKey: "AIzaSy...",            // ← NEXT_PUBLIC_FIREBASE_API_KEY
+  authDomain: "your-app.firebaseapp.com", // ← NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+  projectId: "your-project-id",            // ← NEXT_PUBLIC_FIREBASE_PROJECT_ID
+  storageBucket: "your-app.firebasestorage.app", // ← NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+  messagingSenderId: "123456789",         // ← NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+  appId: "1:123456789:web:abc123"         // ← NEXT_PUBLIC_FIREBASE_APP_ID
+};
+```
+
+> 💡 You can always re-find these values: Firebase Console → ⚙️ **Project Settings** → **General** tab → **Your apps** → **SDK setup and snippets**.
+
+### Step 3 — Enable Google Authentication
+
+1. Firebase Console → **Authentication** → click **Get started**
+2. Go to the **Sign-in method** tab
+3. Click **Google** → toggle **Enable** → click **Save**
+4. Choose your **Project support email** (required by Google)
+5. Note your **Web client ID** — you may need it for advanced OAuth config
+
+> ⚠️ **This is the #1 cause of "popup opens then closes" bugs.** If Google sign-in is not enabled here, the OAuth popup will appear briefly and then vanish without any visible error.
+
+### Step 4 — Configure Authorized Domains
+
+1. Firebase Console → **Authentication** → **Settings** tab
+2. Scroll to **Authorized domains** section
+3. Click **Add domain** and add:
+
+| Domain | Why |
 |---|---|
-| **Authentication** | Google sign-in for user identity |
-| **Firestore** | User progress, leaderboard, admin edits, deleted words |
+| `localhost` | Local development (`npm run dev`) |
+| `your-project.firebaseapp.com` | Firebase default domain |
+| `your-github-username.github.io` | GitHub Pages production domain |
 
-### Collections
+> ⚠️ **This is the #2 cause of popup failures.** If your domain isn't listed, Firebase will reject the OAuth request silently.
+
+### Step 5 — Create Firestore Database
+
+1. Firebase Console → **Firestore Database** → **Create database**
+2. Choose a **location** (pick one close to your users, e.g. `asia-northeast3` for Asia)
+3. Start in **test mode** for now (we'll lock it down later)
+4. Click **Enable**
+
+### Step 6 — Deploy Firestore Security Rules
+
+The app ships with `firestore.rules` in the repo root. Deploy them:
+
+```bash
+# Login to Firebase (first time only)
+npx firebase login
+
+# Deploy rules and indexes to your project
+npx firebase deploy --only firestore:rules --project your-project-id
+npx firebase deploy --only firestore:indexes --project your-project-id
+```
+
+> 💡 `firebase` is already a devDependency, so `npx firebase` works without a global install.
+
+Or use the npm scripts:
+
+```bash
+npm run firestore:rules:deploy
+```
+
+> 📝 The default rules (`allow read, write: if true`) are permissive and meant for development. **Before going to production**, replace `firestore.rules` with proper access rules.
+
+### Step 7 — Set up Firestore Collections
+
+QingVoca reads/writes these Firestore collections:
 
 | Collection | Documents | Purpose |
 |---|---|---|
-| `users` | Per-user | Progress, XP, gems, streaks, settings |
-| `adminVocabOverrides` | Per-word | Admin-edited vocabulary fields |
-| `adminDeletedWords` | Per-word | Globally deleted words |
+| `users` | Per-user (by UID) | Progress, XP, gems, streaks, settings, display name |
+| `adminVocabOverrides` | Per-word (by entry ID) | Admin-edited vocabulary fields |
+| `adminDeletedWords` | Per-word (by word key) | Globally deleted words |
 | `zhVocabEntries` | 636 | Full vocabulary documents |
 | `zhFullVocaEntries` | 636 | Extended vocab entries |
 | `zhDatasetMeta` | 1 | Dataset metadata |
 
-### Security rules
+The `users` and `adminVocabOverrides`/`adminDeletedWords` collections are created automatically by the app on first write. The vocabulary collections (`zhVocabEntries`, etc.) need to be synced separately:
 
-Firestore rules are in `firestore.rules`. For development, the app uses test mode (`allow read, write: if true`). Lock these down before going to production.
+```bash
+# Generate Firestore payload (dry-run)
+npm run firestore:payload:zh
+
+# If you have a service account, you can push directly:
+npm run firestore:migrate          # dry-run
+npm run firestore:migrate:execute  # actually push data
+```
+
+### Step 8 — Configure Environment Variables
+
+```bash
+cp .env.example .env.local
+```
+
+Open `.env.local` and fill in the values from your Firebase project:
+
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSy...
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=123456789
+NEXT_PUBLIC_FIREBASE_APP_ID=1:123456789:web:abc123
+```
+
+> 🔒 `.env.local` is in `.gitignore` and will never be committed. Safe for your secrets.
+
+### Step 9 — Verify Local Setup
+
+Run the Firebase auth validation script:
+
+```bash
+npm run validate:firebase:auth
+```
+
+This checks:
+- ✅ `.env.local` exists with real values (not placeholders)
+- ✅ `.firebaserc` points to the correct project
+- ✅ Firebase config keys are all present
+- ✅ `firebase.ts` imports the right modules
+
+Then start the dev server and test:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000/qingvoca](http://localhost:3000/qingvoca) → click **ME** tab → click **Google 로그인**.
+
+> If the popup opens and closes immediately, check **Step 3** (Google sign-in enabled?) and **Step 4** (authorized domains?) above.
+
+### Step 10 — Configure CI/CD (GitHub Actions)
+
+For production deployments via GitHub Pages, set these as **Repository Variables** (not Secrets — these are public `NEXT_PUBLIC_*` values embedded in the client bundle):
+
+1. Go to your GitHub repo → **Settings** → **Secrets and variables** → **Actions**
+2. Click the **Variables** tab → **New repository variable**
+3. Add all 6:
+
+| Variable Name | Value |
+|---|---|
+| `NEXT_PUBLIC_FIREBASE_API_KEY` | Your Firebase API key |
+| `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN` | `your-project.firebaseapp.com` |
+| `NEXT_PUBLIC_FIREBASE_PROJECT_ID` | `your-project-id` |
+| `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET` | `your-project.firebasestorage.app` |
+| `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID` | Your sender ID |
+| `NEXT_PUBLIC_FIREBASE_APP_ID` | `1:your-id:web:your-hash` |
+
+> These are referenced in `.github/workflows/deploy-pages.yml` as `${{ vars.NEXT_PUBLIC_FIREBASE_* }}`.
+
+### Step 11 — Update `.firebaserc` and `.env.example`
+
+If you're setting up a fresh fork, update these files to point to your own Firebase project:
+
+**`.firebaserc`** — Change the default project:
+
+```json
+{
+  "projects": {
+    "default": "your-project-id"
+  }
+}
+```
+
+**`.env.example`** — Update placeholder values:
+
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=1:your-app-id:web:your-app-hash
+```
+
+### Step 12 — Service Account (for data migration scripts)
+
+Some scripts (like `firestore:migrate`) require a **Firebase Admin SDK service account**. To set one up:
+
+1. Firebase Console → ⚙️ **Project Settings** → **Service accounts** tab
+2. Click **Generate new private key** (saves a `.json` file)
+3. Place the JSON file in the project root (it's in `.gitignore`):
+
+```
+*-firebase-adminsdk-*.json   ← already gitignored
+```
+
+The migration script auto-detects the service account file:
+
+```bash
+npm run firestore:migrate            # dry-run
+npm run firestore:migrate:execute    # push data to Firestore
+```
+
+### Quick reference — Common issues
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| Popup opens then closes | Google sign-in not enabled | **Step 3** — enable Google in Auth → Sign-in method |
+| Popup opens then closes | Domain not authorized | **Step 4** — add `localhost` to authorized domains |
+| `permission-denied` in console | Firestore rules not deployed | **Step 6** — `firebase deploy --only firestore:rules` |
+| `Firebase: No Firebase App` | `.env.local` missing or has placeholders | **Step 8** — fill in real values |
+| Build fails in CI | GitHub Actions variables not set | **Step 10** — add all 6 variables |
+| Leaderboard is empty | No vocab data in Firestore | **Step 7** — run `npm run firestore:migrate:execute` |
+| Offline mode always on | Firebase not configured | `isFirebaseConfigured` checks `apiKey` + `projectId` |
 
 ---
 
