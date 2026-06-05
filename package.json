@@ -23,6 +23,7 @@
     "validate:step11": "node scripts/validate_step11_ui.mjs",
     "validate:step12": "node scripts/validate_step12_speech.mjs",
     "validate:step13": "node scripts/validate_step13_regression.mjs",
+    "validate:locale": "node scripts/validate_locale_defaults.mjs",
     "validate:frontend:step2": "node scripts/validate_frontend_step2_vocab_adapter.mjs",
     "validate:frontend:step3": "node scripts/validate_frontend_step3_home.mjs",
     "validate:frontend:step4": "node scripts/validate_frontend_step4_quiz_components.mjs",

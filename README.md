@@ -147,6 +147,8 @@ Features:
 
 The entire interface is localized — not just word definitions. Switch between **English (en)**, **Korean (ko)**, and **Japanese (ja)** from the ME tab. Your preference is saved to localStorage.
 
+On first launch, QingVoca uses the device locale when no saved preference exists: Korean device locales select `ko`, Japanese device locales select `ja`, and every other device locale falls back to `en`.
+
 **Localized elements include:**
 - Home page titles, subtitles, step/lesson labels, progress text
 - Quiz buttons (save, reset, retry, next), feedback messages
@@ -520,7 +522,7 @@ Progress is persisted to localStorage with the `qingvoca:zh:*` namespace:
 | `qingvoca:zh:progress` | Step progress, completed words, scores, settings |
 | `qingvoca:zh:vocab-overrides` | Local admin edits |
 | `qingvoca:zh:deleted-word-keys` | Locally deleted words |
-| `qingvoca:zh:locale` | Selected display locale (ko/ja/en) |
+| `qingvoca:zh:locale` | Selected display locale (ko/ja/en); if absent, device locale maps ko→ko, ja→ja, other→en |
 | `qingvoca:zh:theme` | Dark/light mode preference |
 | `qingvoca:weather:cache` | Cached LEARN weather data |
 
