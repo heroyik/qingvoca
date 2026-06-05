@@ -4,10 +4,10 @@ import { CHINESE_DATASET_LEVEL, LOCALE_STORAGE_KEY } from "../types/chinese-voca
 export const DATASET_LANGUAGE = "zh" as const;
 export const DATASET_VERSION = "zh-HSK4-v1" as const;
 
-export const PROGRESS_STORAGE_KEY = "kamivoca:zh:progress";
-export const REVIEW_STORAGE_KEY = "kamivoca:zh:review";
-export const SCORE_STORAGE_KEY = "kamivoca:zh:score";
-export const RANK_STORAGE_KEY = "kamivoca:zh:rank";
+export const PROGRESS_STORAGE_KEY = "qingvoca:zh:progress";
+export const REVIEW_STORAGE_KEY = "qingvoca:zh:review";
+export const SCORE_STORAGE_KEY = "qingvoca:zh:score";
+export const RANK_STORAGE_KEY = "qingvoca:zh:rank";
 
 export const STORAGE_KEYS = {
   locale: LOCALE_STORAGE_KEY,

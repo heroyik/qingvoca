@@ -27,6 +27,7 @@
     "validate:frontend:step4": "node scripts/validate_frontend_step4_quiz_components.mjs",
     "validate:frontend:step5": "node scripts/validate_frontend_step5_gamification.mjs",
     "validate:frontend:step6": "node scripts/validate_frontend_step6_firebase.mjs",
+    "validate:firebase:auth": "node scripts/validate_firebase_auth_connection.mjs",
     "validate:frontend:step7": "node scripts/validate_frontend_step7_admin_edit.mjs",
     "validate:frontend:step8": "node scripts/validate_frontend_step8_offline.mjs",
     "validate:frontend:step9": "node scripts/validate_frontend_step9_ui_polish.mjs",
@@ -36,7 +37,12 @@
     "test:frontend": "node scripts/validate_frontend_step10_regression.mjs",
     "test": "node scripts/validate_step13_regression.mjs",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "firestore:migrate": "node scripts/migrate-firestore-to-qingvoca.mjs --dry-run",
+    "firestore:migrate:execute": "node scripts/migrate-firestore-to-qingvoca.mjs --execute",
+    "firestore:rules:sync": "node scripts/sync-firestore-rules-indexes.mjs",
+    "firestore:rules:export": "node scripts/sync-firestore-rules-indexes.mjs --export-only",
+    "firestore:rules:deploy": "node scripts/sync-firestore-rules-indexes.mjs --deploy-only"
   },
   "dependencies": {
     "firebase": "^12.9.0",
@@ -53,6 +59,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "firebase-admin": "^13.10.0",
     "typescript": "^5"
   }
 }

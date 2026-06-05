@@ -3,10 +3,10 @@ import { readFile } from "node:fs/promises";
 const gamificationSource = await readFile("src/utils/gamification.ts", "utf8");
 const expectedKeys = [
   ["locale", "LOCALE_STORAGE_KEY"],
-  ["progress", "kamivoca:zh:progress"],
-  ["review", "kamivoca:zh:review"],
-  ["score", "kamivoca:zh:score"],
-  ["rank", "kamivoca:zh:rank"],
+  ["progress", "qingvoca:zh:progress"],
+  ["review", "qingvoca:zh:review"],
+  ["score", "qingvoca:zh:score"],
+  ["rank", "qingvoca:zh:rank"],
 ];
 
 const errors = [];
@@ -36,9 +36,9 @@ for (const requiredFunction of [
   if (!gamificationSource.includes(requiredFunction)) errors.push(`missing function ${requiredFunction}`);
 }
 
-const localeIndex = gamificationSource.indexOf("kamivoca:zh:locale");
-const progressIndex = gamificationSource.indexOf("kamivoca:zh:progress");
-const reviewIndex = gamificationSource.indexOf("kamivoca:zh:review");
+const localeIndex = gamificationSource.indexOf("qingvoca:zh:locale");
+const progressIndex = gamificationSource.indexOf("qingvoca:zh:progress");
+const reviewIndex = gamificationSource.indexOf("qingvoca:zh:review");
 
 if (localeIndex === progressIndex || localeIndex === reviewIndex) {
   errors.push("locale storage key must be distinct from progress and review keys");

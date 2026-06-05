@@ -45,7 +45,7 @@ export type ChineseVocabEntry = {
 
 export const DEFAULT_LOCALE: SupportedLocale = "ko";
 
-export const LOCALE_STORAGE_KEY = "kamivoca:zh:locale";
+export const LOCALE_STORAGE_KEY = "qingvoca:zh:locale";
 
 export const CHINESE_DATASET_LEVEL = "HSK4" as const;
 

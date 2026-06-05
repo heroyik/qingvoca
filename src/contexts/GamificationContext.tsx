@@ -5,7 +5,7 @@ import type { User } from "firebase/auth";
 import { onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { collection, deleteDoc, doc, onSnapshot, serverTimestamp, setDoc, writeBatch } from "firebase/firestore";
 import vocabData from "@/data/vocab.json";
-import { auth, db, googleProvider } from "@/lib/firebase";
+import { auth, db, googleProvider, isFirebaseConfigured } from "@/lib/firebase";
 import type { ChineseVocabEntry } from "@/types/chinese-vocab";
 import { applyAdminEdit, type AdminEditPatch } from "@/utils/adminEdit";
 import { filterDeletedWords, normalizeVocabWordKey } from "@/utils/vocab";
@@ -68,9 +68,9 @@ type GamificationContextValue = {
   resetLocalState: () => void;
 };
 
-const STORAGE_KEY = "kamivoca:zh:progress";
-const OVERRIDES_STORAGE_KEY = "kamivoca:zh:vocab-overrides";
-const DELETED_STORAGE_KEY = "kamivoca:zh:deleted-word-keys";
+const STORAGE_KEY = "qingvoca:zh:progress";
+const OVERRIDES_STORAGE_KEY = "qingvoca:zh:vocab-overrides";
+const DELETED_STORAGE_KEY = "qingvoca:zh:deleted-word-keys";
 const DAY_MS = 24 * 60 * 60 * 1000;
 const baseVocabEntries = vocabData.data as ChineseVocabEntry[];
 
@@ -472,7 +472,7 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
       isInitialized,
       isAuthResolved,
       isOnline,
-      isOfflineMode: !isOnline,
+      isOfflineMode: !isOnline || !isFirebaseConfigured,
       isOfflineModeBlocked: false,
       addXP,
       addGem,

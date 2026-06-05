@@ -8,3 +8,14 @@ coverage/
 .env
 .env.*
 !.env.example
+
+# Firebase service account keys (used by firestore:migrate script)
+*-service-account.json
+sa-*.json
+service-account-*.json
+
+# Firebase service account keys (used by firestore:migrate script)
+*-service-account.json
+sa-*.json
+service-account-*.json
+*-firebase-adminsdk-*.json

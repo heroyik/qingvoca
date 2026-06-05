@@ -12,7 +12,7 @@ for (const [fileName, content, markers] of [
   [
     "GamificationContext.tsx",
     contextFile,
-    ["kamivoca:zh:progress", "localStorage", "completeUnit", "recordMistake", "clearAllMistakes"],
+    ["qingvoca:zh:progress", "localStorage", "completeUnit", "recordMistake", "clearAllMistakes"],
   ],
   ["useGamification.ts", hookFile, ["useGamification"]],
   ["layout.tsx", layoutFile, ["GamificationProvider"]],
