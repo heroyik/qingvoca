@@ -7,7 +7,7 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import AdminEditTab from "@/components/AdminEditTab";
 import Leaderboard from "@/components/Leaderboard";
 import { useGamification } from "@/hooks/useGamification";
-import { APP_NAME, APP_VERSION } from "@/lib/constants";
+import { isAdmin, APP_NAME, APP_VERSION } from "@/lib/constants";
 import { createHomeStepCards, createReviewSummary, LOCALE_OPTIONS } from "@/utils/learningExperience";
 import { getUnits, getTotalWordCount } from "@/utils/vocab";
 
@@ -231,14 +231,16 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <label className="flex items-center justify-between gap-12 mt-16 font-800">
-              전체 Step 잠금 해제
-              <input
-                type="checkbox"
-                checked={stats.settings.unlockAllLevels}
-                onChange={(event) => updateSettings({ unlockAllLevels: event.currentTarget.checked })}
-              />
-            </label>
+            {isAdmin(user) && (
+              <label className="flex items-center justify-between gap-12 mt-16 font-800">
+                전체 Step 잠금 해제
+                <input
+                  type="checkbox"
+                  checked={stats.settings.unlockAllLevels}
+                  onChange={(event) => updateSettings({ unlockAllLevels: event.currentTarget.checked })}
+                />
+              </label>
+            )}
 
             {/* Theme Toggle */}
             <div className="settings-section">
@@ -255,13 +257,15 @@ export default function Home() {
               </div>
             </div>
 
-            <button
-              className="duo-button duo-button-primary w-full mt-16"
-              type="button"
-              onClick={() => setAdminToolsUnlocked(true)}
-            >
-              관리자 EDIT 열기
-            </button>
+            {isAdmin(user) && (
+              <button
+                className="duo-button duo-button-primary w-full mt-16"
+                type="button"
+                onClick={() => setAdminToolsUnlocked(true)}
+              >
+                관리자 EDIT 열기
+              </button>
+            )}
           </div>
         </section>
       )}

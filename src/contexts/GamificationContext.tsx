@@ -126,19 +126,27 @@ function withStudyDay(stats: UserStats): UserStats {
 
 function mergeStats(input: unknown): UserStats {
   if (!input || typeof input !== "object") return defaultStats;
-  const saved = input as Partial<UserStats>;
+  const saved = input as Record<string, unknown>;
 
   return {
     ...defaultStats,
-    ...saved,
+    xp: typeof saved.xp === "number" ? saved.xp : defaultStats.xp,
+    gems: typeof saved.gems === "number" ? saved.gems : defaultStats.gems,
+    streak: typeof saved.streak === "number" ? saved.streak : defaultStats.streak,
+    lastStudyDate:
+      typeof saved.lastStudyDate === "string" || saved.lastStudyDate === null
+        ? (saved.lastStudyDate as string | null)
+        : defaultStats.lastStudyDate,
     completedUnits: Array.isArray(saved.completedUnits) ? saved.completedUnits : [],
     masteredUnits: Array.isArray(saved.masteredUnits) ? saved.masteredUnits : [],
-    mistakes: saved.mistakes && typeof saved.mistakes === "object" ? saved.mistakes : {},
-    unitStats: saved.unitStats && typeof saved.unitStats === "object" ? saved.unitStats : {},
+    mistakes: saved.mistakes && typeof saved.mistakes === "object" ? (saved.mistakes as Record<string, number>) : {},
+    unitStats: saved.unitStats && typeof saved.unitStats === "object" ? (saved.unitStats as Record<string, UnitProgress>) : {},
     settings: {
       ...defaultStats.settings,
-      ...(saved.settings ?? {}),
+      ...((saved.settings as Partial<UserSettings>) ?? {}),
     },
+    displayName:
+      typeof saved.displayName === "string" ? saved.displayName : defaultStats.displayName,
   };
 }
 
