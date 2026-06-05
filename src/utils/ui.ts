@@ -319,7 +319,7 @@ export function getUiStrings(locale: SupportedLocale = DEFAULT_LOCALE): Record<U
 /** Simple template helper: replaces {key} placeholders with values. */
 export function tpl(template: string, vars: Record<string, string | number>): string {
   return Object.entries(vars).reduce(
-    (result, [key, value]) => result.replace(new RegExp(`\\\\{${key}\\\\}`, "g"), String(value)),
+    (result, [key, value]) => result.replace(new RegExp(`\\{${key}\\}`, "g"), String(value)),
     template,
   );
 }

@@ -189,9 +189,11 @@ export default function Home() {
               <span className="stat-value">{reviewSummary.reviewCount}</span>
               <span className="stat-label">{t("reviewItems", locale)}</span>
             </div>
-            <p className="text-subtitle">
-              {tpl(t("reviewStats", locale), { completed: reviewSummary.completedCount.toLocaleString(), wrong: reviewSummary.recentWrongCount.toLocaleString() })}
-            </p>
+            {reviewSummary.reviewCount > 0 && (
+              <p className="text-subtitle">
+                {tpl(t("reviewStats", locale), { completed: reviewSummary.completedCount.toLocaleString(), wrong: reviewSummary.recentWrongCount.toLocaleString() })}
+              </p>
+            )}
             {reviewSummary.reviewCount > 0 && (
               <Link href="/quiz/review" className="duo-button duo-button-primary button-standard w-full flex-center no-underline">
                 {t("startReviewLabel", locale)}
