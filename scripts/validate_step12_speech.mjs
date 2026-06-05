@@ -4,7 +4,7 @@ const speechSource = await readFile("src/utils/speech.ts", "utf8");
 const vocab = JSON.parse(await readFile("src/data/vocab.json", "utf8"));
 const errors = [];
 
-for (const marker of ["zh-CN", "zh-Hans", "selectChineseVoice", "speakChineseWord", "unsupported", "empty-text"]) {
+for (const marker of ["zh-CN", "zh-Hans", "selectChineseVoice", "speakChineseWord", "speakChineseFeedback", "对啦", "差一点", "unsupported", "empty-text"]) {
   if (!speechSource.includes(marker)) errors.push(`missing speech marker ${marker}`);
 }
 

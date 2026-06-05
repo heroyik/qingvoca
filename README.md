@@ -25,6 +25,7 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 - **Live LEARN weather** — Optional location-based weather scenery on the LEARN path, with rain, snow, clouds, thunder, time-of-day color, and cached weather data.
 - **Multi-locale UI** — Entire interface (labels, buttons, messages) in English, Korean, or Japanese. Locale persists via localStorage.
 - **Chinese speech** — Tap the speaker icon and hear the word pronounced via the Web Speech API.
+- **Sound effects + Chinese feedback** — Separate toggles for Chinese word audio and quiz sound effects. Correct, wrong, and combo feedback can speak natural Chinese encouragement.
 - **Dark mode** — Full dark mode support with system preference detection and manual toggle.
 - **Admin tools** — Search, edit, and delete vocabulary entries with full locale support. Sync changes back to Firestore.
 - **Vocab export** — Tap the HSK4 pill in the header to download the full vocabulary as JSON.
@@ -137,7 +138,8 @@ Features:
 - **Smart wrong answers** — Distractors prioritize the same part of speech across all HSK4 lessons
 - **Randomized word order** — Each Step quiz and Retry uses a fresh client-side question order
 - **Pinyin display** — Toggle on/off in ME; OFF hides pinyin across quiz, review, Wall of Pain, and list previews
-- **Audio playback** — Hear the word via Web Speech API
+- **Audio playback** — Hear the Chinese word via Web Speech API, controlled separately from sound effects
+- **Combo feedback** — Consecutive correct answers trigger combo UI, stronger haptics, cheer effects, and natural Chinese feedback when sound effects are enabled
 - **Instant feedback** — Correct/wrong indicators with word highlighting
 - **Full locale support** — All UI labels, buttons, and messages in ko/ja/en
 
@@ -582,7 +584,7 @@ This is a personal learning project, but PRs are welcome if you spot bugs or hav
 
 <div align="center">
 
-**qingvoca** · v0.1.0
+**qingvoca** · v1.0.0
 
 *Built with ☕ and 单词卡片*
 

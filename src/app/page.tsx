@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type MouseEvent } from "react";
+import { useEffect, useMemo, useState, type ChangeEvent, type MouseEvent } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { HomeIcon, TrophyIcon, BookOpenIcon, PencilSquareIcon, UserIcon } from "@heroicons/react/24/solid";
@@ -105,7 +105,6 @@ export default function Home() {
     useGamification();
   const entries = vocabEntries;
   const [activeTab, setActiveTab] = useState<HomeTab>("learn");
-  const [adminToolsUnlocked, setAdminToolsUnlocked] = useState(false);
   const [locale, setLocaleState] = useState<SupportedLocale>("ko");
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
@@ -127,7 +126,7 @@ export default function Home() {
   );
   const cards = useMemo(() => createHomeStepCards(entries, completedWordIds, locale), [entries, completedWordIds, locale]);
   const totalWords = getTotalWordCount([], entries);
-  const showAdminTabs = adminToolsUnlocked;
+  const showAdminTabs = isAdmin(user) && stats.settings.adminEditEnabled;
   const displayName = user?.displayName || user?.email || stats.displayName || "QingVoca Learner";
   const displayPhoto = user?.photoURL || null;
   const xpTitle = getXpTitle(stats.xp);
@@ -140,12 +139,10 @@ export default function Home() {
     event.stopPropagation();
     router.push("/quiz/review");
   };
-  const toggleAdminEdit = () => {
-    setAdminToolsUnlocked((current) => {
-      const next = !current;
-      if (!next && activeTab === "edit") setActiveTab("profile");
-      return next;
-    });
+  const toggleAdminEdit = (event: ChangeEvent<HTMLInputElement>) => {
+    const next = event.currentTarget.checked;
+    updateSettings({ adminEditEnabled: next });
+    if (!next && activeTab === "edit") setActiveTab("profile");
   };
   const snakePathPoints = cards.map((_, index) => ({
     x: SNAKE_PATH_CENTER_X + getSnakeOffset(index),
@@ -387,7 +384,7 @@ export default function Home() {
               <div className="settings-item">
                 <div className="flex flex-col">
                   <span className="font-16 font-700">{t("localeSelect", locale)}</span>
-                  <span className="font-12 text-secondary">Korean, Japanese, or English interface</span>
+                  <span className="font-12 text-secondary">{t("settingsLocaleDescription", locale)}</span>
                 </div>
                 <div className="profile-locale-buttons">
                   {LOCALE_OPTIONS.map((option) => (
@@ -406,13 +403,13 @@ export default function Home() {
               <div className="settings-item">
                 <div className="flex flex-col">
                   <span className="font-16 font-700">{t("playChineseAudio", locale)}</span>
-                  <span className="font-12 text-secondary">Audio feedback in quiz</span>
+                  <span className="font-12 text-secondary">{t("settingsChineseAudioDescription", locale)}</span>
                 </div>
                 <label className="toggle-switch">
                   <input
                     type="checkbox"
-                    checked={stats.settings.soundEnabled}
-                    onChange={(event) => updateSettings({ soundEnabled: event.currentTarget.checked })}
+                    checked={stats.settings.speechEnabled}
+                    onChange={(event) => updateSettings({ speechEnabled: event.currentTarget.checked })}
                   />
                   <span className="slider"></span>
                 </label>
@@ -420,8 +417,23 @@ export default function Home() {
 
               <div className="settings-item">
                 <div className="flex flex-col">
-                  <span className="font-16 font-700">Haptic Feedback</span>
-                  <span className="font-12 text-secondary">Vibration on supported interactions</span>
+                  <span className="font-16 font-700">{t("soundEffects", locale)}</span>
+                  <span className="font-12 text-secondary">{t("settingsSoundEffectsDescription", locale)}</span>
+                </div>
+                <label className="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked={stats.settings.soundEffectsEnabled}
+                    onChange={(event) => updateSettings({ soundEffectsEnabled: event.currentTarget.checked })}
+                  />
+                  <span className="slider"></span>
+                </label>
+              </div>
+
+              <div className="settings-item">
+                <div className="flex flex-col">
+                  <span className="font-16 font-700">{t("hapticFeedback", locale)}</span>
+                  <span className="font-12 text-secondary">{t("settingsHapticsDescription", locale)}</span>
                 </div>
                 <label className="toggle-switch">
                   <input
@@ -436,7 +448,7 @@ export default function Home() {
               <div className="settings-item">
                 <div className="flex flex-col">
                   <span className="font-16 font-700">{t("showPinyin", locale)}</span>
-                  <span className="font-12 text-secondary">Show pronunciation hints while studying</span>
+                  <span className="font-12 text-secondary">{t("settingsPinyinDescription", locale)}</span>
                 </div>
                 <label className="toggle-switch">
                   <input
@@ -452,7 +464,7 @@ export default function Home() {
                 <div className="settings-item">
                   <div className="flex flex-col">
                     <span className="font-16 font-700">{t("unlockAllLevels", locale)}</span>
-                    <span className="font-12 text-secondary">Start any step freely</span>
+                    <span className="font-12 text-secondary">{t("settingsUnlockDescription", locale)}</span>
                   </div>
                   <label className="toggle-switch">
                     <input
@@ -468,7 +480,7 @@ export default function Home() {
               <div className="settings-item">
                 <div className="flex flex-col">
                   <span className="font-16 font-700">{t("darkMode", locale)}</span>
-                  <span className="font-12 text-secondary">Use the darker QingVoca theme</span>
+                  <span className="font-12 text-secondary">{t("settingsDarkModeDescription", locale)}</span>
                 </div>
                 <label className="toggle-switch">
                   <input
@@ -484,12 +496,12 @@ export default function Home() {
                 <div className="settings-item">
                   <div className="flex flex-col">
                     <span className="font-16 font-700">{t("openAdminEdit", locale)}</span>
-                    <span className="font-12 text-secondary">Show admin vocabulary editing tools</span>
+                    <span className="font-12 text-secondary">{t("settingsAdminEditDescription", locale)}</span>
                   </div>
                   <label className="toggle-switch">
                     <input
                       type="checkbox"
-                      checked={adminToolsUnlocked}
+                      checked={stats.settings.adminEditEnabled}
                       onChange={toggleAdminEdit}
                     />
                     <span className="slider"></span>

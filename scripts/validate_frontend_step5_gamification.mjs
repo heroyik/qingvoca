@@ -13,12 +13,12 @@ for (const [fileName, content, markers] of [
   [
     "GamificationContext.tsx",
     contextFile,
-    ["qingvoca:zh:progress", "localStorage", "completeUnit", "recordMistake", "clearAllMistakes"],
+    ["qingvoca:zh:progress", "localStorage", "completeUnit", "recordMistake", "clearAllMistakes", "adminEditEnabled"],
   ],
   ["useGamification.ts", hookFile, ["useGamification"]],
   ["layout.tsx", layoutFile, ["GamificationProvider"]],
-  ["page.tsx", homeFile, ["useGamification", "stats.completedUnits", "ReviewTab", "unlockAllLevels"]],
-  ["Quiz.tsx", quizFile, ["useGamification", "recordMistake", "completeUnit", "addXP", "addGem"]],
+  ["page.tsx", homeFile, ["useGamification", "stats.completedUnits", "ReviewTab", "unlockAllLevels", "adminEditEnabled"]],
+  ["Quiz.tsx", quizFile, ["useGamification", "recordMistake", "completeUnit", "addXP", "addGem", "speechEnabled", "soundEffectsEnabled", "hapticsEnabled", "navigator.vibrate"]],
   ["ReviewTab.tsx", reviewTabFile, ["useGamification", "stats.mistakes", "removeMistake", "clearAllMistakes", "zhGlobalMistakes", "getDocsFromCache"]],
   ["ReviewQuizLoader.tsx", reviewLoaderFile, ["useGamification", "getReviewWordsByIds", "stats.mistakes"]],
 ]) {

@@ -1,4 +1,4 @@
-const CACHE_VERSION = "qingvoca-v0-1-0-offline-1";
+const CACHE_VERSION = "qingvoca-v1-0-0-offline-1";
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const BASE_PATH = "/qingvoca";

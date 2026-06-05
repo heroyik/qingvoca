@@ -21,6 +21,16 @@ export type UiStringKey =
   | "recentWrongCount"
   | "showPinyin"
   | "playChineseAudio"
+  | "soundEffects"
+  | "hapticFeedback"
+  | "settingsLocaleDescription"
+  | "settingsChineseAudioDescription"
+  | "settingsSoundEffectsDescription"
+  | "settingsHapticsDescription"
+  | "settingsPinyinDescription"
+  | "settingsUnlockDescription"
+  | "settingsDarkModeDescription"
+  | "settingsAdminEditDescription"
   | "localeLabel"
   | "adminEdit"
   | "lessonRange"
@@ -98,6 +108,16 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     recentWrongCount: "최근 오답",
     showPinyin: "병음 표시",
     playChineseAudio: "중국어 음성 재생",
+    soundEffects: "사운드 효과",
+    hapticFeedback: "햅틱 피드백",
+    settingsLocaleDescription: "EN / KO / JA 인터페이스",
+    settingsChineseAudioDescription: "중국어 단어 음성",
+    settingsSoundEffectsDescription: "정답, 오답, 콤보 효과음과 중국어 피드백",
+    settingsHapticsDescription: "지원되는 기기에서 진동 피드백",
+    settingsPinyinDescription: "학습 중 병음 힌트 표시",
+    settingsUnlockDescription: "원하는 Step을 자유롭게 시작",
+    settingsDarkModeDescription: "어두운 QingVoca 테마 사용",
+    settingsAdminEditDescription: "관리자 단어 편집 도구 표시",
     localeLabel: "표시 언어",
     adminEdit: "관리자 편집",
     lessonRange: "레슨 범위",
@@ -174,6 +194,16 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     recentWrongCount: "最近の誤答",
     showPinyin: "ピンイン表示",
     playChineseAudio: "中国語音声再生",
+    soundEffects: "効果音",
+    hapticFeedback: "触覚フィードバック",
+    settingsLocaleDescription: "EN / KO / JA インターフェース",
+    settingsChineseAudioDescription: "中国語単語の音声",
+    settingsSoundEffectsDescription: "正解、誤答、コンボの効果音と中国語フィードバック",
+    settingsHapticsDescription: "対応端末で振動フィードバック",
+    settingsPinyinDescription: "学習中にピンインのヒントを表示",
+    settingsUnlockDescription: "好きなStepを自由に開始",
+    settingsDarkModeDescription: "暗いQingVocaテーマを使用",
+    settingsAdminEditDescription: "管理者の単語編集ツールを表示",
     localeLabel: "表示言語",
     adminEdit: "管理者編集",
     lessonRange: "レッスン範囲",
@@ -250,6 +280,16 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     recentWrongCount: "Recent misses",
     showPinyin: "Show pinyin",
     playChineseAudio: "Play Chinese audio",
+    soundEffects: "Sound effects",
+    hapticFeedback: "Haptic feedback",
+    settingsLocaleDescription: "EN / KO / JA interface",
+    settingsChineseAudioDescription: "Chinese word voice",
+    settingsSoundEffectsDescription: "Correct, wrong, combo sounds, and Chinese feedback",
+    settingsHapticsDescription: "Vibration feedback on supported devices",
+    settingsPinyinDescription: "Show pinyin hints while studying",
+    settingsUnlockDescription: "Start any Step freely",
+    settingsDarkModeDescription: "Use the darker QingVoca theme",
+    settingsAdminEditDescription: "Show admin vocabulary editing tools",
     localeLabel: "Display language",
     adminEdit: "Admin edit",
     lessonRange: "Lesson range",

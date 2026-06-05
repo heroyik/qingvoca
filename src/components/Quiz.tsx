@@ -3,10 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useGamification } from "@/hooks/useGamification";
+import { useSound } from "@/hooks/useSound";
 import type { ChineseVocabEntry, SupportedLocale } from "@/types/chinese-vocab";
 import { DEFAULT_LOCALE } from "@/types/chinese-vocab";
 import { createQuizQuestion, validateQuizQuestions } from "@/utils/quiz";
-import { speakChineseWord } from "@/utils/speech";
+import { speakChineseFeedback, speakChineseWord } from "@/utils/speech";
 import { t, tpl } from "@/utils/ui";
 
 interface QuizProps {
@@ -32,10 +33,13 @@ export default function Quiz({
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [answerState, setAnswerState] = useState<AnswerState>(null);
   const [score, setScore] = useState(0);
+  const [comboCount, setComboCount] = useState(0);
+  const [lastComboCount, setLastComboCount] = useState(0);
   const [mistakeIds, setMistakeIds] = useState<string[]>([]);
   const [showResult, setShowResult] = useState(false);
   const [questionSeed, setQuestionSeed] = useState<string | null>(null);
   const { addGem, addXP, clearMistake, completeUnit, recordMistake, stats } = useGamification();
+  const { play } = useSound(stats.settings.soundEffectsEnabled);
   const wordOrderKey = useMemo(() => unitWords.map((entry) => entry.id).join("|"), [unitWords]);
 
   useEffect(() => {
@@ -44,6 +48,8 @@ export default function Quiz({
       setSelectedOption(null);
       setAnswerState(null);
       setScore(0);
+      setComboCount(0);
+      setLastComboCount(0);
       setMistakeIds([]);
       setShowResult(false);
       setQuestionSeed(createQuestionSeed(unitId));
@@ -72,9 +78,24 @@ export default function Quiz({
     setAnswerState(isCorrect ? "correct" : "wrong");
 
     if (isCorrect) {
+      const nextCombo = comboCount + 1;
+      setComboCount(nextCombo);
+      setLastComboCount(nextCombo);
+      void play(nextCombo >= 3 ? "cheer" : "correct");
+      triggerHapticFeedback(stats.settings.hapticsEnabled, nextCombo >= 3 ? [20, 30, 20, 30, 45] : 18);
+      if (typeof window !== "undefined" && stats.settings.soundEffectsEnabled) {
+        speakChineseFeedback("correct", window.speechSynthesis);
+      }
       setScore((value) => value + 1);
       clearMistake(currentQuestion.id);
     } else {
+      setComboCount(0);
+      setLastComboCount(0);
+      void play("incorrect");
+      triggerHapticFeedback(stats.settings.hapticsEnabled, [24, 36, 24]);
+      if (typeof window !== "undefined" && stats.settings.soundEffectsEnabled) {
+        speakChineseFeedback("incorrect", window.speechSynthesis);
+      }
       setMistakeIds((ids) => (ids.includes(currentQuestion.id) ? ids : [...ids, currentQuestion.id]));
       recordMistake(currentQuestion.id);
     }
@@ -97,7 +118,7 @@ export default function Quiz({
   };
 
   const handleSpeak = () => {
-    if (!currentEntry || typeof window === "undefined") return;
+    if (!currentEntry || !stats.settings.speechEnabled || typeof window === "undefined") return;
     speakChineseWord(currentEntry, window.speechSynthesis);
   };
 
@@ -155,6 +176,8 @@ export default function Quiz({
                 setSelectedOption(null);
                 setAnswerState(null);
                 setScore(0);
+                setComboCount(0);
+                setLastComboCount(0);
                 setMistakeIds([]);
                 setShowResult(false);
                 setQuestionSeed(createQuestionSeed(unitId));
@@ -199,8 +222,13 @@ export default function Quiz({
             <p className="text-title" style={{ color: "var(--xh-navy)" }}>{currentQuestion.pinyin}</p>
           )}
           <p className="text-subtitle">{currentQuestion.pos}</p>
-          <button type="button" className="duo-button duo-button-secondary w-auto px-24 mt-12" onClick={handleSpeak}>
-            {stats.settings.soundEnabled ? t("playAudio", locale) : t("audioOff", locale)}
+          <button
+            type="button"
+            className="duo-button duo-button-secondary w-auto px-24 mt-12"
+            onClick={handleSpeak}
+            disabled={!stats.settings.speechEnabled}
+          >
+            {stats.settings.speechEnabled ? t("playAudio", locale) : t("audioOff", locale)}
           </button>
         </div>
 
@@ -232,9 +260,14 @@ export default function Quiz({
       </section>
 
       {selectedOption && (
-        <div className={`feedback-bar ${answerState === "correct" ? "correct" : "incorrect"}`}>
+        <div className={`feedback-bar ${answerState === "correct" ? "correct" : "incorrect"} ${lastComboCount >= 3 ? "combo" : ""}`}>
           <div>
             <h2 className="font-18 font-900 m-0">{answerState === "correct" ? t("correct", locale) : t("answerLabel", locale)}</h2>
+            {answerState === "correct" && lastComboCount >= 2 && (
+              <p className="combo-callout">
+                {lastComboCount >= 3 ? `🔥 ${lastComboCount} COMBO! 太棒了!` : "✨ 2 COMBO!"}
+              </p>
+            )}
             {answerState === "wrong" && <p className="correct-solution">{currentQuestion.answer}</p>}
           </div>
           <button type="button" className="duo-button duo-button-primary w-auto px-32" onClick={handleNext}>
@@ -268,4 +301,9 @@ function hash(value: string): number {
     result = Math.imul(result, 16777619);
   }
   return result >>> 0;
+}
+
+function triggerHapticFeedback(enabled: boolean, pattern: VibratePattern): void {
+  if (!enabled || typeof navigator === "undefined" || typeof navigator.vibrate !== "function") return;
+  navigator.vibrate(pattern);
 }

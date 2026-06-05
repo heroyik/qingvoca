@@ -674,9 +674,39 @@ button {
   color: #166534;
 }
 
+.feedback-bar.combo {
+  background: linear-gradient(135deg, var(--xh-jade-light), rgba(255, 215, 0, 0.22));
+  border-top-color: rgba(234, 179, 8, 0.45);
+  box-shadow: 0 -10px 30px rgba(234, 179, 8, 0.18);
+}
+
 .feedback-bar.incorrect {
   background: rgba(196, 30, 58, 0.06);
   color: #991b1b;
+}
+
+.combo-callout {
+  margin: 6px 0 0;
+  color: var(--xh-gold);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0;
+  animation: combo-pop 0.32s ease-out both;
+}
+
+@keyframes combo-pop {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .result-card {

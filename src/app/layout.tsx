@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import AudioPrewarmer from "@/components/AudioPrewarmer";
 import OfflineModeGate from "@/components/OfflineModeGate";
 import ServiceWorkerRegistrar from "@/components/ServiceWorkerRegistrar";
 import { GamificationProvider } from "@/contexts/GamificationContext";
@@ -38,6 +39,7 @@ export default function RootLayout({
     <html lang="ko" suppressHydrationWarning>
       <body>
         <GamificationProvider>
+          <AudioPrewarmer />
           <ServiceWorkerRegistrar />
           <OfflineModeGate />
           {children}

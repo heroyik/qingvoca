@@ -11,10 +11,12 @@ import { applyAdminEdit, type AdminEditPatch } from "@/utils/adminEdit";
 import { filterDeletedWords, normalizeVocabWordKey } from "@/utils/vocab";
 
 export type UserSettings = {
-  soundEnabled: boolean;
+  speechEnabled: boolean;
+  soundEffectsEnabled: boolean;
   hapticsEnabled: boolean;
   unlockAllLevels: boolean;
   showPinyin: boolean;
+  adminEditEnabled: boolean;
 };
 
 export type UnitProgress = {
@@ -93,10 +95,12 @@ const defaultStats: UserStats = {
   mistakes: {},
   unitStats: {},
   settings: {
-    soundEnabled: true,
+    speechEnabled: true,
+    soundEffectsEnabled: true,
     hapticsEnabled: true,
     unlockAllLevels: false,
     showPinyin: true,
+    adminEditEnabled: false,
   },
   displayName: "QingVoca Learner",
 };
@@ -131,6 +135,8 @@ function withStudyDay(stats: UserStats): UserStats {
 function mergeStats(input: unknown): UserStats {
   if (!input || typeof input !== "object") return defaultStats;
   const saved = input as Record<string, unknown>;
+  const savedSettings = saved.settings && typeof saved.settings === "object" ? (saved.settings as Record<string, unknown>) : {};
+  const legacySoundEnabled = typeof savedSettings.soundEnabled === "boolean" ? savedSettings.soundEnabled : undefined;
 
   return {
     ...defaultStats,
@@ -147,7 +153,15 @@ function mergeStats(input: unknown): UserStats {
     unitStats: saved.unitStats && typeof saved.unitStats === "object" ? (saved.unitStats as Record<string, UnitProgress>) : {},
     settings: {
       ...defaultStats.settings,
-      ...((saved.settings as Partial<UserSettings>) ?? {}),
+      ...savedSettings,
+      speechEnabled:
+        typeof savedSettings.speechEnabled === "boolean"
+          ? savedSettings.speechEnabled
+          : legacySoundEnabled ?? defaultStats.settings.speechEnabled,
+      soundEffectsEnabled:
+        typeof savedSettings.soundEffectsEnabled === "boolean"
+          ? savedSettings.soundEffectsEnabled
+          : legacySoundEnabled ?? defaultStats.settings.soundEffectsEnabled,
     },
     displayName:
       typeof saved.displayName === "string" ? saved.displayName : defaultStats.displayName,
