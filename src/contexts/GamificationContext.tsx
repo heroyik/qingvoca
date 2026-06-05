@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { User } from "firebase/auth";
 import { onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
-import { collection, deleteDoc, doc, getDocs, onSnapshot, serverTimestamp, setDoc, writeBatch } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs, increment, onSnapshot, serverTimestamp, setDoc, writeBatch } from "firebase/firestore";
 import vocabData from "@/data/vocab.json";
 import { auth, db, googleProvider, isFirebaseConfigured } from "@/lib/firebase";
 import type { ChineseVocabEntry } from "@/types/chinese-vocab";
@@ -78,6 +78,7 @@ const STORAGE_KEY = "qingvoca:zh:progress";
 const OVERRIDES_STORAGE_KEY = "qingvoca:zh:vocab-overrides";
 const DELETED_STORAGE_KEY = "qingvoca:zh:deleted-word-keys";
 const FIRESTORE_QUOTA_BLOCKED_KEY = "qingvoca:firestore:quota-blocked";
+const GLOBAL_MISTAKES_COLLECTION = "zhGlobalMistakes";
 const STATS_WRITE_DEBOUNCE_MS = 15000;
 const DAY_MS = 24 * 60 * 60 * 1000;
 const baseVocabEntries = vocabData.data as ChineseVocabEntry[];
@@ -446,7 +447,8 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
 
   const recordMistake = useCallback(
     (wordId: string) => {
-      const key = normalizeVocabWordKey(wordId);
+      const entry = vocabEntries.find((candidate) => candidate.id === wordId || normalizeVocabWordKey(candidate.word) === normalizeVocabWordKey(wordId));
+      const key = entry?.id ?? normalizeVocabWordKey(wordId);
       updateStats((current) => ({
         ...current,
         mistakes: {
@@ -454,8 +456,33 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
           [key]: (current.mistakes[key] ?? 0) + 1,
         },
       }));
+
+      const firestore = db;
+      if (!firestore || isFirestoreQuotaBlocked || !entry) return;
+
+      void setDoc(
+        doc(firestore, GLOBAL_MISTAKES_COLLECTION, normalizeVocabWordKey(entry.word)),
+        {
+          count: increment(1),
+          word: entry.word,
+          wordId: entry.id,
+          wordKey: normalizeVocabWordKey(entry.word),
+          pinyin: entry.pinyin,
+          meaning: entry.meaning,
+          translations: entry.translations,
+          hsk: entry.hsk,
+          lessonId: entry.lessonId,
+          step: entry.step,
+          language: "zh",
+          datasetVersion: "zh-HSK4-v1",
+          updatedAt: serverTimestamp(),
+        },
+        { merge: true },
+      ).catch((error) => {
+        blockFirestoreQuota(error);
+      });
     },
-    [updateStats],
+    [blockFirestoreQuota, isFirestoreQuotaBlocked, updateStats, vocabEntries],
   );
 
   const clearMistake = useCallback(

@@ -1511,11 +1511,17 @@ button {
 .p-16 {
   padding: 16px;
 }
+.p-20 {
+  padding: 20px;
+}
 .p-24 {
   padding: 24px;
 }
 .p-32 {
   padding: 32px;
+}
+.pt-24 {
+  padding-top: 24px;
 }
 
 .mb-8 {
@@ -1576,6 +1582,9 @@ button {
 }
 .font-24 {
   font-size: 24px;
+}
+.font-48 {
+  font-size: 48px;
 }
 .font-64 {
   font-size: 64px;
@@ -1640,6 +1649,9 @@ button {
 .pb-140 {
   padding-bottom: 140px;
 }
+.pb-120 {
+  padding-bottom: 120px;
+}
 .pb-80 {
   padding-bottom: 80px;
 }
@@ -1674,6 +1686,9 @@ button {
 .border-2 {
   border-width: 2px;
   border-style: solid;
+}
+.border-t-glass {
+  border-top: 1px solid rgba(201, 169, 110, 0.24);
 }
 .border-transparent {
   border-color: transparent;
@@ -1974,7 +1989,7 @@ button {
   align-items: center;
   z-index: 1;
   position: relative;
-  height: 160px;
+  min-height: 168px;
 }
 
 .unit-button {
@@ -1989,6 +2004,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
+  outline: none;
 }
 
 .unit-button.locked {
@@ -2021,6 +2038,18 @@ button {
   opacity: 0.9;
 }
 
+.unit-button.available:hover,
+.unit-button.current:hover,
+.unit-button.completed:hover,
+.unit-button.mastered:hover {
+  transform: translateY(-2px);
+}
+
+.unit-button:focus-visible {
+  outline: 4px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 4px;
+}
+
 .unit-list {
   position: relative;
   display: flex;
@@ -2043,7 +2072,7 @@ button {
 }
 
 .unit-node.available:hover {
-  transform: translateY(-2px);
+  transform: none;
 }
 
 .unit-node.locked {
@@ -2507,6 +2536,40 @@ button {
   box-shadow: var(--shadow-sm);
 }
 
+.profile-login-panel {
+  padding: 24px 16px;
+  margin: 24px 0;
+  border-top: 1px solid rgba(201, 169, 110, 0.24);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.24);
+}
+
+.profile-locale-buttons {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 2px solid var(--border-light);
+  border-radius: 999px;
+  background: rgba(201, 169, 110, 0.08);
+}
+
+.profile-locale-button {
+  min-width: 42px;
+  height: 30px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.profile-locale-button.active {
+  background: var(--xh-red);
+  color: white;
+  box-shadow: 0 2px 0 var(--xh-red-dark);
+}
+
 .settings-section {
   margin-top: 32px;
   text-align: left;
@@ -2611,6 +2674,10 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: center;
   z-index: 10;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .fail-badge-circle {

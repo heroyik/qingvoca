@@ -5,6 +5,7 @@ const hookFile = await readFile("src/hooks/useGamification.ts", "utf8");
 const layoutFile = await readFile("src/app/layout.tsx", "utf8");
 const homeFile = await readFile("src/app/page.tsx", "utf8");
 const quizFile = await readFile("src/components/Quiz.tsx", "utf8");
+const reviewTabFile = await readFile("src/components/ReviewTab.tsx", "utf8");
 const reviewLoaderFile = await readFile("src/components/ReviewQuizLoader.tsx", "utf8");
 const errors = [];
 
@@ -16,8 +17,9 @@ for (const [fileName, content, markers] of [
   ],
   ["useGamification.ts", hookFile, ["useGamification"]],
   ["layout.tsx", layoutFile, ["GamificationProvider"]],
-  ["page.tsx", homeFile, ["useGamification", "stats.completedUnits", "stats.mistakes", "unlockAllLevels"]],
+  ["page.tsx", homeFile, ["useGamification", "stats.completedUnits", "ReviewTab", "unlockAllLevels"]],
   ["Quiz.tsx", quizFile, ["useGamification", "recordMistake", "completeUnit", "addXP", "addGem"]],
+  ["ReviewTab.tsx", reviewTabFile, ["useGamification", "stats.mistakes", "removeMistake", "clearAllMistakes", "zhGlobalMistakes", "getDocsFromCache"]],
   ["ReviewQuizLoader.tsx", reviewLoaderFile, ["useGamification", "getReviewWordsByIds", "stats.mistakes"]],
 ]) {
   for (const marker of markers) {
@@ -35,6 +37,7 @@ for (const [fileName, content] of [
   ["useGamification.ts", hookFile],
   ["page.tsx", homeFile],
   ["Quiz.tsx", quizFile],
+  ["ReviewTab.tsx", reviewTabFile],
   ["ReviewQuizLoader.tsx", reviewLoaderFile],
 ]) {
   for (const blocked of blockedTerms) {

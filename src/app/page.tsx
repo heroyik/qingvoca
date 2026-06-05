@@ -1,14 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import Link from "next/link";
+import { useMemo, useState, type MouseEvent } from "react";
+import { useRouter } from "next/navigation";
 import { HomeIcon, TrophyIcon, BookOpenIcon, PencilSquareIcon, UserIcon } from "@heroicons/react/24/solid";
 import AdminEditTab from "@/components/AdminEditTab";
 import Leaderboard from "@/components/Leaderboard";
+import ReviewTab from "@/components/ReviewTab";
 import { useGamification } from "@/hooks/useGamification";
 import { isAdmin, APP_NAME, APP_VERSION } from "@/lib/constants";
-import { createHomeStepCards, createReviewSummary, LOCALE_OPTIONS } from "@/utils/learningExperience";
-import { getUnits, getTotalWordCount } from "@/utils/vocab";
+import { createHomeStepCards, LOCALE_OPTIONS } from "@/utils/learningExperience";
+import { getUnits, getTotalWordCount, normalizeVocabWordKey } from "@/utils/vocab";
 import { loadLocale, saveLocale } from "@/utils/locale";
 import { t, tpl } from "@/utils/ui";
 import type { SupportedLocale } from "@/types/chinese-vocab";
@@ -46,7 +47,48 @@ const getMotivationalSticker = (index: number) => {
   return stickers[index] || "加油";
 };
 
+const getUnitIcon = (index: number, isLocked: boolean, isCompleted: boolean, isMastered: boolean) => {
+  if (isLocked) return "🔒";
+  if (isMastered) return "冠";
+  if (isCompleted) return "✓";
+  return index + 1;
+};
+
+const getProfileInitial = (name: string) => (name.trim().charAt(0) || "Q").toUpperCase();
+
+const getProfileAvatarColor = (seed: string) => {
+  const colors = ["var(--xh-red)", "var(--xh-navy)", "var(--xh-gold)", "var(--xh-jade)", "var(--xh-rose-gold)"];
+  let hash = 0;
+  for (const char of seed) hash = (hash + char.charCodeAt(0)) % colors.length;
+  return colors[hash];
+};
+
+const getXpTitle = (totalXp: number) => {
+  if (totalXp >= 50000) return "汉语宗师";
+  if (totalXp >= 25000) return "成语掌门";
+  if (totalXp >= 12000) return "语境达人";
+  if (totalXp >= 6000) return "词汇高手";
+  if (totalXp >= 3000) return "HSK 行者";
+  if (totalXp >= 1500) return "声调猎人";
+  if (totalXp >= 700) return "短语新星";
+  if (totalXp >= 250) return "词语学徒";
+  return "清词初心者";
+};
+
+const getXpTitleAccent = (totalXp: number) => {
+  if (totalXp >= 50000) return "MASTER";
+  if (totalXp >= 25000) return "SAGE";
+  if (totalXp >= 12000) return "LEGEND";
+  if (totalXp >= 6000) return "ELITE";
+  if (totalXp >= 3000) return "PRO";
+  if (totalXp >= 1500) return "RANGER";
+  if (totalXp >= 700) return "RUNNER";
+  if (totalXp >= 250) return "ROOKIE";
+  return "STARTER";
+};
+
 export default function Home() {
+  const router = useRouter();
   const { isAuthResolved, isOfflineMode, signInWithGoogle, signOutUser, stats, updateSettings, user, vocabEntries, theme, setTheme } =
     useGamification();
   const entries = vocabEntries;
@@ -67,15 +109,21 @@ export default function Home() {
         .flatMap((unit) => unit.words.map((word) => word.id)),
     [stats.completedUnits, units],
   );
-  const reviewWordIds = useMemo(() => Object.keys(stats.mistakes), [stats.mistakes]);
-  const reviewSummary = createReviewSummary({
-    reviewWordIds,
-    completedWordIds,
-    recentWrongWordIds: reviewWordIds,
-  });
   const cards = useMemo(() => createHomeStepCards(entries, completedWordIds, locale), [entries, completedWordIds, locale]);
   const totalWords = getTotalWordCount([], entries);
   const showAdminTabs = adminToolsUnlocked;
+  const displayName = user?.displayName || user?.email || stats.displayName || "QingVoca Learner";
+  const displayPhoto = user?.photoURL || null;
+  const xpTitle = getXpTitle(stats.xp);
+  const xpTitleAccent = getXpTitleAccent(stats.xp);
+  const handleUnitSelect = (unitId: string, isLocked: boolean) => {
+    if (isLocked) return;
+    router.push(`/quiz/${unitId}`);
+  };
+  const handleReviewMistakes = (event: MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    router.push("/quiz/review");
+  };
 
   return (
     <main className="container min-h-screen pb-80 pt-68">
@@ -150,29 +198,61 @@ export default function Home() {
 
             {cards.map((card, index) => {
               const previousUnitId = units[index - 1]?.id;
+              const unit = units[index];
+              const unitId = unit?.id ?? `unit-${card.step}`;
               const isLocked =
                 !stats.settings.unlockAllLevels &&
                 index > 0 &&
                 Boolean(previousUnitId) &&
                 !stats.completedUnits.includes(previousUnitId);
-              const isCurrent = !isLocked && !stats.completedUnits.includes(units[index]?.id ?? "");
+              const isCompleted = stats.completedUnits.includes(unitId);
+              const isMastered = stats.masteredUnits.includes(unitId);
+              const isCurrent = !isLocked && !isCompleted;
               const tier = getLevelTier(index);
-              const unit = units[index];
+              const failCount =
+                unit?.words.reduce((sum, word) => {
+                  const wordKey = normalizeVocabWordKey(word.word);
+                  return sum + (stats.mistakes[word.id] ?? stats.mistakes[wordKey] ?? 0);
+                }, 0) ?? 0;
+              const showFailBadge = failCount > 0;
+              const buttonState = isLocked ? "locked" : isMastered ? "mastered" : isCompleted ? "completed" : isCurrent ? "current" : "available";
+              const offset = Math.sin(index * 1.2) * 60;
 
               return (
-                <Link
+                <div
                   key={card.step}
-                  className={`unit-node ${isLocked ? "locked" : "available"} ${tier}`}
-                  href={isLocked ? "/" : `/quiz/${unit?.id ?? `unit-${card.step}`}`}
-                  aria-disabled={isLocked}
-                  onClick={(event) => {
-                    if (isLocked) event.preventDefault();
-                  }}
-                  style={{ marginLeft: `${Math.sin(index * 1.2) * 60}px` }}
+                  className={`unit-node-container unit-node ${isLocked ? "locked" : "available"} ${tier}`}
+                  style={{ transform: `translateX(${offset}px)` }}
                 >
-                  <div className="unit-circle" style={{ backgroundColor: getLevelColor(index, isLocked) }}>
-                    <span className="font-24">{card.step}</span>
+                  <div
+                    className={`no-underline unit-button ${buttonState} ${tier}`}
+                    aria-disabled={isLocked}
+                    role={isLocked ? undefined : "link"}
+                    tabIndex={isLocked ? -1 : 0}
+                    onClick={() => handleUnitSelect(unitId, isLocked)}
+                    onKeyDown={(event) => {
+                      if (isLocked) return;
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        handleUnitSelect(unitId, false);
+                      }
+                    }}
+                  >
+                    <span className={typeof getUnitIcon(index, isLocked, isCompleted, isMastered) === "number" ? "font-24" : "font-30"}>
+                      {getUnitIcon(index, isLocked, isCompleted, isMastered)}
+                    </span>
                   </div>
+                  {showFailBadge && !isLocked && (
+                    <button
+                      type="button"
+                      className="fail-badge-dual"
+                      aria-label={`${failCount} review mistakes`}
+                      onClick={handleReviewMistakes}
+                    >
+                      <span className="fail-badge-circle" />
+                      <span className="fail-badge-count">{failCount}</span>
+                    </button>
+                  )}
                   {isCurrent && <div className="start-indicator">{t("startLabel", locale)}</div>}
                   <div
                     className={`unit-label-card tier-${tier}`}
@@ -189,7 +269,7 @@ export default function Home() {
                     </p>
                     <p className="font-14 font-800 text-main mt-4">{getMotivationalSticker(index)}</p>
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>
@@ -197,101 +277,178 @@ export default function Home() {
       )}
 
       {activeTab === "review" && (
-        <section className="review-content">
-          <div className="review-card-modern">
-            <div className="review-header">
-              <div className="review-header-icon">📖</div>
-              <h2 className="text-title m-0">{t("reviewTitle", locale)}</h2>
-            </div>
-            <div className="stat-container">
-              <span className="stat-value">{reviewSummary.reviewCount}</span>
-              <span className="stat-label">{t("reviewItems", locale)}</span>
-            </div>
-            {reviewSummary.reviewCount > 0 && (
-              <p className="text-subtitle">
-                {tpl(t("reviewStats", locale), { completed: reviewSummary.completedCount.toLocaleString(), wrong: reviewSummary.recentWrongCount.toLocaleString() })}
-              </p>
-            )}
-            {reviewSummary.reviewCount > 0 && (
-              <Link href="/quiz/review" className="duo-button duo-button-primary button-standard w-full flex-center no-underline">
-                {t("startReviewLabel", locale)}
-              </Link>
-            )}
-          </div>
-        </section>
+        <ReviewTab locale={locale} />
       )}
 
       {activeTab === "leader" && (
-        <section className="review-content">
-          <div className="review-card-modern">
-            <Leaderboard />
-          </div>
-        </section>
+        <Leaderboard />
       )}
 
       {activeTab === "profile" && (
-        <section className="review-content">
-          <div className="review-card-modern">
-            <h2 className="text-title m-0">{t("profileTitle", locale)}</h2>
-            {user && (
-              <div className="avatar-container mt-16 mx-auto">
-                {user.photoURL ? (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img src={user.photoURL} alt={user.displayName || "Profile"} width={100} height={100} className="object-cover" style={{ width: "100%", height: "100%" }} />
-                ) : (
-                  <span className="font-900" style={{ fontSize: 36, color: "var(--xh-red)" }}>
-                    {(user.displayName || user.email || "Q").charAt(0).toUpperCase()}
-                  </span>
-                )}
-              </div>
-            )}
-            <p className="text-subtitle">
-              {user
-                ? `${user.displayName || user.email || stats.displayName}${user.email ? ` (${user.email})` : ""}`
-                : ""}
-            </p>
-            <button
-              className="duo-button duo-button-primary w-full mb-16"
-              type="button"
-              disabled={!isAuthResolved || isOfflineMode}
-              onClick={() => {
-                if (user) {
-                  void signOutUser();
-                } else {
-                  void signInWithGoogle();
-                }
+        <section className="profile-container pb-120">
+          <div className="review-card-modern text-center p-32">
+            <div
+              className="avatar-container"
+              style={{
+                backgroundColor: displayPhoto ? "transparent" : getProfileAvatarColor(user?.uid || displayName),
+                color: "white",
+                fontWeight: 900,
+                fontSize: 44,
               }}
             >
-              {user ? t("signOut", locale) : t("signInWithGoogle", locale)}
-            </button>
-            <p className="text-subtitle">{t("localeSelect", locale)}</p>
-            <div className="flex gap-8 flex-wrap">
-              {LOCALE_OPTIONS.map((option) => (
-                <button
-                  key={option.locale}
-                  className={`duo-button w-auto px-20 ${option.locale === locale ? "duo-button-primary" : "duo-button-secondary"}`}
-                  type="button"
-                  onClick={() => setLocale(option.locale)}
-                >
-                  {option.label}
-                </button>
-              ))}
+              {displayPhoto ? (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img src={displayPhoto} alt={displayName} width={100} height={100} className="object-cover" />
+              ) : (
+                <span>{getProfileInitial(displayName)}</span>
+              )}
+              {isAdmin(user) && <div className="profile-admin-badge">ADMIN</div>}
             </div>
-            {isAdmin(user) && (
-              <label className="flex items-center justify-between gap-12 mt-16 font-800">
-                {t("unlockAllLevels", locale)}
-                <input
-                  type="checkbox"
-                  checked={stats.settings.unlockAllLevels}
-                  onChange={(event) => updateSettings({ unlockAllLevels: event.currentTarget.checked })}
-                />
-              </label>
+
+            <h2 className="font-24 font-900 text-main mb-4">{displayName}</h2>
+            {user?.email && <p className="text-subtitle mt-0 mb-12">{user.email}</p>}
+
+            <div className="profile-xp-title-wrap mb-16">
+              <div className="profile-xp-title-pill">
+                <span className="profile-xp-title-accent">{xpTitleAccent}</span>
+                <span className="profile-xp-title-main">{xpTitle}</span>
+                <span className="profile-xp-title-flag">清</span>
+              </div>
+            </div>
+
+            <div className="stat-grid">
+              <div className="profile-stat-card">
+                <span className="font-12 font-800 text-secondary uppercase">Streak</span>
+                <span className="font-24 font-900 text-kv-kurenai">🔥 {stats.streak}</span>
+              </div>
+              <div className="profile-stat-card">
+                <span className="font-12 font-800 text-secondary uppercase">Total XP</span>
+                <span className="font-24 font-900" style={{ color: "var(--xh-jade)" }}>✨ {stats.xp.toLocaleString()}</span>
+              </div>
+              <div className="profile-stat-card">
+                <span className="font-12 font-800 text-secondary uppercase">Gems</span>
+                <span className="font-24 font-900" style={{ color: "var(--xh-navy)" }}>💎 {stats.gems.toLocaleString()}</span>
+              </div>
+              <div className="profile-stat-card">
+                <span className="font-12 font-800 text-secondary uppercase">Mastery</span>
+                <span className="font-24 font-900" style={{ color: "var(--xh-gold)" }}>👑 {stats.masteredUnits.length}</span>
+              </div>
+            </div>
+
+            {user ? (
+              <button
+                className="duo-button duo-button-primary w-auto px-32 mx-auto mb-16"
+                type="button"
+                disabled={!isAuthResolved}
+                onClick={() => void signOutUser()}
+              >
+                {t("signOut", locale)}
+              </button>
+            ) : (
+              <div className="profile-login-panel">
+                <div className="font-48 mb-12">🔑</div>
+                <h3 className="font-20 font-900 text-main mb-8">Save Your Progress</h3>
+                <p className="text-subtitle mb-16">{t("signInPrompt", locale)}</p>
+                <button
+                  className="duo-button duo-button-outline flex-center gap-12 p-16 bg-google"
+                  type="button"
+                  disabled={!isAuthResolved || isOfflineMode}
+                  onClick={() => void signInWithGoogle()}
+                >
+                  {t("signInWithGoogle", locale)}
+                </button>
+              </div>
             )}
 
-            {/* Theme Toggle */}
-            <div className="settings-section">
+            <div className="settings-section mt-24 pt-24 border-t-glass">
+              <h3 className="font-18 font-900 text-main mb-16 text-left">Settings</h3>
+
               <div className="settings-item">
-                <span className="font-800">{t("darkMode", locale)}</span>
+                <div className="flex flex-col">
+                  <span className="font-16 font-700">{t("localeSelect", locale)}</span>
+                  <span className="font-12 text-secondary">Korean, Japanese, or English interface</span>
+                </div>
+                <div className="profile-locale-buttons">
+                  {LOCALE_OPTIONS.map((option) => (
+                    <button
+                      key={option.locale}
+                      className={`profile-locale-button ${option.locale === locale ? "active" : ""}`}
+                      type="button"
+                      onClick={() => setLocale(option.locale)}
+                    >
+                      {option.locale.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="settings-item">
+                <div className="flex flex-col">
+                  <span className="font-16 font-700">{t("playChineseAudio", locale)}</span>
+                  <span className="font-12 text-secondary">Audio feedback in quiz</span>
+                </div>
+                <label className="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked={stats.settings.soundEnabled}
+                    onChange={(event) => updateSettings({ soundEnabled: event.currentTarget.checked })}
+                  />
+                  <span className="slider"></span>
+                </label>
+              </div>
+
+              <div className="settings-item">
+                <div className="flex flex-col">
+                  <span className="font-16 font-700">Haptic Feedback</span>
+                  <span className="font-12 text-secondary">Vibration on supported interactions</span>
+                </div>
+                <label className="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked={stats.settings.hapticsEnabled}
+                    onChange={(event) => updateSettings({ hapticsEnabled: event.currentTarget.checked })}
+                  />
+                  <span className="slider"></span>
+                </label>
+              </div>
+
+              <div className="settings-item">
+                <div className="flex flex-col">
+                  <span className="font-16 font-700">{t("showPinyin", locale)}</span>
+                  <span className="font-12 text-secondary">Show pronunciation hints while studying</span>
+                </div>
+                <label className="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked={stats.settings.showPinyin}
+                    onChange={(event) => updateSettings({ showPinyin: event.currentTarget.checked })}
+                  />
+                  <span className="slider"></span>
+                </label>
+              </div>
+
+              {isAdmin(user) && (
+                <div className="settings-item">
+                  <div className="flex flex-col">
+                    <span className="font-16 font-700">{t("unlockAllLevels", locale)}</span>
+                    <span className="font-12 text-secondary">Start any step freely</span>
+                  </div>
+                  <label className="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked={stats.settings.unlockAllLevels}
+                      onChange={(event) => updateSettings({ unlockAllLevels: event.currentTarget.checked })}
+                    />
+                    <span className="slider"></span>
+                  </label>
+                </div>
+              )}
+
+              <div className="settings-item">
+                <div className="flex flex-col">
+                  <span className="font-16 font-700">{t("darkMode", locale)}</span>
+                  <span className="font-12 text-secondary">Use the darker QingVoca theme</span>
+                </div>
                 <label className="toggle-switch">
                   <input
                     type="checkbox"

@@ -21,6 +21,7 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 - **Quiz engine** — Multiple-choice questions with smart distractors pulled from the same HSK4 pool. No easy outs.
 - **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Because motivation is a feature.
 - **Offline-first, quota-safe sync** — Service worker + Firestore local cache keep study flows available offline, while leaderboard and admin reads are cached or loaded only when needed.
+- **Kamivoca-style mobile UX** — LEARN, REVIEW, LEADER, and ME tabs use compact mobile-first cards, path nodes, ranking rows, profile stats, and review controls inspired by Kamivoca.
 - **Multi-locale UI** — Entire interface (labels, buttons, messages) in Korean, Japanese, or English. Locale persists via localStorage.
 - **Chinese speech** — Tap the speaker icon and hear the word pronounced via the Web Speech API.
 - **Dark mode** — Full dark mode support with system preference detection and manual toggle.
@@ -108,11 +109,11 @@ Step 2  →  Lessons 3-4   (~64 words)
 Step 10 →  Lessons 19-20 (~64 words)
 ```
 
-A snake path connects all 10 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels.
+A Kamivoca-style snake path connects all 10 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into the review flow.
 
 ### 🎮 Gamification
 
-Every quiz session earns you **XP** and **gems**. Mistakes get logged and queued for review. Complete a unit with a perfect score and you **master** it. Build daily **streaks** and watch your rank climb on the **global leaderboard** (powered by Firestore with a local-cache + TTL fallback). Users with 0 XP are hidden from the leaderboard.
+Every quiz session earns you **XP** and **gems**. Mistakes get logged locally for review and aggregated into the global **Wall of Pain** collection. Complete a unit with a perfect score and you **master** it. Build daily **streaks** and watch your rank climb on the **global leaderboard** (powered by Firestore with a local-cache + TTL fallback). Users with 0 XP are hidden from the leaderboard.
 
 | Stat | What it tracks |
 |---|---|
@@ -122,6 +123,8 @@ Every quiz session earns you **XP** and **gems**. Mistakes get logged and queued
 | `completedUnits` | Steps you've finished |
 | `masteredUnits` | Steps you've aced (0 mistakes) |
 | `mistakes` | Words you still need to work on |
+
+The REVIEW tab highlights local tricky words, lets you clear individual or all mistakes, and shows a Firestore-backed Wall of Pain list using cache-first reads so the global ranking does not burn reads on every tab open.
 
 ### 🔍 Quiz engine
 
@@ -193,6 +196,7 @@ qingvoca/
 │   │   ├── Quiz.tsx            # Core quiz engine (locale-aware)
 │   │   ├── QuizLoader.tsx      # Quiz data loader (reads persisted locale)
 │   │   ├── ReviewQuizLoader.tsx # Review quiz loader (locale-aware)
+│   │   ├── ReviewTab.tsx       # Review tab + Wall of Pain
 │   │   ├── Leaderboard.tsx     # Global leaderboard
 │   │   ├── AdminEditTab.tsx    # Admin vocabulary editor (locale-aware)
 │   │   ├── OfflineModeGate.tsx # Offline state UI
@@ -394,6 +398,7 @@ npm run firestore:rules:deploy
 | `zhVocabEntries` | 636 | Full vocabulary documents |
 | `zhFullVocaEntries` | 636 | Extended vocab entries |
 | `zhDatasetMeta` | 1 | Dataset metadata |
+| `zhGlobalMistakes` | Per-word | Wall of Pain aggregate mistake counts |
 
 ### Firestore I/O policy
 
@@ -402,6 +407,7 @@ QingVoca keeps Firestore usage intentionally low:
 - User progress is the only always-on realtime listener, scoped to `users/{uid}`.
 - Progress writes are debounced and flushed on tab hide instead of writing after every quiz state change.
 - The leaderboard uses `sessionStorage` TTL cache first, then Firestore local cache, then a single `getDocs()` request.
+- The Wall of Pain uses the same cache-first pattern and writes aggregate mistake increments with `increment(1)`.
 - Admin vocabulary collections are fetched only when the admin editor opens; regular study sessions do not read them.
 - If Firestore returns `resource-exhausted`, the app marks Firestore quota as blocked for the current browser session and falls back to local/demo data instead of retrying.
 
@@ -514,6 +520,7 @@ Session storage also keeps short-lived Firestore safety state:
 | Key | Contents |
 |---|---|
 | `qingvoca:leaderboard:cache` | Cached leaderboard entries with a 10-minute TTL |
+| `qingvoca:global-mistakes:cache` | Cached Wall of Pain entries with a 10-minute TTL |
 | `qingvoca:firestore:quota-blocked` | Session-only Firestore circuit breaker after `resource-exhausted` |
 
 ---
