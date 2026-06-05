@@ -84,7 +84,7 @@ export default function Leaderboard() {
   return (
     <div className="leaderboard-list">
       <h2 className="text-title m-0 text-center">🏆 Hall of Fame</h2>
-      {leaders.map((entry, index) => (
+      {leaders.filter((entry) => (entry.xp ?? 0) > 0).map((entry, index) => (
         <div key={entry.id} className="leaderboard-item">
           <div className="rank-text" style={{ color: getRankColor(index) }}>
             {index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : index + 1}
