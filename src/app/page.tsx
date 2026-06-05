@@ -3,7 +3,6 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { HomeIcon, TrophyIcon, BookOpenIcon, PencilSquareIcon, UserIcon } from "@heroicons/react/24/solid";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import AdminEditTab from "@/components/AdminEditTab";
 import Leaderboard from "@/components/Leaderboard";
 import { useGamification } from "@/hooks/useGamification";

@@ -1,7 +1,7 @@
 import type { ChineseVocabEntry, SupportedLocale } from "../types/chinese-vocab";
 import { CHINESE_DATASET_LEVEL } from "../types/chinese-vocab";
 import { getDisplayMeaning, getStepSummaries } from "./vocab";
-import { t, tpl } from "./ui";
+import { t } from "./ui";
 import { DEFAULT_LOCALE } from "../types/chinese-vocab";
 
 export type HomeStepCard = {

@@ -22,7 +22,7 @@ for (const [fileName, content, markers] of [
     ],
   ],
   ["useGamification.ts", hookFile, ["VocabOverridePatch"]],
-  ["page.tsx", pageFile, ["AdminEditTab", "관리자 EDIT 열기"]],
+  ["page.tsx", pageFile, ["AdminEditTab", "openAdminEdit"]],
   [
     "AdminEditTab.tsx",
     componentFile,

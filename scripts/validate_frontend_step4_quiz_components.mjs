@@ -8,9 +8,9 @@ const reviewPage = await readFile("src/app/quiz/review/page.tsx", "utf8");
 const errors = [];
 
 for (const [fileName, content, markers] of [
-  ["Quiz.tsx", quiz, ["createQuizQuestion", "validateQuizQuestions", "speakChineseWord", "Play Chinese audio", "Correct!", "Answer:"]],
+  ["Quiz.tsx", quiz, ["createQuizQuestion", "validateQuizQuestions", "speakChineseWord", "playAudio", "correct", "answerLabel"]],
   ["QuizLoader.tsx", loader, ["getUnits", "parseUnitId", "<Quiz"]],
-  ["ReviewQuizLoader.tsx", reviewLoader, ["unitId=\"review\"", "Review Session", "<Quiz"]],
+  ["ReviewQuizLoader.tsx", reviewLoader, ["unitId=\"review\"", "noReviewWords", "<Quiz"]],
   ["quiz page", quizPage, ["generateStaticParams", "QuizLoader"]],
   ["review page", reviewPage, ["ReviewQuizLoader", "Suspense"]],
 ]) {

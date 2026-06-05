@@ -1,26 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
+import { useMemo } from "react";
 import { useGamification } from "@/hooks/useGamification";
 import { getReviewWordsByIds } from "@/utils/quiz";
-import type { ChineseVocabEntry } from "@/types/chinese-vocab";
 import { loadLocale } from "@/utils/locale";
-import { t, tpl } from "@/utils/ui";
+import { t } from "@/utils/ui";
 import Quiz from "./Quiz";
 
 export default function ReviewQuizLoader() {
   const { stats, vocabEntries } = useGamification();
   const locale = loadLocale(typeof window !== "undefined" ? window.localStorage : undefined);
-  const reviewWordsRef = useRef<ChineseVocabEntry[] | null>(null);
-  if (reviewWordsRef.current === null) {
+  const reviewWords = useMemo(() => {
     const reviewIds = Object.entries(stats.mistakes)
       .filter(([, count]) => count > 0)
       .sort((a, b) => b[1] - a[1])
       .map(([wordId]) => wordId);
-    reviewWordsRef.current = getReviewWordsByIds(vocabEntries, reviewIds);
-  }
-  const reviewWords = reviewWordsRef.current;
+    return getReviewWordsByIds(vocabEntries, reviewIds);
+  }, [stats.mistakes, vocabEntries]);
 
   if (reviewWords.length === 0) {
     return (
