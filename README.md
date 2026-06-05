@@ -9,7 +9,7 @@
 
 QingVoca is a **Chinese vocabulary learning app** built for anyone tackling **HSK4** — whether you're prepping for the exam, leveling up your Mandarin, or just flexing on your flashcard game. It takes the classic word list, chops it into **10 Steps** (covering **20 lessons**, **636 words** total), and wraps it in a modern Chinese-themed quiz interface with gamification, offline support, and multi-language definitions.
 
-The UI defaults to **Korean** (with Japanese and English options) — so it's built for Korean speakers learning Chinese, but works for anyone.
+The UI supports **Korean, Japanese, and English** — switch anytime from the ME tab.
 
 ### Design
 
@@ -21,10 +21,12 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 - **Quiz engine** — Multiple-choice questions with smart distractors pulled from the same HSK4 pool. No easy outs.
 - **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Because motivation is a feature.
 - **Offline-first** — Service worker + Firestore local cache means you can study on the subway, in airplane mode, or anywhere your Wi-Fi goes to die.
-- **Multi-locale definitions** — See word meanings in Korean, Japanese, or English. Switch anytime.
+- **Multi-locale UI** — Entire interface (labels, buttons, messages) in Korean, Japanese, or English. Locale persists via localStorage.
 - **Chinese speech** — Tap the speaker icon and hear the word pronounced via the Web Speech API.
 - **Dark mode** — Full dark mode support with system preference detection and manual toggle.
-- **Admin tools** — Edit vocabulary entries, manage overrides, and sync changes back to Firestore. For the power users.
+- **Admin tools** — Search, edit, and delete vocabulary entries with full locale support. Sync changes back to Firestore.
+- **Vocab export** — Tap the HSK4 pill in the header to download the full vocabulary as JSON.
+- **Google sign-in** — Cloud sync of progress across devices via Firebase Auth.
 
 ---
 
@@ -33,13 +35,14 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 | Layer | What we're rocking |
 |---|---|
 | **Framework** | [Next.js](https://nextjs.org/) (App Router, static export) |
-| **UI** | React 19, Heroicons, custom CSS with Chinese design tokens |
+| **UI** | React 19, Heroicons, Lucide, custom CSS with Chinese design tokens |
 | **Backend** | Firebase (Auth + Firestore) |
 | **Language** | TypeScript |
 | **State** | React Context + hooks |
 | **Offline** | Service Worker + Firestore persistent cache |
-| **Testing** | Playwright (e2e), custom validation scripts |
-| **Deployment** | GitHub Pages (static export) |
+| **i18n** | Custom `t()` / `tpl()` helpers with 60+ localized string keys |
+| **Testing** | Custom validation scripts, Playwright (e2e) |
+| **Deployment** | GitHub Pages (static export via GitHub Actions) |
 | **Package manager** | npm |
 
 ---
@@ -75,6 +78,7 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
 NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
 NEXT_PUBLIC_FIREBASE_APP_ID=1:your-id:web:your-hash
+NEXT_PUBLIC_ADMIN_EMAIL=your-admin-email@gmail.com
 ```
 
 > 💡 **Tip:** You can grab these values from Firebase Console → Project Settings → General → Your apps → SDK setup.
@@ -98,15 +102,17 @@ Hit [http://localhost:3000/qingvoca](http://localhost:3000/qingvoca) and you're 
 Words are organized into **10 Steps**, with each step covering **2 lessons** (20 lessons total across the full HSK4 word list). Progress through them sequentially — each step presents a batch of words for quizzing.
 
 ```
-Step 1  →  Lessons 1-2   (127 words)
-Step 2  →  Lessons 3-4   (127 words)
+Step 1  →  Lessons 1-2   (65 words)
+Step 2  →  Lessons 3-4   (65 words)
 ...
-Step 10 →  Lessons 19-20 (127 words)
+Step 10 →  Lessons 19-20 (65 words)
 ```
+
+A snake path connects all 10 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels.
 
 ### 🎮 Gamification
 
-Every quiz session earns you **XP** and **gems**. Mistakes get logged and queued for review. Complete a unit with a perfect score and you **master** it. Build daily **streaks** and watch your rank climb on the **global leaderboard** (powered by Firestore).
+Every quiz session earns you **XP** and **gems**. Mistakes get logged and queued for review. Complete a unit with a perfect score and you **master** it. Build daily **streaks** and watch your rank climb on the **global leaderboard** (powered by Firestore). Users with 0 XP are hidden from the leaderboard.
 
 | Stat | What it tracks |
 |---|---|
@@ -126,12 +132,21 @@ Features:
 - **Pinyin display** — Toggle on/off in settings
 - **Audio playback** — Hear the word via Web Speech API
 - **Instant feedback** — Correct/wrong indicators with word highlighting
+- **Full locale support** — All UI labels, buttons, and messages in ko/ja/en
 
-### 🌐 Multi-locale
+### 🌐 Multi-locale UI
 
-Switch between **Korean (ko)**, **Japanese (ja)**, and **English (en)** for word definitions. Your preference is saved to localStorage.
+The entire interface is localized — not just word definitions. Switch between **Korean (ko)**, **Japanese (ja)**, and **English (en)** from the ME tab. Your preference is saved to localStorage.
 
-| Locale | Default meaning source |
+**Localized elements include:**
+- Home page titles, subtitles, step/lesson labels, progress text
+- Quiz buttons (save, reset, retry, next), feedback messages
+- Profile tab labels, sign-in/out buttons, theme toggle
+- Admin edit tab (field labels, search placeholder, status messages)
+- Review tab (count labels, stats, start button)
+- Leaderboard (0-XP users hidden)
+
+| Locale | Meaning fallback chain |
 |---|---|
 | `ko` | Korean translation → meaning → English → word |
 | `ja` | Japanese translation → Korean → meaning → word |
@@ -149,13 +164,18 @@ The app gracefully degrades — Firebase features (leaderboard, cloud sync) are 
 
 ### 🛠️ Admin tools
 
-Unlockable from the profile tab, the admin panel lets you:
+Unlockable from the profile tab (admin email configured via `NEXT_PUBLIC_ADMIN_EMAIL`), the admin panel lets you:
 
 - **Search & edit** any vocabulary entry (word, pinyin, meaning, translations, lesson, step)
 - **Delete words** globally (hides them from quizzes across all users)
 - **Sync changes** to Firestore so every user gets the update
+- **Full locale support** — Admin panel labels in ko/ja/en
 
 Changes are applied in real-time via Firestore snapshot listeners.
+
+### 📥 Vocab export
+
+Tap the **HSK4 pill** in the header to download the full 636-word vocabulary as a JSON file (`qingvoca-hsk4-636words.json`). Useful for offline study, data analysis, or importing into other tools.
 
 ---
 
@@ -166,13 +186,15 @@ qingvoca/
 ├── src/
 │   ├── app/                    # Next.js App Router pages
 │   │   ├── layout.tsx          # Root layout (providers, metadata)
-│   │   ├── page.tsx            # Home page (tabs, dashboard)
+│   │   ├── page.tsx            # Home page (tabs, dashboard, snake path)
 │   │   ├── quiz/[unitId]/      # Quiz page for a specific step
 │   │   └── quiz/review/        # Review quiz (mistake queue)
 │   ├── components/             # React components
-│   │   ├── Quiz.tsx            # Core quiz engine
+│   │   ├── Quiz.tsx            # Core quiz engine (locale-aware)
+│   │   ├── QuizLoader.tsx      # Quiz data loader (reads persisted locale)
+│   │   ├── ReviewQuizLoader.tsx # Review quiz loader (locale-aware)
 │   │   ├── Leaderboard.tsx     # Global leaderboard
-│   │   ├── AdminEditTab.tsx    # Admin vocabulary editor
+│   │   ├── AdminEditTab.tsx    # Admin vocabulary editor (locale-aware)
 │   │   ├── OfflineModeGate.tsx # Offline state UI
 │   │   └── ServiceWorkerRegistrar.tsx
 │   ├── contexts/
@@ -188,11 +210,13 @@ qingvoca/
 │   │   ├── firestore.ts        # Firestore collection constants
 │   │   ├── speech.ts           # Web Speech API integration
 │   │   ├── adminEdit.ts        # Admin edit logic
-│   │   ├── locale.ts           # Locale management
-│   │   └── ui.ts               # UI strings (multi-locale)
+│   │   ├── locale.ts           # Locale management (load/save/normalize)
+│   │   ├── learningExperience.ts # Home step cards, review summary, locale options
+│   │   ├── priorityWords.ts    # Priority word selection
+│   │   └── ui.ts               # UI strings — 60+ keys × 3 locales + tpl() helper
 │   ├── lib/
 │   │   ├── firebase.ts         # Firebase initialization
-│   │   └── constants.ts        # App constants
+│   │   └── constants.ts        # App constants, isAdmin() helper
 │   └── data/
 │       └── vocab.json          # 636 HSK4 vocabulary entries
 ├── scripts/                    # Build & validation scripts
@@ -202,15 +226,14 @@ qingvoca/
 │   └── generate-offline-manifest.mjs
 ├── data/
 │   └── vocab.json              # Source vocabulary data (pre-transform)
-├── plan/
-│   └── *.md                    # Development plans & specs
+├── plan/                       # Development plans & specs
 ├── public/
 │   ├── sw.js                   # Service worker
 │   └── offline-manifest.json   # Offline asset manifest
-├── .firebaserc                 # Firebase project config
-├── firebase.json               # Firebase CLI config
 ├── firestore.rules             # Firestore security rules
 ├── firestore.indexes.json      # Firestore index config
+├── .github/workflows/
+│   └── deploy-pages.yml        # CI/CD pipeline
 └── next.config.ts              # Next.js config (static export)
 ```
 
@@ -250,10 +273,9 @@ qingvoca/
 
 | Command | What it does |
 |---|---|
-| `npm test` | Run regression tests |
+| `npm test` | Run all regression tests |
 | `npm run test:frontend` | Run frontend regression tests |
 | `npm run test:e2e` | Run Playwright e2e tests |
-| `npm run test:e2e:ui` | Run Playwright tests with UI |
 | `npm run validate:*` | Individual step validations (steps 4-13) |
 | `npm run validate:frontend:*` | Frontend step validations (steps 2-10) |
 | `npm run validate:firebase:auth` | Firebase auth config validation |
@@ -272,7 +294,7 @@ QingVoca has a rigorous validation pipeline with **13+ step-specific validation 
 - ✅ Firebase Auth connection
 - ✅ Firestore collection structure
 - ✅ Offline manifest correctness
-- ✅ UI component rendering
+- ✅ UI component rendering (locale-aware markers)
 - ✅ Admin edit flow
 - ✅ No legacy Cognite residue
 - ✅ Regression tests (data integrity, types, exports)
@@ -324,7 +346,6 @@ const firebaseConfig = {
 2. Go to the **Sign-in method** tab
 3. Click **Google** → toggle **Enable** → click **Save**
 4. Choose your **Project support email** (required by Google)
-5. Note your **Web client ID** — you may need it for advanced OAuth config
 
 > ⚠️ **This is the #1 cause of "popup opens then closes" bugs.** If Google sign-in is not enabled here, the OAuth popup will appear briefly and then vanish without any visible error.
 
@@ -338,7 +359,7 @@ const firebaseConfig = {
 |---|---|
 | `localhost` | Local development (`npm run dev`) |
 | `your-project.firebaseapp.com` | Firebase default domain |
-| `your-github-username.github.io` | GitHub Pages production domain |
+| `heroyik.github.io` | GitHub Pages production domain |
 
 > ⚠️ **This is the #2 cause of popup failures.** If your domain isn't listed, Firebase will reject the OAuth request silently.
 
@@ -351,18 +372,11 @@ const firebaseConfig = {
 
 ### Step 6 — Deploy Firestore Security Rules
 
-The app ships with `firestore.rules` in the repo root. Deploy them:
-
 ```bash
-# Login to Firebase (first time only)
 npx firebase login
-
-# Deploy rules and indexes to your project
 npx firebase deploy --only firestore:rules --project your-project-id
 npx firebase deploy --only firestore:indexes --project your-project-id
 ```
-
-> 💡 `firebase` is already a devDependency, so `npx firebase` works without a global install.
 
 Or use the npm scripts:
 
@@ -370,11 +384,7 @@ Or use the npm scripts:
 npm run firestore:rules:deploy
 ```
 
-> 📝 The default rules (`allow read, write: if true`) are permissive and meant for development. **Before going to production**, replace `firestore.rules` with proper access rules.
-
 ### Step 7 — Set up Firestore Collections
-
-QingVoca reads/writes these Firestore collections:
 
 | Collection | Documents | Purpose |
 |---|---|---|
@@ -385,24 +395,11 @@ QingVoca reads/writes these Firestore collections:
 | `zhFullVocaEntries` | 636 | Extended vocab entries |
 | `zhDatasetMeta` | 1 | Dataset metadata |
 
-The `users` and `adminVocabOverrides`/`adminDeletedWords` collections are created automatically by the app on first write. The vocabulary collections (`zhVocabEntries`, etc.) need to be synced separately:
-
-```bash
-# Generate Firestore payload (dry-run)
-npm run firestore:payload:zh
-
-# If you have a service account, you can push directly:
-npm run firestore:migrate          # dry-run
-npm run firestore:migrate:execute  # actually push data
-```
-
 ### Step 8 — Configure Environment Variables
 
 ```bash
 cp .env.example .env.local
 ```
-
-Open `.env.local` and fill in the values from your Firebase project:
 
 ```env
 NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSy...
@@ -411,41 +408,21 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
 NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=123456789
 NEXT_PUBLIC_FIREBASE_APP_ID=1:123456789:web:abc123
+NEXT_PUBLIC_ADMIN_EMAIL=your-admin-email@gmail.com
 ```
-
-> 🔒 `.env.local` is in `.gitignore` and will never be committed. Safe for your secrets.
 
 ### Step 9 — Verify Local Setup
 
-Run the Firebase auth validation script:
-
 ```bash
 npm run validate:firebase:auth
-```
-
-This checks:
-- ✅ `.env.local` exists with real values (not placeholders)
-- ✅ `.firebaserc` points to the correct project
-- ✅ Firebase config keys are all present
-- ✅ `firebase.ts` imports the right modules
-
-Then start the dev server and test:
-
-```bash
 npm run dev
 ```
 
 Open [http://localhost:3000/qingvoca](http://localhost:3000/qingvoca) → click **ME** tab → click **Google 로그인**.
 
-> If the popup opens and closes immediately, check **Step 3** (Google sign-in enabled?) and **Step 4** (authorized domains?) above.
-
 ### Step 10 — Configure CI/CD (GitHub Actions)
 
-For production deployments via GitHub Pages, set these as **Repository Variables** (not Secrets — these are public `NEXT_PUBLIC_*` values embedded in the client bundle):
-
-1. Go to your GitHub repo → **Settings** → **Secrets and variables** → **Actions**
-2. Click the **Variables** tab → **New repository variable**
-3. Add all 6:
+Set these as **Repository Variables** (not Secrets):
 
 | Variable Name | Value |
 |---|---|
@@ -455,52 +432,7 @@ For production deployments via GitHub Pages, set these as **Repository Variables
 | `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET` | `your-project.firebasestorage.app` |
 | `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID` | Your sender ID |
 | `NEXT_PUBLIC_FIREBASE_APP_ID` | `1:your-id:web:your-hash` |
-
-> These are referenced in `.github/workflows/deploy-pages.yml` as `${{ vars.NEXT_PUBLIC_FIREBASE_* }}`.
-
-### Step 11 — Update `.firebaserc` and `.env.example`
-
-If you're setting up a fresh fork, update these files to point to your own Firebase project:
-
-**`.firebaserc`** — Change the default project:
-
-```json
-{
-  "projects": {
-    "default": "your-project-id"
-  }
-}
-```
-
-**`.env.example`** — Update placeholder values:
-
-```env
-NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
-NEXT_PUBLIC_FIREBASE_APP_ID=1:your-app-id:web:your-app-hash
-```
-
-### Step 12 — Service Account (for data migration scripts)
-
-Some scripts (like `firestore:migrate`) require a **Firebase Admin SDK service account**. To set one up:
-
-1. Firebase Console → ⚙️ **Project Settings** → **Service accounts** tab
-2. Click **Generate new private key** (saves a `.json` file)
-3. Place the JSON file in the project root (it's in `.gitignore`):
-
-```
-*-firebase-adminsdk-*.json   ← already gitignored
-```
-
-The migration script auto-detects the service account file:
-
-```bash
-npm run firestore:migrate            # dry-run
-npm run firestore:migrate:execute    # push data to Firestore
-```
+| `NEXT_PUBLIC_ADMIN_EMAIL` | Admin email for edit access |
 
 ### Quick reference — Common issues
 
@@ -510,7 +442,7 @@ npm run firestore:migrate:execute    # push data to Firestore
 | Popup opens then closes | Domain not authorized | **Step 4** — add `localhost` to authorized domains |
 | `permission-denied` in console | Firestore rules not deployed | **Step 6** — `firebase deploy --only firestore:rules` |
 | `Firebase: No Firebase App` | `.env.local` missing or has placeholders | **Step 8** — fill in real values |
-| Build fails in CI | GitHub Actions variables not set | **Step 10** — add all 6 variables |
+| Build fails in CI | GitHub Actions variables not set | **Step 10** — add all 7 variables |
 | Leaderboard is empty | No vocab data in Firestore | **Step 7** — run `npm run firestore:migrate:execute` |
 | Offline mode always on | Firebase not configured | `isFirebaseConfigured` checks `apiKey` + `projectId` |
 
@@ -526,19 +458,6 @@ QingVoca is deployed as a **static export** to **GitHub Pages** via GitHub Actio
 2. GitHub Actions runs: install → lint → test → build → upload artifact
 3. Deploy to `https://heroyik.github.io/qingvoca/`
 
-### GitHub Actions Secrets/Variables
-
-The following repository variables must be set (already configured):
-
-| Variable | Value |
-|---|---|
-| `NEXT_PUBLIC_FIREBASE_API_KEY` | Firebase API key |
-| `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN` | `qingvoca-app.firebaseapp.com` |
-| `NEXT_PUBLIC_FIREBASE_PROJECT_ID` | `qingvoca-app` |
-| `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET` | `qingvoca-app.firebasestorage.app` |
-| `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID` | Sender ID |
-| `NEXT_PUBLIC_FIREBASE_APP_ID` | App ID |
-
 ---
 
 ## Data format
@@ -550,8 +469,6 @@ Each vocabulary entry looks like this:
   "id": "1",
   "word": "安排",
   "pinyin": "ānpái",
-  "reading": "ānpái",
-
   "meaning": "to arrange; to plan",
   "translations": {
     "ko": "安排하다",
@@ -563,17 +480,9 @@ Each vocabulary entry looks like this:
   "step": 1,
   "pos": "verb",
   "hsk": "HSK4",
-  "jlpt": "HSK4",
-  "band": "BASIC",
-  "opic": "BASIC",
   "example": ["我安排了明天的会议。"]
 }
 ```
-
-- `hsk` and `jlpt` are always `HSK4`
-- `step` determines which Step the word belongs to (1-10)
-- `lessonId` maps to the original lesson (1-20)
-- `band` is computed from the step: BASIC (1-3), INTERMEDIATE (4-7), ADVANCED (8-10)
 
 ---
 
@@ -583,13 +492,10 @@ Progress is persisted to localStorage with the `qingvoca:zh:*` namespace:
 
 | Key | Contents |
 |---|---|
-| `qingvoca:zh:progress` | Step progress, completed words, scores |
-| `qingvoca:zh:review` | Review queue (mistake word IDs) |
-| `qingvoca:zh:score` | Total score and streak |
-| `qingvoca:zh:rank` | Rank information |
-| `qingvoca:zh:locale` | Selected display locale |
+| `qingvoca:zh:progress` | Step progress, completed words, scores, settings |
 | `qingvoca:zh:vocab-overrides` | Local admin edits |
 | `qingvoca:zh:deleted-word-keys` | Locally deleted words |
+| `qingvoca:zh:locale` | Selected display locale (ko/ja/en) |
 | `qingvoca:zh:theme` | Dark/light mode preference |
 
 ---
@@ -628,7 +534,7 @@ This is a personal learning project, but PRs are welcome if you spot bugs or hav
 - TypeScript strict mode
 - Functional components with hooks
 - Context for global state
-- Utility functions in `src/utils/`
+- All UI strings in `src/utils/ui.ts` (ko/ja/en)
 - Validation scripts in `scripts/`
 
 ---
