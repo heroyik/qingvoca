@@ -114,6 +114,7 @@ export default function Home() {
 
           <div className="unit-list">
             <svg className="connector-svg" aria-hidden="true" width={240} height={(cards.length - 1) * 220 + 84}>
+              {/* Solid background path */}
               <path
                 d={cards
                   .map((_, index) => {
@@ -127,6 +128,23 @@ export default function Home() {
                 strokeWidth="16"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+              />
+              {/* Animated dashed overlay */}
+              <path
+                className="connector-path-animated"
+                d={cards
+                  .map((_, index) => {
+                    const x = (120 + Math.sin(index * 1.2) * 60).toFixed(2);
+                    const y = (index * 220 + 42).toFixed(2);
+                    return `${index === 0 ? "M" : "L"} ${x} ${y}`;
+                  })
+                  .join(" ")}
+                fill="none"
+                stroke="var(--xh-kurenai)"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeDasharray="12 24"
               />
             </svg>
 
@@ -384,6 +402,16 @@ export default function Home() {
           100% {
             transform: scale(1);
           }
+        }
+
+        @keyframes dash-flow {
+          to {
+            stroke-dashoffset: -36;
+          }
+        }
+
+        .connector-path-animated {
+          animation: dash-flow 1.5s linear infinite;
         }
       `}</style>
     </main>
