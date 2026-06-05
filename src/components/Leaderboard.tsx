@@ -12,6 +12,20 @@ type LeaderboardEntry = {
   gems?: number;
 };
 
+/** Demo seed users shown when Firestore has no real user data yet. */
+const DEMO_USERS: LeaderboardEntry[] = [
+  { id: "demo-kr-01", displayName: "Seo-yeon Kim", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=seo-yeon&backgroundColor=b6e3f4", xp: 4820, gems: 320 },
+  { id: "demo-jp-01", displayName: "Haruki Tanaka", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=haruki&backgroundColor=ffd5dc", xp: 4350, gems: 280 },
+  { id: "demo-us-01", displayName: "Emily Johnson", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=emily&backgroundColor=c0aede", xp: 3980, gems: 250 },
+  { id: "demo-vn-01", displayName: "Minh Anh Nguyen", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=minh-anh&backgroundColor=d1f4d1", xp: 3710, gems: 210 },
+  { id: "demo-kr-02", displayName: "Ji-hoon Park", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=ji-hoon&backgroundColor=ffeaa7", xp: 3450, gems: 190 },
+  { id: "demo-th-01", displayName: "Siriporn Chaiyaporn", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=siriporn&backgroundColor=fab1a0", xp: 2890, gems: 160 },
+  { id: "demo-br-01", displayName: "Lucas Silva", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=lucas-silva&backgroundColor=81ecec", xp: 2540, gems: 130 },
+  { id: "demo-jp-02", displayName: "Yuki Watanabe", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=yuki&backgroundColor=a29bfe", xp: 1980, gems: 90 },
+  { id: "demo-fr-01", displayName: "Émilie Dubois", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=emilie-dubois&backgroundColor=fd79a8", xp: 1320, gems: 60 },
+  { id: "demo-de-01", displayName: "Lukas Müller", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=lukas-mueller&backgroundColor=00cec9", xp: 870, gems: 40 },
+];
+
 function getInitial(name?: string) {
   return (name?.trim().charAt(0) || "Q").toUpperCase();
 }
@@ -81,10 +95,14 @@ export default function Leaderboard() {
 
   if (loading) return <div className="flex-center p-40 text-secondary">Loading Rankings...</div>;
 
+  // Use demo users when no real Firestore data is available
+  const displayLeaders = leaders.length > 0 ? leaders : DEMO_USERS;
+  const visibleLeaders = displayLeaders.filter((entry) => (entry.xp ?? 0) > 0);
+
   return (
     <div className="leaderboard-list">
       <h2 className="text-title m-0 text-center">🏆 Hall of Fame</h2>
-      {leaders.filter((entry) => (entry.xp ?? 0) > 0).map((entry, index) => (
+      {visibleLeaders.map((entry, index) => (
         <div key={entry.id} className="leaderboard-item">
           <div className="rank-text" style={{ color: getRankColor(index) }}>
             {index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : index + 1}
@@ -101,9 +119,6 @@ export default function Leaderboard() {
           <div className="leader-item-xp">{(entry.xp ?? 0).toLocaleString()} XP</div>
         </div>
       ))}
-      {leaders.length === 0 && (
-        <div className="text-center text-secondary p-40">로그인하면 리더보드에 학습 기록이 표시됩니다.</div>
-      )}
     </div>
   );
 }
