@@ -1,9 +1,9 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { User } from "firebase/auth";
 import { onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
-import { collection, deleteDoc, doc, onSnapshot, serverTimestamp, setDoc, writeBatch } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs, onSnapshot, serverTimestamp, setDoc, writeBatch } from "firebase/firestore";
 import vocabData from "@/data/vocab.json";
 import { auth, db, googleProvider, isFirebaseConfigured } from "@/lib/firebase";
 import type { ChineseVocabEntry } from "@/types/chinese-vocab";
@@ -65,6 +65,7 @@ type GamificationContextValue = {
   updateProfile: (profile: { displayName?: string }) => void;
   signInWithGoogle: () => Promise<void>;
   signOutUser: () => Promise<void>;
+  loadAdminVocabData: () => Promise<void>;
   deleteWordsGlobally: (entryIds: string[]) => Promise<void>;
   saveVocabOverride: (entryId: string, patch: VocabOverridePatch) => Promise<void>;
   clearVocabOverride: (entryId: string) => Promise<void>;
@@ -76,6 +77,8 @@ const THEME_STORAGE_KEY = "qingvoca:zh:theme";
 const STORAGE_KEY = "qingvoca:zh:progress";
 const OVERRIDES_STORAGE_KEY = "qingvoca:zh:vocab-overrides";
 const DELETED_STORAGE_KEY = "qingvoca:zh:deleted-word-keys";
+const FIRESTORE_QUOTA_BLOCKED_KEY = "qingvoca:firestore:quota-blocked";
+const STATS_WRITE_DEBOUNCE_MS = 15000;
 const DAY_MS = 24 * 60 * 60 * 1000;
 const baseVocabEntries = vocabData.data as ChineseVocabEntry[];
 
@@ -164,6 +167,19 @@ function readJsonStorage<T>(key: string, fallback: T): T {
   }
 }
 
+function readBooleanStorage(key: string) {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.sessionStorage.getItem(key) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function isResourceExhausted(error: unknown) {
+  return Boolean(error && typeof error === "object" && "code" in error && (error as { code?: string }).code === "resource-exhausted");
+}
+
 function sanitizePatch(entryId: string, patch: VocabOverridePatch): AdminEditPatch {
   const sanitized: AdminEditPatch = { id: entryId };
   if (typeof patch.word === "string") sanitized.word = patch.word.trim();
@@ -189,6 +205,8 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
   const [user, setUser] = useState<User | null>(null);
   const [isAuthResolved, setIsAuthResolved] = useState(!auth);
   const [hasRemoteStats, setHasRemoteStats] = useState(false);
+  const [isRemoteStatsResolved, setIsRemoteStatsResolved] = useState(false);
+  const [isFirestoreQuotaBlocked, setIsFirestoreQuotaBlocked] = useState(() => readBooleanStorage(FIRESTORE_QUOTA_BLOCKED_KEY));
   const [isOnline, setIsOnline] = useState(() => (typeof navigator === "undefined" ? true : navigator.onLine));
   const [vocabOverrides, setVocabOverrides] = useState<Record<string, AdminEditPatch>>(() =>
     readJsonStorage<Record<string, AdminEditPatch>>(OVERRIDES_STORAGE_KEY, {}),
@@ -214,12 +232,23 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
     }
   });
   const isInitialized = true;
+  const hasLoadedAdminVocabDataRef = useRef(false);
+
+  const blockFirestoreQuota = useCallback((error: unknown) => {
+    if (!isResourceExhausted(error)) return false;
+    setIsFirestoreQuotaBlocked(true);
+    try {
+      window.sessionStorage.setItem(FIRESTORE_QUOTA_BLOCKED_KEY, "1");
+    } catch {}
+    return true;
+  }, []);
 
   useEffect(() => {
     if (!auth) return undefined;
     return onAuthStateChanged(auth, (nextUser) => {
       setUser(nextUser);
-      if (!nextUser) setHasRemoteStats(false);
+      setHasRemoteStats(false);
+      setIsRemoteStatsResolved(!nextUser);
       setIsAuthResolved(true);
     });
   }, []);
@@ -261,66 +290,96 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     const firestore = db;
-    if (!firestore || !user) return undefined;
+    if (!firestore || !user || isFirestoreQuotaBlocked) return undefined;
 
     const userRef = doc(firestore, "users", user.uid);
-    return onSnapshot(userRef, (snapshot) => {
-      if (!snapshot.exists()) {
-        setHasRemoteStats(false);
-        return;
+    return onSnapshot(
+      userRef,
+      (snapshot) => {
+        setIsRemoteStatsResolved(true);
+        if (!snapshot.exists()) {
+          setHasRemoteStats(false);
+          return;
+        }
+
+        setHasRemoteStats(true);
+        if (snapshot.metadata.hasPendingWrites) return;
+        setStats((current) => {
+          const next = mergeStats({ ...current, ...snapshot.data() });
+          return statsSignature(next) === statsSignature(current) ? current : next;
+        });
+      },
+      (error) => {
+        setIsRemoteStatsResolved(true);
+        blockFirestoreQuota(error);
+      },
+    );
+  }, [blockFirestoreQuota, isFirestoreQuotaBlocked, user]);
+
+  useEffect(() => {
+    const firestore = db;
+    if (!firestore || !user || !isAuthResolved || !isRemoteStatsResolved || isFirestoreQuotaBlocked) return undefined;
+
+    const userRef = doc(firestore, "users", user.uid);
+    const writeStats = async () => {
+      const payload: Record<string, unknown> = {
+        ...stats,
+        displayName: user.displayName || stats.displayName || "QingVoca Learner",
+        photoURL: user.photoURL ?? null,
+        email: user.email ?? null,
+        updatedAt: serverTimestamp(),
+      };
+      if (!hasRemoteStats) payload.createdAt = serverTimestamp();
+
+      try {
+        await setDoc(userRef, payload, { merge: true });
+      } catch (error) {
+        blockFirestoreQuota(error);
       }
-
-      setHasRemoteStats(true);
-      setStats((current) => {
-        const next = mergeStats({ ...current, ...snapshot.data() });
-        return statsSignature(next) === statsSignature(current) ? current : next;
-      });
-    });
-  }, [user]);
-
-  useEffect(() => {
-    const firestore = db;
-    if (!firestore || !user || !isAuthResolved) return;
-
-    const userRef = doc(firestore, "users", user.uid);
-    const payload: Record<string, unknown> = {
-      ...stats,
-      displayName: user.displayName || stats.displayName || "QingVoca Learner",
-      photoURL: user.photoURL ?? null,
-      email: user.email ?? null,
-      updatedAt: serverTimestamp(),
     };
-    if (!hasRemoteStats) payload.createdAt = serverTimestamp();
 
-    void setDoc(userRef, payload, { merge: true });
-  }, [hasRemoteStats, isAuthResolved, stats, user]);
+    const timeoutId = window.setTimeout(() => {
+      void writeStats();
+    }, STATS_WRITE_DEBOUNCE_MS);
+    const flushOnHide = () => {
+      if (document.visibilityState === "hidden") void writeStats();
+    };
 
-  useEffect(() => {
+    document.addEventListener("visibilitychange", flushOnHide);
+    return () => {
+      window.clearTimeout(timeoutId);
+      document.removeEventListener("visibilitychange", flushOnHide);
+    };
+  }, [blockFirestoreQuota, hasRemoteStats, isAuthResolved, isFirestoreQuotaBlocked, isRemoteStatsResolved, stats, user]);
+
+  const loadAdminVocabData = useCallback(async () => {
     const firestore = db;
-    if (!firestore) return undefined;
+    if (!firestore || isFirestoreQuotaBlocked || hasLoadedAdminVocabDataRef.current) return;
+    hasLoadedAdminVocabDataRef.current = true;
 
-    const overridesUnsubscribe = onSnapshot(collection(firestore, "adminVocabOverrides"), (snapshot) => {
+    try {
+      const [overridesSnapshot, deletedSnapshot] = await Promise.all([
+        getDocs(collection(firestore, "adminVocabOverrides")),
+        getDocs(collection(firestore, "adminDeletedWords")),
+      ]);
+
       setVocabOverrides((current) => {
         const next: Record<string, AdminEditPatch> = {};
-        snapshot.docs.forEach((documentSnapshot) => {
+        overridesSnapshot.docs.forEach((documentSnapshot) => {
           next[documentSnapshot.id] = sanitizePatch(documentSnapshot.id, documentSnapshot.data());
         });
         return JSON.stringify(next) === JSON.stringify(current) ? current : next;
       });
-    });
-
-    const deletedUnsubscribe = onSnapshot(collection(firestore, "adminDeletedWords"), (snapshot) => {
       setGlobalDeletedWordKeys((current) => {
-        const next = snapshot.docs.map((documentSnapshot) => documentSnapshot.id).sort();
+        const next = deletedSnapshot.docs.map((documentSnapshot) => documentSnapshot.id).sort();
         return JSON.stringify(next) === JSON.stringify([...current].sort()) ? current : next;
       });
-    });
-
-    return () => {
-      overridesUnsubscribe();
-      deletedUnsubscribe();
-    };
-  }, []);
+    } catch (error) {
+      if (blockFirestoreQuota(error)) return;
+      hasLoadedAdminVocabDataRef.current = false;
+      throw error;
+    }
+  }, [blockFirestoreQuota, isFirestoreQuotaBlocked]);
 
   const vocabEntries = useMemo(() => {
     const editedEntries = baseVocabEntries.map((entry) => {
@@ -454,17 +513,22 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
     setVocabOverrides((current) => ({ ...current, [entryId]: sanitized }));
 
     const firestore = db;
-    if (firestore) {
-      await setDoc(
-        doc(firestore, "adminVocabOverrides", entryId),
-        {
-          ...sanitized,
-          updatedAt: serverTimestamp(),
-        },
-        { merge: true },
-      );
+    if (firestore && !isFirestoreQuotaBlocked) {
+      try {
+        await setDoc(
+          doc(firestore, "adminVocabOverrides", entryId),
+          {
+            ...sanitized,
+            updatedAt: serverTimestamp(),
+          },
+          { merge: true },
+        );
+      } catch (error) {
+        blockFirestoreQuota(error);
+        throw error;
+      }
     }
-  }, []);
+  }, [blockFirestoreQuota, isFirestoreQuotaBlocked]);
 
   const clearVocabOverride = useCallback(async (entryId: string) => {
     setVocabOverrides((current) => {
@@ -474,8 +538,15 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
     });
 
     const firestore = db;
-    if (firestore) await deleteDoc(doc(firestore, "adminVocabOverrides", entryId));
-  }, []);
+    if (firestore && !isFirestoreQuotaBlocked) {
+      try {
+        await deleteDoc(doc(firestore, "adminVocabOverrides", entryId));
+      } catch (error) {
+        blockFirestoreQuota(error);
+        throw error;
+      }
+    }
+  }, [blockFirestoreQuota, isFirestoreQuotaBlocked]);
 
   const deleteWordsGlobally = useCallback(
     async (entryIds: string[]) => {
@@ -485,7 +556,7 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
       setGlobalDeletedWordKeys((current) => Array.from(new Set([...current, ...nextKeys])).sort());
 
       const firestore = db;
-      if (firestore) {
+      if (firestore && !isFirestoreQuotaBlocked) {
         const batch = writeBatch(firestore);
         selectedEntries.forEach((entry) => {
           batch.set(doc(firestore, "adminDeletedWords", normalizeVocabWordKey(entry.word)), {
@@ -494,10 +565,15 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
             deletedAt: serverTimestamp(),
           });
         });
-        await batch.commit();
+        try {
+          await batch.commit();
+        } catch (error) {
+          blockFirestoreQuota(error);
+          throw error;
+        }
       }
     },
-    [vocabEntries],
+    [blockFirestoreQuota, isFirestoreQuotaBlocked, vocabEntries],
   );
 
   const resetProgress = useCallback(() => setStats(defaultStats), []);
@@ -529,6 +605,7 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
       updateProfile,
       signInWithGoogle,
       signOutUser,
+      loadAdminVocabData,
       deleteWordsGlobally,
       saveVocabOverride,
       clearVocabOverride,
@@ -547,6 +624,7 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
       isOnline,
       isInitialized,
       isAuthResolved,
+      loadAdminVocabData,
       recordMistake,
       resetLocalState,
       resetProgress,

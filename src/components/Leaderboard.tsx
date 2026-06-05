@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { collection, getDocs, limit, onSnapshot, orderBy, query } from "firebase/firestore";
+import { collection, getDocs, getDocsFromCache, limit, orderBy, query } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
 type LeaderboardEntry = {
@@ -25,6 +25,9 @@ const DEMO_USERS: LeaderboardEntry[] = [
   { id: "demo-fr-01", displayName: "Émilie Dubois", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=emilie-dubois&backgroundColor=fd79a8", xp: 1320, gems: 60 },
   { id: "demo-de-01", displayName: "Lukas Müller", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=lukas-mueller&backgroundColor=00cec9", xp: 870, gems: 40 },
 ];
+const LEADERBOARD_CACHE_KEY = "qingvoca:leaderboard:cache";
+const FIRESTORE_QUOTA_BLOCKED_KEY = "qingvoca:firestore:quota-blocked";
+const LEADERBOARD_CACHE_TTL_MS = 10 * 60 * 1000;
 
 function getInitial(name?: string) {
   return (name?.trim().charAt(0) || "Q").toUpperCase();
@@ -42,54 +45,85 @@ function getRankColor(index: number) {
   return "var(--text-secondary)";
 }
 
+function isResourceExhausted(error: unknown) {
+  return Boolean(error && typeof error === "object" && "code" in error && (error as { code?: string }).code === "resource-exhausted");
+}
+
+function readCachedLeaders() {
+  try {
+    const cached = window.sessionStorage.getItem(LEADERBOARD_CACHE_KEY);
+    if (!cached) return null;
+    const parsed = JSON.parse(cached) as { savedAt?: number; leaders?: LeaderboardEntry[] };
+    if (!parsed.savedAt || Date.now() - parsed.savedAt > LEADERBOARD_CACHE_TTL_MS) return null;
+    return Array.isArray(parsed.leaders) ? parsed.leaders : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeCachedLeaders(leaders: LeaderboardEntry[]) {
+  try {
+    window.sessionStorage.setItem(LEADERBOARD_CACHE_KEY, JSON.stringify({ savedAt: Date.now(), leaders }));
+  } catch {}
+}
+
+function markQuotaBlocked() {
+  try {
+    window.sessionStorage.setItem(FIRESTORE_QUOTA_BLOCKED_KEY, "1");
+  } catch {}
+}
+
+function isQuotaBlocked() {
+  try {
+    return window.sessionStorage.getItem(FIRESTORE_QUOTA_BLOCKED_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
 export default function Leaderboard() {
-  const [leaders, setLeaders] = useState<LeaderboardEntry[]>([]);
-  const [loading, setLoading] = useState(Boolean(db));
+  const [leaders, setLeaders] = useState<LeaderboardEntry[]>(() => readCachedLeaders() ?? []);
+  const [loading, setLoading] = useState(() => Boolean(db) && !readCachedLeaders() && !isQuotaBlocked());
 
   useEffect(() => {
-    let unsubscribe: (() => void) | undefined;
+    let isCancelled = false;
 
     const firestore = db;
-    if (!firestore) return undefined;
+    if (!firestore || readCachedLeaders() || isQuotaBlocked()) return undefined;
 
-    const timeoutId = setTimeout(() => {
-      setLeaders([]);
-      setLoading(false);
-    }, 10000);
-
-    try {
+    const loadLeaders = async () => {
       const leadersQuery = query(collection(firestore, "users"), orderBy("xp", "desc"), limit(10));
-      unsubscribe = onSnapshot(
-        leadersQuery,
-        (snapshot) => {
-          clearTimeout(timeoutId);
-          setLeaders(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as LeaderboardEntry[]);
+
+      try {
+        const cacheSnapshot = await getDocsFromCache(leadersQuery);
+        if (!isCancelled && !cacheSnapshot.empty) {
+          const cachedLeaders = cacheSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as LeaderboardEntry[];
+          setLeaders(cachedLeaders);
+          writeCachedLeaders(cachedLeaders);
           setLoading(false);
-        },
-        async () => {
-          try {
-            const fallbackQuery = query(collection(firestore, "users"), limit(50));
-            const snapshot = await getDocs(fallbackQuery);
-            const entries = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as LeaderboardEntry[];
-            entries.sort((a, b) => (b.xp ?? 0) - (a.xp ?? 0));
-            setLeaders(entries.slice(0, 10));
-          } finally {
-            clearTimeout(timeoutId);
-            setLoading(false);
-          }
-        },
-      );
-    } catch {
-      clearTimeout(timeoutId);
-      setTimeout(() => {
-        setLeaders([]);
-        setLoading(false);
-      }, 0);
-    }
+          return;
+        }
+      } catch {}
+
+      try {
+        const snapshot = await getDocs(leadersQuery);
+        const nextLeaders = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as LeaderboardEntry[];
+        if (!isCancelled) {
+          setLeaders(nextLeaders);
+          writeCachedLeaders(nextLeaders);
+        }
+      } catch (error) {
+        if (isResourceExhausted(error)) markQuotaBlocked();
+        if (!isCancelled) setLeaders([]);
+      } finally {
+        if (!isCancelled) setLoading(false);
+      }
+    };
+
+    void loadLeaders();
 
     return () => {
-      if (unsubscribe) unsubscribe();
-      clearTimeout(timeoutId);
+      isCancelled = true;
     };
   }, []);
 

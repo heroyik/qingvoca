@@ -66,7 +66,7 @@ interface AdminEditTabProps {
 }
 
 export default function AdminEditTab({ locale = DEFAULT_LOCALE }: AdminEditTabProps) {
-  const { clearVocabOverride, deleteWordsGlobally, globalDeletedWordKeys, saveVocabOverride, vocabEntries } =
+  const { clearVocabOverride, deleteWordsGlobally, globalDeletedWordKeys, loadAdminVocabData, saveVocabOverride, vocabEntries } =
     useGamification();
   const [search, setSearch] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -85,6 +85,12 @@ export default function AdminEditTab({ locale = DEFAULT_LOCALE }: AdminEditTabPr
     () => visibleEntries.find((entry) => entry.id === editingId) ?? visibleEntries[0] ?? null,
     [editingId, visibleEntries],
   );
+
+  useEffect(() => {
+    void loadAdminVocabData().catch((error) => {
+      console.error("[AdminEditTab] load admin vocab data failed", error);
+    });
+  }, [loadAdminVocabData]);
 
   useEffect(() => {
     if (!editingEntry || editingEntry.id === editingId) return undefined;

@@ -20,7 +20,7 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 - **Step-based progression** — Words are grouped into 10 Steps, each covering 2 lessons. Clear one, unlock the next. Simple.
 - **Quiz engine** — Multiple-choice questions with smart distractors pulled from the same HSK4 pool. No easy outs.
 - **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Because motivation is a feature.
-- **Offline-first** — Service worker + Firestore local cache means you can study on the subway, in airplane mode, or anywhere your Wi-Fi goes to die.
+- **Offline-first, quota-safe sync** — Service worker + Firestore local cache keep study flows available offline, while leaderboard and admin reads are cached or loaded only when needed.
 - **Multi-locale UI** — Entire interface (labels, buttons, messages) in Korean, Japanese, or English. Locale persists via localStorage.
 - **Chinese speech** — Tap the speaker icon and hear the word pronounced via the Web Speech API.
 - **Dark mode** — Full dark mode support with system preference detection and manual toggle.
@@ -112,7 +112,7 @@ A snake path connects all 10 steps visually, with tiered colors (red → navy �
 
 ### 🎮 Gamification
 
-Every quiz session earns you **XP** and **gems**. Mistakes get logged and queued for review. Complete a unit with a perfect score and you **master** it. Build daily **streaks** and watch your rank climb on the **global leaderboard** (powered by Firestore). Users with 0 XP are hidden from the leaderboard.
+Every quiz session earns you **XP** and **gems**. Mistakes get logged and queued for review. Complete a unit with a perfect score and you **master** it. Build daily **streaks** and watch your rank climb on the **global leaderboard** (powered by Firestore with a local-cache + TTL fallback). Users with 0 XP are hidden from the leaderboard.
 
 | Stat | What it tracks |
 |---|---|
@@ -171,7 +171,7 @@ Unlockable from the profile tab (admin email configured via `NEXT_PUBLIC_ADMIN_E
 - **Sync changes** to Firestore so every user gets the update
 - **Full locale support** — Admin panel labels in ko/ja/en
 
-Changes are applied in real-time via Firestore snapshot listeners.
+Admin data loads on demand when the admin panel opens. Changes are still written back to Firestore, but normal study sessions do not subscribe to admin collections.
 
 ### 📥 Vocab export
 
@@ -395,6 +395,16 @@ npm run firestore:rules:deploy
 | `zhFullVocaEntries` | 636 | Extended vocab entries |
 | `zhDatasetMeta` | 1 | Dataset metadata |
 
+### Firestore I/O policy
+
+QingVoca keeps Firestore usage intentionally low:
+
+- User progress is the only always-on realtime listener, scoped to `users/{uid}`.
+- Progress writes are debounced and flushed on tab hide instead of writing after every quiz state change.
+- The leaderboard uses `sessionStorage` TTL cache first, then Firestore local cache, then a single `getDocs()` request.
+- Admin vocabulary collections are fetched only when the admin editor opens; regular study sessions do not read them.
+- If Firestore returns `resource-exhausted`, the app marks Firestore quota as blocked for the current browser session and falls back to local/demo data instead of retrying.
+
 ### Step 8 — Configure Environment Variables
 
 ```bash
@@ -443,7 +453,8 @@ Set these as **Repository Variables** (not Secrets):
 | `permission-denied` in console | Firestore rules not deployed | **Step 6** — `firebase deploy --only firestore:rules` |
 | `Firebase: No Firebase App` | `.env.local` missing or has placeholders | **Step 8** — fill in real values |
 | Build fails in CI | GitHub Actions variables not set | **Step 10** — add all 7 variables |
-| Leaderboard is empty | No vocab data in Firestore | **Step 7** — run `npm run firestore:migrate:execute` |
+| Leaderboard is empty | No user XP data, local cache miss, or Firestore quota fallback | Sign in and earn XP, seed users, or wait for quota recovery |
+| `resource-exhausted` in console | Firestore quota exceeded | App falls back for the session; reduce traffic or wait for quota reset |
 | Offline mode always on | Firebase not configured | `isFirebaseConfigured` checks `apiKey` + `projectId` |
 
 ---
@@ -497,6 +508,13 @@ Progress is persisted to localStorage with the `qingvoca:zh:*` namespace:
 | `qingvoca:zh:deleted-word-keys` | Locally deleted words |
 | `qingvoca:zh:locale` | Selected display locale (ko/ja/en) |
 | `qingvoca:zh:theme` | Dark/light mode preference |
+
+Session storage also keeps short-lived Firestore safety state:
+
+| Key | Contents |
+|---|---|
+| `qingvoca:leaderboard:cache` | Cached leaderboard entries with a 10-minute TTL |
+| `qingvoca:firestore:quota-blocked` | Session-only Firestore circuit breaker after `resource-exhausted` |
 
 ---
 

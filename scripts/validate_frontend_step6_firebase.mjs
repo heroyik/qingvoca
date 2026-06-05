@@ -28,7 +28,7 @@ for (const [fileName, content, markers] of [
   ],
   ["useGamification.ts", hookFile, ["useGamification"]],
   ["page.tsx", pageFile, ["Leaderboard", "signInWithGoogle", "signOutUser", "isOfflineMode"]],
-  ["Leaderboard.tsx", leaderboardFile, ["collection", "orderBy", "onSnapshot", "getDocs", "users"]],
+  ["Leaderboard.tsx", leaderboardFile, ["collection", "orderBy", "getDocsFromCache", "getDocs", "users"]],
   ["package.json", packageFile, ['"firebase"']],
 ]) {
   for (const marker of markers) {
