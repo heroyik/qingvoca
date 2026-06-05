@@ -27,7 +27,6 @@
  *   --target-sa=<path>    — override target service account path
  */
 
-import { readFileSync } from "node:fs";
 import admin from "firebase-admin";
 
 // ---------------------------------------------------------------------------
