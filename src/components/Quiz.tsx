@@ -7,6 +7,7 @@ import type { ChineseVocabEntry, SupportedLocale } from "@/types/chinese-vocab";
 import { DEFAULT_LOCALE } from "@/types/chinese-vocab";
 import { createQuizQuestion, validateQuizQuestions } from "@/utils/quiz";
 import { speakChineseWord } from "@/utils/speech";
+import { t, tpl } from "@/utils/ui";
 
 interface QuizProps {
   unitId: string;
@@ -83,9 +84,9 @@ export default function Quiz({
   if (questions.length === 0) {
     return (
       <main className="container min-h-screen flex-center flex-col gap-16">
-        <h1 className="text-title">No quiz words</h1>
+        <h1 className="text-title">{t("noQuizWords", locale)}</h1>
         <Link href="/" className="duo-button duo-button-primary w-auto px-40 no-underline">
-          GO HOME
+          {t("goHome", locale)}
         </Link>
       </main>
     );
@@ -94,7 +95,7 @@ export default function Quiz({
   if (validationErrors.length > 0) {
     return (
       <main className="container min-h-screen flex-center flex-col gap-16">
-        <h1 className="text-title">Quiz data error</h1>
+        <h1 className="text-title">{t("quizDataError", locale)}</h1>
         <p className="text-subtitle">{validationErrors[0]}</p>
       </main>
     );
@@ -107,16 +108,16 @@ export default function Quiz({
       <main className="container min-h-screen flex-center flex-col gap-20 p-24">
         <div className="result-card w-full">
           <div className="font-64">{percentage >= 80 ? "🎉" : "📖"}</div>
-          <h1 className="text-title">{isReview ? "复习完成" : "Step Complete"}</h1>
+          <h1 className="text-title">{isReview ? t("reviewComplete", locale) : t("stepComplete", locale)}</h1>
           <p className="text-subtitle">
-            {score} / {questions.length} correct · {percentage}%
+            {tpl(t("correctCount", locale), { score, total: questions.length, pct: percentage })}
           </p>
           {mistakeIds.length > 0 && (
-            <p className="text-subtitle">{mistakeIds.length} words should go to review in the next gamification step.</p>
+            <p className="text-subtitle">{tpl(t("reviewHint", locale), { count: mistakeIds.length })}</p>
           )}
           <div className="flex gap-12 mt-24">
             <Link href="/" className="duo-button duo-button-secondary w-auto px-32 no-underline">
-              HOME
+              {t("home", locale)}
             </Link>
             <button
               type="button"
@@ -130,7 +131,7 @@ export default function Quiz({
                 setShowResult(false);
               }}
             >
-              RETRY
+              {t("retry", locale)}
             </button>
           </div>
         </div>
@@ -162,13 +163,13 @@ export default function Quiz({
 
         <div className="quiz-card">
           <div className="quiz-unit-badge">
-            Step {currentQuestion.step} · Lesson {currentQuestion.lessonId}
+            {tpl(t("stepLesson", locale), { step: currentQuestion.step, lesson: currentQuestion.lessonId })}
           </div>
           <h1 className="text-main-title">{currentQuestion.word}</h1>
           <p className="text-title" style={{ color: "var(--xh-navy)" }}>{currentQuestion.pinyin}</p>
           <p className="text-subtitle">{currentQuestion.pos}</p>
           <button type="button" className="duo-button duo-button-secondary w-auto px-24 mt-12" onClick={handleSpeak}>
-            {stats.settings.soundEnabled ? "Play Chinese audio" : "Audio off"}
+            {stats.settings.soundEnabled ? t("playAudio", locale) : t("audioOff", locale)}
           </button>
         </div>
 
@@ -202,11 +203,11 @@ export default function Quiz({
       {selectedOption && (
         <div className={`feedback-bar ${answerState === "correct" ? "correct" : "incorrect"}`}>
           <div>
-            <h2 className="font-18 font-900 m-0">{answerState === "correct" ? "Correct!" : "Answer:"}</h2>
+            <h2 className="font-18 font-900 m-0">{answerState === "correct" ? t("correct", locale) : t("answerLabel", locale)}</h2>
             {answerState === "wrong" && <p className="correct-solution">{currentQuestion.answer}</p>}
           </div>
           <button type="button" className="duo-button duo-button-primary w-auto px-32" onClick={handleNext}>
-            NEXT
+            {t("next", locale)}
           </button>
         </div>
       )}

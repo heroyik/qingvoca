@@ -1,7 +1,8 @@
 import type { ChineseVocabEntry, SupportedLocale } from "../types/chinese-vocab";
 import { CHINESE_DATASET_LEVEL } from "../types/chinese-vocab";
 import { getDisplayMeaning, getStepSummaries } from "./vocab";
-import { t } from "./ui";
+import { t, tpl } from "./ui";
+import { DEFAULT_LOCALE } from "../types/chinese-vocab";
 
 export type HomeStepCard = {
   step: number;
@@ -32,6 +33,7 @@ export const LOCALE_OPTIONS: LocaleOption[] = [
 export function createHomeStepCards(
   entries: ChineseVocabEntry[],
   completedWordIds: string[] = [],
+  locale: SupportedLocale = DEFAULT_LOCALE,
 ): HomeStepCard[] {
   const completed = new Set(completedWordIds);
 
@@ -41,8 +43,8 @@ export function createHomeStepCards(
 
     return {
       step: summary.step,
-      title: `Step ${summary.step}`,
-      lessonRange: `Lesson ${summary.lessonIds[0]}-${summary.lessonIds[summary.lessonIds.length - 1]}`,
+      title: `${t("step", locale)} ${summary.step}`,
+      lessonRange: `${t("lesson", locale)} ${summary.lessonIds[0]}-${summary.lessonIds[summary.lessonIds.length - 1]}`,
       wordCount: summary.wordCount,
       hsk: CHINESE_DATASET_LEVEL,
       progressPercent,

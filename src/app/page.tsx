@@ -10,6 +10,9 @@ import { useGamification } from "@/hooks/useGamification";
 import { isAdmin, APP_NAME, APP_VERSION } from "@/lib/constants";
 import { createHomeStepCards, createReviewSummary, LOCALE_OPTIONS } from "@/utils/learningExperience";
 import { getUnits, getTotalWordCount } from "@/utils/vocab";
+import { loadLocale, saveLocale } from "@/utils/locale";
+import { t, tpl } from "@/utils/ui";
+import type { SupportedLocale } from "@/types/chinese-vocab";
 
 type HomeTab = "learn" | "leader" | "review" | "profile" | "edit";
 
@@ -50,6 +53,13 @@ export default function Home() {
   const entries = vocabEntries;
   const [activeTab, setActiveTab] = useState<HomeTab>("learn");
   const [adminToolsUnlocked, setAdminToolsUnlocked] = useState(false);
+  const [locale, setLocaleState] = useState<SupportedLocale>(() =>
+    typeof window !== "undefined" ? loadLocale(window.localStorage) : "ko",
+  );
+  const setLocale = (newLocale: SupportedLocale) => {
+    setLocaleState(newLocale);
+    saveLocale(window.localStorage, newLocale);
+  };
   const units = useMemo(() => getUnits([], entries), [entries]);
   const completedWordIds = useMemo(
     () =>
@@ -64,7 +74,7 @@ export default function Home() {
     completedWordIds,
     recentWrongWordIds: reviewWordIds,
   });
-  const cards = useMemo(() => createHomeStepCards(entries, completedWordIds), [entries, completedWordIds]);
+  const cards = useMemo(() => createHomeStepCards(entries, completedWordIds, locale), [entries, completedWordIds, locale]);
   const totalWords = getTotalWordCount([], entries);
   const showAdminTabs = adminToolsUnlocked;
 
@@ -76,18 +86,31 @@ export default function Home() {
           <span className="version-badge">{APP_VERSION}</span>
         </div>
         <div className="header-right flex items-center gap-12">
-          <div className="vocab-stash-pill mt-0 flex items-center gap-2 py-4 px-10 h-32">
+          <button
+            type="button"
+            className="vocab-stash-pill mt-0 flex items-center gap-2 py-4 px-10 h-32 cursor-pointer"
+            onClick={() => {
+              const json = JSON.stringify(entries, null, 2);
+              const blob = new Blob([json], { type: "application/json" });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = `qingvoca-hsk4-${entries.length}words.json`;
+              a.click();
+              setTimeout(() => URL.revokeObjectURL(url), 100);
+            }}
+          >
             <strong className="text-kv-kurenai font-12">{totalWords.toLocaleString()}</strong>
-            HSK4
-          </div>
+            {t("hskLevel", locale)}
+          </button>
         </div>
       </header>
 
       {activeTab === "learn" && (
         <section className="learn-container">
           <div className="mt-24 mb-24">
-            <h2 className="text-title">중국어 HSK4 단어장</h2>
-            <p className="text-subtitle">Step 1부터 Step 10까지, 원본 Lesson 1-20을 2개씩 묶어 학습합니다.</p>
+            <h2 className="text-title">{t("learnTitle", locale)}</h2>
+            <p className="text-subtitle">{t("learnSubtitle", locale)}</p>
           </div>
 
           <svg className="connector-svg" aria-hidden="true">
@@ -133,7 +156,7 @@ export default function Home() {
                   <div className="unit-circle" style={{ backgroundColor: getLevelColor(index, isLocked) }}>
                     <span className="font-24">{card.step}</span>
                   </div>
-                  {isCurrent && <div className="start-indicator">开始 START</div>}
+                  {isCurrent && <div className="start-indicator">{t("startLabel", locale)}</div>}
                   <div
                     className={`unit-label-card tier-${tier}`}
                   >
@@ -145,7 +168,7 @@ export default function Home() {
                       {card.lessonRange} · {card.hsk}
                     </p>
                     <p className="font-13 font-800 text-subtitle mt-0 mb-2">
-                      {card.wordCount} words · {card.progressPercent}% complete
+                      {tpl(t("wordsProgress", locale), { count: card.wordCount, pct: card.progressPercent })}
                     </p>
                     <p className="font-14 font-800 text-main mt-4">{getMotivationalSticker(index)}</p>
                   </div>
@@ -161,18 +184,17 @@ export default function Home() {
           <div className="review-card-modern">
             <div className="review-header">
               <div className="review-header-icon">📖</div>
-              <h2 className="text-title m-0">복습</h2>
+              <h2 className="text-title m-0">{t("reviewTitle", locale)}</h2>
             </div>
             <div className="stat-container">
               <span className="stat-value">{reviewSummary.reviewCount}</span>
-              <span className="stat-label">review items</span>
+              <span className="stat-label">{t("reviewItems", locale)}</span>
             </div>
             <p className="text-subtitle">
-              완료 {reviewSummary.completedCount.toLocaleString()}개 · 최근 오답{" "}
-              {reviewSummary.recentWrongCount.toLocaleString()}개
+              {tpl(t("reviewStats", locale), { completed: reviewSummary.completedCount.toLocaleString(), wrong: reviewSummary.recentWrongCount.toLocaleString() })}
             </p>
             <Link href="/quiz/review" className="duo-button duo-button-primary button-standard w-full flex-center no-underline">
-              开始 REVIEW
+              {t("startReviewLabel", locale)}
             </Link>
           </div>
         </section>
@@ -189,12 +211,12 @@ export default function Home() {
       {activeTab === "profile" && (
         <section className="review-content">
           <div className="review-card-modern">
-            <h2 className="text-title m-0">프로필</h2>
+            <h2 className="text-title m-0">{t("profileTitle", locale)}</h2>
             {user && (
               <div className="avatar-container mt-16 mx-auto">
                 {user.photoURL ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
-                  <img src={user.photoURL} alt={user.displayName || "Profile"} className="object-cover" style={{ width: "100%", height: "100%" }} />
+                  <img src={user.photoURL} alt={user.displayName || "Profile"} width={100} height={100} className="object-cover" style={{ width: "100%", height: "100%" }} />
                 ) : (
                   <span className="font-900" style={{ fontSize: 36, color: "var(--xh-red)" }}>
                     {(user.displayName || user.email || "Q").charAt(0).toUpperCase()}
@@ -204,10 +226,8 @@ export default function Home() {
             )}
             <p className="text-subtitle">
               {user
-                ? `${user.displayName || stats.displayName}${user.email ? ` (${user.email})` : ""}`
-                : isOfflineMode
-                  ? "Firebase env 미설정: 로컬 진행도 모드"
-                  : "Google 로그인으로 진행도를 동기화할 수 있습니다."}
+                ? `${user.displayName || user.email || stats.displayName}${user.email ? ` (${user.email})` : ""}`
+                : ""}
             </p>
             <button
               className="duo-button duo-button-primary w-full mb-16"
@@ -221,19 +241,24 @@ export default function Home() {
                 }
               }}
             >
-              {user ? "로그아웃" : "Google 로그인"}
+              {user ? t("signOut", locale) : t("signInWithGoogle", locale)}
             </button>
-            <p className="text-subtitle">로케일 선택</p>
+            <p className="text-subtitle">{t("localeSelect", locale)}</p>
             <div className="flex gap-8 flex-wrap">
               {LOCALE_OPTIONS.map((option) => (
-                <button key={option.locale} className="duo-button duo-button-secondary w-auto px-20" type="button">
+                <button
+                  key={option.locale}
+                  className={`duo-button w-auto px-20 ${option.locale === locale ? "duo-button-primary" : "duo-button-secondary"}`}
+                  type="button"
+                  onClick={() => setLocale(option.locale)}
+                >
                   {option.label}
                 </button>
               ))}
             </div>
             {isAdmin(user) && (
               <label className="flex items-center justify-between gap-12 mt-16 font-800">
-                전체 Step 잠금 해제
+                {t("unlockAllLevels", locale)}
                 <input
                   type="checkbox"
                   checked={stats.settings.unlockAllLevels}
@@ -245,7 +270,7 @@ export default function Home() {
             {/* Theme Toggle */}
             <div className="settings-section">
               <div className="settings-item">
-                <span className="font-800">🌙 다크모드</span>
+                <span className="font-800">{t("darkMode", locale)}</span>
                 <label className="toggle-switch">
                   <input
                     type="checkbox"
@@ -263,7 +288,7 @@ export default function Home() {
                 type="button"
                 onClick={() => setAdminToolsUnlocked(true)}
               >
-                관리자 EDIT 열기
+                {t("openAdminEdit", locale)}
               </button>
             )}
           </div>
@@ -329,7 +354,7 @@ export default function Home() {
           </div>
           <div className="separator-v"></div>
           <div>
-            학습 포인트: <strong className="text-kv-kurenai font-15">{stats.xp} ✨</strong>
+            {t("learningPoints", locale)} <strong className="text-kv-kurenai font-15">{stats.xp} ✨</strong>
           </div>
           <div className="separator-v"></div>
           <a

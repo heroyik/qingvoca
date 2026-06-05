@@ -4,6 +4,8 @@ import Link from "next/link";
 import vocabData from "@/data/vocab.json";
 import type { ChineseVocabEntry } from "@/types/chinese-vocab";
 import { getUnits, parseUnitId } from "@/utils/vocab";
+import { loadLocale } from "@/utils/locale";
+import { t, tpl } from "@/utils/ui";
 import Quiz from "./Quiz";
 
 interface QuizLoaderProps {
@@ -15,18 +17,19 @@ export default function QuizLoader({ unitId }: QuizLoaderProps) {
   const step = parseUnitId(unitId);
   const units = getUnits([], entries);
   const unit = units.find((item) => item.step === step || item.id === unitId);
+  const locale = loadLocale(typeof window !== "undefined" ? window.localStorage : undefined);
 
   if (!unit) {
     return (
       <main className="container min-h-screen flex-center flex-col gap-16">
-        <h1 className="text-title">Unknown Step</h1>
-        <p className="text-subtitle">Step {unitId} is not available.</p>
+        <h1 className="text-title">{t("unknownStep", locale)}</h1>
+        <p className="text-subtitle">{tpl(t("stepNotAvailable", locale), { id: unitId })}</p>
         <Link href="/" className="duo-button duo-button-primary w-auto px-40 no-underline">
-          GO HOME
+          {t("goHome", locale)}
         </Link>
       </main>
     );
   }
 
-  return <Quiz unitId={unit.id} unitWords={unit.words} allWords={entries} unitTitle={unit.title} />;
+  return <Quiz unitId={unit.id} unitWords={unit.words} allWords={entries} unitTitle={unit.title} locale={locale} />;
 }

@@ -5,10 +5,13 @@ import { useRef } from "react";
 import { useGamification } from "@/hooks/useGamification";
 import { getReviewWordsByIds } from "@/utils/quiz";
 import type { ChineseVocabEntry } from "@/types/chinese-vocab";
+import { loadLocale } from "@/utils/locale";
+import { t, tpl } from "@/utils/ui";
 import Quiz from "./Quiz";
 
 export default function ReviewQuizLoader() {
   const { stats, vocabEntries } = useGamification();
+  const locale = loadLocale(typeof window !== "undefined" ? window.localStorage : undefined);
   const reviewWordsRef = useRef<ChineseVocabEntry[] | null>(null);
   if (reviewWordsRef.current === null) {
     const reviewIds = Object.entries(stats.mistakes)
@@ -23,10 +26,10 @@ export default function ReviewQuizLoader() {
     return (
       <main className="container min-h-screen flex-center flex-col gap-16 p-24">
         <div className="review-card-modern">
-          <h1 className="text-title m-0">복습할 단어가 없습니다</h1>
-          <p className="text-subtitle">퀴즈에서 틀린 단어가 생기면 이곳에 자동으로 모입니다.</p>
+          <h1 className="text-title m-0">{t("noReviewWords", locale)}</h1>
+          <p className="text-subtitle">{t("noReviewWordsHint", locale)}</p>
           <Link href="/" className="duo-button duo-button-primary w-full flex-center no-underline">
-            HOME
+            {t("goHome", locale)}
           </Link>
         </div>
       </main>
@@ -38,8 +41,9 @@ export default function ReviewQuizLoader() {
       unitId="review"
       unitWords={reviewWords}
       allWords={vocabEntries}
-      unitTitle="Review Session"
+      unitTitle={t("review", locale)}
       isReview
+      locale={locale}
     />
   );
 }
