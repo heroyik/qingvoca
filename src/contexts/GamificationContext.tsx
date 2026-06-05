@@ -196,7 +196,14 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
   const [globalDeletedWordKeys, setGlobalDeletedWordKeys] = useState<string[]>(() =>
     readJsonStorage<string[]>(DELETED_STORAGE_KEY, []),
   );
-  const [theme, setThemeState] = useState<Theme>("light");
+  const [theme, setThemeState] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "light";
+    try {
+      const saved = localStorage.getItem(THEME_STORAGE_KEY);
+      if (saved === "dark" || saved === "light") return saved;
+    } catch {}
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  });
   const [stats, setStats] = useState<UserStats>(() => {
     if (typeof window === "undefined") return defaultStats;
     try {
@@ -248,18 +255,9 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
   }, []);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      const saved = localStorage.getItem(THEME_STORAGE_KEY);
-      if (saved === "dark" || saved === "light") {
-        setThemeState(saved);
-        return;
-      }
-    } catch {}
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setThemeState("dark");
-    }
-  }, []);
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+  }, [theme]);
 
   useEffect(() => {
     const firestore = db;
