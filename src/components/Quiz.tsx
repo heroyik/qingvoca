@@ -106,8 +106,8 @@ export default function Quiz({
     return (
       <main className="container min-h-screen flex-center flex-col gap-20 p-24">
         <div className="result-card w-full">
-          <div className="font-64">{percentage >= 80 ? "🎉" : "📚"}</div>
-          <h1 className="text-title">{isReview ? "Review Complete" : "Step Complete"}</h1>
+          <div className="font-64">{percentage >= 80 ? "🎉" : "📖"}</div>
+          <h1 className="text-title">{isReview ? "复习完成" : "Step Complete"}</h1>
           <p className="text-subtitle">
             {score} / {questions.length} correct · {percentage}%
           </p>
@@ -140,7 +140,7 @@ export default function Quiz({
 
   return (
     <main className="container min-h-screen pb-120 pt-68">
-      <header className="sticky-header japanese-header">
+      <header className="sticky-header xh-header">
         <div className="header-left">
           <Link href="/" className="no-underline text-kv-kurenai font-900">
             QingVoca
@@ -165,7 +165,7 @@ export default function Quiz({
             Step {currentQuestion.step} · Lesson {currentQuestion.lessonId}
           </div>
           <h1 className="text-main-title">{currentQuestion.word}</h1>
-          <p className="text-title text-kv-ai-iro">{currentQuestion.pinyin}</p>
+          <p className="text-title" style={{ color: "var(--xh-navy)" }}>{currentQuestion.pinyin}</p>
           <p className="text-subtitle">{currentQuestion.pos}</p>
           <button type="button" className="duo-button duo-button-secondary w-auto px-24 mt-12" onClick={handleSpeak}>
             {stats.settings.soundEnabled ? "Play Chinese audio" : "Audio off"}

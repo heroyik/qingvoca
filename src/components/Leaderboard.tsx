@@ -17,8 +17,15 @@ function getInitial(name?: string) {
 }
 
 function getAvatarColor(index: number) {
-  const colors = ["#ff6b6b", "#1d9a9a", "#f2b705", "#5b6ee1", "#2f9e44"];
+  const colors = ["var(--xh-red)", "var(--xh-navy)", "var(--xh-gold)", "var(--xh-jade)", "var(--xh-rose-gold)"];
   return colors[index % colors.length];
+}
+
+function getRankColor(index: number) {
+  if (index === 0) return "var(--xh-gold)";
+  if (index === 1) return "var(--xh-ink-light)";
+  if (index === 2) return "var(--xh-rose-gold)";
+  return "var(--text-secondary)";
 }
 
 export default function Leaderboard() {
@@ -76,10 +83,12 @@ export default function Leaderboard() {
 
   return (
     <div className="leaderboard-list">
-      <h2 className="text-title m-0 text-center">Hall of Fame</h2>
+      <h2 className="text-title m-0 text-center">🏆 Hall of Fame</h2>
       {leaders.map((entry, index) => (
         <div key={entry.id} className="leaderboard-item">
-          <div className="rank-text">{index === 0 ? "1" : index + 1}</div>
+          <div className="rank-text" style={{ color: getRankColor(index) }}>
+            {index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : index + 1}
+          </div>
           <div className="user-avatar mr-12" style={{ backgroundColor: getAvatarColor(index) }}>
             {entry.photoURL ? (
               // eslint-disable-next-line @next/next/no-img-element

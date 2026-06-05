@@ -1,19 +1,21 @@
 # 🀄 QingVoca
 
-> **Chinese HSK4 vocabulary on easy mode.**  
-> A step-based quiz app that makes grinding 636 HSK4 words feel less like homework and more like a game.
+> **중국어 HSK4 어휘 학습 앱**  
+> 636개 HSK4 단어를 게임처럼 학습하는 스텝 기반 퀴즈 앱
 
 ---
 
 ## What is this?
 
-> Born from [Kamivoca](https://github.com/heroyik/kamivoca) 🇯🇵 → adapted for Chinese 🇨🇳
-
-QingVoca is a **Chinese vocabulary learning app** built for anyone tackling **HSK4** — whether you're prepping for the exam, leveling up your Mandarin, or just flexing on your flashcard game. It takes the classic word list, chops it into **10 Steps** (covering **20 lessons**, **636 words** total), and wraps it in a slick quiz interface with gamification, offline support, and multi-language definitions.
+QingVoca is a **Chinese vocabulary learning app** built for anyone tackling **HSK4** — whether you're prepping for the exam, leveling up your Mandarin, or just flexing on your flashcard game. It takes the classic word list, chops it into **10 Steps** (covering **20 lessons**, **636 words** total), and wraps it in a modern Chinese-themed quiz interface with gamification, offline support, and multi-language definitions.
 
 The UI defaults to **Korean** (with Japanese and English options) — so it's built for Korean speakers learning Chinese, but works for anyone.
 
-### The vibe
+### Design
+
+QingVoca features a **modern Chinese aesthetic** with a red and rose gold color palette, traditional cloud motif patterns, dark mode support, and the 清 character favicon. The design draws from authentic Chinese visual language while maintaining a clean, contemporary feel.
+
+### Features
 
 - **Step-based progression** — Words are grouped into 10 Steps, each covering 2 lessons. Clear one, unlock the next. Simple.
 - **Quiz engine** — Multiple-choice questions with smart distractors pulled from the same HSK4 pool. No easy outs.
@@ -21,6 +23,7 @@ The UI defaults to **Korean** (with Japanese and English options) — so it's bu
 - **Offline-first** — Service worker + Firestore local cache means you can study on the subway, in airplane mode, or anywhere your Wi-Fi goes to die.
 - **Multi-locale definitions** — See word meanings in Korean, Japanese, or English. Switch anytime.
 - **Chinese speech** — Tap the speaker icon and hear the word pronounced via the Web Speech API.
+- **Dark mode** — Full dark mode support with system preference detection and manual toggle.
 - **Admin tools** — Edit vocabulary entries, manage overrides, and sync changes back to Firestore. For the power users.
 
 ---
@@ -30,7 +33,7 @@ The UI defaults to **Korean** (with Japanese and English options) — so it's bu
 | Layer | What we're rocking |
 |---|---|
 | **Framework** | [Next.js](https://nextjs.org/) (App Router, static export) |
-| **UI** | React 19, Tailwind CSS |
+| **UI** | React 19, Heroicons, custom CSS with Chinese design tokens |
 | **Backend** | Firebase (Auth + Firestore) |
 | **Language** | TypeScript |
 | **State** | React Context + hooks |
@@ -239,7 +242,7 @@ qingvoca/
 |---|---|
 | `npm run firestore:migrate` | Firestore data migration (dry-run) |
 | `npm run firestore:migrate:execute` | Execute Firestore data migration |
-| `npm run firestore:rules:export` | Export rules & indexes from kamivoca-app |
+| `npm run firestore:rules:export` | Export rules & indexes from Firestore |
 | `npm run firestore:rules:deploy` | Deploy rules & indexes to qingvoca-app |
 | `npm run firestore:rules:sync` | Export + deploy in one step |
 
@@ -548,7 +551,7 @@ Each vocabulary entry looks like this:
   "word": "安排",
   "pinyin": "ānpái",
   "reading": "ānpái",
-  "furigana": "",
+
   "meaning": "to arrange; to plan",
   "translations": {
     "ko": "安排하다",
@@ -587,6 +590,7 @@ Progress is persisted to localStorage with the `qingvoca:zh:*` namespace:
 | `qingvoca:zh:locale` | Selected display locale |
 | `qingvoca:zh:vocab-overrides` | Local admin edits |
 | `qingvoca:zh:deleted-word-keys` | Locally deleted words |
+| `qingvoca:zh:theme` | Dark/light mode preference |
 
 ---
 
@@ -631,7 +635,6 @@ This is a personal learning project, but PRs are welcome if you spot bugs or hav
 
 ## Acknowledgments
 
-- Built on top of the [Kamivoca](https://github.com/heroyik/kamivoca) architecture (Japanese → Chinese adaptation)
 - HSK4 vocabulary sourced from official HSK standard materials
 - Firebase for the backend plumbing
 - Next.js for the static export magic

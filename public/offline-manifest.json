@@ -1,5 +1,7 @@
 {
   "language": "zh",
+  "theme_color": "#722F37",
+  "background_color": "#FAF9F6",
   "hsk": "HSK4",
   "datasetVersion": "zh-HSK4-v1",
   "generatedAt": "2026-06-05T03:49:06.177Z",

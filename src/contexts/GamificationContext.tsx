@@ -38,11 +38,15 @@ export type UserStats = {
 
 export type VocabOverridePatch = Omit<AdminEditPatch, "id">;
 
+type Theme = "light" | "dark";
+
 type GamificationContextValue = {
   user: User | null;
   vocabEntries: ChineseVocabEntry[];
   globalDeletedWordKeys: string[];
   stats: UserStats;
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
   isInitialized: boolean;
   isAuthResolved: boolean;
   isOnline: boolean;
@@ -68,6 +72,7 @@ type GamificationContextValue = {
   resetLocalState: () => void;
 };
 
+const THEME_STORAGE_KEY = "qingvoca:zh:theme";
 const STORAGE_KEY = "qingvoca:zh:progress";
 const OVERRIDES_STORAGE_KEY = "qingvoca:zh:vocab-overrides";
 const DELETED_STORAGE_KEY = "qingvoca:zh:deleted-word-keys";
@@ -183,6 +188,7 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
   const [globalDeletedWordKeys, setGlobalDeletedWordKeys] = useState<string[]>(() =>
     readJsonStorage<string[]>(DELETED_STORAGE_KEY, []),
   );
+  const [theme, setThemeState] = useState<Theme>("light");
   const [stats, setStats] = useState<UserStats>(() => {
     if (typeof window === "undefined") return defaultStats;
     try {
@@ -225,6 +231,27 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
   useEffect(() => {
     window.localStorage.setItem(DELETED_STORAGE_KEY, JSON.stringify(globalDeletedWordKeys));
   }, [globalDeletedWordKeys]);
+
+  const setTheme = useCallback((newTheme: Theme) => {
+    setThemeState(newTheme);
+    localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(newTheme);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const saved = localStorage.getItem(THEME_STORAGE_KEY);
+      if (saved === "dark" || saved === "light") {
+        setThemeState(saved);
+        return;
+      }
+    } catch {}
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setThemeState("dark");
+    }
+  }, []);
 
   useEffect(() => {
     const firestore = db;
@@ -401,7 +428,14 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
 
   const signInWithGoogle = useCallback(async () => {
     if (!auth || !googleProvider) return;
-    await signInWithPopup(auth, googleProvider);
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (error: unknown) {
+      const code = error && typeof error === "object" && "code" in error ? (error as { code: string }).code : "unknown";
+      const message = error instanceof Error ? error.message : String(error);
+      console.error("[auth] signInWithPopup failed:", code, message);
+      throw error;
+    }
   }, []);
 
   const signOutUser = useCallback(async () => {
@@ -474,6 +508,8 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
       isOnline,
       isOfflineMode: !isOnline || !isFirebaseConfigured,
       isOfflineModeBlocked: false,
+      theme,
+      setTheme,
       addXP,
       addGem,
       completeUnit,
@@ -517,6 +553,8 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
       updateSettings,
       user,
       vocabEntries,
+      theme,
+      setTheme,
     ],
   );
 

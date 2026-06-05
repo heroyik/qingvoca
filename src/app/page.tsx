@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { HomeIcon, TrophyIcon, BookOpenIcon, PencilSquareIcon, UserIcon } from "@heroicons/react/24/solid";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import AdminEditTab from "@/components/AdminEditTab";
 import Leaderboard from "@/components/Leaderboard";
 import { useGamification } from "@/hooks/useGamification";
@@ -21,30 +22,30 @@ const getLevelTier = (index: number) => {
 const getLevelTitle = (index: number) => getLevelTier(index).toUpperCase();
 
 const getLevelColor = (index: number, isLocked: boolean) => {
-  if (isLocked) return "#afafaf";
-  if (index < 3) return "var(--kv-kurenai)";
-  if (index < 7) return "var(--kv-ai-iro)";
-  return "var(--kv-kintsugi-gold)";
+  if (isLocked) return "var(--border-light)";
+  if (index < 3) return "var(--xh-red)";
+  if (index < 7) return "var(--xh-navy)";
+  return "var(--xh-gold)";
 };
 
 const getMotivationalSticker = (index: number) => {
   const stickers = [
-    "First Steps",
-    "Tone Finder",
-    "Word Hunter",
-    "Phrase Builder",
-    "Steady Climb",
-    "Context Reader",
-    "Fluent Moves",
-    "Memory Forge",
-    "HSK Sprint",
-    "Final Review",
+    "第一步",
+    "声调探索",
+    "词语猎人",
+    "短语构建",
+    "稳步攀升",
+    "语境阅读",
+    "流利行动",
+    "记忆锻造",
+    "HSK冲刺",
+    "最终复习",
   ];
-  return stickers[index] || "Keep Going";
+  return stickers[index] || "加油";
 };
 
 export default function Home() {
-  const { isAuthResolved, isOfflineMode, signInWithGoogle, signOutUser, stats, updateSettings, user, vocabEntries } =
+  const { isAuthResolved, isOfflineMode, signInWithGoogle, signOutUser, stats, updateSettings, user, vocabEntries, theme, setTheme } =
     useGamification();
   const entries = vocabEntries;
   const [activeTab, setActiveTab] = useState<HomeTab>("learn");
@@ -69,7 +70,7 @@ export default function Home() {
 
   return (
     <main className="container min-h-screen pb-80 pt-68">
-      <header className="sticky-header japanese-header">
+      <header className="sticky-header xh-header">
         <div className="header-left flex items-baseline gap-4">
           <h1 className="font-22 font-900 m-0 text-kv-kurenai leading-1-1 tracking-tight">{APP_NAME}</h1>
           <span className="version-badge">{APP_VERSION}</span>
@@ -99,7 +100,7 @@ export default function Home() {
                 })
                 .join(" ")}
               fill="none"
-              stroke="#e5e5e5"
+              stroke="var(--border-light)"
               strokeWidth="16"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -132,10 +133,9 @@ export default function Home() {
                   <div className="unit-circle" style={{ backgroundColor: getLevelColor(index, isLocked) }}>
                     <span className="font-24">{card.step}</span>
                   </div>
-                  {isCurrent && <div className="start-indicator">START</div>}
+                  {isCurrent && <div className="start-indicator">开始 START</div>}
                   <div
                     className={`unit-label-card tier-${tier}`}
-                    style={{ boxShadow: "0 4px 0 rgba(0,0,0,0.1)" }}
                   >
                     <p className="font-11 font-900 letter-spacing-0-5 mb-1" style={{ color: getLevelColor(index, isLocked) }}>
                       {getLevelTitle(index)} {card.step}
@@ -160,7 +160,7 @@ export default function Home() {
         <section className="review-content">
           <div className="review-card-modern">
             <div className="review-header">
-              <div className="review-header-icon">📚</div>
+              <div className="review-header-icon">📖</div>
               <h2 className="text-title m-0">복습</h2>
             </div>
             <div className="stat-container">
@@ -172,7 +172,7 @@ export default function Home() {
               {reviewSummary.recentWrongCount.toLocaleString()}개
             </p>
             <Link href="/quiz/review" className="duo-button duo-button-primary button-standard w-full flex-center no-underline">
-              START REVIEW
+              开始 REVIEW
             </Link>
           </div>
         </section>
@@ -190,9 +190,21 @@ export default function Home() {
         <section className="review-content">
           <div className="review-card-modern">
             <h2 className="text-title m-0">프로필</h2>
+            {user && (
+              <div className="avatar-container mt-16 mx-auto">
+                {user.photoURL ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img src={user.photoURL} alt={user.displayName || "Profile"} className="object-cover" style={{ width: "100%", height: "100%" }} />
+                ) : (
+                  <span className="font-900" style={{ fontSize: 36, color: "var(--xh-red)" }}>
+                    {(user.displayName || user.email || "Q").charAt(0).toUpperCase()}
+                  </span>
+                )}
+              </div>
+            )}
             <p className="text-subtitle">
               {user
-                ? `${user.displayName || stats.displayName} · Firestore 동기화 중`
+                ? `${user.displayName || stats.displayName}${user.email ? ` (${user.email})` : ""}`
                 : isOfflineMode
                   ? "Firebase env 미설정: 로컬 진행도 모드"
                   : "Google 로그인으로 진행도를 동기화할 수 있습니다."}
@@ -227,6 +239,22 @@ export default function Home() {
                 onChange={(event) => updateSettings({ unlockAllLevels: event.currentTarget.checked })}
               />
             </label>
+
+            {/* Theme Toggle */}
+            <div className="settings-section">
+              <div className="settings-item">
+                <span className="font-800">🌙 다크모드</span>
+                <label className="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked={theme === "dark"}
+                    onChange={(event) => setTheme(event.currentTarget.checked ? "dark" : "light")}
+                  />
+                  <span className="slider"></span>
+                </label>
+              </div>
+            </div>
+
             <button
               className="duo-button duo-button-primary w-full mt-16"
               type="button"
@@ -252,7 +280,7 @@ export default function Home() {
           onClick={() => setActiveTab("learn")}
           className={`nav-item ${activeTab === "learn" ? "active" : ""}`}
         >
-          <span className="font-24">⌂</span>
+          <HomeIcon width={24} height={24} />
           <span className="font-10 font-800">LEARN</span>
         </button>
         <button
@@ -260,7 +288,7 @@ export default function Home() {
           onClick={() => setActiveTab("leader")}
           className={`nav-item ${activeTab === "leader" ? "active" : ""}`}
         >
-          <span className="font-24">🏆</span>
+          <TrophyIcon width={24} height={24} />
           <span className="font-10 font-800">LEADER</span>
         </button>
         <button
@@ -268,7 +296,7 @@ export default function Home() {
           onClick={() => setActiveTab("review")}
           className={`nav-item ${activeTab === "review" ? "active" : ""}`}
         >
-          <span className="font-24">📚</span>
+          <BookOpenIcon width={24} height={24} />
           <span className="font-10 font-800">REVIEW</span>
         </button>
         {showAdminTabs && (
@@ -277,7 +305,7 @@ export default function Home() {
             onClick={() => setActiveTab("edit")}
             className={`nav-item ${activeTab === "edit" ? "active" : ""}`}
           >
-            <span className="font-24">✎</span>
+            <PencilSquareIcon width={24} height={24} />
             <span className="font-10 font-800">EDIT</span>
           </button>
         )}
@@ -286,7 +314,7 @@ export default function Home() {
           onClick={() => setActiveTab("profile")}
           className={`nav-item ${activeTab === "profile" ? "active" : ""}`}
         >
-          <span className="font-24">◉</span>
+          <UserIcon width={24} height={24} />
           <span className="font-10 font-800">ME</span>
         </button>
 
@@ -297,7 +325,7 @@ export default function Home() {
           </div>
           <div className="separator-v"></div>
           <div>
-            My Learning Aura: <strong className="text-kv-kurenai font-15">{stats.xp} ✨</strong>
+            학습 포인트: <strong className="text-kv-kurenai font-15">{stats.xp} ✨</strong>
           </div>
           <div className="separator-v"></div>
           <a
@@ -308,7 +336,7 @@ export default function Home() {
             title="GitHub Repository"
             className="aura-link"
           >
-            <Github size={16} />
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </nav>

@@ -17,6 +17,7 @@
     "validate:step8": "node scripts/validate_step8_admin_edit.mjs",
     "firestore:payload:zh": "node scripts/sync-firestore-chinese-vocab.mjs",
     "validate:step9": "node scripts/validate_step9_firestore.mjs",
+    "generate:favicon": "node scripts/generate-favicons.mjs",
     "offline:manifest": "node scripts/generate-offline-manifest.mjs",
     "validate:step10": "node scripts/validate_step10_offline.mjs",
     "validate:step11": "node scripts/validate_step11_ui.mjs",
@@ -45,6 +46,7 @@
     "firestore:rules:deploy": "node scripts/sync-firestore-rules-indexes.mjs --deploy-only"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "firebase": "^12.9.0",
     "lucide-react": "^0.563.0",
     "next": "16.1.6",

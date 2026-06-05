@@ -28,7 +28,7 @@ type UiStringKey =
 
 const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
   ko: {
-    appTitle: "중국어 KamiVoca",
+    appTitle: "QingVoca",
     word: "중국어",
     pinyin: "병음",
     meaning: "뜻",
@@ -53,7 +53,7 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     wordCount: "단어 수",
   },
   ja: {
-    appTitle: "中国語 KamiVoca",
+    appTitle: "QingVoca",
     word: "中国語",
     pinyin: "ピンイン",
     meaning: "意味",
@@ -78,7 +78,7 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     wordCount: "単語数",
   },
   en: {
-    appTitle: "Chinese KamiVoca",
+    appTitle: "QingVoca",
     word: "Chinese",
     pinyin: "Pinyin",
     meaning: "Meaning",
