@@ -279,7 +279,7 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
     const userRef = doc(firestore, "users", user.uid);
     const payload: Record<string, unknown> = {
       ...stats,
-      displayName: stats.displayName || user.displayName || "QingVoca Learner",
+      displayName: user.displayName || stats.displayName || "QingVoca Learner",
       photoURL: user.photoURL ?? null,
       email: user.email ?? null,
       updatedAt: serverTimestamp(),
