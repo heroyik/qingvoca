@@ -113,7 +113,7 @@ export default function Home() {
           </div>
 
           <div className="unit-list">
-            <svg className="connector-svg" aria-hidden="true">
+            <svg className="connector-svg" aria-hidden="true" width={240} height={(cards.length - 1) * 220 + 84}>
               <path
                 d={cards
                   .map((_, index) => {
