@@ -9,10 +9,9 @@ coverage/
 .env.*
 !.env.example
 
-# Firebase service account keys (used by firestore:migrate script)
-*-service-account.json
-sa-*.json
-service-account-*.json
+# Build artifacts
+tsconfig.tsbuildinfo
+test-results/
 
 # Firebase service account keys (used by firestore:migrate script)
 *-service-account.json
