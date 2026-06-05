@@ -62,7 +62,20 @@ export type UiStringKey =
   | "noReviewWordsHint"
   | "unknownStep"
   | "stepNotAvailable"
-  | "hskLevel";
+  | "hskLevel"
+  | "adminEditSubtitle"
+  | "adminSearchPlaceholder"
+  | "adminFieldMainMeaning"
+  | "adminFieldExample"
+  | "adminSave"
+  | "adminReset"
+  | "adminDeleteSelected"
+  | "adminSaveSuccess"
+  | "adminSaveError"
+  | "adminResetSuccess"
+  | "adminResetError"
+  | "adminDeleteSuccess"
+  | "adminDeleteError";
 
 const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
   ko: {
@@ -127,6 +140,19 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     unknownStep: "알 수 없는 단계",
     stepNotAvailable: "{id} 단계는 현재 사용할 수 없습니다.",
     hskLevel: "HSK4",
+    adminEditSubtitle: "중국어 HSK4 단어 {count}개를 검색하고 수정합니다.",
+    adminSearchPlaceholder: "단어, 병음, 뜻 검색",
+    adminFieldMainMeaning: "대표 뜻",
+    adminFieldExample: "예문",
+    adminSave: "저장",
+    adminReset: "초기화",
+    adminDeleteSelected: "선택 삭제",
+    adminSaveSuccess: "수정 내용을 저장했습니다.",
+    adminSaveError: "저장 중 오류가 발생했습니다.",
+    adminResetSuccess: "선택 단어의 override를 초기화했습니다.",
+    adminResetError: "초기화 중 오류가 발생했습니다.",
+    adminDeleteSuccess: "{count}개 단어를 전역 삭제 목록에 추가했습니다.",
+    adminDeleteError: "삭제 반영 중 오류가 발생했습니다.",
   },
   ja: {
     appTitle: "QingVoca",
@@ -190,6 +216,19 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     unknownStep: "不明なステップ",
     stepNotAvailable: "ステップ {id} は現在利用できません。",
     hskLevel: "HSK4",
+    adminEditSubtitle: "{count}個の中国語HSK4単語を検索・編集します。",
+    adminSearchPlaceholder: "単語、ピンイン、意味を検索",
+    adminFieldMainMeaning: "代表意味",
+    adminFieldExample: "例文",
+    adminSave: "保存",
+    adminReset: "リセット",
+    adminDeleteSelected: "選択削除",
+    adminSaveSuccess: "変更を保存しました。",
+    adminSaveError: "保存中にエラーが発生しました。",
+    adminResetSuccess: "選択した単語のオーバーライドをリセットしました。",
+    adminResetError: "リセット中にエラーが発生しました。",
+    adminDeleteSuccess: "{count}個の単語をグローバル削除リストに追加しました。",
+    adminDeleteError: "削除の反映中にエラーが発生しました。",
   },
   en: {
     appTitle: "QingVoca",
@@ -253,6 +292,19 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     unknownStep: "Unknown Step",
     stepNotAvailable: "Step {id} is not available.",
     hskLevel: "HSK4",
+    adminEditSubtitle: "Search and edit {count} Chinese HSK4 words.",
+    adminSearchPlaceholder: "Search word, pinyin, meaning",
+    adminFieldMainMeaning: "Main meaning",
+    adminFieldExample: "Example",
+    adminSave: "Save",
+    adminReset: "Reset",
+    adminDeleteSelected: "Delete selected",
+    adminSaveSuccess: "Changes saved.",
+    adminSaveError: "Error while saving.",
+    adminResetSuccess: "Override reset for selected word.",
+    adminResetError: "Error while resetting.",
+    adminDeleteSuccess: "{count} words added to global delete list.",
+    adminDeleteError: "Error while deleting.",
   },
 };
 
@@ -267,7 +319,7 @@ export function getUiStrings(locale: SupportedLocale = DEFAULT_LOCALE): Record<U
 /** Simple template helper: replaces {key} placeholders with values. */
 export function tpl(template: string, vars: Record<string, string | number>): string {
   return Object.entries(vars).reduce(
-    (result, [key, value]) => result.replace(new RegExp(`\\{${key}\\}`, "g"), String(value)),
+    (result, [key, value]) => result.replace(new RegExp(`\\\\{${key}\\\\}`, "g"), String(value)),
     template,
   );
 }

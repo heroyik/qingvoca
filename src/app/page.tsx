@@ -297,7 +297,7 @@ export default function Home() {
       {activeTab === "edit" && showAdminTabs && (
         <section className="review-content">
           <div className="review-card-modern">
-            <AdminEditTab />
+            <AdminEditTab locale={locale} />
           </div>
         </section>
       )}

@@ -3,8 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { PenSquare, RotateCcw, Save, Search } from "lucide-react";
 import { useGamification } from "@/hooks/useGamification";
-import type { ChineseVocabEntry } from "@/types/chinese-vocab";
+import type { ChineseVocabEntry, SupportedLocale } from "@/types/chinese-vocab";
+import { DEFAULT_LOCALE } from "@/types/chinese-vocab";
 import { normalizeVocabWordKey } from "@/utils/vocab";
+import { t, tpl } from "@/utils/ui";
 
 type EditDraft = {
   word: string;
@@ -59,7 +61,11 @@ function matchesSearch(entry: ChineseVocabEntry, value: string) {
   ].some((item) => item?.toLowerCase().includes(value));
 }
 
-export default function AdminEditTab() {
+interface AdminEditTabProps {
+  locale?: SupportedLocale;
+}
+
+export default function AdminEditTab({ locale = DEFAULT_LOCALE }: AdminEditTabProps) {
   const { clearVocabOverride, deleteWordsGlobally, globalDeletedWordKeys, saveVocabOverride, vocabEntries } =
     useGamification();
   const [search, setSearch] = useState("");
@@ -116,10 +122,10 @@ export default function AdminEditTab() {
         lessonId: Number.parseInt(draft.lessonId, 10) || editingEntry.lessonId,
         example: parseExamples(draft.exampleText),
       });
-      setStatus("수정 내용을 저장했습니다.");
+      setStatus(t("adminSaveSuccess", locale));
     } catch (error) {
       console.error("[AdminEditTab] save failed", error);
-      setStatus("저장 중 오류가 발생했습니다.");
+      setStatus(t("adminSaveError", locale));
     } finally {
       setIsSaving(false);
     }
@@ -131,10 +137,10 @@ export default function AdminEditTab() {
     setStatus(null);
     try {
       await clearVocabOverride(editingEntry.id);
-      setStatus("선택 단어의 override를 초기화했습니다.");
+      setStatus(t("adminResetSuccess", locale));
     } catch (error) {
       console.error("[AdminEditTab] reset failed", error);
-      setStatus("초기화 중 오류가 발생했습니다.");
+      setStatus(t("adminResetError", locale));
     } finally {
       setIsSaving(false);
     }
@@ -146,11 +152,11 @@ export default function AdminEditTab() {
     setStatus(null);
     try {
       await deleteWordsGlobally(selectedIds);
-      setStatus(`${selectedIds.length}개 단어를 전역 삭제 목록에 추가했습니다.`);
+      setStatus(tpl(t("adminDeleteSuccess", locale), { count: selectedIds.length }));
       setSelectedIds([]);
     } catch (error) {
       console.error("[AdminEditTab] delete failed", error);
-      setStatus("삭제 반영 중 오류가 발생했습니다.");
+      setStatus(t("adminDeleteError", locale));
     } finally {
       setIsSaving(false);
     }
@@ -163,14 +169,14 @@ export default function AdminEditTab() {
           <PenSquare size={26} />
         </div>
         <div>
-          <h2 className="text-title m-0">관리자 편집</h2>
-          <p className="text-small mt-4">중국어 HSK4 단어 {vocabEntries.length.toLocaleString()}개를 검색하고 수정합니다.</p>
+          <h2 className="text-title m-0">{t("adminEdit", locale)}</h2>
+          <p className="text-small mt-4">{tpl(t("adminEditSubtitle", locale), { count: vocabEntries.length.toLocaleString() })}</p>
         </div>
       </div>
 
       <label className="admin-delete-search mt-16">
         <Search size={16} />
-        <input value={search} onChange={(event) => setSearch(event.currentTarget.value)} placeholder="단어, 병음, 뜻 검색" />
+        <input value={search} onChange={(event) => setSearch(event.currentTarget.value)} placeholder={t("adminSearchPlaceholder", locale)} />
       </label>
 
       <div className="admin-edit-grid mt-16">
@@ -190,7 +196,7 @@ export default function AdminEditTab() {
               />
               <span className="font-900">{entry.word}</span>
               <span>{entry.pinyin}</span>
-              <span>Lesson {entry.lessonId}</span>
+              <span>{t("lesson", locale)} {entry.lessonId}</span>
             </button>
           ))}
         </div>
@@ -199,23 +205,23 @@ export default function AdminEditTab() {
           <div className="admin-edit-panel">
             <div className="grid-2 gap-10">
               <label>
-                중국어
+                {t("word", locale)}
                 <input value={draft.word} onChange={(event) => setDraft({ ...draft, word: event.currentTarget.value })} />
               </label>
               <label>
-                병음
+                {t("pinyin", locale)}
                 <input value={draft.pinyin} onChange={(event) => setDraft({ ...draft, pinyin: event.currentTarget.value })} />
               </label>
               <label>
-                대표 뜻
+                {t("adminFieldMainMeaning", locale)}
                 <input value={draft.meaning} onChange={(event) => setDraft({ ...draft, meaning: event.currentTarget.value })} />
               </label>
               <label>
-                품사
+                {t("partOfSpeech", locale)}
                 <input value={draft.pos} onChange={(event) => setDraft({ ...draft, pos: event.currentTarget.value })} />
               </label>
               <label>
-                Lesson
+                {t("lesson", locale)}
                 <input
                   type="number"
                   min="1"
@@ -248,7 +254,7 @@ export default function AdminEditTab() {
             </div>
 
             <label className="mt-12 block">
-              예문
+              {t("adminFieldExample", locale)}
               <textarea
                 value={draft.exampleText}
                 onChange={(event) => setDraft({ ...draft, exampleText: event.currentTarget.value })}
@@ -258,13 +264,13 @@ export default function AdminEditTab() {
 
             <div className="flex gap-10 mt-16 flex-wrap">
               <button className="duo-button duo-button-primary w-auto px-24" type="button" onClick={handleSave} disabled={isSaving}>
-                <Save size={16} /> 저장
+                <Save size={16} /> {t("adminSave", locale)}
               </button>
               <button className="duo-button duo-button-secondary w-auto px-24" type="button" onClick={handleReset} disabled={isSaving}>
-                <RotateCcw size={16} /> 초기화
+                <RotateCcw size={16} /> {t("adminReset", locale)}
               </button>
               <button className="duo-button duo-button-outline w-auto px-24" type="button" onClick={handleDelete} disabled={isSaving}>
-                선택 삭제 {selectedIds.length}
+                {t("adminDeleteSelected", locale)} {selectedIds.length}
               </button>
             </div>
             {status && <p className="text-subtitle mt-12">{status}</p>}
