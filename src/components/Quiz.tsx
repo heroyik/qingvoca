@@ -166,7 +166,9 @@ export default function Quiz({
             {tpl(t("stepLesson", locale), { step: currentQuestion.step, lesson: currentQuestion.lessonId })}
           </div>
           <h1 className="text-main-title">{currentQuestion.word}</h1>
-          <p className="text-title" style={{ color: "var(--xh-navy)" }}>{currentQuestion.pinyin}</p>
+          {stats.settings.showPinyin && (
+            <p className="text-title" style={{ color: "var(--xh-navy)" }}>{currentQuestion.pinyin}</p>
+          )}
           <p className="text-subtitle">{currentQuestion.pos}</p>
           <button type="button" className="duo-button duo-button-secondary w-auto px-24 mt-12" onClick={handleSpeak}>
             {stats.settings.soundEnabled ? t("playAudio", locale) : t("audioOff", locale)}

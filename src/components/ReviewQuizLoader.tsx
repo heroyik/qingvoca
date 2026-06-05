@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useGamification } from "@/hooks/useGamification";
 import { getReviewWordsByIds } from "@/utils/quiz";
 import { loadLocale } from "@/utils/locale";
@@ -10,7 +10,13 @@ import Quiz from "./Quiz";
 
 export default function ReviewQuizLoader() {
   const { stats, vocabEntries } = useGamification();
-  const locale = loadLocale(typeof window !== "undefined" ? window.localStorage : undefined);
+  const [locale, setLocale] = useState(loadLocale(undefined));
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setLocale(loadLocale(window.localStorage));
+    }, 0);
+    return () => window.clearTimeout(timeoutId);
+  }, []);
   const reviewWords = useMemo(() => {
     const reviewIds = Object.entries(stats.mistakes)
       .filter(([, count]) => count > 0)

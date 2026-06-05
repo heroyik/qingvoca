@@ -1002,10 +1002,10 @@ button {
   align-items: center;
   gap: 10px;
   padding: 12px 14px;
-  background: var(--bg-soft);
+  background: #ffffff;
   border: 2px solid var(--border-light);
   border-radius: 16px;
-  color: var(--text-main);
+  color: #2c2c2c;
 }
 
 .admin-delete-search input {
@@ -1015,7 +1015,12 @@ button {
   background: transparent;
   font-size: 14px;
   font-weight: 700;
-  color: var(--text-main);
+  color: #2c2c2c;
+}
+
+.admin-delete-search input::placeholder {
+  color: #6b7280;
+  opacity: 1;
 }
 
 .admin-delete-stats {
@@ -1168,11 +1173,14 @@ button {
 }
 
 .admin-edit-panel {
-  background: var(--bg-soft);
+  background: #ffffff;
   border: 2px solid var(--border-light);
   border-radius: 18px;
   padding: 16px;
   box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
 }
 
 .admin-edit-empty {
@@ -1251,9 +1259,10 @@ button {
 
 .admin-edit-grid {
   display: grid;
-  grid-template-columns: minmax(220px, 0.9fr) minmax(280px, 1.2fr);
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.15fr);
   gap: 16px;
   align-items: start;
+  min-width: 0;
 }
 
 .admin-word-list {
@@ -1281,6 +1290,10 @@ button {
   min-height: 48px;
 }
 
+.admin-word-row.hide-pinyin {
+  grid-template-columns: 24px 1fr auto;
+}
+
 .admin-word-row span {
   min-width: 0;
   overflow: hidden;
@@ -1297,7 +1310,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  color: var(--text-secondary);
+  color: #6b7280;
   font-size: 12px;
   font-weight: 900;
 }
@@ -1307,11 +1320,26 @@ button {
   width: 100%;
   border: 2px solid var(--border-light);
   border-radius: 8px;
+  background: #ffffff;
   padding: 10px 12px;
-  color: var(--text-main);
+  color: #2c2c2c;
   font: inherit;
   font-size: 14px;
   min-width: 0;
+  color-scheme: light;
+}
+
+.admin-edit-panel input::placeholder,
+.admin-edit-panel textarea::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+.admin-edit-panel input:focus,
+.admin-edit-panel textarea:focus {
+  border-color: var(--xh-red);
+  box-shadow: 0 0 0 3px rgba(114, 47, 55, 0.12);
+  outline: 0;
 }
 
 .grid-2 {
@@ -1385,6 +1413,7 @@ button {
   .learn-container {
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 190px;
   }
 
   .unit-node {
@@ -1393,7 +1422,7 @@ button {
   }
 
   .connector-svg {
-    width: 180px;
+    width: 260px;
   }
 
   .review-card-modern {
@@ -1416,6 +1445,11 @@ button {
   .admin-edit-grid,
   .grid-2 {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-edit-card {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -1840,12 +1874,186 @@ button {
 .learn-container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 24px 20px 20px 20px;
+  padding: 24px 20px 180px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
   position: relative;
+}
+
+.weather-scene,
+.weather-canvas-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.weather-scene {
+  z-index: 0;
+  overflow: hidden;
+}
+
+.weather-scene-light {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 15%, rgba(255, 244, 216, 0.32) 0%, rgba(255, 244, 216, 0.08) 20%, transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 28%, transparent 55%);
+  mix-blend-mode: screen;
+}
+
+.weather-mountains {
+  position: absolute;
+  left: -12%;
+  right: -12%;
+  background: linear-gradient(180deg, rgba(70, 106, 104, 0.64) 0%, rgba(39, 61, 66, 0.96) 100%);
+  filter: blur(1px);
+}
+
+.weather-mountains-far {
+  bottom: 30%;
+  height: 18%;
+  opacity: 0.72;
+  clip-path: polygon(0 88%, 8% 70%, 16% 78%, 26% 48%, 35% 72%, 46% 42%, 58% 70%, 70% 44%, 80% 60%, 91% 40%, 100% 72%, 100% 100%, 0 100%);
+}
+
+.weather-mountains-near {
+  bottom: 18%;
+  height: 20%;
+  opacity: 0.86;
+  clip-path: polygon(0 100%, 0 76%, 11% 70%, 22% 46%, 31% 56%, 44% 30%, 55% 54%, 69% 34%, 81% 56%, 92% 44%, 100% 58%, 100% 100%);
+}
+
+.weather-water {
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: 33%;
+  height: 16%;
+  border-top-left-radius: 40% 100%;
+  border-top-right-radius: 36% 100%;
+  background: linear-gradient(180deg, rgba(112, 180, 210, 0.9) 0%, rgba(76, 129, 152, 0.95) 100%);
+  opacity: 0.75;
+  filter: blur(2px);
+}
+
+.weather-ground {
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  bottom: 7%;
+  height: 21%;
+  background: linear-gradient(180deg, rgba(98, 134, 93, 0.9) 0%, rgba(75, 109, 71, 0.96) 100%);
+  clip-path: polygon(0 100%, 0 46%, 9% 48%, 18% 38%, 27% 52%, 36% 44%, 48% 55%, 62% 40%, 74% 58%, 86% 46%, 100% 53%, 100% 100%);
+}
+
+.weather-dim {
+  position: absolute;
+  inset: 0;
+}
+
+.weather-canvas-layer {
+  z-index: 3;
+}
+
+.weather-canvas-layer canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.weather-thunder-flash {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.weather-badges {
+  position: fixed;
+  top: 132px;
+  right: max(12px, calc((100vw - 600px) / 2 + 12px));
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.weather-badges > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.weather-badges > div:nth-child(2) {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+}
+
+.weather-lunar {
+  font-size: 10px;
+  opacity: 0.78;
+}
+
+.weather-high {
+  color: #ef4444;
+}
+
+.weather-low {
+  color: #3b82f6;
+}
+
+.weather-progress {
+  position: fixed;
+  bottom: 150px;
+  left: 50%;
+  z-index: 240;
+  width: 180px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.weather-progress-track {
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(8px);
+}
+
+.weather-progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.6s ease;
+}
+
+.learn-container > .unit-list {
+  position: relative;
+  z-index: 10;
 }
 
 /* ── Offline Banner ── */
@@ -1975,9 +2183,10 @@ button {
 .connector-svg {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  width: 260px;
   height: 100%;
+  transform: translateX(-50%);
   overflow: visible;
   z-index: 0;
   pointer-events: none;
@@ -1989,7 +2198,7 @@ button {
   align-items: center;
   z-index: 1;
   position: relative;
-  min-height: 168px;
+  height: 168px;
 }
 
 .unit-button {
@@ -2065,7 +2274,7 @@ button {
   flex-direction: column;
   align-items: center;
   width: min(260px, 86vw);
-  min-height: 148px;
+  height: 168px;
   color: inherit;
   text-decoration: none;
   transition: transform 0.18s ease, opacity 0.18s ease;
@@ -2268,6 +2477,23 @@ button {
 
 .review-card-modern::before {
   content: none;
+}
+
+.admin-edit-content {
+  max-width: 600px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.admin-edit-card {
+  overflow: visible;
+  box-sizing: border-box;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.admin-edit-tab {
+  min-width: 0;
 }
 
 .review-header {
@@ -2751,6 +2977,60 @@ input:checked + .slider:before {
 .dark .aura-bar {
   background-color: var(--xh-paper);
   border-top-color: var(--xh-border);
+}
+
+.dark .admin-delete-search,
+.dark .admin-edit-panel {
+  background: var(--bg-soft);
+  border-color: var(--border-light);
+  color: var(--text-main);
+}
+
+.dark .admin-delete-search input,
+.dark .admin-edit-panel input,
+.dark .admin-edit-panel textarea {
+  background: var(--bg-soft);
+  color: var(--text-main);
+  border-color: var(--border-light);
+  color-scheme: dark;
+}
+
+.dark .admin-delete-search input::placeholder,
+.dark .admin-edit-panel input::placeholder,
+.dark .admin-edit-panel textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.dark .admin-edit-panel label {
+  color: var(--text-secondary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) .admin-delete-search,
+  :root:not(.light) .admin-edit-panel {
+    background: var(--bg-soft);
+    border-color: var(--border-light);
+    color: var(--text-main);
+  }
+
+  :root:not(.light) .admin-delete-search input,
+  :root:not(.light) .admin-edit-panel input,
+  :root:not(.light) .admin-edit-panel textarea {
+    background: var(--bg-soft);
+    color: var(--text-main);
+    border-color: var(--border-light);
+    color-scheme: dark;
+  }
+
+  :root:not(.light) .admin-delete-search input::placeholder,
+  :root:not(.light) .admin-edit-panel input::placeholder,
+  :root:not(.light) .admin-edit-panel textarea::placeholder {
+    color: var(--text-secondary);
+  }
+
+  :root:not(.light) .admin-edit-panel label {
+    color: var(--text-secondary);
+  }
 }
 
 @media (max-width: 600px) {

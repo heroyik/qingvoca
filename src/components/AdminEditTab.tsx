@@ -66,7 +66,7 @@ interface AdminEditTabProps {
 }
 
 export default function AdminEditTab({ locale = DEFAULT_LOCALE }: AdminEditTabProps) {
-  const { clearVocabOverride, deleteWordsGlobally, globalDeletedWordKeys, loadAdminVocabData, saveVocabOverride, vocabEntries } =
+  const { clearVocabOverride, deleteWordsGlobally, globalDeletedWordKeys, loadAdminVocabData, saveVocabOverride, stats, vocabEntries } =
     useGamification();
   const [search, setSearch] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -191,7 +191,7 @@ export default function AdminEditTab({ locale = DEFAULT_LOCALE }: AdminEditTabPr
             <button
               key={entry.id}
               type="button"
-              className={`admin-word-row ${editingEntry?.id === entry.id ? "active" : ""}`}
+              className={`admin-word-row ${stats.settings.showPinyin ? "" : "hide-pinyin"} ${editingEntry?.id === entry.id ? "active" : ""}`}
               onClick={() => setEditingId(entry.id)}
             >
               <input
@@ -201,7 +201,7 @@ export default function AdminEditTab({ locale = DEFAULT_LOCALE }: AdminEditTabPr
                 onClick={(event) => event.stopPropagation()}
               />
               <span className="font-900">{entry.word}</span>
-              <span>{entry.pinyin}</span>
+              {stats.settings.showPinyin && <span>{entry.pinyin}</span>}
               <span>{t("lesson", locale)} {entry.lessonId}</span>
             </button>
           ))}

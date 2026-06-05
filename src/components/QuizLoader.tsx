@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import vocabData from "@/data/vocab.json";
 import type { ChineseVocabEntry } from "@/types/chinese-vocab";
 import { getUnits, parseUnitId } from "@/utils/vocab";
@@ -13,11 +14,18 @@ interface QuizLoaderProps {
 }
 
 export default function QuizLoader({ unitId }: QuizLoaderProps) {
+  const [locale, setLocale] = useState(loadLocale(undefined));
   const entries = vocabData.data as ChineseVocabEntry[];
   const step = parseUnitId(unitId);
   const units = getUnits([], entries);
   const unit = units.find((item) => item.step === step || item.id === unitId);
-  const locale = loadLocale(typeof window !== "undefined" ? window.localStorage : undefined);
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setLocale(loadLocale(window.localStorage));
+    }, 0);
+    return () => window.clearTimeout(timeoutId);
+  }, []);
 
   if (!unit) {
     return (

@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState, type MouseEvent } from "react";
+import { useEffect, useMemo, useState, type MouseEvent } from "react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { HomeIcon, TrophyIcon, BookOpenIcon, PencilSquareIcon, UserIcon } from "@heroicons/react/24/solid";
 import AdminEditTab from "@/components/AdminEditTab";
@@ -16,6 +17,11 @@ import type { SupportedLocale } from "@/types/chinese-vocab";
 
 type HomeTab = "learn" | "leader" | "review" | "profile" | "edit";
 
+const WeatherBackground = dynamic(
+  () => import("@/components/WeatherBackground").then((module) => module.WeatherBackground),
+  { ssr: false },
+);
+
 const getLevelTier = (index: number) => {
   if (index < 3) return "beginner";
   if (index < 7) return "intermediate";
@@ -23,6 +29,12 @@ const getLevelTier = (index: number) => {
 };
 
 const getLevelTitle = (index: number) => getLevelTier(index).toUpperCase();
+
+const SNAKE_PATH_WIDTH = 260;
+const SNAKE_PATH_CENTER_X = SNAKE_PATH_WIDTH / 2;
+const SNAKE_NODE_CENTER_Y = 44;
+const SNAKE_NODE_STEP_Y = 240;
+const getSnakeOffset = (index: number) => Math.sin(index * 1.2) * 60;
 
 const getLevelColor = (index: number, isLocked: boolean) => {
   if (isLocked) return "var(--border-light)";
@@ -94,12 +106,16 @@ export default function Home() {
   const entries = vocabEntries;
   const [activeTab, setActiveTab] = useState<HomeTab>("learn");
   const [adminToolsUnlocked, setAdminToolsUnlocked] = useState(false);
-  const [locale, setLocaleState] = useState<SupportedLocale>(() =>
-    typeof window !== "undefined" ? loadLocale(window.localStorage) : "ko",
-  );
+  const [locale, setLocaleState] = useState<SupportedLocale>("ko");
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setLocaleState(loadLocale(window.localStorage));
+    }, 0);
+    return () => window.clearTimeout(timeoutId);
+  }, []);
   const setLocale = (newLocale: SupportedLocale) => {
     setLocaleState(newLocale);
-    saveLocale(window.localStorage, newLocale);
+    if (typeof window !== "undefined") saveLocale(window.localStorage, newLocale);
   };
   const units = useMemo(() => getUnits([], entries), [entries]);
   const completedWordIds = useMemo(
@@ -124,6 +140,21 @@ export default function Home() {
     event.stopPropagation();
     router.push("/quiz/review");
   };
+  const toggleAdminEdit = () => {
+    setAdminToolsUnlocked((current) => {
+      const next = !current;
+      if (!next && activeTab === "edit") setActiveTab("profile");
+      return next;
+    });
+  };
+  const snakePathPoints = cards.map((_, index) => ({
+    x: SNAKE_PATH_CENTER_X + getSnakeOffset(index),
+    y: SNAKE_NODE_CENTER_Y + index * SNAKE_NODE_STEP_Y,
+  }));
+  const snakePathD = snakePathPoints
+    .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x.toFixed(2)} ${point.y.toFixed(2)}`)
+    .join(" ");
+  const snakePathHeight = SNAKE_NODE_CENTER_Y * 2 + Math.max(cards.length - 1, 0) * SNAKE_NODE_STEP_Y;
 
   return (
     <main className="container min-h-screen pb-80 pt-68">
@@ -155,22 +186,18 @@ export default function Home() {
 
       {activeTab === "learn" && (
         <section className="learn-container">
-          <div className="mt-24 mb-24">
-            <h2 className="text-title">{t("learnTitle", locale)}</h2>
-            <p className="text-subtitle">{t("learnSubtitle", locale)}</p>
-          </div>
-
+          <WeatherBackground />
           <div className="unit-list">
-            <svg className="connector-svg" aria-hidden="true" width={240} height={(cards.length - 1) * 220 + 84}>
+            <svg
+              className="connector-svg"
+              aria-hidden="true"
+              width={SNAKE_PATH_WIDTH}
+              height={snakePathHeight}
+              viewBox={`0 0 ${SNAKE_PATH_WIDTH} ${snakePathHeight}`}
+            >
               {/* Solid background path */}
               <path
-                d={cards
-                  .map((_, index) => {
-                    const x = (120 + Math.sin(index * 1.2) * 60).toFixed(2);
-                    const y = (index * 220 + 42).toFixed(2);
-                    return `${index === 0 ? "M" : "L"} ${x} ${y}`;
-                  })
-                  .join(" ")}
+                d={snakePathD}
                 fill="none"
                 stroke="var(--border-light)"
                 strokeWidth="16"
@@ -180,13 +207,7 @@ export default function Home() {
               {/* Animated dashed overlay */}
               <path
                 className="connector-path-animated"
-                d={cards
-                  .map((_, index) => {
-                    const x = (120 + Math.sin(index * 1.2) * 60).toFixed(2);
-                    const y = (index * 220 + 42).toFixed(2);
-                    return `${index === 0 ? "M" : "L"} ${x} ${y}`;
-                  })
-                  .join(" ")}
+                d={snakePathD}
                 fill="none"
                 stroke="var(--xh-kurenai)"
                 strokeWidth="6"
@@ -216,7 +237,7 @@ export default function Home() {
                 }, 0) ?? 0;
               const showFailBadge = failCount > 0;
               const buttonState = isLocked ? "locked" : isMastered ? "mastered" : isCompleted ? "completed" : isCurrent ? "current" : "available";
-              const offset = Math.sin(index * 1.2) * 60;
+              const offset = getSnakeOffset(index);
 
               return (
                 <div
@@ -458,24 +479,31 @@ export default function Home() {
                   <span className="slider"></span>
                 </label>
               </div>
-            </div>
 
-            {isAdmin(user) && (
-              <button
-                className="duo-button duo-button-primary w-full mt-16"
-                type="button"
-                onClick={() => setAdminToolsUnlocked(true)}
-              >
-                {t("openAdminEdit", locale)}
-              </button>
-            )}
+              {isAdmin(user) && (
+                <div className="settings-item">
+                  <div className="flex flex-col">
+                    <span className="font-16 font-700">{t("openAdminEdit", locale)}</span>
+                    <span className="font-12 text-secondary">Show admin vocabulary editing tools</span>
+                  </div>
+                  <label className="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked={adminToolsUnlocked}
+                      onChange={toggleAdminEdit}
+                    />
+                    <span className="slider"></span>
+                  </label>
+                </div>
+              )}
+            </div>
           </div>
         </section>
       )}
 
       {activeTab === "edit" && showAdminTabs && (
-        <section className="review-content">
-          <div className="review-card-modern">
+        <section className="review-content admin-edit-content">
+          <div className="review-card-modern admin-edit-card">
             <AdminEditTab locale={locale} />
           </div>
         </section>

@@ -22,7 +22,8 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 - **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Because motivation is a feature.
 - **Offline-first, quota-safe sync** — Service worker + Firestore local cache keep study flows available offline, while leaderboard and admin reads are cached or loaded only when needed.
 - **Kamivoca-style mobile UX** — LEARN, REVIEW, LEADER, and ME tabs use compact mobile-first cards, path nodes, ranking rows, profile stats, and review controls inspired by Kamivoca.
-- **Multi-locale UI** — Entire interface (labels, buttons, messages) in Korean, Japanese, or English. Locale persists via localStorage.
+- **Live LEARN weather** — Optional location-based weather scenery on the LEARN path, with rain, snow, clouds, thunder, time-of-day color, and cached weather data.
+- **Multi-locale UI** — Entire interface (labels, buttons, messages) in English, Korean, or Japanese. Locale persists via localStorage.
 - **Chinese speech** — Tap the speaker icon and hear the word pronounced via the Web Speech API.
 - **Dark mode** — Full dark mode support with system preference detection and manual toggle.
 - **Admin tools** — Search, edit, and delete vocabulary entries with full locale support. Sync changes back to Firestore.
@@ -109,7 +110,7 @@ Step 2  →  Lessons 3-4   (~64 words)
 Step 10 →  Lessons 19-20 (~64 words)
 ```
 
-A Kamivoca-style snake path connects all 10 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into the review flow.
+A Kamivoca-style snake path connects all 10 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into the review flow. The path can also render a cached, location-aware weather backdrop using Open-Meteo data; use `?weather=RAIN`, `?weather=SNOW&time=night`, and similar URL overrides for visual testing.
 
 ### 🎮 Gamification
 
@@ -132,14 +133,14 @@ The quiz presents a Chinese word (with pinyin) and asks you to pick the correct 
 
 Features:
 - **Smart wrong answers** — Distractors are from the same difficulty band
-- **Pinyin display** — Toggle on/off in settings
+- **Pinyin display** — Toggle on/off in ME; OFF hides pinyin across quiz, review, Wall of Pain, and list previews
 - **Audio playback** — Hear the word via Web Speech API
 - **Instant feedback** — Correct/wrong indicators with word highlighting
 - **Full locale support** — All UI labels, buttons, and messages in ko/ja/en
 
 ### 🌐 Multi-locale UI
 
-The entire interface is localized — not just word definitions. Switch between **Korean (ko)**, **Japanese (ja)**, and **English (en)** from the ME tab. Your preference is saved to localStorage.
+The entire interface is localized — not just word definitions. Switch between **English (en)**, **Korean (ko)**, and **Japanese (ja)** from the ME tab. Your preference is saved to localStorage.
 
 **Localized elements include:**
 - Home page titles, subtitles, step/lesson labels, progress text
@@ -167,14 +168,14 @@ The app gracefully degrades — Firebase features (leaderboard, cloud sync) are 
 
 ### 🛠️ Admin tools
 
-Unlockable from the profile tab (admin email configured via `NEXT_PUBLIC_ADMIN_EMAIL`), the admin panel lets you:
+Toggleable from the ME tab (admin email configured via `NEXT_PUBLIC_ADMIN_EMAIL`), the admin panel lets you:
 
 - **Search & edit** any vocabulary entry (word, pinyin, meaning, translations, lesson, step)
 - **Delete words** globally (hides them from quizzes across all users)
 - **Sync changes** to Firestore so every user gets the update
 - **Full locale support** — Admin panel labels in ko/ja/en
 
-Admin data loads on demand when the admin panel opens. Changes are still written back to Firestore, but normal study sessions do not subscribe to admin collections.
+Admin data loads on demand when the admin panel opens. Changes are still written back to Firestore, but normal study sessions do not subscribe to admin collections. The ME tab exposes Admin edit as a normal settings toggle, alongside Dark mode and display-language controls.
 
 ### 📥 Vocab export
 
@@ -199,12 +200,14 @@ qingvoca/
 │   │   ├── ReviewTab.tsx       # Review tab + Wall of Pain
 │   │   ├── Leaderboard.tsx     # Global leaderboard
 │   │   ├── AdminEditTab.tsx    # Admin vocabulary editor (locale-aware)
+│   │   ├── WeatherBackground.tsx # LEARN weather scene + particles
 │   │   ├── OfflineModeGate.tsx # Offline state UI
 │   │   └── ServiceWorkerRegistrar.tsx
 │   ├── contexts/
 │   │   └── GamificationContext.tsx  # State management (auth, progress, Firestore sync)
 │   ├── hooks/
-│   │   └── useGamification.ts  # Gamification hook
+│   │   ├── useGamification.ts  # Gamification hook
+│   │   └── useWeather.ts       # Cached location weather hook
 │   ├── types/
 │   │   └── chinese-vocab.ts    # TypeScript types
 │   ├── utils/                  # Utility functions
@@ -514,6 +517,7 @@ Progress is persisted to localStorage with the `qingvoca:zh:*` namespace:
 | `qingvoca:zh:deleted-word-keys` | Locally deleted words |
 | `qingvoca:zh:locale` | Selected display locale (ko/ja/en) |
 | `qingvoca:zh:theme` | Dark/light mode preference |
+| `qingvoca:weather:cache` | Cached LEARN weather data |
 
 Session storage also keeps short-lived Firestore safety state:
 

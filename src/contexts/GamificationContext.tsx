@@ -207,32 +207,14 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
   const [isAuthResolved, setIsAuthResolved] = useState(!auth);
   const [hasRemoteStats, setHasRemoteStats] = useState(false);
   const [isRemoteStatsResolved, setIsRemoteStatsResolved] = useState(false);
-  const [isFirestoreQuotaBlocked, setIsFirestoreQuotaBlocked] = useState(() => readBooleanStorage(FIRESTORE_QUOTA_BLOCKED_KEY));
-  const [isOnline, setIsOnline] = useState(() => (typeof navigator === "undefined" ? true : navigator.onLine));
-  const [vocabOverrides, setVocabOverrides] = useState<Record<string, AdminEditPatch>>(() =>
-    readJsonStorage<Record<string, AdminEditPatch>>(OVERRIDES_STORAGE_KEY, {}),
-  );
-  const [globalDeletedWordKeys, setGlobalDeletedWordKeys] = useState<string[]>(() =>
-    readJsonStorage<string[]>(DELETED_STORAGE_KEY, []),
-  );
-  const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "light";
-    try {
-      const saved = localStorage.getItem(THEME_STORAGE_KEY);
-      if (saved === "dark" || saved === "light") return saved;
-    } catch {}
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  });
-  const [stats, setStats] = useState<UserStats>(() => {
-    if (typeof window === "undefined") return defaultStats;
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      return saved ? mergeStats(JSON.parse(saved)) : defaultStats;
-    } catch {
-      return defaultStats;
-    }
-  });
-  const isInitialized = true;
+  const [hasLoadedLocalState, setHasLoadedLocalState] = useState(false);
+  const [isFirestoreQuotaBlocked, setIsFirestoreQuotaBlocked] = useState(false);
+  const [isOnline, setIsOnline] = useState(true);
+  const [vocabOverrides, setVocabOverrides] = useState<Record<string, AdminEditPatch>>({});
+  const [globalDeletedWordKeys, setGlobalDeletedWordKeys] = useState<string[]>([]);
+  const [theme, setThemeState] = useState<Theme>("light");
+  const [stats, setStats] = useState<UserStats>(defaultStats);
+  const isInitialized = hasLoadedLocalState;
   const hasLoadedAdminVocabDataRef = useRef(false);
 
   const blockFirestoreQuota = useCallback((error: unknown) => {
@@ -242,6 +224,29 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
       window.sessionStorage.setItem(FIRESTORE_QUOTA_BLOCKED_KEY, "1");
     } catch {}
     return true;
+  }, []);
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setIsFirestoreQuotaBlocked(readBooleanStorage(FIRESTORE_QUOTA_BLOCKED_KEY));
+      setIsOnline(navigator.onLine);
+      setVocabOverrides(readJsonStorage<Record<string, AdminEditPatch>>(OVERRIDES_STORAGE_KEY, {}));
+      setGlobalDeletedWordKeys(readJsonStorage<string[]>(DELETED_STORAGE_KEY, []));
+      setStats(mergeStats(readJsonStorage<unknown>(STORAGE_KEY, defaultStats)));
+
+      try {
+        const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
+        if (saved === "dark" || saved === "light") {
+          setThemeState(saved);
+        } else {
+          setThemeState(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        }
+      } catch {}
+
+      setHasLoadedLocalState(true);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   useEffect(() => {
@@ -265,21 +270,24 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
   }, []);
 
   useEffect(() => {
+    if (!hasLoadedLocalState) return;
     if (!isInitialized) return;
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
-  }, [isInitialized, stats]);
+  }, [hasLoadedLocalState, isInitialized, stats]);
 
   useEffect(() => {
+    if (!hasLoadedLocalState) return;
     window.localStorage.setItem(OVERRIDES_STORAGE_KEY, JSON.stringify(vocabOverrides));
-  }, [vocabOverrides]);
+  }, [hasLoadedLocalState, vocabOverrides]);
 
   useEffect(() => {
+    if (!hasLoadedLocalState) return;
     window.localStorage.setItem(DELETED_STORAGE_KEY, JSON.stringify(globalDeletedWordKeys));
-  }, [globalDeletedWordKeys]);
+  }, [globalDeletedWordKeys, hasLoadedLocalState]);
 
   const setTheme = useCallback((newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+    window.localStorage.setItem(THEME_STORAGE_KEY, newTheme);
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(newTheme);
   }, []);

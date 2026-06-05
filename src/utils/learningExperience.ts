@@ -25,9 +25,9 @@ export type LocaleOption = {
 };
 
 export const LOCALE_OPTIONS: LocaleOption[] = [
+  { locale: "en", label: "English" },
   { locale: "ko", label: "한국어" },
   { locale: "ja", label: "日本語" },
-  { locale: "en", label: "English" },
 ];
 
 export function createHomeStepCards(
