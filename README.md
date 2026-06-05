@@ -102,10 +102,10 @@ Hit [http://localhost:3000/qingvoca](http://localhost:3000/qingvoca) and you're 
 Words are organized into **10 Steps**, with each step covering **2 lessons** (20 lessons total across the full HSK4 word list). Progress through them sequentially — each step presents a batch of words for quizzing.
 
 ```
-Step 1  →  Lessons 1-2   (65 words)
-Step 2  →  Lessons 3-4   (65 words)
+Step 1  →  Lessons 1-2   (~64 words)
+Step 2  →  Lessons 3-4   (~64 words)
 ...
-Step 10 →  Lessons 19-20 (65 words)
+Step 10 →  Lessons 19-20 (~64 words)
 ```
 
 A snake path connects all 10 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels.
