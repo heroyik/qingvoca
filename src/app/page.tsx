@@ -112,24 +112,24 @@ export default function Home() {
             <p className="text-subtitle">{t("learnSubtitle", locale)}</p>
           </div>
 
-          <svg className="connector-svg" aria-hidden="true">
-            <path
-              d={cards
-                .map((_, index) => {
-                  const x = (120 + Math.sin(index * 1.2) * 60).toFixed(2);
-                  const y = (index * 170).toFixed(2);
-                  return `${index === 0 ? "M" : "L"} ${x} ${y}`;
-                })
-                .join(" ")}
-              fill="none"
-              stroke="var(--border-light)"
-              strokeWidth="16"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-
           <div className="unit-list">
+            <svg className="connector-svg" aria-hidden="true">
+              <path
+                d={cards
+                  .map((_, index) => {
+                    const x = (120 + Math.sin(index * 1.2) * 60).toFixed(2);
+                    const y = (index * 220 + 42).toFixed(2);
+                    return `${index === 0 ? "M" : "L"} ${x} ${y}`;
+                  })
+                  .join(" ")}
+                fill="none"
+                stroke="var(--border-light)"
+                strokeWidth="16"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+
             {cards.map((card, index) => {
               const previousUnitId = units[index - 1]?.id;
               const isLocked =
