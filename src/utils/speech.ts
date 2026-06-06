@@ -38,6 +38,7 @@ const CHINESE_FEEDBACK_PHRASES: Record<ChineseFeedbackTone, string[]> = {
 };
 
 let activeAudio: HTMLAudioElement | null = null;
+let activeAudioContainer: HTMLDivElement | null = null;
 
 export function selectChineseVoice(voices: SpeechVoiceLike[]): SpeechVoiceLike | null {
   const exact = voices.find((voice) => normalizeLang(voice.lang) === "zh-cn");
@@ -144,7 +145,7 @@ function shouldUseAudioFallback(): boolean {
 }
 
 function playAudioFallback(text: string) {
-  if (typeof Audio === "undefined") return;
+  if (typeof document === "undefined") return;
   activeAudio?.pause();
   playAudioUrls(createFallbackAudioUrls(text));
 }
@@ -157,17 +158,35 @@ function createFallbackAudioUrls(text: string): string[] {
   ];
 }
 
-function playAudioUrls(urls: string[]) {
+function playAudioUrls(urls: string[], failed: string[] = []) {
   const [url, ...nextUrls] = urls;
-  if (!url) return;
+  if (!url) {
+    console.warn("[speech] audio fallback failed", { failed });
+    return;
+  }
 
-  const audio = new Audio(url);
+  const audio = document.createElement("audio");
   activeAudio = audio;
   audio.preload = "auto";
+  audio.src = url;
+  audio.style.display = "none";
+  audio.setAttribute("playsinline", "true");
+  ensureAudioContainer().replaceChildren(audio);
   audio.onerror = () => {
-    if (activeAudio === audio) playAudioUrls(nextUrls);
+    if (activeAudio === audio) playAudioUrls(nextUrls, [...failed, url]);
   };
-  void audio.play().catch(() => {
-    if (activeAudio === audio) playAudioUrls(nextUrls);
+  audio.load();
+  void audio.play().catch((error) => {
+    console.warn("[speech] audio play rejected", { url, error });
+    if (activeAudio === audio) playAudioUrls(nextUrls, [...failed, url]);
   });
+}
+
+function ensureAudioContainer(): HTMLDivElement {
+  if (activeAudioContainer?.isConnected) return activeAudioContainer;
+  activeAudioContainer = document.createElement("div");
+  activeAudioContainer.setAttribute("aria-hidden", "true");
+  activeAudioContainer.style.display = "none";
+  document.body.appendChild(activeAudioContainer);
+  return activeAudioContainer;
 }
