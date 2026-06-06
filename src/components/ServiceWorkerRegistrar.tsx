@@ -52,9 +52,10 @@ export default function ServiceWorkerRegistrar() {
     const register = async () => {
       setOfflineReady(false);
       try {
-        await navigator.serviceWorker.register(`${BASE_PATH}/sw.js`, {
+        const registration = await navigator.serviceWorker.register(`${BASE_PATH}/sw.js`, {
           scope: `${BASE_PATH}/`,
         });
+        await registration.update();
 
         const ready = await syncOfflineReady();
         if (!ready && !isCancelled) {
