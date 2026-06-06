@@ -12,12 +12,12 @@ const inputPath = process.argv[2] ?? DEFAULT_INPUT;
 const outputPath = process.argv[3] ?? DEFAULT_OUTPUT;
 
 function getStepForLesson(lessonId) {
-  return Math.ceil(lessonId / 2);
+  return lessonId;
 }
 
 function getBandForStep(step) {
-  if (step <= 3) return "BASIC";
-  if (step <= 7) return "INTERMEDIATE";
+  if (step <= 6) return "BASIC";
+  if (step <= 14) return "INTERMEDIATE";
   return "ADVANCED";
 }
 
@@ -123,11 +123,11 @@ function validateOutput(entries) {
   const errors = [];
   const steps = new Set(entries.map((entry) => entry.step));
 
-  if (steps.size !== 10) {
-    errors.push(`expected exactly 10 steps, got ${steps.size}`);
+  if (steps.size !== 20) {
+    errors.push(`expected exactly 20 steps, got ${steps.size}`);
   }
 
-  for (let step = 1; step <= 10; step += 1) {
+  for (let step = 1; step <= 20; step += 1) {
     if (!steps.has(step)) errors.push(`missing Step ${step}`);
   }
 

@@ -278,7 +278,6 @@ export default function Home() {
                     <p className="font-11 font-900 letter-spacing-0-5 mb-1" style={{ color: getLevelColor(index, isLocked) }}>
                       {getLevelTitle(index)} {card.step}
                     </p>
-                    <p className="font-16 font-900 text-main mt-4 mb-2">{card.title}</p>
                     <p className="font-13 font-800 text-subtitle mt-0 mb-2">
                       {card.lessonRange} · {card.hsk}
                     </p>

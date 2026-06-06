@@ -101,11 +101,11 @@ export function validateAdminPatch(patch: AdminEditPatch): string[] {
   if (patch.lessonId != null && (patch.lessonId < 1 || patch.lessonId > 20)) {
     errors.push("lessonId must be between 1 and 20.");
   }
-  if (patch.step != null && (patch.step < 1 || patch.step > 10)) {
-    errors.push("step must be between 1 and 10.");
+  if (patch.step != null && (patch.step < 1 || patch.step > 20)) {
+    errors.push("step must be between 1 and 20.");
   }
-  if (patch.level != null && (patch.level < 1 || patch.level > 10)) {
-    errors.push("level must be between 1 and 10.");
+  if (patch.level != null && (patch.level < 1 || patch.level > 20)) {
+    errors.push("level must be between 1 and 20.");
   }
 
   return errors;

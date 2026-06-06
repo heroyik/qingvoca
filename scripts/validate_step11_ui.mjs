@@ -21,21 +21,21 @@ for (const required of ["한국어", "日本語", "English", "lesson", "step", "
 }
 
 const stepCards = [];
-for (let step = 1; step <= 10; step += 1) {
+for (let step = 1; step <= 20; step += 1) {
   const words = entries.filter((entry) => entry.step === step);
   const lessons = [...new Set(words.map((entry) => entry.lessonId))].sort((a, b) => a - b);
   stepCards.push({
     step,
     title: `Step ${step}`,
-    lessonRange: `Lesson ${lessons[0]}-${lessons[lessons.length - 1]}`,
+    lessonRange: lessons.length === 1 ? `Lesson ${lessons[0]}` : `Lesson ${lessons[0]}-${lessons[lessons.length - 1]}`,
     wordCount: words.length,
     hsk: "HSK4",
   });
 }
 
-if (stepCards.length !== 10) errors.push(`expected 10 step cards, got ${stepCards.length}`);
-if (stepCards[0].lessonRange !== "Lesson 1-2") errors.push("Step 1 card does not show Lesson 1-2");
-if (stepCards[9].lessonRange !== "Lesson 19-20") errors.push("Step 10 card does not show Lesson 19-20");
+if (stepCards.length !== 20) errors.push(`expected 20 step cards, got ${stepCards.length}`);
+if (stepCards[0].lessonRange !== "Lesson 1") errors.push("Step 1 card does not show Lesson 1");
+if (stepCards[19].lessonRange !== "Lesson 20") errors.push("Step 20 card does not show Lesson 20");
 if (stepCards.some((card) => card.wordCount <= 0)) errors.push("a step card has no words");
 if (stepCards.some((card) => card.hsk !== "HSK4")) errors.push("a step card is missing HSK4");
 
@@ -53,7 +53,7 @@ if (errors.length > 0) {
 } else {
   console.log("[step11] validation complete");
   console.log("[step11] UI strings cover ko, ja, en Chinese learning labels");
-  console.log("[step11] Step cards cover Step 1-10, Lesson 1-20, HSK4");
+  console.log("[step11] Step cards cover Step 1-20, Lesson 1-20, HSK4");
   console.log("[step11] pinyin tone marks are preserved");
   console.log("[step11] compact button labels fit the configured threshold");
 }

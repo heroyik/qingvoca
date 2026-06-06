@@ -64,10 +64,10 @@ function getDistractors(entry, locale, count = 3) {
 
 const errors = [];
 
-for (let step = 1; step <= 10; step += 1) {
+for (let step = 1; step <= 20; step += 1) {
   const words = entries.filter((entry) => entry.step === step);
   const lessons = [...new Set(words.map((entry) => entry.lessonId))].sort((a, b) => a - b);
-  const expectedLessons = [step * 2 - 1, step * 2];
+  const expectedLessons = [step];
 
   if (words.length === 0) errors.push(`Step ${step} has no quiz words`);
   if (JSON.stringify(lessons) !== JSON.stringify(expectedLessons)) {
@@ -118,7 +118,7 @@ if (errors.length > 0) {
   console.log("[step5] validation complete");
   console.log("[step5] quiz card fields: word, pinyin, pos");
   console.log("[step5] locales validated: ko, ja, en");
-  console.log("[step5] all Step IDs map to two source lessons");
+  console.log("[step5] all Step IDs map to one source lesson");
   console.log("[step5] distractors: same HSK4, same part of speech when available, non-empty, unique by locale meaning");
   console.log(`[step5] review id lookup sample: ${reviewWords.length}/${reviewIds.length}`);
 }

@@ -4,7 +4,7 @@ const vocab = JSON.parse(await readFile("src/data/vocab.json", "utf8"));
 const entries = vocab.data;
 
 function getStepForLesson(lessonId) {
-  return Math.ceil(lessonId / 2);
+  return lessonId;
 }
 
 function getDisplayMeaning(entry, locale = "ko") {
@@ -17,9 +17,9 @@ function getDisplayMeaning(entry, locale = "ko") {
 const errors = [];
 const steps = [...new Set(entries.map((entry) => entry.step))].sort((a, b) => a - b);
 
-if (steps.length !== 10) errors.push(`expected 10 steps, got ${steps.length}`);
+if (steps.length !== 20) errors.push(`expected 20 steps, got ${steps.length}`);
 
-for (let step = 1; step <= 10; step += 1) {
+for (let step = 1; step <= 20; step += 1) {
   const words = entries.filter((entry) => entry.step === step);
   if (words.length === 0) errors.push(`step ${step} has no words`);
 }

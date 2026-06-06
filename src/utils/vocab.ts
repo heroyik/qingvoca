@@ -31,12 +31,12 @@ export function getReading(entry: Pick<ChineseVocabEntry, "pinyin" | "reading" |
 }
 
 export function getStepForLesson(lessonId: number): number {
-  return Math.ceil(lessonId / 2);
+  return lessonId;
 }
 
 export function getBandForStep(step: number): ChineseDifficultyBand {
-  if (step <= 3) return "BASIC";
-  if (step <= 7) return "INTERMEDIATE";
+  if (step <= 6) return "BASIC";
+  if (step <= 14) return "INTERMEDIATE";
   return "ADVANCED";
 }
 
@@ -137,7 +137,10 @@ export function getUnits(
     return {
       id: `unit-${step}`,
       title: `Step ${step}`,
-      source: `Lesson ${lessonIds[0]}-${lessonIds[lessonIds.length - 1]}`,
+      source:
+        lessonIds.length === 1
+          ? `Lesson ${lessonIds[0]}`
+          : `Lesson ${lessonIds[0]}-${lessonIds[lessonIds.length - 1]}`,
       words,
       step,
       lessonIds,
@@ -181,7 +184,7 @@ export function sortByStepThenWord(entries: ChineseVocabEntry[]): ChineseVocabEn
   });
 }
 
-export function validateStepCoverage(entries: ChineseVocabEntry[], expectedSteps = 10): string[] {
+export function validateStepCoverage(entries: ChineseVocabEntry[], expectedSteps = 20): string[] {
   const errors: string[] = [];
   const steps = getAvailableSteps(entries);
 

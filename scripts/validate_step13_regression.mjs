@@ -18,20 +18,20 @@ for (const entry of vocab.data) {
     if (entry[field] == null || entry[field] === "") errors.push(`${entry.id ?? "(missing id)"} missing ${field}`);
   }
   if (entry.hsk !== "HSK4") errors.push(`${entry.id} hsk is not HSK4`);
-  if (entry.step < 1 || entry.step > 10) errors.push(`${entry.id} step out of range`);
-  if (entry.step !== Math.ceil(entry.lessonId / 2)) errors.push(`${entry.id} step does not match lessonId`);
+  if (entry.step < 1 || entry.step > 20) errors.push(`${entry.id} step out of range`);
+  if (entry.step !== entry.lessonId) errors.push(`${entry.id} step does not match lessonId`);
   if (entry.level !== entry.step) errors.push(`${entry.id} level does not match step`);
 }
 
-for (let step = 1; step <= 10; step += 1) {
+for (let step = 1; step <= 20; step += 1) {
   const words = vocab.data.filter((entry) => entry.step === step);
   if (words.length === 0) errors.push(`Step ${step} has no words`);
 }
 
 const step1Lessons = [...new Set(vocab.data.filter((entry) => entry.step === 1).map((entry) => entry.lessonId))].sort((a, b) => a - b);
-const step10Lessons = [...new Set(vocab.data.filter((entry) => entry.step === 10).map((entry) => entry.lessonId))].sort((a, b) => a - b);
-if (JSON.stringify(step1Lessons) !== JSON.stringify([1, 2])) errors.push("Step 1 does not map to Lesson 1-2");
-if (JSON.stringify(step10Lessons) !== JSON.stringify([19, 20])) errors.push("Step 10 does not map to Lesson 19-20");
+const step20Lessons = [...new Set(vocab.data.filter((entry) => entry.step === 20).map((entry) => entry.lessonId))].sort((a, b) => a - b);
+if (JSON.stringify(step1Lessons) !== JSON.stringify([1])) errors.push("Step 1 does not map to Lesson 1");
+if (JSON.stringify(step20Lessons) !== JSON.stringify([20])) errors.push("Step 20 does not map to Lesson 20");
 
 const sample = vocab.data[0];
 if (!sample.translations.ko || !sample.translations.ja || !sample.translations.en) {

@@ -44,7 +44,10 @@ export function createHomeStepCards(
     return {
       step: summary.step,
       title: `${t("step", locale)} ${summary.step}`,
-      lessonRange: `${t("lesson", locale)} ${summary.lessonIds[0]}-${summary.lessonIds[summary.lessonIds.length - 1]}`,
+      lessonRange:
+        summary.lessonIds.length === 1
+          ? `${t("lesson", locale)} ${summary.lessonIds[0]}`
+          : `${t("lesson", locale)} ${summary.lessonIds[0]}-${summary.lessonIds[summary.lessonIds.length - 1]}`,
       wordCount: summary.wordCount,
       hsk: CHINESE_DATASET_LEVEL,
       progressPercent,

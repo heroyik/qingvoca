@@ -8,16 +8,7 @@ const PRECACHE_ROUTES = [
   `${BASE_PATH}`,
   `${BASE_PATH}/`,
   `${BASE_PATH}/quiz/review`,
-  `${BASE_PATH}/quiz/unit-1`,
-  `${BASE_PATH}/quiz/unit-2`,
-  `${BASE_PATH}/quiz/unit-3`,
-  `${BASE_PATH}/quiz/unit-4`,
-  `${BASE_PATH}/quiz/unit-5`,
-  `${BASE_PATH}/quiz/unit-6`,
-  `${BASE_PATH}/quiz/unit-7`,
-  `${BASE_PATH}/quiz/unit-8`,
-  `${BASE_PATH}/quiz/unit-9`,
-  `${BASE_PATH}/quiz/unit-10`,
+  ...Array.from({ length: 20 }, (_, index) => `${BASE_PATH}/quiz/unit-${index + 1}`),
 ];
 
 async function getOfflineUrls() {

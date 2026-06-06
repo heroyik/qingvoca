@@ -28,7 +28,7 @@ if (manifest.datasetVersion !== "zh-HSK4-v1") errors.push("manifest datasetVersi
 if (!asset) errors.push("vocab asset missing");
 if (asset && asset.hash !== expectedHash) errors.push("vocab hash mismatch");
 if (asset && asset.totalCount !== 636) errors.push(`expected totalCount 636, got ${asset.totalCount}`);
-if (asset && asset.stepCount !== 10) errors.push(`expected stepCount 10, got ${asset.stepCount}`);
+if (asset && asset.stepCount !== 20) errors.push(`expected stepCount 20, got ${asset.stepCount}`);
 if (asset && asset.lessonCount !== 20) errors.push(`expected lessonCount 20, got ${asset.lessonCount}`);
 for (const route of ["/", "/quiz/[unitId]", "/quiz/review"]) {
   if (!manifest.routes.includes(route)) errors.push(`missing route ${route}`);
@@ -40,6 +40,6 @@ if (errors.length > 0) {
 } else {
   console.log("[step10] validation complete");
   console.log("[step10] offline manifest includes src/data/vocab.json sha256 hash");
-  console.log("[step10] dataset metadata: zh, HSK4, zh-HSK4-v1, 636 words, 10 steps, 20 lessons");
+  console.log("[step10] dataset metadata: zh, HSK4, zh-HSK4-v1, 636 words, 20 steps, 20 lessons");
   console.log("[step10] offline routes: /, /quiz/[unitId], /quiz/review");
 }

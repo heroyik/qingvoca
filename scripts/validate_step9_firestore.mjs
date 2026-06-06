@@ -34,8 +34,8 @@ for (const document of payload.documents) {
   if (typeof data.step !== "number") errors.push(`${document.id} missing numeric step`);
 }
 
-if (payload.meta.data.language !== "zh" || payload.meta.data.hsk !== "HSK4" || payload.meta.data.stepCount !== 10) {
-  errors.push("dataset meta is not scoped to zh HSK4 with 10 steps");
+if (payload.meta.data.language !== "zh" || payload.meta.data.hsk !== "HSK4" || payload.meta.data.stepCount !== 20) {
+  errors.push("dataset meta is not scoped to zh HSK4 with 20 steps");
 }
 
 if (errors.length > 0) {

@@ -7,7 +7,7 @@
 
 ## What is this?
 
-QingVoca is a **Chinese vocabulary learning app** built for anyone tackling **HSK4** — whether you're prepping for the exam, leveling up your Mandarin, or just flexing on your flashcard game. It takes the classic word list, chops it into **10 Steps** (covering **20 lessons**, **636 words** total), and wraps it in a modern Chinese-themed quiz interface with gamification, offline support, and multi-language definitions.
+QingVoca is a **Chinese vocabulary learning app** built for anyone tackling **HSK4** — whether you're prepping for the exam, leveling up your Mandarin, or just flexing on your flashcard game. It takes the classic word list, chops it into **20 Steps** (one Step per original lesson, **636 words** total), and wraps it in a modern Chinese-themed quiz interface with gamification, offline support, and multi-language definitions.
 
 The UI supports **Korean, Japanese, and English** — switch anytime from the ME tab.
 
@@ -17,7 +17,7 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 
 ### Features
 
-- **Step-based progression** — Words are grouped into 10 Steps, each covering 2 lessons. Clear one, unlock the next. Simple.
+- **Step-based progression** — Words are grouped into 20 Steps, each covering 1 original lesson. Clear one, unlock the next. Simple.
 - **Quiz engine** — Multiple-choice questions with randomized question order and smart same-part-of-speech distractors pulled from the full HSK4 pool. No easy outs.
 - **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Because motivation is a feature.
 - **Offline-first, quota-safe sync** — Service worker + Firestore local cache keep study flows available offline, while leaderboard and admin reads are cached or loaded only when needed.
@@ -102,16 +102,16 @@ Hit [http://localhost:3000/qingvoca](http://localhost:3000/qingvoca) and you're 
 
 ### 📚 Step-based learning
 
-Words are organized into **10 Steps**, with each step covering **2 lessons** (20 lessons total across the full HSK4 word list). Progress through them sequentially — each step presents a batch of words for quizzing.
+Words are organized into **20 Steps**, with each Step covering **1 original lesson** across the full HSK4 word list. Progress through them sequentially — each step presents a focused batch of words for quizzing.
 
 ```
-Step 1  →  Lessons 1-2   (~64 words)
-Step 2  →  Lessons 3-4   (~64 words)
+Step 1  →  Lesson 1  (31 words)
+Step 2  →  Lesson 2  (30 words)
 ...
-Step 10 →  Lessons 19-20 (~64 words)
+Step 20 →  Lesson 20 (30 words)
 ```
 
-A Kamivoca-style snake path connects all 10 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into the review flow. The path can also render a cached, location-aware weather backdrop using Open-Meteo data; use `?weather=RAIN`, `?weather=SNOW&time=night`, and similar URL overrides for visual testing.
+A Kamivoca-style snake path connects all 20 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into the review flow. The path can also render a cached, location-aware weather backdrop using Open-Meteo data; use `?weather=RAIN`, `?weather=SNOW&time=night`, and similar URL overrides for visual testing.
 
 ### 🎮 Gamification
 
@@ -586,7 +586,7 @@ This is a personal learning project, but PRs are welcome if you spot bugs or hav
 
 <div align="center">
 
-**qingvoca** · v1.0.0
+**qingvoca** · v1.0.1
 
 *Built with ☕ and 单词卡片*
 
