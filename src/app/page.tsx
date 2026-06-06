@@ -508,7 +508,14 @@ export default function Home() {
                       <span className="slider"></span>
                     </label>
                   </div>
-                  <p className="m-0 font-12 leading-1-5 text-secondary">{t("redgoldSourceNote", locale)}</p>
+                  <p className="m-0 text-center font-12 leading-1-5 text-secondary">
+                    {t("redgoldSourceNotePrefix", locale)}
+                    <a href="https://heroyik.github.io/redgold" target="_blank" rel="noreferrer">
+                      <span style={{ color: "var(--xh-red)" }}>Red</span>
+                      <span style={{ color: "var(--xh-gold)" }}>Gold</span>
+                    </a>
+                    {t("redgoldSourceNoteSuffix", locale)}
+                  </p>
                 </div>
               )}
             </div>
