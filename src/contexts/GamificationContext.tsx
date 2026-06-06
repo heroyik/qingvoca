@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { User } from "firebase/auth";
 import { onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
-import { collection, doc, getDoc, getDocFromCache, getDocs } from "firebase/firestore";
+import { collection, doc, getDocFromCache, getDocFromServer, getDocs } from "firebase/firestore";
 import vocabData from "@/data/vocab.json";
 import { useFirestoreSync } from "@/hooks/useFirestoreSync";
 import { auth, db, googleProvider, isFirebaseConfigured } from "@/lib/firebase";
@@ -285,8 +285,9 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
   useEffect(() => {
     if (!auth) return undefined;
     return onAuthStateChanged(auth, (nextUser) => {
+      hasMergedRemoteStatsRef.current = false;
+      setIsRemoteStatsResolved(!nextUser || !db);
       setUser(nextUser);
-      setIsRemoteStatsResolved(true);
       setIsAuthResolved(true);
     });
   }, []);
@@ -353,7 +354,8 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     const firestore = db;
-    if (!firestore || !user || !hasLoadedLocalState || hasMergedRemoteStatsRef.current) return;
+    if (!user) return;
+    if (!firestore || !hasLoadedLocalState || hasMergedRemoteStatsRef.current) return;
     hasMergedRemoteStatsRef.current = true;
 
     const userRef = doc(firestore, "users", user.uid);
@@ -367,17 +369,20 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
         if (cached.exists()) mergeSnapshot(cached.data());
       } catch {}
 
-      const syncState = readFirestoreSyncState();
-      const canReadServer = canUseFirestore() && (!syncState.lastRemoteReadAt || Date.now() - syncState.lastRemoteReadAt > REMOTE_READ_TTL_MS);
-      if (!canReadServer) return;
+      if (!canUseFirestore()) {
+        setIsRemoteStatsResolved(true);
+        return;
+      }
 
       try {
-        const snapshot = await getDoc(userRef);
+        const snapshot = await getDocFromServer(userRef);
         if (snapshot.exists()) mergeSnapshot(snapshot.data());
         markFirestoreRemoteRead();
       } catch (error) {
         markFirestoreFailure(error);
         setIsFirestoreQuotaBlocked(true);
+      } finally {
+        setIsRemoteStatsResolved(true);
       }
     };
 
