@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import type { User } from "firebase/auth";
-import { deleteDoc, doc, increment, serverTimestamp, setDoc, writeBatch } from "firebase/firestore";
+import { deleteDoc, doc, increment, runTransaction, serverTimestamp, setDoc, writeBatch } from "firebase/firestore";
+import type { UserStats } from "@/contexts/GamificationContext";
 import { db } from "@/lib/firebase";
 import { canUseFirestore, markFirestoreFailure, markFirestoreSuccess } from "@/utils/firestoreAvailability";
 import { readSyncQueue, writeSyncQueue, type SyncQueueItem } from "@/utils/firestoreSyncQueue";
@@ -11,7 +12,41 @@ const GLOBAL_MISTAKES_COLLECTION = "zhGlobalMistakes";
 const MAX_GLOBAL_MISTAKES_PER_FLUSH = 20;
 const MAX_ADMIN_WRITES_PER_FLUSH = 20;
 
-export function useFirestoreSync(user: User | null, enabled: boolean) {
+function getNumber(value: unknown, fallback = 0) {
+  return typeof value === "number" && Number.isFinite(value) ? value : fallback;
+}
+
+function getStringArray(value: unknown) {
+  return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
+}
+
+function mergeMistakes(local: Record<string, number>, remoteInput: unknown) {
+  const remote = remoteInput && typeof remoteInput === "object" ? (remoteInput as Record<string, unknown>) : {};
+  const keys = new Set([...Object.keys(local), ...Object.keys(remote)]);
+  const mistakes: Record<string, number> = {};
+  keys.forEach((key) => {
+    mistakes[key] = Math.max(local[key] ?? 0, getNumber(remote[key]));
+  });
+  return mistakes;
+}
+
+function mergeQueuedUserStats(payload: UserStats, remoteInput: Record<string, unknown>): UserStats {
+  return {
+    ...payload,
+    xp: Math.max(payload.xp, getNumber(remoteInput.xp)),
+    gems: Math.max(payload.gems, getNumber(remoteInput.gems)),
+    streak: Math.max(payload.streak, getNumber(remoteInput.streak)),
+    completedUnits: Array.from(new Set([...getStringArray(remoteInput.completedUnits), ...payload.completedUnits])),
+    masteredUnits: Array.from(new Set([...getStringArray(remoteInput.masteredUnits), ...payload.masteredUnits])),
+    mistakes: mergeMistakes(payload.mistakes, remoteInput.mistakes),
+    unitStats:
+      remoteInput.unitStats && typeof remoteInput.unitStats === "object"
+        ? { ...(remoteInput.unitStats as UserStats["unitStats"]), ...payload.unitStats }
+        : payload.unitStats,
+  };
+}
+
+export function useFirestoreSync(user: User | null, enabled: boolean, onRemoteUserStats?: (stats: UserStats) => void) {
   const isFlushingRef = useRef(false);
 
   const flushFirestoreQueue = useCallback(async () => {
@@ -34,17 +69,25 @@ export function useFirestoreSync(user: User | null, enabled: boolean) {
             remaining.push(item);
             continue;
           }
-          await setDoc(
-            doc(firestore, "users", user.uid),
-            {
-              ...item.payload,
-              displayName: user.displayName || item.payload.displayName || "QingVoca Learner",
-              photoURL: user.photoURL ?? null,
-              email: user.email ?? null,
-              updatedAt: serverTimestamp(),
-            },
-            { merge: true },
-          );
+          const userRef = doc(firestore, "users", user.uid);
+          const mergedStats = await runTransaction(firestore, async (transaction) => {
+            const snapshot = await transaction.get(userRef);
+            const remoteData = snapshot.exists() ? snapshot.data() : {};
+            const nextStats = mergeQueuedUserStats(item.payload, remoteData);
+            transaction.set(
+              userRef,
+              {
+                ...nextStats,
+                displayName: user.displayName || nextStats.displayName || "QingVoca Learner",
+                photoURL: user.photoURL ?? null,
+                email: user.email ?? null,
+                updatedAt: serverTimestamp(),
+              },
+              { merge: true },
+            );
+            return nextStats;
+          });
+          onRemoteUserStats?.(mergedStats);
           continue;
         }
 
@@ -134,7 +177,7 @@ export function useFirestoreSync(user: User | null, enabled: boolean) {
     writeSyncQueue(remaining);
     markFirestoreSuccess();
     isFlushingRef.current = false;
-  }, [enabled, user]);
+  }, [enabled, onRemoteUserStats, user]);
 
   const flushOrPruneFirestoreQueue = useCallback(async () => {
     if (!user) {

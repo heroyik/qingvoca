@@ -351,7 +351,10 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
     };
   }, [isAuthResolved, isRemoteStatsResolved, stats, user]);
 
-  const { flushOrPruneFirestoreQueue } = useFirestoreSync(user, isAuthResolved && isRemoteStatsResolved);
+  const mergeRemoteUserStats = useCallback((remoteStats: UserStats) => {
+    setStats((current) => mergeRemoteStats(current, remoteStats));
+  }, []);
+  const { flushOrPruneFirestoreQueue } = useFirestoreSync(user, isAuthResolved && isRemoteStatsResolved, mergeRemoteUserStats);
 
   useEffect(() => {
     const firestore = db;
