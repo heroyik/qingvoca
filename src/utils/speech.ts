@@ -39,6 +39,7 @@ const CHINESE_FEEDBACK_PHRASES: Record<ChineseFeedbackTone, string[]> = {
 
 let activeAudio: HTMLAudioElement | null = null;
 let activeAudioContainer: HTMLDivElement | null = null;
+let activeAudioObjectUrl: string | null = null;
 
 export function selectChineseVoice(voices: SpeechVoiceLike[]): SpeechVoiceLike | null {
   const exact = voices.find((voice) => normalizeLang(voice.lang) === "zh-cn");
@@ -147,7 +148,8 @@ function shouldUseAudioFallback(): boolean {
 function playAudioFallback(text: string) {
   if (typeof document === "undefined") return;
   activeAudio?.pause();
-  playAudioUrls(createFallbackAudioUrls(text));
+  revokeActiveAudioObjectUrl();
+  void playAudioUrls(createFallbackAudioUrls(text));
 }
 
 function createFallbackAudioUrls(text: string): string[] {
@@ -158,28 +160,38 @@ function createFallbackAudioUrls(text: string): string[] {
   ];
 }
 
-function playAudioUrls(urls: string[], failed: string[] = []) {
+async function playAudioUrls(urls: string[], failed: string[] = []) {
   const [url, ...nextUrls] = urls;
   if (!url) {
     console.warn("[speech] audio fallback failed", { failed });
     return;
   }
 
-  const audio = document.createElement("audio");
-  activeAudio = audio;
-  audio.preload = "auto";
-  audio.src = url;
-  audio.style.display = "none";
-  audio.setAttribute("playsinline", "true");
-  ensureAudioContainer().replaceChildren(audio);
-  audio.onerror = () => {
-    if (activeAudio === audio) playAudioUrls(nextUrls, [...failed, url]);
-  };
-  audio.load();
-  void audio.play().catch((error) => {
+  try {
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) throw new Error(`TTS request failed: ${response.status}`);
+    const contentType = response.headers.get("content-type") || "audio/mpeg";
+    const blob = await response.blob();
+    const audioUrl = URL.createObjectURL(blob.type ? blob : new Blob([blob], { type: contentType }));
+    activeAudioObjectUrl = audioUrl;
+
+    const audio = document.createElement("audio");
+    activeAudio = audio;
+    audio.preload = "auto";
+    audio.src = audioUrl;
+    audio.style.display = "none";
+    audio.setAttribute("playsinline", "true");
+    ensureAudioContainer().replaceChildren(audio);
+    audio.onerror = () => {
+      if (activeAudio === audio) void playAudioUrls(nextUrls, [...failed, url]);
+    };
+    audio.onended = revokeActiveAudioObjectUrl;
+    audio.load();
+    await audio.play();
+  } catch (error) {
     console.warn("[speech] audio play rejected", { url, error });
-    if (activeAudio === audio) playAudioUrls(nextUrls, [...failed, url]);
-  });
+    void playAudioUrls(nextUrls, [...failed, url]);
+  }
 }
 
 function ensureAudioContainer(): HTMLDivElement {
@@ -189,4 +201,10 @@ function ensureAudioContainer(): HTMLDivElement {
   activeAudioContainer.style.display = "none";
   document.body.appendChild(activeAudioContainer);
   return activeAudioContainer;
+}
+
+function revokeActiveAudioObjectUrl() {
+  if (!activeAudioObjectUrl) return;
+  URL.revokeObjectURL(activeAudioObjectUrl);
+  activeAudioObjectUrl = null;
 }
