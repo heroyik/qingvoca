@@ -2,7 +2,44 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function doesNotDowngradeScore() {
+      return request.resource.data.xp is number
+        && request.resource.data.gems is number
+        && request.resource.data.streak is number
+        && request.resource.data.xp >= resource.data.xp
+        && request.resource.data.gems >= resource.data.gems
+        && request.resource.data.streak >= resource.data.streak;
+    }
+
+    match /users/{userId} {
+      allow read: if true;
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId) && doesNotDowngradeScore();
+      allow delete: if false;
+    }
+
+    match /zhGlobalMistakes/{wordKey} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    match /adminVocabOverrides/{entryId} {
+      allow read, write: if true;
+    }
+
+    match /adminDeletedWords/{wordKey} {
+      allow read, write: if true;
+    }
+
+    match /zhVocab/{entryId} {
       allow read, write: if true;
     }
   }
