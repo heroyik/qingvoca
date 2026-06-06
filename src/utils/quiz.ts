@@ -89,6 +89,7 @@ export function getDistractors(
     .filter(({ meaning }) => {
       const normalized = normalizeMeaning(meaning);
       if (seen.has(normalized)) return false;
+      if (isConfusingDistractor(answer, meaning)) return false;
       seen.add(normalized);
       return true;
     })
@@ -130,6 +131,23 @@ export function validateQuizQuestions(questions: QuizQuestion[], optionCount = 4
 
 function normalizeMeaning(meaning: string): string {
   return meaning.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+function normalizeMeaningForSimilarity(meaning: string): string {
+  return meaning
+    .toLowerCase()
+    .replace(/[「」『』()[\]{}.,;:!?~〜、。·・/\\|'"`’‘“”\-_\s]/g, "")
+    .trim();
+}
+
+function isConfusingDistractor(answer: string, candidate: string): boolean {
+  const normalizedAnswer = normalizeMeaningForSimilarity(answer);
+  const normalizedCandidate = normalizeMeaningForSimilarity(candidate);
+  if (!normalizedAnswer || !normalizedCandidate) return false;
+  if (normalizedAnswer === normalizedCandidate) return true;
+  if (normalizedAnswer.length >= 3 && normalizedCandidate.includes(normalizedAnswer)) return true;
+  if (normalizedCandidate.length >= 3 && normalizedAnswer.includes(normalizedCandidate)) return true;
+  return false;
 }
 
 function getPosTokens(pos: string): Set<string> {

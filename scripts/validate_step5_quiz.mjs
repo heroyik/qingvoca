@@ -13,6 +13,23 @@ function normalizeMeaning(meaning) {
   return meaning.trim().replace(/\s+/g, " ").toLowerCase();
 }
 
+function normalizeMeaningForSimilarity(meaning) {
+  return meaning
+    .toLowerCase()
+    .replace(/[「」『』()[\]{}.,;:!?~〜、。·・/\\|'"`’‘“”\-_\s]/g, "")
+    .trim();
+}
+
+function isConfusingDistractor(answer, candidate) {
+  const normalizedAnswer = normalizeMeaningForSimilarity(answer);
+  const normalizedCandidate = normalizeMeaningForSimilarity(candidate);
+  if (!normalizedAnswer || !normalizedCandidate) return false;
+  if (normalizedAnswer === normalizedCandidate) return true;
+  if (normalizedAnswer.length >= 3 && normalizedCandidate.includes(normalizedAnswer)) return true;
+  if (normalizedCandidate.length >= 3 && normalizedAnswer.includes(normalizedCandidate)) return true;
+  return false;
+}
+
 function getPosTokens(pos) {
   return new Set(
     pos
@@ -48,6 +65,7 @@ function getDistractors(entry, locale, count = 3) {
     .filter(({ meaning }) => {
       const normalized = normalizeMeaning(meaning);
       if (seen.has(normalized)) return false;
+      if (isConfusingDistractor(answer, meaning)) return false;
       seen.add(normalized);
       return true;
     })
@@ -86,7 +104,8 @@ for (const locale of ["ko", "ja", "en"]) {
         candidate.id !== entry.id &&
         candidate.hsk === entry.hsk &&
         hasSharedPos(getPosTokens(entry.pos), candidate.pos) &&
-        !new Set([normalizeMeaning(answer), ""]).has(normalizeMeaning(getDisplayMeaning(candidate, locale))),
+        !new Set([normalizeMeaning(answer), ""]).has(normalizeMeaning(getDisplayMeaning(candidate, locale))) &&
+        !isConfusingDistractor(answer, getDisplayMeaning(candidate, locale)),
     ).length;
     const expectedSamePosCount = Math.min(3, samePosAvailable);
     const samePosCount = distractors.filter(({ posMatch }) => posMatch).length;
@@ -96,6 +115,9 @@ for (const locale of ["ko", "ja", "en"]) {
     if (options.length !== 4) errors.push(`${entry.id} ${locale} option count is ${options.length}`);
     if (unique.size !== options.length) errors.push(`${entry.id} ${locale} has duplicate options`);
     if (options.some((option) => !option.trim())) errors.push(`${entry.id} ${locale} has blank option`);
+    if (distractors.some(({ meaning }) => isConfusingDistractor(answer, meaning))) {
+      errors.push(`${entry.id} ${locale} has a distractor that contains or repeats the answer`);
+    }
     if (samePosCount < expectedSamePosCount) {
       errors.push(`${entry.id} ${locale} has ${samePosCount}/${expectedSamePosCount} same-pos distractors`);
     }
