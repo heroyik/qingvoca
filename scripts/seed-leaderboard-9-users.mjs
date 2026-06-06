@@ -74,11 +74,14 @@ function avatarIndex(seed) {
 
 function buildPhotoURL(seed) {
   const avatar = AVATAR_POOL[avatarIndex(seed)];
+  const background = `#${avatar.backgroundColor}`;
   const svg = [
     `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">`,
-    `<rect width="120" height="120" rx="60" fill="#${avatar.backgroundColor}"/>`,
-    `<circle cx="60" cy="60" r="50" fill="rgba(255,255,255,0.22)"/>`,
-    `<text x="60" y="73" text-anchor="middle" font-size="52" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif">${avatar.symbol}</text>`,
+    `<defs><radialGradient id="g" cx="35%" cy="28%" r="75%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="42%" stop-color="${background}"/><stop offset="100%" stop-color="${background}" stop-opacity="0.86"/></radialGradient></defs>`,
+    `<rect width="120" height="120" fill="url(#g)"/>`,
+    `<circle cx="24" cy="24" r="34" fill="rgba(255,255,255,0.18)"/>`,
+    `<circle cx="99" cy="101" r="42" fill="rgba(0,0,0,0.08)"/>`,
+    `<text x="60" y="83" text-anchor="middle" font-size="76" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif">${avatar.symbol}</text>`,
     `</svg>`,
   ].join("");
   return `data:image/svg+xml,${encodeURIComponent(svg)}`;
