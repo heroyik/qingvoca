@@ -20,6 +20,13 @@ interface QuizProps {
 
 type AnswerState = "correct" | "wrong" | null;
 
+const BASE_CORRECT_XP = 10;
+const PERFECT_STEP_BONUS_XP = 1000;
+
+function getComboXp(combo: number) {
+  return BASE_CORRECT_XP * Math.max(1, combo);
+}
+
 export default function Quiz({
   unitId,
   unitWords,
@@ -87,7 +94,7 @@ export default function Quiz({
       triggerHapticFeedback(stats.settings.hapticsEnabled, nextCombo >= 3 ? [20, 30, 20, 30, 45] : 18);
       playChineseFeedback("correct");
       setScore((value) => value + 1);
-      addXP(10);
+      addXP(getComboXp(nextCombo));
       addGem(1);
       clearMistake(currentQuestion.id);
     } else {
@@ -108,7 +115,9 @@ export default function Quiz({
       return;
     }
 
-    const mastered = mistakeIds.length === 0 && score === questions.length;
+    const finalScore = score + (answerState === "correct" ? 1 : 0);
+    const mastered = mistakeIds.length === 0 && finalScore === questions.length;
+    if (mastered && !isReview) addXP(PERFECT_STEP_BONUS_XP);
     if (!isReview) completeUnit(unitId, mistakeIds.length, mastered);
     setShowResult(true);
   };
