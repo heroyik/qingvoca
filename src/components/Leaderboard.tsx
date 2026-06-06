@@ -59,8 +59,15 @@ function writeCachedLeaders(leaders: LeaderboardEntry[]) {
   } catch {}
 }
 
+function fillLeaderboardSlots(realLeaders: LeaderboardEntry[]) {
+  const visibleRealLeaders = realLeaders.filter((entry) => (entry.xp ?? 0) > 0);
+  const usedIds = new Set(visibleRealLeaders.map((entry) => entry.id));
+  const fillerLeaders = DEMO_USERS.filter((entry) => !usedIds.has(entry.id)).slice(0, Math.max(0, 10 - visibleRealLeaders.length));
+  return [...visibleRealLeaders, ...fillerLeaders];
+}
+
 export default function Leaderboard() {
-  const [leaders, setLeaders] = useState<LeaderboardEntry[]>(() => readCachedLeaders() ?? DEMO_USERS);
+  const [leaders, setLeaders] = useState<LeaderboardEntry[]>(() => fillLeaderboardSlots(readCachedLeaders() ?? []));
   const [brokenImageIds, setBrokenImageIds] = useState<Set<string>>(() => new Set());
 
   useEffect(() => {
@@ -76,8 +83,9 @@ export default function Leaderboard() {
         const cacheSnapshot = await getDocsFromCache(leadersQuery);
         if (!isCancelled && !cacheSnapshot.empty) {
           const cachedLeaders = cacheSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as LeaderboardEntry[];
-          setLeaders(cachedLeaders);
-          writeCachedLeaders(cachedLeaders);
+          const filledLeaders = fillLeaderboardSlots(cachedLeaders);
+          setLeaders(filledLeaders);
+          writeCachedLeaders(filledLeaders);
           return;
         }
       } catch {}
@@ -85,9 +93,10 @@ export default function Leaderboard() {
       try {
         const snapshot = await getDocs(leadersQuery);
         const nextLeaders = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as LeaderboardEntry[];
+        const filledLeaders = fillLeaderboardSlots(nextLeaders);
         if (!isCancelled) {
-          setLeaders(nextLeaders);
-          writeCachedLeaders(nextLeaders);
+          setLeaders(filledLeaders);
+          writeCachedLeaders(filledLeaders);
         }
         markFirestoreSuccess();
       } catch (error) {
