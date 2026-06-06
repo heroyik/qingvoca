@@ -1,6 +1,7 @@
 import type { ChineseVocabEntry } from "../types/chinese-vocab";
 
 export const CHINESE_VOICE_FALLBACKS = ["zh-CN", "zh-Hans"] as const;
+const GOOGLE_TTS_URL = "https://translate.google.com/translate_tts";
 
 export type SpeechVoiceLike = {
   lang: string;
@@ -10,6 +11,10 @@ export type SpeechVoiceLike = {
 
 type SpeechUtteranceLike = SpeechSynthesisUtterance & {
   onstart: (() => void) | null;
+};
+
+type NavigatorWithBrave = Navigator & {
+  brave?: unknown;
 };
 
 export type SpeechSynthesisLike = {
@@ -30,6 +35,8 @@ const CHINESE_FEEDBACK_PHRASES: Record<ChineseFeedbackTone, string[]> = {
   correct: ["对啦，真棒！", "没错，就是这样！", "太好了，答对了！"],
   incorrect: ["差一点，再试试！", "没关系，继续加油！", "哎呀，不对，看看答案吧！"],
 };
+
+let activeAudio: HTMLAudioElement | null = null;
 
 export function selectChineseVoice(voices: SpeechVoiceLike[]): SpeechVoiceLike | null {
   const exact = voices.find((voice) => normalizeLang(voice.lang) === "zh-cn");
@@ -81,7 +88,13 @@ function speakChineseText(textInput: string, speechSynthesis: SpeechSynthesisLik
     return { ok: false, reason: "empty-text", text };
   }
 
+  if (shouldUseAudioFallback()) {
+    playAudioFallback(text);
+    return { ok: true, voice: null, lang: CHINESE_VOICE_FALLBACKS[0], text };
+  }
+
   if (!speechSynthesis || typeof speechSynthesis.getVoices !== "function") {
+    playAudioFallback(text);
     return { ok: false, reason: "unsupported", text };
   }
 
@@ -122,4 +135,18 @@ function speakChineseText(textInput: string, speechSynthesis: SpeechSynthesisLik
 
 function normalizeLang(lang: string): string {
   return lang.toLowerCase().replace("_", "-");
+}
+
+function shouldUseAudioFallback(): boolean {
+  if (typeof navigator === "undefined") return false;
+  return Boolean((navigator as NavigatorWithBrave).brave);
+}
+
+function playAudioFallback(text: string) {
+  if (typeof Audio === "undefined") return;
+  const url = `${GOOGLE_TTS_URL}?ie=UTF-8&client=tw-ob&tl=zh-CN&q=${encodeURIComponent(text)}`;
+  activeAudio?.pause();
+  activeAudio = new Audio(url);
+  activeAudio.preload = "auto";
+  void activeAudio.play().catch(() => {});
 }
