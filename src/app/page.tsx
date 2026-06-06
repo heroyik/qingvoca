@@ -493,19 +493,22 @@ export default function Home() {
               </div>
 
               {isAdmin(user) && (
-                <div className="settings-item">
-                  <div className="flex flex-col">
-                    <span className="font-16 font-700">{t("openAdminEdit", locale)}</span>
-                    <span className="font-12 text-secondary">{t("settingsAdminEditDescription", locale)}</span>
+                <div className="flex flex-col gap-2">
+                  <div className="settings-item">
+                    <div className="flex flex-col">
+                      <span className="font-16 font-700">{t("openAdminEdit", locale)}</span>
+                      <span className="font-12 text-secondary">{t("settingsAdminEditDescription", locale)}</span>
+                    </div>
+                    <label className="toggle-switch">
+                      <input
+                        type="checkbox"
+                        checked={stats.settings.adminEditEnabled}
+                        onChange={toggleAdminEdit}
+                      />
+                      <span className="slider"></span>
+                    </label>
                   </div>
-                  <label className="toggle-switch">
-                    <input
-                      type="checkbox"
-                      checked={stats.settings.adminEditEnabled}
-                      onChange={toggleAdminEdit}
-                    />
-                    <span className="slider"></span>
-                  </label>
+                  <p className="m-0 font-12 leading-1-5 text-secondary">{t("redgoldSourceNote", locale)}</p>
                 </div>
               )}
             </div>

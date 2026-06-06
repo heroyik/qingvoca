@@ -31,6 +31,7 @@ export type UiStringKey =
   | "settingsUnlockDescription"
   | "settingsDarkModeDescription"
   | "settingsAdminEditDescription"
+  | "redgoldSourceNote"
   | "localeLabel"
   | "adminEdit"
   | "lessonRange"
@@ -118,6 +119,7 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     settingsUnlockDescription: "원하는 Step을 자유롭게 시작",
     settingsDarkModeDescription: "어두운 QingVoca 테마 사용",
     settingsAdminEditDescription: "관리자 단어 편집 도구 표시",
+    redgoldSourceNote: "redgold(https://heroyik.github.io/redgold) 각 레슨에서 새로 뜬 단어만 싹 모아, 바로 외우기 좋게 만든 버전이에요.",
     localeLabel: "표시 언어",
     adminEdit: "관리자 편집",
     lessonRange: "레슨 범위",
@@ -204,6 +206,7 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     settingsUnlockDescription: "好きなStepを自由に開始",
     settingsDarkModeDescription: "暗いQingVocaテーマを使用",
     settingsAdminEditDescription: "管理者の単語編集ツールを表示",
+    redgoldSourceNote: "redgold(https://heroyik.github.io/redgold) の各レッスンで新しく出る単語だけをサクッと集めた、勉強用バージョンです。",
     localeLabel: "表示言語",
     adminEdit: "管理者編集",
     lessonRange: "レッスン範囲",
@@ -290,6 +293,7 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     settingsUnlockDescription: "Start any Step freely",
     settingsDarkModeDescription: "Use the darker QingVoca theme",
     settingsAdminEditDescription: "Show admin vocabulary editing tools",
+    redgoldSourceNote: "Built from redgold(https://heroyik.github.io/redgold): just the fresh words from each lesson, bundled for quick study.",
     localeLabel: "Display language",
     adminEdit: "Admin edit",
     lessonRange: "Lesson range",
