@@ -22,9 +22,21 @@ type AnswerState = "correct" | "wrong" | null;
 
 const BASE_CORRECT_XP = 10;
 const PERFECT_STEP_BONUS_XP = 1000;
+const HALL_OF_FAME_BASELINES = [4820, 4350, 3980, 3710, 3450, 2890, 2540, 1980, 1320, 970, 870, 720, 500, 490, 480, 420, 390, 260, 160];
 
 function getComboXp(combo: number) {
   return BASE_CORRECT_XP * Math.max(1, combo);
+}
+
+function getRankSnapshot(xp: number) {
+  const sortedScores = [...HALL_OF_FAME_BASELINES].sort((a, b) => b - a);
+  const rank = sortedScores.filter((score) => score > xp).length + 1;
+  const nextTarget = [...sortedScores].reverse().find((score) => score > xp);
+  return {
+    rank,
+    nextTarget,
+    gap: nextTarget === undefined ? 0 : nextTarget - xp,
+  };
 }
 
 export default function Quiz({
@@ -74,6 +86,10 @@ export default function Quiz({
   const validationErrors = useMemo(() => validateQuizQuestions(questions), [questions]);
   const currentQuestion = questions[currentIndex];
   const currentEntry = shuffledUnitWords[currentIndex];
+  const rankSnapshot = useMemo(() => getRankSnapshot(stats.xp), [stats.xp]);
+  const nextCorrectXp = getComboXp(comboCount + 1);
+  const sessionAccuracy = currentIndex === 0 && !selectedOption ? 0 : Math.round((score / Math.max(currentIndex + (selectedOption ? 1 : 0), 1)) * 100);
+  const perfectStillAlive = !isReview && mistakeIds.length === 0;
 
   const playChineseFeedback = (tone: "correct" | "incorrect") => {
     if (typeof window === "undefined" || !stats.settings.soundEffectsEnabled) return;
@@ -217,6 +233,25 @@ export default function Quiz({
             className="progress-fill"
             style={{ width: `${Math.round(((currentIndex + 1) / questions.length) * 100)}%` }}
           />
+        </div>
+
+        <div className="quiz-gamification-panel" aria-label="Quiz score status">
+          <div className="quiz-rank-card">
+            <span className="quiz-rank-label">Current rank</span>
+            <strong>#{rankSnapshot.rank}</strong>
+            <span>{rankSnapshot.gap > 0 ? `${rankSnapshot.gap.toLocaleString()} XP to #${rankSnapshot.rank - 1}` : "Top of the board"}</span>
+          </div>
+          <div className="quiz-score-strip">
+            <span>✨ {stats.xp.toLocaleString()} XP</span>
+            <span>💎 {stats.gems.toLocaleString()}</span>
+            <span>🔥 {stats.streak}</span>
+            <span>🎯 {sessionAccuracy}%</span>
+          </div>
+          <div className="quiz-reward-strip">
+            <span>Next hit +{nextCorrectXp} XP</span>
+            {comboCount > 0 && <span>{comboCount} combo live</span>}
+            {perfectStillAlive && <span>Perfect bonus +{PERFECT_STEP_BONUS_XP.toLocaleString()} XP</span>}
+          </div>
         </div>
 
         <div className="quiz-card">
