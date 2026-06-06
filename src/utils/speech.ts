@@ -90,7 +90,7 @@ function speakChineseText(textInput: string, speechSynthesis: SpeechSynthesisLik
   const lang = voice?.lang || CHINESE_VOICE_FALLBACKS[0];
 
   if (typeof speechSynthesis.speak === "function" && typeof SpeechSynthesisUtterance !== "undefined") {
-    const speak = () => {
+    const speak = (retryOnStall: boolean) => {
       const nextVoice = selectChineseVoice(speechSynthesis.getVoices()) ?? voice;
       let didStart = false;
       const utterance = createChineseUtterance(text, nextVoice) as SpeechUtteranceLike;
@@ -101,20 +101,19 @@ function speakChineseText(textInput: string, speechSynthesis: SpeechSynthesisLik
       speechSynthesis.resume?.();
       speechSynthesis.speak?.(utterance);
       window.setTimeout(() => {
-        if (didStart) return;
+        if (!retryOnStall || didStart) return;
         speechSynthesis.resume?.();
         speechSynthesis.speak?.(createChineseUtterance(text, nextVoice));
       }, 180);
     };
 
+    speak(true);
+
     if (voices.length === 0 && "onvoiceschanged" in speechSynthesis) {
       speechSynthesis.onvoiceschanged = () => {
         speechSynthesis.onvoiceschanged = null;
-        speak();
+        speak(false);
       };
-      window.setTimeout(speak, 120);
-    } else {
-      speak();
     }
   }
 
