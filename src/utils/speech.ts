@@ -2,6 +2,7 @@ import type { ChineseVocabEntry } from "../types/chinese-vocab";
 
 export const CHINESE_VOICE_FALLBACKS = ["zh-CN", "zh-Hans"] as const;
 const GOOGLE_TTS_URL = "https://translate.google.com/translate_tts";
+const YOUDAO_TTS_URL = "https://dict.youdao.com/dictvoice";
 
 export type SpeechVoiceLike = {
   lang: string;
@@ -144,9 +145,29 @@ function shouldUseAudioFallback(): boolean {
 
 function playAudioFallback(text: string) {
   if (typeof Audio === "undefined") return;
-  const url = `${GOOGLE_TTS_URL}?ie=UTF-8&client=tw-ob&tl=zh-CN&q=${encodeURIComponent(text)}`;
   activeAudio?.pause();
-  activeAudio = new Audio(url);
-  activeAudio.preload = "auto";
-  void activeAudio.play().catch(() => {});
+  playAudioUrls(createFallbackAudioUrls(text));
+}
+
+function createFallbackAudioUrls(text: string): string[] {
+  const encoded = encodeURIComponent(text);
+  return [
+    `${YOUDAO_TTS_URL}?audio=${encoded}&type=2`,
+    `${GOOGLE_TTS_URL}?ie=UTF-8&client=tw-ob&tl=zh-CN&q=${encoded}`,
+  ];
+}
+
+function playAudioUrls(urls: string[]) {
+  const [url, ...nextUrls] = urls;
+  if (!url) return;
+
+  const audio = new Audio(url);
+  activeAudio = audio;
+  audio.preload = "auto";
+  audio.onerror = () => {
+    if (activeAudio === audio) playAudioUrls(nextUrls);
+  };
+  void audio.play().catch(() => {
+    if (activeAudio === audio) playAudioUrls(nextUrls);
+  });
 }
