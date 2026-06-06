@@ -11,6 +11,8 @@ Current version: **1.1.0**
 
 QingVoca is a **Chinese vocabulary learning app** built for anyone tackling **HSK4** — whether you're prepping for the exam, leveling up your Mandarin, or just flexing on your flashcard game. It takes the classic word list, chops it into **20 Steps** (one Step per original lesson, **636 words** total), and wraps it in a modern Chinese-themed quiz interface with gamification, offline support, and multi-language definitions.
 
+QingVoca is also the vocabulary-focused **digital twin of [Redgold](https://heroyik.github.io/redgold/)**. Redgold is the lesson-reading side of the pair; QingVoca is the drill room built from those lessons. Each QingVoca Step mirrors one Redgold lesson, pulls out the fresh HSK4 words from that lesson, and turns them into a focused quiz loop. On the LEARN path, every `Lesson N · HSK4` label is a live source link: tap it and QingVoca opens the matching Redgold lesson page in a new tab, so you can bounce from vocab reps back to the original lesson context without hunting around.
+
 The UI supports **Korean, Japanese, and English** — switch anytime from the ME tab.
 
 ### Design
@@ -20,6 +22,7 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 ### Features
 
 - **Step-based progression** — Words are grouped into 20 Steps, each covering 1 original lesson. Clear one, unlock the next. Simple.
+- **Redgold-linked lessons** — Every Step is mapped to its Redgold source lesson, and each lesson label links straight back to that Redgold page.
 - **Quiz engine** — Multiple-choice questions with randomized question order and smart same-part-of-speech distractors pulled from the full HSK4 pool. No easy outs.
 - **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Because motivation is a feature.
 - **Offline-first, quota-safe sync** — Service worker + Firestore local cache keep study flows available offline, while local progress is queued and synced later when Firestore is available.
@@ -113,7 +116,19 @@ Step 2  →  Lesson 2  (30 words)
 Step 20 →  Lesson 20 (30 words)
 ```
 
-A Kamivoca-style snake path connects all 20 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into the review flow. The path can also render a cached, location-aware weather backdrop using Open-Meteo data; use `?weather=CLEAR`, `?weather=CLOUDY`, `?weather=RAIN`, `?weather=SNOW`, `?weather=WIND`, `?weather=THUNDER`, and `&time=night` URL overrides for visual testing.
+A Kamivoca-style snake path connects all 20 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into the review flow.
+
+The lesson title inside each Step is more than a label. It is a source bridge back to Redgold:
+
+| QingVoca | Redgold |
+|---|---|
+| `Step 1 · Lesson 1` | Opens `https://heroyik.github.io/redgold/?lesson=1` |
+| `Step 2 · Lesson 2` | Opens `https://heroyik.github.io/redgold/?lesson=2` |
+| `Step 20 · Lesson 20` | Opens `https://heroyik.github.io/redgold/?lesson=20` |
+
+That makes the two apps work as a pair: read the lesson in Redgold, drill the new words in QingVoca, then jump right back to the exact lesson whenever a word needs more context.
+
+The path can also render a cached, location-aware weather backdrop using Open-Meteo data; use `?weather=CLEAR`, `?weather=CLOUDY`, `?weather=RAIN`, `?weather=SNOW`, `?weather=WIND`, `?weather=THUNDER`, and `&time=night` URL overrides for visual testing.
 
 ### 🎮 Gamification
 
