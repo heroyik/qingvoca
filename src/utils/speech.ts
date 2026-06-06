@@ -1,8 +1,6 @@
 import type { ChineseVocabEntry } from "../types/chinese-vocab";
 
 export const CHINESE_VOICE_FALLBACKS = ["zh-CN", "zh-Hans"] as const;
-const GOOGLE_TTS_URL = "https://translate.google.com/translate_tts";
-const YOUDAO_TTS_URL = "https://dict.youdao.com/dictvoice";
 
 export type SpeechVoiceLike = {
   lang: string;
@@ -12,10 +10,6 @@ export type SpeechVoiceLike = {
 
 type SpeechUtteranceLike = SpeechSynthesisUtterance & {
   onstart: (() => void) | null;
-};
-
-type NavigatorWithBrave = Navigator & {
-  brave?: unknown;
 };
 
 export type SpeechSynthesisLike = {
@@ -36,10 +30,6 @@ const CHINESE_FEEDBACK_PHRASES: Record<ChineseFeedbackTone, string[]> = {
   correct: ["对啦，真棒！", "没错，就是这样！", "太好了，答对了！"],
   incorrect: ["差一点，再试试！", "没关系，继续加油！", "哎呀，不对，看看答案吧！"],
 };
-
-let activeAudio: HTMLAudioElement | null = null;
-let activeAudioContainer: HTMLDivElement | null = null;
-let activeAudioObjectUrl: string | null = null;
 
 export function selectChineseVoice(voices: SpeechVoiceLike[]): SpeechVoiceLike | null {
   const exact = voices.find((voice) => normalizeLang(voice.lang) === "zh-cn");
@@ -91,13 +81,7 @@ function speakChineseText(textInput: string, speechSynthesis: SpeechSynthesisLik
     return { ok: false, reason: "empty-text", text };
   }
 
-  if (shouldUseAudioFallback()) {
-    playAudioFallback(text);
-    return { ok: true, voice: null, lang: CHINESE_VOICE_FALLBACKS[0], text };
-  }
-
   if (!speechSynthesis || typeof speechSynthesis.getVoices !== "function") {
-    playAudioFallback(text);
     return { ok: false, reason: "unsupported", text };
   }
 
@@ -118,6 +102,16 @@ function speakChineseText(textInput: string, speechSynthesis: SpeechSynthesisLik
       speechSynthesis.speak?.(utterance);
       window.setTimeout(() => {
         if (!retryOnStall || didStart) return;
+        console.warn("[speech] Web Speech did not start", {
+          text,
+          voice: nextVoice?.name,
+          lang: nextVoice?.lang ?? utterance.lang,
+          voices: speechSynthesis.getVoices().map((candidate) => ({
+            name: candidate.name,
+            lang: candidate.lang,
+            default: candidate.default,
+          })),
+        });
         speechSynthesis.resume?.();
         speechSynthesis.speak?.(createChineseUtterance(text, nextVoice));
       }, 180);
@@ -138,73 +132,4 @@ function speakChineseText(textInput: string, speechSynthesis: SpeechSynthesisLik
 
 function normalizeLang(lang: string): string {
   return lang.toLowerCase().replace("_", "-");
-}
-
-function shouldUseAudioFallback(): boolean {
-  if (typeof navigator === "undefined") return false;
-  return Boolean((navigator as NavigatorWithBrave).brave);
-}
-
-function playAudioFallback(text: string) {
-  if (typeof document === "undefined") return;
-  activeAudio?.pause();
-  revokeActiveAudioObjectUrl();
-  void playAudioUrls(createFallbackAudioUrls(text));
-}
-
-function createFallbackAudioUrls(text: string): string[] {
-  const encoded = encodeURIComponent(text);
-  return [
-    `${YOUDAO_TTS_URL}?audio=${encoded}&type=2`,
-    `${GOOGLE_TTS_URL}?ie=UTF-8&client=tw-ob&tl=zh-CN&q=${encoded}`,
-  ];
-}
-
-async function playAudioUrls(urls: string[], failed: string[] = []) {
-  const [url, ...nextUrls] = urls;
-  if (!url) {
-    console.warn("[speech] audio fallback failed", { failed });
-    return;
-  }
-
-  try {
-    const response = await fetch(url, { cache: "no-store" });
-    if (!response.ok) throw new Error(`TTS request failed: ${response.status}`);
-    const contentType = response.headers.get("content-type") || "audio/mpeg";
-    const blob = await response.blob();
-    const audioUrl = URL.createObjectURL(blob.type ? blob : new Blob([blob], { type: contentType }));
-    activeAudioObjectUrl = audioUrl;
-
-    const audio = document.createElement("audio");
-    activeAudio = audio;
-    audio.preload = "auto";
-    audio.src = audioUrl;
-    audio.style.display = "none";
-    audio.setAttribute("playsinline", "true");
-    ensureAudioContainer().replaceChildren(audio);
-    audio.onerror = () => {
-      if (activeAudio === audio) void playAudioUrls(nextUrls, [...failed, url]);
-    };
-    audio.onended = revokeActiveAudioObjectUrl;
-    audio.load();
-    await audio.play();
-  } catch (error) {
-    console.warn("[speech] audio play rejected", { url, error });
-    void playAudioUrls(nextUrls, [...failed, url]);
-  }
-}
-
-function ensureAudioContainer(): HTMLDivElement {
-  if (activeAudioContainer?.isConnected) return activeAudioContainer;
-  activeAudioContainer = document.createElement("div");
-  activeAudioContainer.setAttribute("aria-hidden", "true");
-  activeAudioContainer.style.display = "none";
-  document.body.appendChild(activeAudioContainer);
-  return activeAudioContainer;
-}
-
-function revokeActiveAudioObjectUrl() {
-  if (!activeAudioObjectUrl) return;
-  URL.revokeObjectURL(activeAudioObjectUrl);
-  activeAudioObjectUrl = null;
 }
