@@ -327,10 +327,10 @@ export default function Home() {
               const isCurrent = !isLocked && !isCompleted;
               const tier = getLevelTier(index);
               const failCount =
-                unit?.words.reduce((sum, word) => {
+                unit?.words.filter((word) => {
                   const wordKey = normalizeVocabWordKey(word.word);
-                  return sum + (stats.mistakes[word.id] ?? stats.mistakes[wordKey] ?? 0);
-                }, 0) ?? 0;
+                  return (stats.mistakes[word.id] ?? stats.mistakes[wordKey] ?? 0) > 0;
+                }).length ?? 0;
               const showFailBadge = failCount > 0;
               const buttonState = isLocked ? "locked" : isMastered ? "mastered" : isCompleted ? "completed" : isCurrent ? "current" : "available";
               const offset = getSnakeOffset(index).toFixed(4);
