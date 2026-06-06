@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useGamification } from "@/hooks/useGamification";
-import { useSound } from "@/hooks/useSound";
 import type { ChineseVocabEntry, SupportedLocale } from "@/types/chinese-vocab";
 import { DEFAULT_LOCALE } from "@/types/chinese-vocab";
 import { createQuizQuestion, validateQuizQuestions } from "@/utils/quiz";
@@ -39,7 +38,6 @@ export default function Quiz({
   const [showResult, setShowResult] = useState(false);
   const [questionSeed, setQuestionSeed] = useState<string | null>(null);
   const { addGem, addXP, clearMistake, completeUnit, recordMistake, stats } = useGamification();
-  const { play } = useSound(stats.settings.soundEffectsEnabled);
   const wordOrderKey = useMemo(() => unitWords.map((entry) => entry.id).join("|"), [unitWords]);
 
   useEffect(() => {
@@ -70,6 +68,11 @@ export default function Quiz({
   const currentQuestion = questions[currentIndex];
   const currentEntry = shuffledUnitWords[currentIndex];
 
+  const playChineseFeedback = (tone: "correct" | "incorrect") => {
+    if (typeof window === "undefined" || !stats.settings.soundEffectsEnabled) return;
+    speakChineseFeedback(tone, window.speechSynthesis);
+  };
+
   const handleSelect = (option: string) => {
     if (!currentQuestion || selectedOption) return;
 
@@ -81,21 +84,15 @@ export default function Quiz({
       const nextCombo = comboCount + 1;
       setComboCount(nextCombo);
       setLastComboCount(nextCombo);
-      void play(nextCombo >= 3 ? "cheer" : "correct");
       triggerHapticFeedback(stats.settings.hapticsEnabled, nextCombo >= 3 ? [20, 30, 20, 30, 45] : 18);
-      if (typeof window !== "undefined" && stats.settings.soundEffectsEnabled) {
-        speakChineseFeedback("correct", window.speechSynthesis);
-      }
+      playChineseFeedback("correct");
       setScore((value) => value + 1);
       clearMistake(currentQuestion.id);
     } else {
       setComboCount(0);
       setLastComboCount(0);
-      void play("incorrect");
       triggerHapticFeedback(stats.settings.hapticsEnabled, [24, 36, 24]);
-      if (typeof window !== "undefined" && stats.settings.soundEffectsEnabled) {
-        speakChineseFeedback("incorrect", window.speechSynthesis);
-      }
+      playChineseFeedback("incorrect");
       setMistakeIds((ids) => (ids.includes(currentQuestion.id) ? ids : [...ids, currentQuestion.id]));
       recordMistake(currentQuestion.id);
     }
@@ -195,8 +192,9 @@ export default function Quiz({
     <main className="container min-h-screen pb-120 pt-68">
       <header className="sticky-header xh-header">
         <div className="header-left">
-          <Link href="/" className="no-underline text-kv-kurenai font-900">
-            QingVoca
+          <Link href="/" className="qv-wordmark no-underline font-900" aria-label="QingVoca">
+            <span className="qv-wordmark-qing">Qing</span>
+            <span className="qv-wordmark-voca">Voca</span>
           </Link>
           <span className="version-badge ml-8">{unitTitle ?? unitId}</span>
         </div>

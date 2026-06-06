@@ -21,6 +21,8 @@ for (const [fileName, content, markers] of [
   ["Quiz.tsx", quizFile, ["useGamification", "recordMistake", "completeUnit", "addXP", "addGem", "speechEnabled", "soundEffectsEnabled", "hapticsEnabled", "navigator.vibrate"]],
   ["ReviewTab.tsx", reviewTabFile, ["useGamification", "stats.mistakes", "removeMistake", "clearAllMistakes", "zhGlobalMistakes", "getDocsFromCache"]],
   ["ReviewQuizLoader.tsx", reviewLoaderFile, ["useGamification", "getReviewWordsByIds", "stats.mistakes"]],
+  ["quiz.ts", await readFile("src/utils/quiz.ts", "utf8"), ["entryByWordKey", "normalizeVocabWordKey(id)"]],
+  ["GamificationContext.tsx", contextFile, ["keys.add(entry.id)", "keys.add(normalizeVocabWordKey(entry.word))"]],
 ]) {
   for (const marker of markers) {
     if (!content.includes(marker)) errors.push(`${fileName} missing marker: ${marker}`);

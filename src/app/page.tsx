@@ -34,7 +34,9 @@ const SNAKE_PATH_WIDTH = 260;
 const SNAKE_PATH_CENTER_X = SNAKE_PATH_WIDTH / 2;
 const SNAKE_NODE_CENTER_Y = 44;
 const SNAKE_NODE_STEP_Y = 240;
+const REDGOLD_LESSON_BASE_URL = "https://heroyik.github.io/redgold/";
 const getSnakeOffset = (index: number) => Math.sin(index * 1.2) * 60;
+const getRedGoldLessonUrl = (lessonId: number) => `${REDGOLD_LESSON_BASE_URL}?lesson=${lessonId}`;
 
 const getLevelColor = (index: number, isLocked: boolean) => {
   if (isLocked) return "var(--border-light)";
@@ -55,8 +57,18 @@ const getMotivationalSticker = (index: number) => {
     "记忆锻造",
     "HSK冲刺",
     "最终复习",
+    "新章开启",
+    "句意捕手",
+    "听说同行",
+    "词海远航",
+    "语感升级",
+    "难点突破",
+    "熟练掌握",
+    "考点精炼",
+    "全力冲关",
+    "圆满收官",
   ];
-  return stickers[index] || "加油";
+  return stickers[index] || "继续前进";
 };
 
 const getUnitIcon = (index: number, isLocked: boolean, isCompleted: boolean, isMastered: boolean) => {
@@ -157,7 +169,10 @@ export default function Home() {
     <main className="container min-h-screen pb-80 pt-68">
       <header className="sticky-header xh-header">
         <div className="header-left flex items-baseline gap-4">
-          <h1 className="font-22 font-900 m-0 text-kv-kurenai leading-1-1 tracking-tight">{APP_NAME}</h1>
+          <h1 className="qv-wordmark font-22 font-900 m-0 leading-1-1" aria-label={APP_NAME}>
+            <span className="qv-wordmark-qing">Qing</span>
+            <span className="qv-wordmark-voca">Voca</span>
+          </h1>
           <span className="version-badge">{APP_VERSION}</span>
         </div>
         <div className="header-right flex items-center gap-12">
@@ -235,6 +250,7 @@ export default function Home() {
               const showFailBadge = failCount > 0;
               const buttonState = isLocked ? "locked" : isMastered ? "mastered" : isCompleted ? "completed" : isCurrent ? "current" : "available";
               const offset = getSnakeOffset(index);
+              const redGoldLessonId = unit?.lessonIds[0] ?? card.step;
 
               return (
                 <div
@@ -278,9 +294,17 @@ export default function Home() {
                     <p className="font-11 font-900 letter-spacing-0-5 mb-1" style={{ color: getLevelColor(index, isLocked) }}>
                       {getLevelTitle(index)} {card.step}
                     </p>
-                    <p className="font-13 font-800 text-subtitle mt-0 mb-2">
+                    <a
+                      href={getRedGoldLessonUrl(redGoldLessonId)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="lesson-source-link font-13 font-800 mt-0 mb-2"
+                      aria-label={`Open RedGold Lesson ${redGoldLessonId} in a new tab`}
+                      onClick={(event) => event.stopPropagation()}
+                    >
                       {card.lessonRange} · {card.hsk}
-                    </p>
+                      <span className="lesson-source-link-icon" aria-hidden="true">↗</span>
+                    </a>
                     <p className="font-13 font-800 text-subtitle mt-0 mb-2">
                       {tpl(t("wordsProgress", locale), { count: card.wordCount, pct: card.progressPercent })}
                     </p>

@@ -8,10 +8,15 @@ export type SpeechVoiceLike = {
   default?: boolean;
 };
 
+type SpeechUtteranceLike = SpeechSynthesisUtterance & {
+  onstart: (() => void) | null;
+};
+
 export type SpeechSynthesisLike = {
   getVoices(): SpeechVoiceLike[];
   speak?(utterance: SpeechSynthesisUtterance): void;
   cancel?(): void;
+  resume?(): void;
   onvoiceschanged?: ((event: Event) => void) | (() => void) | null;
 };
 
@@ -87,8 +92,19 @@ function speakChineseText(textInput: string, speechSynthesis: SpeechSynthesisLik
   if (typeof speechSynthesis.speak === "function" && typeof SpeechSynthesisUtterance !== "undefined") {
     const speak = () => {
       const nextVoice = selectChineseVoice(speechSynthesis.getVoices()) ?? voice;
+      let didStart = false;
+      const utterance = createChineseUtterance(text, nextVoice) as SpeechUtteranceLike;
+      utterance.onstart = () => {
+        didStart = true;
+      };
       speechSynthesis.cancel?.();
-      speechSynthesis.speak?.(createChineseUtterance(text, nextVoice));
+      speechSynthesis.resume?.();
+      speechSynthesis.speak?.(utterance);
+      window.setTimeout(() => {
+        if (didStart) return;
+        speechSynthesis.resume?.();
+        speechSynthesis.speak?.(createChineseUtterance(text, nextVoice));
+      }, 180);
     };
 
     if (voices.length === 0 && "onvoiceschanged" in speechSynthesis) {

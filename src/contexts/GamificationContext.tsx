@@ -509,14 +509,19 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
 
   const clearMistake = useCallback(
     (wordId: string) => {
-      const key = normalizeVocabWordKey(wordId);
+      const entry = vocabEntries.find((candidate) => candidate.id === wordId || normalizeVocabWordKey(candidate.word) === normalizeVocabWordKey(wordId));
+      const keys = new Set([wordId, normalizeVocabWordKey(wordId)]);
+      if (entry) {
+        keys.add(entry.id);
+        keys.add(normalizeVocabWordKey(entry.word));
+      }
       updateStats((current) => {
         const mistakes = { ...current.mistakes };
-        delete mistakes[key];
+        for (const key of keys) delete mistakes[key];
         return { ...current, mistakes };
       });
     },
-    [updateStats],
+    [updateStats, vocabEntries],
   );
 
   const clearAllMistakes = useCallback(() => {

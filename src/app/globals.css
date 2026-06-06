@@ -1020,6 +1020,28 @@ button {
   color: var(--xh-red);
 }
 
+.qv-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: 0;
+}
+
+.qv-wordmark-qing,
+.qv-wordmark-voca {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.qv-wordmark-qing {
+  background-image: linear-gradient(135deg, #b50000 0%, #870000 100%);
+}
+
+.qv-wordmark-voca {
+  background-image: linear-gradient(135deg, #e2b547 0%, #c89218 100%);
+}
+
 .admin-delete-toolbar {
   display: flex;
   flex-direction: column;
@@ -2369,6 +2391,34 @@ button {
   border-radius: 16px;
   min-width: 110px;
   box-shadow: var(--shadow-sm);
+}
+
+.lesson-source-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--xh-navy);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.lesson-source-link:hover,
+.lesson-source-link:focus-visible {
+  color: var(--xh-red);
+  background-color: rgba(196, 30, 58, 0.08);
+  outline: none;
+}
+
+.lesson-source-link-icon {
+  color: var(--xh-gold);
+  font-size: 12px;
+  line-height: 1;
 }
 
 .aura-link {

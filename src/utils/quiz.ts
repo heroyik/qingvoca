@@ -1,6 +1,6 @@
 import type { ChineseVocabEntry, SupportedLocale } from "../types/chinese-vocab";
 import { DEFAULT_LOCALE } from "../types/chinese-vocab";
-import { getDisplayMeaning, getReading, getWordsForStep } from "./vocab";
+import { getDisplayMeaning, getReading, getWordsForStep, normalizeVocabWordKey } from "./vocab";
 
 export type QuizQuestion = {
   id: string;
@@ -28,7 +28,10 @@ export function getQuizWordsForStep(entries: ChineseVocabEntry[], step: number):
 
 export function getReviewWordsByIds(entries: ChineseVocabEntry[], reviewIds: string[]): ChineseVocabEntry[] {
   const entryById = new Map(entries.map((entry) => [entry.id, entry]));
-  return reviewIds.map((id) => entryById.get(id)).filter((entry): entry is ChineseVocabEntry => Boolean(entry));
+  const entryByWordKey = new Map(entries.map((entry) => [normalizeVocabWordKey(entry.word), entry]));
+  return reviewIds
+    .map((id) => entryById.get(id) ?? entryByWordKey.get(normalizeVocabWordKey(id)))
+    .filter((entry): entry is ChineseVocabEntry => Boolean(entry));
 }
 
 export function createQuizQuestion(

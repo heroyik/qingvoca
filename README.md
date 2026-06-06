@@ -3,6 +3,8 @@
 > **중국어 HSK4 어휘 학습 앱**  
 > 636개 HSK4 단어를 게임처럼 학습하는 스텝 기반 퀴즈 앱
 
+Current version: **1.0.2**
+
 ---
 
 ## What is this?
@@ -25,7 +27,7 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 - **Live LEARN weather** — Optional location-based weather scenery on the LEARN path, with rain, snow, clouds, thunder, time-of-day color, and cached weather data.
 - **Multi-locale UI** — Entire interface (labels, buttons, messages) in English, Korean, or Japanese. Locale persists via localStorage.
 - **Chinese speech** — Tap the speaker icon and hear the word pronounced via the Web Speech API.
-- **Sound effects + Chinese feedback** — Separate toggles for Chinese word audio and quiz sound effects. Correct, wrong, and combo feedback can speak natural Chinese encouragement.
+- **Chinese feedback** — Correct and wrong answers can speak natural Chinese encouragement directly.
 - **Dark mode** — Full dark mode support with system preference detection and manual toggle.
 - **Admin tools** — Search, edit, and delete vocabulary entries with full locale support. Sync changes back to Firestore.
 - **Vocab export** — Tap the HSK4 pill in the header to download the full vocabulary as JSON.
@@ -138,8 +140,8 @@ Features:
 - **Smart wrong answers** — Distractors prioritize the same part of speech across all HSK4 lessons
 - **Randomized word order** — Each Step quiz and Retry uses a fresh client-side question order
 - **Pinyin display** — Toggle on/off in ME; OFF hides pinyin across quiz, review, Wall of Pain, and list previews
-- **Audio playback** — Hear the Chinese word via Web Speech API, controlled separately from sound effects
-- **Combo feedback** — Consecutive correct answers trigger combo UI, stronger haptics, cheer effects, and natural Chinese feedback when sound effects are enabled
+- **Audio playback** — Hear the Chinese word via Web Speech API, controlled separately from answer feedback
+- **Combo feedback** — Consecutive correct answers trigger combo UI, stronger haptics, and natural Chinese feedback when Chinese feedback is enabled
 - **Instant feedback** — Correct/wrong indicators with word highlighting
 - **Full locale support** — All UI labels, buttons, and messages in ko/ja/en
 
