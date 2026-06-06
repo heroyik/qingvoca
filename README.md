@@ -34,7 +34,7 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 - **Dark mode** — Full dark mode support with system preference detection and manual toggle.
 - **Admin tools** — Search, edit, and delete vocabulary entries with full locale support. Sync changes back to Firestore.
 - **Vocab export** — Tap the HSK4 pill in the header to download the full vocabulary as JSON.
-- **Google sign-in** — Cloud sync of progress across devices via Firebase Auth.
+- **Google sign-in** — Cloud sync of progress across devices via Firebase Auth, with KakaoTalk in-app browser handoff to the user's external browser before OAuth starts.
 
 ---
 
@@ -242,6 +242,7 @@ qingvoca/
 │   │   ├── firestore.ts        # Firestore collection constants
 │   │   ├── speech.ts           # Web Speech API integration
 │   │   ├── adminEdit.ts        # Admin edit logic
+│   │   ├── browser.ts          # Browser detection and external-browser handoff helpers
 │   │   ├── locale.ts           # Locale management (load/save/normalize)
 │   │   ├── learningExperience.ts # Home step cards, review summary, locale options
 │   │   ├── priorityWords.ts    # Priority word selection
@@ -380,6 +381,8 @@ const firebaseConfig = {
 4. Choose your **Project support email** (required by Google)
 
 > ⚠️ **This is the #1 cause of "popup opens then closes" bugs.** If Google sign-in is not enabled here, the OAuth popup will appear briefly and then vanish without any visible error.
+
+QingVoca also detects the KakaoTalk in-app browser before Google OAuth starts. On Android, it hands the current page off to Chrome with an `intent://` URL so Google sign-in runs in a regular browser instead of KakaoTalk's embedded webview.
 
 ### Step 4 — Configure Authorized Domains
 

@@ -9,6 +9,7 @@ import { useFirestoreSync } from "@/hooks/useFirestoreSync";
 import { auth, db, googleProvider, isFirebaseConfigured } from "@/lib/firebase";
 import type { ChineseVocabEntry } from "@/types/chinese-vocab";
 import { applyAdminEdit, type AdminEditPatch } from "@/utils/adminEdit";
+import { openExternalBrowserForKakaoTalk } from "@/utils/browser";
 import {
   canUseFirestore,
   markFirestoreFailure,
@@ -560,6 +561,8 @@ export function GamificationProvider({ children }: { children: React.ReactNode }
 
   const signInWithGoogle = useCallback(async () => {
     if (!auth || !googleProvider) return;
+    if (openExternalBrowserForKakaoTalk()) return;
+
     try {
       await signInWithPopup(auth, googleProvider);
     } catch (error: unknown) {
