@@ -87,6 +87,8 @@ export default function Quiz({
       triggerHapticFeedback(stats.settings.hapticsEnabled, nextCombo >= 3 ? [20, 30, 20, 30, 45] : 18);
       playChineseFeedback("correct");
       setScore((value) => value + 1);
+      addXP(10);
+      addGem(1);
       clearMistake(currentQuestion.id);
     } else {
       setComboCount(0);
@@ -106,10 +108,7 @@ export default function Quiz({
       return;
     }
 
-    const earnedXP = score * 10;
     const mastered = mistakeIds.length === 0 && score === questions.length;
-    addXP(earnedXP);
-    addGem(mastered ? 20 : Math.max(1, Math.round(score / 2)));
     if (!isReview) completeUnit(unitId, mistakeIds.length, mastered);
     setShowResult(true);
   };
