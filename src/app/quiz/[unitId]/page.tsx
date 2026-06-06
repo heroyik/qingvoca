@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { getAvailableSteps, parseUnitId } from "@/utils/vocab";
 import vocabData from "@/data/vocab.json";
 import type { ChineseVocabEntry } from "@/types/chinese-vocab";
@@ -17,5 +18,9 @@ export async function generateStaticParams() {
 export default async function QuizPage({ params }: QuizPageProps) {
   const { unitId } = await params;
   parseUnitId(unitId);
-  return <QuizLoader unitId={unitId} />;
+  return (
+    <Suspense fallback={<div className="flex-center min-h-screen font-800">Loading quiz...</div>}>
+      <QuizLoader unitId={unitId} />
+    </Suspense>
+  );
 }

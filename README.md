@@ -3,7 +3,7 @@
 > **A slick HSK4 Chinese vocab trainer**  
 > 636 HSK4 words, packed into a step-by-step quiz grind that actually feels fun.
 
-Current version: **1.1.1**
+Current version: **1.1.2**
 
 ---
 
@@ -22,6 +22,7 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 ### Features
 
 - **Step-based progression** — Words are grouped into 20 Steps, each covering 1 original lesson. Clear one, unlock the next. Simple.
+- **Step-level mistake drills** — Tap a Step's mistake badge on LEARN and jump straight into just the words missed in that Step.
 - **Redgold-linked lessons** — Every Step is mapped to its Redgold source lesson, and each lesson label links straight back to that Redgold page.
 - **Quiz engine** — Multiple-choice questions with randomized question order and smart same-part-of-speech distractors pulled from the full HSK4 pool. No easy outs.
 - **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Your signed-in profile stays visible even when you're still catching the top 10.
@@ -116,7 +117,7 @@ Step 2  →  Lesson 2  (30 words)
 Step 20 →  Lesson 20 (30 words)
 ```
 
-A Kamivoca-style snake path connects all 20 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into the review flow.
+A Kamivoca-style snake path connects all 20 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into a Step-only mistake drill.
 
 The lesson title inside each Step is more than a label. It is a source bridge back to Redgold:
 
@@ -144,6 +145,8 @@ Every quiz session earns you **XP** and **gems**. Mistakes get logged locally fo
 | `mistakes` | Words you still need to work on |
 
 The REVIEW tab highlights local tricky words, lets you clear individual or all mistakes, and shows a Firestore-backed Wall of Pain list using cache-first reads so the global ranking does not burn reads on every tab open.
+
+On the LEARN path, each Step's mistake badge opens a focused drill for only that Step's missed words. It behaves like review practice, so correct answers clear mistakes without accidentally marking the whole Step complete.
 
 ### 🔍 Quiz engine
 

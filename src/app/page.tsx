@@ -218,9 +218,9 @@ export default function Home() {
     if (isLocked) return;
     router.push(`/quiz/${unitId}`);
   };
-  const handleReviewMistakes = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleReviewMistakes = (event: MouseEvent<HTMLButtonElement>, unitId: string) => {
     event.stopPropagation();
-    router.push("/quiz/review");
+    router.push(`/quiz/${unitId}?mode=mistakes`);
   };
   const toggleAdminEdit = (event: ChangeEvent<HTMLInputElement>) => {
     const next = event.currentTarget.checked;
@@ -365,7 +365,7 @@ export default function Home() {
                       type="button"
                       className="fail-badge-dual"
                       aria-label={`${failCount} review mistakes`}
-                      onClick={handleReviewMistakes}
+                      onClick={(event) => handleReviewMistakes(event, unitId)}
                     >
                       <span className="fail-badge-circle" />
                       <span className="fail-badge-count">{failCount}</span>
