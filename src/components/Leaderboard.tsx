@@ -83,7 +83,7 @@ function fillLeaderboardSlots(realLeaders: LeaderboardEntry[], currentLeader: Le
     .sort((a, b) => (b.xp ?? 0) - (a.xp ?? 0));
   const usedIds = new Set(visibleRealLeaders.map((entry) => entry.id));
   const fillerLeaders = DEMO_USERS.filter((entry) => !usedIds.has(entry.id)).slice(0, Math.max(0, 10 - visibleRealLeaders.length));
-  return [...visibleRealLeaders, ...fillerLeaders];
+  return [...visibleRealLeaders, ...fillerLeaders].sort((a, b) => (b.xp ?? 0) - (a.xp ?? 0)).slice(0, 10);
 }
 
 export default function Leaderboard() {
