@@ -1126,6 +1126,18 @@ button {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+.leaderboard-current-user-wrap {
+  border-top: 2px dashed var(--border-light);
+  margin-top: 4px;
+  padding-top: 12px;
+}
+
+.leaderboard-current-user {
+  background-color: var(--bg-main);
+  border-color: var(--xh-red);
+  box-shadow: 0 3px 0 rgba(229, 57, 53, 0.18);
+}
+
 .leaderboard-list {
   display: flex;
   flex-direction: column;
@@ -2640,6 +2652,7 @@ button {
 
 .rank-text {
   width: 30px;
+  flex: 0 0 30px;
   font-weight: 900;
   font-size: 18px;
   color: var(--text-secondary);
@@ -2647,8 +2660,10 @@ button {
 
 .leader-item-name {
   flex: 1;
+  min-width: 0;
   font-weight: 700;
   color: var(--text-main);
+  overflow-wrap: anywhere;
 }
 
 .leader-item-xp {

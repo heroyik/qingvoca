@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
 import { collection, getDocs, getDocsFromCache, limit, orderBy, query } from "firebase/firestore";
 import { useGamification } from "@/hooks/useGamification";
 import { db } from "@/lib/firebase";
@@ -88,6 +89,53 @@ function fillLeaderboardSlots(realLeaders: LeaderboardEntry[], currentLeader: Le
   return [...visibleRealLeaders, ...fillerLeaders].sort((a, b) => (b.xp ?? 0) - (a.xp ?? 0)).slice(0, 10);
 }
 
+function LeaderboardRow({
+  entry,
+  rankLabel,
+  brokenImageIds,
+  onImageError,
+  isCurrentUser = false,
+}: {
+  entry: LeaderboardEntry;
+  rankLabel: ReactNode;
+  brokenImageIds: Set<string>;
+  onImageError: (entryId: string) => void;
+  isCurrentUser?: boolean;
+}) {
+  const hasUsablePhoto = Boolean(
+    (entry.photoURL?.startsWith("http") || entry.photoURL?.startsWith("data:image/")) && !entry.imageError && !brokenImageIds.has(entry.id),
+  );
+
+  return (
+    <div className={`leaderboard-item${isCurrentUser ? " leaderboard-current-user" : ""}`}>
+      <div className="rank-text">{rankLabel}</div>
+      <div
+        className="user-avatar mr-12 relative"
+        style={{
+          backgroundColor: hasUsablePhoto ? "transparent" : getAvatarColor(entry.id),
+          color: "white",
+          fontWeight: 900,
+          fontSize: 18,
+        }}
+      >
+        {hasUsablePhoto ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={entry.photoURL}
+            alt={entry.displayName || "QingVoca learner"}
+            className="object-cover rounded-full"
+            onError={() => onImageError(entry.id)}
+          />
+        ) : (
+          <span>{getInitial(entry.displayName)}</span>
+        )}
+      </div>
+      <div className="leader-item-name">{entry.displayName || "QingVoca Learner"}</div>
+      <div className="leader-item-xp">{(entry.xp ?? 0).toLocaleString()} XP</div>
+    </div>
+  );
+}
+
 export default function Leaderboard() {
   const { stats, user } = useGamification();
   const currentLeader: LeaderboardEntry | null = useMemo(
@@ -146,52 +194,36 @@ export default function Leaderboard() {
   }, []);
 
   const visibleLeaders = useMemo(() => fillLeaderboardSlots(leaders, currentLeader), [currentLeader, leaders]);
+  const isCurrentUserVisible = Boolean(currentLeader && visibleLeaders.some((entry) => entry.id === currentLeader.id));
+  const handleImageError = (entryId: string) => {
+    setBrokenImageIds((current) => new Set(current).add(entryId));
+    setLeaders((current) => current.map((leader) => leader.id === entryId ? { ...leader, imageError: true } : leader));
+  };
 
   return (
     <div className="p-20 max-w-600 mx-auto">
       <h2 className="font-24 font-900 text-kv-kurenai mb-20 text-center">Hall of Fame 🏆</h2>
       <div className="leaderboard-list">
-        {visibleLeaders.map((entry, index) => {
-          const hasUsablePhoto = Boolean(
-            (entry.photoURL?.startsWith("http") || entry.photoURL?.startsWith("data:image/")) && !entry.imageError && !brokenImageIds.has(entry.id),
-          );
-
-          return (
-            <div key={entry.id} className="leaderboard-item">
-              <div className="rank-text">
-                {index === 0 ? "👑" : index + 1}
-              </div>
-              <div
-                className="user-avatar mr-12 relative"
-                style={{
-                  backgroundColor: hasUsablePhoto ? "transparent" : getAvatarColor(entry.id),
-                  color: "white",
-                  fontWeight: 900,
-                  fontSize: 18,
-                }}
-              >
-                {hasUsablePhoto ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={entry.photoURL}
-                    alt={entry.displayName || "QingVoca learner"}
-                    className="object-cover rounded-full"
-                    onError={() => {
-                      setBrokenImageIds((current) => new Set(current).add(entry.id));
-                      setLeaders((current) =>
-                        current.map((leader) => leader.id === entry.id ? { ...leader, imageError: true } : leader),
-                      );
-                    }}
-                  />
-                ) : (
-                  <span>{getInitial(entry.displayName)}</span>
-                )}
-              </div>
-              <div className="leader-item-name">{entry.displayName || "QingVoca Learner"}</div>
-              <div className="leader-item-xp">{(entry.xp ?? 0).toLocaleString()} XP</div>
-            </div>
-          );
-        })}
+        {visibleLeaders.map((entry, index) => (
+          <LeaderboardRow
+            key={entry.id}
+            entry={entry}
+            rankLabel={index === 0 ? "👑" : index + 1}
+            brokenImageIds={brokenImageIds}
+            onImageError={handleImageError}
+          />
+        ))}
+        {currentLeader && !isCurrentUserVisible && (
+          <div className="leaderboard-current-user-wrap">
+            <LeaderboardRow
+              entry={currentLeader}
+              rankLabel="You"
+              brokenImageIds={brokenImageIds}
+              onImageError={handleImageError}
+              isCurrentUser
+            />
+          </div>
+        )}
         {visibleLeaders.length === 0 && (
           <div className="text-center text-secondary p-40">
             Be the first to join the leaderboard! 🚀

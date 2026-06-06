@@ -3,7 +3,7 @@
 > **A slick HSK4 Chinese vocab trainer**  
 > 636 HSK4 words, packed into a step-by-step quiz grind that actually feels fun.
 
-Current version: **1.1.0**
+Current version: **1.1.1**
 
 ---
 
@@ -24,7 +24,7 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 - **Step-based progression** — Words are grouped into 20 Steps, each covering 1 original lesson. Clear one, unlock the next. Simple.
 - **Redgold-linked lessons** — Every Step is mapped to its Redgold source lesson, and each lesson label links straight back to that Redgold page.
 - **Quiz engine** — Multiple-choice questions with randomized question order and smart same-part-of-speech distractors pulled from the full HSK4 pool. No easy outs.
-- **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Because motivation is a feature.
+- **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Your signed-in profile stays visible even when you're still catching the top 10.
 - **Offline-first, quota-safe sync** — Service worker + Firestore local cache keep study flows available offline, while local progress is queued and synced later when Firestore is available.
 - **Kamivoca-style mobile UX** — LEARN, REVIEW, LEADER, and ME tabs use compact mobile-first cards, path nodes, ranking rows, profile stats, and review controls inspired by Kamivoca.
 - **Live LEARN weather** — Optional location-based weather scenery on the LEARN path, with sunny, cloudy, rainy, snowy, windy, thunder, time-of-day color, moon phase at night, and cached weather data.
@@ -132,7 +132,7 @@ The path can also render a cached, location-aware weather backdrop using Open-Me
 
 ### 🎮 Gamification
 
-Every quiz session earns you **XP** and **gems**. Mistakes get logged locally for review and aggregated into the global **Wall of Pain** collection. Complete a unit with a perfect score and you **master** it. Build daily **streaks** and watch your rank climb on the **global leaderboard** (powered by Firestore with a local-cache + TTL fallback). Users with 0 XP are hidden from the leaderboard.
+Every quiz session earns you **XP** and **gems**. Mistakes get logged locally for review and aggregated into the global **Wall of Pain** collection. Complete a unit with a perfect score and you **master** it. Build daily **streaks** and watch your rank climb on the **global leaderboard** (powered by Firestore with a local-cache + TTL fallback). The top 10 stays ranked by XP, while your signed-in profile gets a dedicated `You` row whenever you're outside that cut or still syncing fresh mobile progress.
 
 | Stat | What it tracks |
 |---|---|
@@ -173,7 +173,7 @@ On first launch, QingVoca uses the device locale when no saved preference exists
 - Profile tab labels, sign-in/out buttons, theme toggle
 - Admin edit tab (field labels, search placeholder, status messages)
 - Review tab (count labels, stats, start button)
-- Leaderboard (0-XP users hidden)
+- Leaderboard, including the always-visible signed-in user row
 
 | Locale | Meaning fallback chain |
 |---|---|
