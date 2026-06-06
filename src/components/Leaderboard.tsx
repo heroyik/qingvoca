@@ -15,18 +15,29 @@ type LeaderboardEntry = {
   imageError?: boolean;
 };
 
+function buildDemoAvatar(symbol: string, background: string) {
+  const svg = [
+    `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">`,
+    `<rect width="120" height="120" rx="60" fill="${background}"/>`,
+    `<circle cx="60" cy="60" r="50" fill="rgba(255,255,255,0.22)"/>`,
+    `<text x="60" y="73" text-anchor="middle" font-size="52" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif">${symbol}</text>`,
+    `</svg>`,
+  ].join("");
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
 /** Demo seed users shown when Firestore has no real user data yet. */
 const DEMO_USERS: LeaderboardEntry[] = [
-  { id: "demo-kr-01", displayName: "Seo-yeon Kim", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=seo-yeon&backgroundColor=b6e3f4", xp: 4820, gems: 320 },
-  { id: "demo-jp-01", displayName: "Haruki Tanaka", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=haruki&backgroundColor=ffd5dc", xp: 4350, gems: 280 },
-  { id: "demo-us-01", displayName: "Emily Johnson", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=emily&backgroundColor=c0aede", xp: 3980, gems: 250 },
-  { id: "demo-vn-01", displayName: "Minh Anh Nguyen", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=minh-anh&backgroundColor=d1f4d1", xp: 3710, gems: 210 },
-  { id: "demo-kr-02", displayName: "Ji-hoon Park", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=ji-hoon&backgroundColor=ffeaa7", xp: 3450, gems: 190 },
-  { id: "demo-th-01", displayName: "Siriporn Chaiyaporn", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=siriporn&backgroundColor=fab1a0", xp: 2890, gems: 160 },
-  { id: "demo-br-01", displayName: "Lucas Silva", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=lucas-silva&backgroundColor=81ecec", xp: 2540, gems: 130 },
-  { id: "demo-jp-02", displayName: "Yuki Watanabe", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=yuki&backgroundColor=a29bfe", xp: 1980, gems: 90 },
-  { id: "demo-fr-01", displayName: "Émilie Dubois", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=emilie-dubois&backgroundColor=fd79a8", xp: 1320, gems: 60 },
-  { id: "demo-de-01", displayName: "Lukas Müller", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=lukas-mueller&backgroundColor=00cec9", xp: 870, gems: 40 },
+  { id: "demo-kr-01", displayName: "Seo-yeon Kim", photoURL: buildDemoAvatar("🧑‍🎓", "#b6e3f4"), xp: 4820, gems: 320 },
+  { id: "demo-jp-01", displayName: "Haruki Tanaka", photoURL: buildDemoAvatar("🐼", "#ffd5dc"), xp: 4350, gems: 280 },
+  { id: "demo-us-01", displayName: "Emily Johnson", photoURL: buildDemoAvatar("🌻", "#c0aede"), xp: 3980, gems: 250 },
+  { id: "demo-vn-01", displayName: "Minh Anh Nguyen", photoURL: buildDemoAvatar("🧑‍💻", "#d1f4d1"), xp: 3710, gems: 210 },
+  { id: "demo-kr-02", displayName: "Ji-hoon Park", photoURL: buildDemoAvatar("🦊", "#ffeaa7"), xp: 3450, gems: 190 },
+  { id: "demo-th-01", displayName: "Siriporn Chaiyaporn", photoURL: buildDemoAvatar("🌵", "#fab1a0"), xp: 2890, gems: 160 },
+  { id: "demo-br-01", displayName: "Lucas Silva", photoURL: buildDemoAvatar("🧑‍🚀", "#81ecec"), xp: 2540, gems: 130 },
+  { id: "demo-jp-02", displayName: "Yuki Watanabe", photoURL: buildDemoAvatar("🐯", "#a29bfe"), xp: 1980, gems: 90 },
+  { id: "demo-fr-01", displayName: "Émilie Dubois", photoURL: buildDemoAvatar("🪴", "#fd79a8"), xp: 1320, gems: 60 },
+  { id: "demo-de-01", displayName: "Lukas Müller", photoURL: buildDemoAvatar("🐧", "#00cec9"), xp: 870, gems: 40 },
 ];
 const LEADERBOARD_CACHE_KEY = "qingvoca:leaderboard:cache";
 const LEADERBOARD_CACHE_TTL_MS = 30 * 60 * 1000;
@@ -139,7 +150,9 @@ export default function Leaderboard() {
       <h2 className="font-24 font-900 text-kv-kurenai mb-20 text-center">Hall of Fame 🏆</h2>
       <div className="leaderboard-list">
         {visibleLeaders.map((entry, index) => {
-          const hasUsablePhoto = Boolean(entry.photoURL?.startsWith("http") && !entry.imageError && !brokenImageIds.has(entry.id));
+          const hasUsablePhoto = Boolean(
+            (entry.photoURL?.startsWith("http") || entry.photoURL?.startsWith("data:image/")) && !entry.imageError && !brokenImageIds.has(entry.id),
+          );
 
           return (
             <div key={entry.id} className="leaderboard-item">

@@ -14,6 +14,17 @@
 
 import admin from "firebase-admin";
 
+function buildDemoAvatar(symbol, background) {
+  const svg = [
+    `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">`,
+    `<rect width="120" height="120" rx="60" fill="${background}"/>`,
+    `<circle cx="60" cy="60" r="50" fill="rgba(255,255,255,0.22)"/>`,
+    `<text x="60" y="73" text-anchor="middle" font-size="52" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif">${symbol}</text>`,
+    `</svg>`,
+  ].join("");
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
 // ---------------------------------------------------------------------------
 // Dummy users
 // ---------------------------------------------------------------------------
@@ -22,7 +33,7 @@ const DUMMY_USERS = [
   {
     id: "dummy-korean-01",
     displayName: "Seo-yeon Kim",
-    photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=seo-yeon",
+    photoURL: buildDemoAvatar("🧑‍🎓", "#b6e3f4"),
     xp: 4820,
     gems: 320,
     country: "KR",
@@ -30,7 +41,7 @@ const DUMMY_USERS = [
   {
     id: "dummy-japanese-01",
     displayName: "Haruki Tanaka",
-    photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=haruki",
+    photoURL: buildDemoAvatar("🐼", "#ffd5dc"),
     xp: 4350,
     gems: 280,
     country: "JP",
@@ -38,7 +49,7 @@ const DUMMY_USERS = [
   {
     id: "dummy-american-01",
     displayName: "Emily Johnson",
-    photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=emily",
+    photoURL: buildDemoAvatar("🌻", "#c0aede"),
     xp: 3980,
     gems: 250,
     country: "US",
@@ -46,7 +57,7 @@ const DUMMY_USERS = [
   {
     id: "dummy-vietnamese-01",
     displayName: "Minh Anh Nguyen",
-    photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=minh-anh",
+    photoURL: buildDemoAvatar("🧑‍💻", "#d1f4d1"),
     xp: 3710,
     gems: 210,
     country: "VN",
@@ -54,7 +65,7 @@ const DUMMY_USERS = [
   {
     id: "dummy-korean-02",
     displayName: "Ji-hoon Park",
-    photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=ji-hoon",
+    photoURL: buildDemoAvatar("🦊", "#ffeaa7"),
     xp: 3450,
     gems: 190,
     country: "KR",
@@ -62,7 +73,7 @@ const DUMMY_USERS = [
   {
     id: "dummy-thai-01",
     displayName: "Siriporn Chaiyaporn",
-    photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=siriporn",
+    photoURL: buildDemoAvatar("🌵", "#fab1a0"),
     xp: 2890,
     gems: 160,
     country: "TH",
@@ -70,7 +81,7 @@ const DUMMY_USERS = [
   {
     id: "dummy-brazilian-01",
     displayName: "Lucas Silva",
-    photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=lucas-silva",
+    photoURL: buildDemoAvatar("🧑‍🚀", "#81ecec"),
     xp: 2540,
     gems: 130,
     country: "BR",
@@ -78,7 +89,7 @@ const DUMMY_USERS = [
   {
     id: "dummy-japanese-02",
     displayName: "Yuki Watanabe",
-    photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=yuki",
+    photoURL: buildDemoAvatar("🐯", "#a29bfe"),
     xp: 1980,
     gems: 90,
     country: "JP",
@@ -86,7 +97,7 @@ const DUMMY_USERS = [
   {
     id: "dummy-french-01",
     displayName: "Émilie Dubois",
-    photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=emilie-dubois",
+    photoURL: buildDemoAvatar("🪴", "#fd79a8"),
     xp: 1320,
     gems: 60,
     country: "FR",
@@ -94,7 +105,7 @@ const DUMMY_USERS = [
   {
     id: "dummy-german-01",
     displayName: "Lukas Müller",
-    photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=lukas-mueller",
+    photoURL: buildDemoAvatar("🐧", "#00cec9"),
     xp: 870,
     gems: 40,
     country: "DE",

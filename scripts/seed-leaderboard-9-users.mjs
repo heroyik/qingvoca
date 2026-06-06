@@ -16,29 +16,41 @@
 
 import admin from "firebase-admin";
 
+const AVATAR_POOL = [
+  { symbol: "🧑‍🎨", backgroundColor: "c0aede" },
+  { symbol: "🧑‍🚀", backgroundColor: "b6e3f4" },
+  { symbol: "🐼", backgroundColor: "ffd5dc" },
+  { symbol: "🦊", backgroundColor: "ffeaa7" },
+  { symbol: "🐯", backgroundColor: "d1f4d1" },
+  { symbol: "🌵", backgroundColor: "81ecec" },
+  { symbol: "🌻", backgroundColor: "fd79a8" },
+  { symbol: "🪴", backgroundColor: "a29bfe" },
+  { symbol: "🌿", backgroundColor: "fab1a0" },
+];
+
 // ---------------------------------------------------------------------------
 // 9 users with national identity
 // ---------------------------------------------------------------------------
 
 const USERS = [
   // American (2)
-  { id: "dummy-us-02", displayName: "James Anderson",   country: "US", seed: "james-anderson",   backgroundColor: "c0aede" },
-  { id: "dummy-us-03", displayName: "Megan Williams",   country: "US", seed: "megan-williams",   backgroundColor: "b6e3f4" },
+  { id: "dummy-us-02", displayName: "James Anderson",   country: "US", seed: "james-anderson" },
+  { id: "dummy-us-03", displayName: "Megan Williams",   country: "US", seed: "megan-williams" },
 
   // British (2)
-  { id: "dummy-gb-01", displayName: "Oliver Davies",    country: "GB", seed: "oliver-davies",    backgroundColor: "ffd5dc" },
-  { id: "dummy-gb-02", displayName: "Charlotte Smith",  country: "GB", seed: "charlotte-smith",  backgroundColor: "ffeaa7" },
+  { id: "dummy-gb-01", displayName: "Oliver Davies",    country: "GB", seed: "oliver-davies" },
+  { id: "dummy-gb-02", displayName: "Charlotte Smith",  country: "GB", seed: "charlotte-smith" },
 
   // Australian (2)
-  { id: "dummy-au-01", displayName: "Jack Thompson",    country: "AU", seed: "jack-thompson",    backgroundColor: "d1f4d1" },
-  { id: "dummy-au-02", displayName: "Mia O'Brien",      country: "AU", seed: "mia-obrien",       backgroundColor: "81ecec" },
+  { id: "dummy-au-01", displayName: "Jack Thompson",    country: "AU", seed: "jack-thompson" },
+  { id: "dummy-au-02", displayName: "Mia O'Brien",      country: "AU", seed: "mia-obrien" },
 
   // French (2)
-  { id: "dummy-fr-02", displayName: "Pierre Lefèvre",   country: "FR", seed: "pierre-lefevre",   backgroundColor: "fd79a8" },
-  { id: "dummy-fr-03", displayName: "Camille Moreau",   country: "FR", seed: "camille-moreau",   backgroundColor: "a29bfe" },
+  { id: "dummy-fr-02", displayName: "Pierre Lefèvre",   country: "FR", seed: "pierre-lefevre" },
+  { id: "dummy-fr-03", displayName: "Camille Moreau",   country: "FR", seed: "camille-moreau" },
 
   // Vietnamese (1)
-  { id: "dummy-vn-02", displayName: "Lê Thị Hương",    country: "VN", seed: "le-thi-huong",     backgroundColor: "fab1a0" },
+  { id: "dummy-vn-02", displayName: "Lê Thị Hương",    country: "VN", seed: "le-thi-huong" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -54,8 +66,22 @@ function randomGems() {
   return Math.floor(Math.random() * 30) + 5;
 }
 
-function buildPhotoURL(seed, bg) {
-  return `https://api.dicebear.com/7.x/avataaars/svg?seed=${seed}&backgroundColor=${bg}`;
+function avatarIndex(seed) {
+  let hash = 0;
+  for (const char of seed) hash = (hash + char.charCodeAt(0)) % AVATAR_POOL.length;
+  return hash;
+}
+
+function buildPhotoURL(seed) {
+  const avatar = AVATAR_POOL[avatarIndex(seed)];
+  const svg = [
+    `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">`,
+    `<rect width="120" height="120" rx="60" fill="#${avatar.backgroundColor}"/>`,
+    `<circle cx="60" cy="60" r="50" fill="rgba(255,255,255,0.22)"/>`,
+    `<text x="60" y="73" text-anchor="middle" font-size="52" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif">${avatar.symbol}</text>`,
+    `</svg>`,
+  ].join("");
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -106,7 +132,7 @@ async function main() {
     const gems = randomGems();
     const data = {
       displayName: user.displayName,
-      photoURL: buildPhotoURL(user.seed, user.backgroundColor),
+      photoURL: buildPhotoURL(user.seed),
       xp,
       gems,
       createdAt: admin.firestore.FieldValue.serverTimestamp(),
