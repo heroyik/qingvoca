@@ -58,6 +58,7 @@ export default function Quiz({
   const [mistakeIds, setMistakeIds] = useState<string[]>([]);
   const [showResult, setShowResult] = useState(false);
   const [questionSeed, setQuestionSeed] = useState<string | null>(null);
+  const [speechWarning, setSpeechWarning] = useState<string | null>(null);
   const { addGem, addXP, clearMistake, completeUnit, recordMistake, stats } = useGamification();
   const wordOrderKey = useMemo(() => unitWords.map((entry) => entry.id).join("|"), [unitWords]);
 
@@ -142,7 +143,16 @@ export default function Quiz({
 
   const handleSpeak = () => {
     if (!currentEntry || !stats.settings.speechEnabled || typeof window === "undefined") return;
-    speakChineseWord(currentEntry, window.speechSynthesis);
+    const result = speakChineseWord(currentEntry, window.speechSynthesis);
+    if (!result.ok) {
+      setSpeechWarning("Chinese audio is not available in this browser. Please use Chrome or Safari for voice playback.");
+      return;
+    }
+    if (isBraveBrowser()) {
+      setSpeechWarning("Brave may not support Chinese voice playback reliably. If there is no sound, use Chrome or Safari.");
+    } else {
+      setSpeechWarning(null);
+    }
   };
 
   if (questions.length === 0) {
@@ -273,6 +283,11 @@ export default function Quiz({
           >
             {stats.settings.speechEnabled ? t("playAudio", locale) : t("audioOff", locale)}
           </button>
+          {speechWarning && (
+            <p className="text-small mt-10" style={{ color: "var(--text-secondary)", maxWidth: 280 }}>
+              {speechWarning}
+            </p>
+          )}
         </div>
 
         <div className="options-grid">
@@ -359,4 +374,9 @@ function hash(value: string): number {
 function triggerHapticFeedback(enabled: boolean, pattern: VibratePattern): void {
   if (!enabled || typeof navigator === "undefined" || typeof navigator.vibrate !== "function") return;
   navigator.vibrate(pattern);
+}
+
+function isBraveBrowser(): boolean {
+  if (typeof navigator === "undefined") return false;
+  return Boolean((navigator as Navigator & { brave?: unknown }).brave);
 }
