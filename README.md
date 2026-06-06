@@ -1,7 +1,7 @@
 # 🀄 QingVoca
 
-> **중국어 HSK4 어휘 학습 앱**  
-> 636개 HSK4 단어를 게임처럼 학습하는 스텝 기반 퀴즈 앱
+> **A slick HSK4 Chinese vocab trainer**  
+> 636 HSK4 words, packed into a step-by-step quiz grind that actually feels fun.
 
 Current version: **1.1.0**
 
@@ -448,7 +448,7 @@ npm run validate:firebase:auth
 npm run dev
 ```
 
-Open [http://localhost:3000/qingvoca](http://localhost:3000/qingvoca) → click **ME** tab → click **Google 로그인**.
+Open [http://localhost:3000/qingvoca](http://localhost:3000/qingvoca) → click **ME** tab → click **Sign in with Google**.
 
 ### Step 10 — Configure CI/CD (GitHub Actions)
 
@@ -502,7 +502,7 @@ Each vocabulary entry looks like this:
   "pinyin": "ānpái",
   "meaning": "to arrange; to plan",
   "translations": {
-    "ko": "安排하다",
+    "ko": "to arrange",
     "ja": "手配する",
     "en": "to arrange"
   },
