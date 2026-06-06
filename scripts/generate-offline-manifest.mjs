@@ -28,6 +28,7 @@ const routes = [
   "/quiz/review",
   ...steps.flatMap((step) => [`/quiz/${step}`, `/quiz/unit-${step}`]),
 ];
+const cacheRoutes = routes.filter((route) => !route.includes("["));
 
 async function exists(filePath) {
   try {
@@ -67,7 +68,10 @@ const publicAssets = await collectFiles("public", (filePath) =>
 );
 const urls = Array.from(
   new Set([
-    ...routes.map((route) => `${BASE_PATH}${route === "/" ? "/" : route}`),
+    ...cacheRoutes.flatMap((route) => {
+      const url = `${BASE_PATH}${route === "/" ? "/" : route}`;
+      return route === "/" ? [url] : [url, `${url}/`, `${url}.html`];
+    }),
     `${BASE_PATH}`,
     `${BASE_PATH}/offline-manifest.json`,
     ...staticAssets.map(toPublicUrl),

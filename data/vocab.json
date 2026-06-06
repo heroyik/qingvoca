@@ -13,7 +13,13 @@
         "en": "law",
         "ko": "법률",
         "ja": "法律"
-      }
+      },
+      "example": [
+        "这条法律对大家都很重要。"
+      ],
+      "examplePinyin": [
+        "zhè tiáo fǎ lǜ duì dà jiā dōu hěn zhòng yào 。"
+      ]
     },
     {
       "word": "俩",
@@ -25,7 +31,13 @@
         "en": "two",
         "ko": "둘, 두 사람",
         "ja": "二人、両方"
-      }
+      },
+      "example": [
+        "他们俩是很好的朋友。"
+      ],
+      "examplePinyin": [
+        "tā men liǎ shì hěn hǎo de péng yǒu 。"
+      ]
     },
     {
       "word": "印象",
@@ -37,7 +49,13 @@
         "en": "impression",
         "ko": "인상",
         "ja": "印象"
-      }
+      },
+      "example": [
+        "你给我的印象很好。"
+      ],
+      "examplePinyin": [
+        "nǐ gěi wǒ de yìn xiàng hěn hǎo 。"
+      ]
     },
     {
       "word": "深",
@@ -49,7 +67,13 @@
         "en": "deep",
         "ko": "깊다",
         "ja": "深い"
-      }
+      },
+      "example": [
+        "这条河很深。"
+      ],
+      "examplePinyin": [
+        "zhè tiáo hé hěn shēn 。"
+      ]
     },
     {
       "word": "熟悉",
@@ -61,7 +85,13 @@
         "en": "be familiar with",
         "ko": "익숙하다, 잘 알다",
         "ja": "慣れている、よく知っている"
-      }
+      },
+      "example": [
+        "我对这条路很熟悉。"
+      ],
+      "examplePinyin": [
+        "wǒ duì zhè tiáo lù hěn shú xī 。"
+      ]
     },
     {
       "word": "不仅",
@@ -73,7 +103,13 @@
         "en": "not only",
         "ko": "~뿐만 아니라",
         "ja": "〜だけでなく"
-      }
+      },
+      "example": [
+        "他不仅会说中文，还会做中国菜。"
+      ],
+      "examplePinyin": [
+        "tā bù jǐn huì shuō zhōng wén ， hái huì zuò zhōng guó cài 。"
+      ]
     },
     {
       "word": "性格",
@@ -85,7 +121,13 @@
         "en": "personality",
         "ko": "성격",
         "ja": "性格"
-      }
+      },
+      "example": [
+        "他的性格很好。"
+      ],
+      "examplePinyin": [
+        "tā de xìng gé hěn hǎo 。"
+      ]
     },
     {
       "word": "开玩笑",
@@ -97,7 +139,13 @@
         "en": "to joke",
         "ko": "농담하다",
         "ja": "冗談を言う"
-      }
+      },
+      "example": [
+        "我只是开玩笑，你别生气。"
+      ],
+      "examplePinyin": [
+        "wǒ zhǐ shì kāi wán xiào ， nǐ bié shēng qì 。"
+      ]
     },
     {
       "word": "从来",
@@ -109,7 +157,13 @@
         "en": "always",
         "ko": "여태, 줄곧",
         "ja": "これまでずっと"
-      }
+      },
+      "example": [
+        "他从来不迟到。"
+      ],
+      "examplePinyin": [
+        "tā cóng lái bù chí dào 。"
+      ]
     },
     {
       "word": "最好",
@@ -121,7 +175,13 @@
         "en": "had better",
         "ko": "~하는 게 가장 좋다",
         "ja": "〜したほうがよい"
-      }
+      },
+      "example": [
+        "你最好早点出发。"
+      ],
+      "examplePinyin": [
+        "nǐ zuì hǎo zǎo diǎn chū fā 。"
+      ]
     },
     {
       "word": "共同",
@@ -133,7 +193,13 @@
         "en": "common",
         "ko": "공통의, 함께하는",
         "ja": "共通の、共同の"
-      }
+      },
+      "example": [
+        "我们有共同的目标。"
+      ],
+      "examplePinyin": [
+        "wǒ men yǒu gòng tóng de mù biāo 。"
+      ]
     },
     {
       "word": "适合",
@@ -145,7 +211,13 @@
         "en": "to suit",
         "ko": "잘 맞다, 적합하다",
         "ja": "合う、ふさわしい"
-      }
+      },
+      "example": [
+        "这件衣服很适合你。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn yī fu hěn shì hé nǐ 。"
+      ]
     },
     {
       "word": "生活",
@@ -157,7 +229,13 @@
         "en": "life",
         "ko": "생활; 살아가다",
         "ja": "生活; 暮らす"
-      }
+      },
+      "example": [
+        "我喜欢现在的生活。"
+      ],
+      "examplePinyin": [
+        "wǒ xǐ huan xiàn zài de shēng huó 。"
+      ]
     },
     {
       "word": "刚",
@@ -169,7 +247,13 @@
         "en": "just",
         "ko": "막, 방금",
         "ja": "ちょうど、〜したばかり"
-      }
+      },
+      "example": [
+        "我刚到家。"
+      ],
+      "examplePinyin": [
+        "wǒ gāng dào jiā 。"
+      ]
     },
     {
       "word": "浪漫",
@@ -181,7 +265,13 @@
         "en": "romantic",
         "ko": "낭만적이다",
         "ja": "ロマンチックだ"
-      }
+      },
+      "example": [
+        "今晚的气氛很浪漫。"
+      ],
+      "examplePinyin": [
+        "jīn wǎn de qì fēn hěn làng màn 。"
+      ]
     },
     {
       "word": "够",
@@ -193,7 +283,13 @@
         "en": "enough",
         "ko": "충분하다",
         "ja": "十分である"
-      }
+      },
+      "example": [
+        "这些钱够了。"
+      ],
+      "examplePinyin": [
+        "zhè xiē qián gòu le 。"
+      ]
     },
     {
       "word": "缺点",
@@ -205,7 +301,13 @@
         "en": "shortcoming",
         "ko": "단점",
         "ja": "短所"
-      }
+      },
+      "example": [
+        "每个人都有缺点。"
+      ],
+      "examplePinyin": [
+        "měi gè rén dōu yǒu quē diǎn 。"
+      ]
     },
     {
       "word": "接受",
@@ -217,7 +319,13 @@
         "en": "to accept",
         "ko": "받아들이다",
         "ja": "受け入れる"
-      }
+      },
+      "example": [
+        "我可以接受这个安排。"
+      ],
+      "examplePinyin": [
+        "wǒ kě yǐ jiē shòu zhè ge ān pái 。"
+      ]
     },
     {
       "word": "羡慕",
@@ -229,7 +337,13 @@
         "en": "to envy",
         "ko": "부러워하다",
         "ja": "うらやましがる"
-      }
+      },
+      "example": [
+        "我很羡慕你的勇气。"
+      ],
+      "examplePinyin": [
+        "wǒ hěn xiàn mù nǐ de yǒng qì 。"
+      ]
     },
     {
       "word": "爱情",
@@ -241,7 +355,13 @@
         "en": "love",
         "ko": "사랑",
         "ja": "恋愛、愛情"
-      }
+      },
+      "example": [
+        "爱情不是生活的全部。"
+      ],
+      "examplePinyin": [
+        "ài qíng bú shì shēng huó de quán bù 。"
+      ]
     },
     {
       "word": "星星",
@@ -253,7 +373,13 @@
         "en": "star",
         "ko": "별",
         "ja": "星"
-      }
+      },
+      "example": [
+        "今晚的星星很多。"
+      ],
+      "examplePinyin": [
+        "jīn wǎn de xīng xīng hěn duō 。"
+      ]
     },
     {
       "word": "即使",
@@ -265,7 +391,13 @@
         "en": "even if",
         "ko": "설령 ~하더라도",
         "ja": "たとえ〜でも"
-      }
+      },
+      "example": [
+        "即使下雨，我们也要去。"
+      ],
+      "examplePinyin": [
+        "jí shǐ xià yǔ ， wǒ men yě yào qù 。"
+      ]
     },
     {
       "word": "加班",
@@ -277,7 +409,13 @@
         "en": "to work overtime",
         "ko": "야근하다",
         "ja": "残業する"
-      }
+      },
+      "example": [
+        "我今晚要加班。"
+      ],
+      "examplePinyin": [
+        "wǒ jīn wǎn yào jiā bān 。"
+      ]
     },
     {
       "word": "亮",
@@ -289,7 +427,13 @@
         "en": "to shine",
         "ko": "밝다, 불이 켜져 있다",
         "ja": "明るい、灯りがついている"
-      }
+      },
+      "example": [
+        "房间里的灯很亮。"
+      ],
+      "examplePinyin": [
+        "fáng jiān lǐ de dēng hěn liàng 。"
+      ]
     },
     {
       "word": "感动",
@@ -301,7 +445,13 @@
         "en": "to touch",
         "ko": "감동시키다, 감동하다",
         "ja": "感動させる、心を動かす"
-      }
+      },
+      "example": [
+        "你的话让我很感动。"
+      ],
+      "examplePinyin": [
+        "nǐ de huà ràng wǒ hěn gǎn dòng 。"
+      ]
     },
     {
       "word": "自然",
@@ -313,7 +463,13 @@
         "en": "naturally",
         "ko": "자연히, 당연히",
         "ja": "自然に、当然"
-      }
+      },
+      "example": [
+        "多练几遍，你自然就会了。"
+      ],
+      "examplePinyin": [
+        "duō liàn jǐ biàn ， nǐ zì rán jiù huì le 。"
+      ]
     },
     {
       "word": "原因",
@@ -325,7 +481,13 @@
         "en": "reason",
         "ko": "이유",
         "ja": "理由"
-      }
+      },
+      "example": [
+        "你能告诉我原因吗？"
+      ],
+      "examplePinyin": [
+        "nǐ néng gào sù wǒ yuán yīn ma ？"
+      ]
     },
     {
       "word": "互相",
@@ -337,7 +499,13 @@
         "en": "mutually",
         "ko": "서로",
         "ja": "互いに"
-      }
+      },
+      "example": [
+        "我们应该互相帮助。"
+      ],
+      "examplePinyin": [
+        "wǒ men yīng gāi hù xiāng bāng zhù 。"
+      ]
     },
     {
       "word": "吸引",
@@ -349,7 +517,13 @@
         "en": "to attract",
         "ko": "끌어당기다",
         "ja": "引きつける"
-      }
+      },
+      "example": [
+        "这部电影很吸引人。"
+      ],
+      "examplePinyin": [
+        "zhè bù diàn yǐng hěn xī yǐn rén 。"
+      ]
     },
     {
       "word": "幽默",
@@ -361,7 +535,13 @@
         "en": "humorous",
         "ko": "유머러스하다",
         "ja": "ユーモアがある"
-      }
+      },
+      "example": [
+        "他说话很幽默。"
+      ],
+      "examplePinyin": [
+        "tā shuō huà hěn yōu mò 。"
+      ]
     },
     {
       "word": "脾气",
@@ -373,7 +553,13 @@
         "en": "temper",
         "ko": "성미, 성격",
         "ja": "気質、気性"
-      }
+      },
+      "example": [
+        "他的脾气很好。"
+      ],
+      "examplePinyin": [
+        "tā de pí qì hěn hǎo 。"
+      ]
     },
     {
       "word": "适应",
@@ -385,7 +571,13 @@
         "en": "to get used to",
         "ko": "적응하다",
         "ja": "適応する、慣れる"
-      }
+      },
+      "example": [
+        "我想适应一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng shì yìng yí xià 。"
+      ]
     },
     {
       "word": "交",
@@ -397,7 +589,13 @@
         "en": "to make (friends)",
         "ko": "사귀다",
         "ja": "交わる、(友達を)作る"
-      }
+      },
+      "example": [
+        "我想交一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng jiāo yí xià 。"
+      ]
     },
     {
       "word": "平时",
@@ -409,7 +607,13 @@
         "en": "normal times",
         "ko": "평소",
         "ja": "平生、普段"
-      }
+      },
+      "example": [
+        "平时我喜欢在家休息。"
+      ],
+      "examplePinyin": [
+        "píng shí wǒ xǐ huan zài jiā xiū xi 。"
+      ]
     },
     {
       "word": "逛",
@@ -421,7 +625,13 @@
         "en": "to stroll, to roam",
         "ko": "거닐다, 구경하다",
         "ja": "ぶらぶら歩く、見て回る"
-      }
+      },
+      "example": [
+        "我想逛一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng guàng yí xià 。"
+      ]
     },
     {
       "word": "短信",
@@ -433,7 +643,13 @@
         "en": "text message",
         "ko": "문자 메시지",
         "ja": "ショートメール"
-      }
+      },
+      "example": [
+        "我把短信放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ duǎn xìn fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "正好",
@@ -445,7 +661,13 @@
         "en": "just in time, just right",
         "ko": "마침, 알맞다",
         "ja": "ちょうどよい"
-      }
+      },
+      "example": [
+        "我正好也想找你。"
+      ],
+      "examplePinyin": [
+        "wǒ zhèng hǎo yě xiǎng zhǎo nǐ 。"
+      ]
     },
     {
       "word": "聚会",
@@ -457,7 +679,13 @@
         "en": "party, get-together",
         "ko": "모임, 파티",
         "ja": "集まり、パーティー"
-      }
+      },
+      "example": [
+        "这个聚会对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge jù huì duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "联系",
@@ -469,7 +697,13 @@
         "en": "to contact",
         "ko": "연락하다",
         "ja": "連絡する"
-      }
+      },
+      "example": [
+        "我晚上再联系你。"
+      ],
+      "examplePinyin": [
+        "wǒ wǎn shàng zài lián xì nǐ 。"
+      ]
     },
     {
       "word": "差不多",
@@ -481,7 +715,13 @@
         "en": "almost",
         "ko": "거의 비슷하다",
         "ja": "ほとんど同じ、だいたい"
-      }
+      },
+      "example": [
+        "时间差不多了，我们走吧。"
+      ],
+      "examplePinyin": [
+        "shí jiān chà bù duō le ， wǒ men zǒu ba 。"
+      ]
     },
     {
       "word": "专门",
@@ -493,7 +733,13 @@
         "en": "specially",
         "ko": "전문적으로, 특별히",
         "ja": "専門的に、わざわざ"
-      }
+      },
+      "example": [
+        "我专门来看看你。"
+      ],
+      "examplePinyin": [
+        "wǒ zhuān mén lái kàn kàn nǐ 。"
+      ]
     },
     {
       "word": "毕业",
@@ -505,7 +751,13 @@
         "en": "to graduate",
         "ko": "졸업하다",
         "ja": "卒業する"
-      }
+      },
+      "example": [
+        "他今天要毕业。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào bì yè 。"
+      ]
     },
     {
       "word": "麻烦",
@@ -517,7 +769,13 @@
         "en": "to bother",
         "ko": "번거롭게 하다",
         "ja": "面倒をかける、お手数ですが"
-      }
+      },
+      "example": [
+        "我想麻烦一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng má fán yí xià 。"
+      ]
     },
     {
       "word": "好像",
@@ -529,7 +787,13 @@
         "en": "as if",
         "ko": "마치 ~인 것 같다",
         "ja": "まるで〜のようだ"
-      }
+      },
+      "example": [
+        "他好像不太高兴。"
+      ],
+      "examplePinyin": [
+        "tā hǎo xiàng bú tài gāo xìng 。"
+      ]
     },
     {
       "word": "重新",
@@ -541,7 +805,13 @@
         "en": "again, once more",
         "ko": "다시, 새로이",
         "ja": "改めて、再び"
-      }
+      },
+      "example": [
+        "我们重新开始吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men chóng xīn kāi shǐ ba 。"
+      ]
     },
     {
       "word": "尽管",
@@ -553,7 +823,13 @@
         "en": "although",
         "ko": "비록 ~일지라도",
         "ja": "たとえ〜でも、〜にもかかわらず"
-      }
+      },
+      "example": [
+        "尽管很累，他还是来了。"
+      ],
+      "examplePinyin": [
+        "jǐn guǎn hěn lèi ， tā hái shì lái le 。"
+      ]
     },
     {
       "word": "真正",
@@ -565,7 +841,13 @@
         "en": "true, real",
         "ko": "진짜의, 진정한",
         "ja": "本物の、真の"
-      }
+      },
+      "example": [
+        "真正的朋友会听你说心里话。"
+      ],
+      "examplePinyin": [
+        "zhēn zhèng de péng yǒu huì tīng nǐ shuō xīn lǐ huà 。"
+      ]
     },
     {
       "word": "友谊",
@@ -577,7 +859,13 @@
         "en": "friendship",
         "ko": "우정",
         "ja": "友情"
-      }
+      },
+      "example": [
+        "我们聊聊友谊吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo yǒu yì ba 。"
+      ]
     },
     {
       "word": "丰富",
@@ -589,7 +877,13 @@
         "en": "to enrich",
         "ko": "풍부하게 하다, 풍부하다",
         "ja": "豊かにする、豊富な"
-      }
+      },
+      "example": [
+        "我想丰富一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng fēng fù yí xià 。"
+      ]
     },
     {
       "word": "无聊",
@@ -601,7 +895,13 @@
         "en": "boring",
         "ko": "무료하다, 심심하다",
         "ja": "退屈だ"
-      }
+      },
+      "example": [
+        "他今天看起来很无聊。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn wú liáo 。"
+      ]
     },
     {
       "word": "讨厌",
@@ -613,7 +913,13 @@
         "en": "to dislike",
         "ko": "싫어하다",
         "ja": "嫌う、嫌な"
-      }
+      },
+      "example": [
+        "我想讨厌一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng tǎo yàn yí xià 。"
+      ]
     },
     {
       "word": "却",
@@ -625,7 +931,13 @@
         "en": "but, yet",
         "ko": "오히려, 도리어",
         "ja": "かえって、しかし"
-      }
+      },
+      "example": [
+        "他很忙，却每天运动。"
+      ],
+      "examplePinyin": [
+        "tā hěn máng ， què měi tiān yùn dòng 。"
+      ]
     },
     {
       "word": "周围",
@@ -637,7 +949,13 @@
         "en": "surrounding",
         "ko": "주위",
         "ja": "周囲"
-      }
+      },
+      "example": [
+        "这个周围对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge zhōu wéi duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "交流",
@@ -649,7 +967,13 @@
         "en": "to communicate",
         "ko": "교류하다, 소통하다",
         "ja": "交流する、やり取りする"
-      }
+      },
+      "example": [
+        "我想交流一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng jiāo liú yí xià 。"
+      ]
     },
     {
       "word": "理解",
@@ -661,7 +985,13 @@
         "en": "to understand",
         "ko": "이해하다",
         "ja": "理解する"
-      }
+      },
+      "example": [
+        "我能理解你的心情。"
+      ],
+      "examplePinyin": [
+        "wǒ néng lǐ jiě nǐ de xīn qíng 。"
+      ]
     },
     {
       "word": "镜子",
@@ -673,7 +1003,13 @@
         "en": "mirror",
         "ko": "거울",
         "ja": "鏡"
-      }
+      },
+      "example": [
+        "我把镜子放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ jìng zi fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "而",
@@ -685,7 +1021,13 @@
         "en": "while, yet",
         "ko": "그러나, 그런데",
         "ja": "しかも、しかし"
-      }
+      },
+      "example": [
+        "他喜欢茶，而我喜欢咖啡。"
+      ],
+      "examplePinyin": [
+        "tā xǐ huan chá ， ér wǒ xǐ huan kā fēi 。"
+      ]
     },
     {
       "word": "当",
@@ -697,7 +1039,13 @@
         "en": "when",
         "ko": "~할 때",
         "ja": "〜の時"
-      }
+      },
+      "example": [
+        "当我到家时，雨停了。"
+      ],
+      "examplePinyin": [
+        "dāng wǒ dào jiā shí ， yǔ tíng le 。"
+      ]
     },
     {
       "word": "困难",
@@ -709,7 +1057,13 @@
         "en": "difficulty",
         "ko": "곤란, 어려움",
         "ja": "困難"
-      }
+      },
+      "example": [
+        "我们聊聊困难吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo kùn nán ba 。"
+      ]
     },
     {
       "word": "及时",
@@ -721,7 +1075,13 @@
         "en": "in time",
         "ko": "제때에, 즉시",
         "ja": "タイミングよく、すぐに"
-      }
+      },
+      "example": [
+        "你来得很及时。"
+      ],
+      "examplePinyin": [
+        "nǐ lái de hěn jí shí 。"
+      ]
     },
     {
       "word": "陪",
@@ -733,7 +1093,13 @@
         "en": "to accompany",
         "ko": "동반하다, 함께 있다",
         "ja": "付き添う、一緒にいる"
-      }
+      },
+      "example": [
+        "我想陪一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng péi yí xià 。"
+      ]
     },
     {
       "word": "挺",
@@ -745,7 +1111,13 @@
         "en": "quite, rather",
         "ko": "꽤, 제법",
         "ja": "かなり、結構"
-      }
+      },
+      "example": [
+        "这家店挺好吃的。"
+      ],
+      "examplePinyin": [
+        "zhè jiā diàn tǐng hǎo chī de 。"
+      ]
     },
     {
       "word": "紧张",
@@ -757,7 +1129,13 @@
         "en": "nervous",
         "ko": "긴장하다",
         "ja": "緊張する"
-      }
+      },
+      "example": [
+        "他今天看起来很紧张。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn jǐn zhāng 。"
+      ]
     },
     {
       "word": "信心",
@@ -769,7 +1147,13 @@
         "en": "confidence",
         "ko": "자신, 신념",
         "ja": "自信"
-      }
+      },
+      "example": [
+        "我们聊聊信心吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo xìn xīn ba 。"
+      ]
     },
     {
       "word": "能力",
@@ -781,7 +1165,13 @@
         "en": "ability",
         "ko": "능력",
         "ja": "能力"
-      }
+      },
+      "example": [
+        "我们聊聊能力吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo néng lì ba 。"
+      ]
     },
     {
       "word": "招聘",
@@ -793,7 +1183,13 @@
         "en": "to recruit",
         "ko": "채용하다",
         "ja": "募集する"
-      }
+      },
+      "example": [
+        "我们公司正在招聘新人。"
+      ],
+      "examplePinyin": [
+        "wǒ men gōng sī zhèng zài zhāo pìn xīn rén 。"
+      ]
     },
     {
       "word": "提供",
@@ -805,7 +1201,13 @@
         "en": "to provide",
         "ko": "제공하다",
         "ja": "提供する"
-      }
+      },
+      "example": [
+        "店里提供免费茶水。"
+      ],
+      "examplePinyin": [
+        "diàn lǐ tí gōng miǎn fèi chá shuǐ 。"
+      ]
     },
     {
       "word": "决定",
@@ -817,7 +1219,13 @@
         "en": "to decide",
         "ko": "결정하다",
         "ja": "決める"
-      }
+      },
+      "example": [
+        "我决定明天出发。"
+      ],
+      "examplePinyin": [
+        "wǒ jué dìng míng tiān chū fā 。"
+      ]
     },
     {
       "word": "机会",
@@ -829,7 +1237,13 @@
         "en": "opportunity",
         "ko": "기회",
         "ja": "機会"
-      }
+      },
+      "example": [
+        "我们聊聊机会吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jī huì ba 。"
+      ]
     },
     {
       "word": "负责",
@@ -841,7 +1255,13 @@
         "en": "to be responsible for",
         "ko": "책임지다",
         "ja": "担当する"
-      }
+      },
+      "example": [
+        "这件事由我负责。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn shì yóu wǒ fù zé 。"
+      ]
     },
     {
       "word": "本来",
@@ -853,7 +1273,13 @@
         "en": "originally",
         "ko": "원래",
         "ja": "元々"
-      }
+      },
+      "example": [
+        "我本来想给你打电话。"
+      ],
+      "examplePinyin": [
+        "wǒ běn lái xiǎng gěi nǐ dǎ diàn huà 。"
+      ]
     },
     {
       "word": "突然",
@@ -865,7 +1291,13 @@
         "en": "suddenly",
         "ko": "갑자기",
         "ja": "突然"
-      }
+      },
+      "example": [
+        "外面突然下雨了。"
+      ],
+      "examplePinyin": [
+        "wài miàn tū rán xià yǔ le 。"
+      ]
     },
     {
       "word": "生病",
@@ -877,7 +1309,13 @@
         "en": "to get sick",
         "ko": "병에 걸리다",
         "ja": "病気になる"
-      }
+      },
+      "example": [
+        "他今天要生病。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào shēng bìng 。"
+      ]
     },
     {
       "word": "住院",
@@ -889,7 +1327,13 @@
         "en": "to be hospitalized",
         "ko": "입원하다",
         "ja": "入院する"
-      }
+      },
+      "example": [
+        "他今天要住院。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào zhù yuàn 。"
+      ]
     },
     {
       "word": "应聘",
@@ -901,7 +1345,13 @@
         "en": "to apply for a job",
         "ko": "지원하다, 응모하다",
         "ja": "応募する"
-      }
+      },
+      "example": [
+        "他明天去应聘。"
+      ],
+      "examplePinyin": [
+        "tā míng tiān qù yìng pìn 。"
+      ]
     },
     {
       "word": "经过",
@@ -913,7 +1363,13 @@
         "en": "after, through",
         "ko": "거쳐, 통과하여",
         "ja": "経て、通して"
-      }
+      },
+      "example": [
+        "经过这次练习，我放心多了。"
+      ],
+      "examplePinyin": [
+        "jīng guò zhè cì liàn xí ， wǒ fàng xīn duō le 。"
+      ]
     },
     {
       "word": "笔试",
@@ -925,7 +1381,13 @@
         "en": "written test",
         "ko": "필기시험",
         "ja": "筆記試験"
-      }
+      },
+      "example": [
+        "这个笔试对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge bǐ shì duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "面试",
@@ -937,7 +1399,13 @@
         "en": "interview",
         "ko": "면접",
         "ja": "面接"
-      }
+      },
+      "example": [
+        "这个面试对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge miàn shì duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "材料",
@@ -949,7 +1417,13 @@
         "en": "materials",
         "ko": "서류, 자료",
         "ja": "書類、資料"
-      }
+      },
+      "example": [
+        "我把材料放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ cái liào fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "比较",
@@ -961,7 +1435,13 @@
         "en": "relatively",
         "ko": "비교적, 꽤",
         "ja": "比較的"
-      }
+      },
+      "example": [
+        "今天比较冷。"
+      ],
+      "examplePinyin": [
+        "jīn tiān bǐ jiào lěng 。"
+      ]
     },
     {
       "word": "符合",
@@ -973,7 +1453,13 @@
         "en": "to meet (requirements)",
         "ko": "부합하다, 맞다",
         "ja": "合致する"
-      }
+      },
+      "example": [
+        "这个条件符合要求。"
+      ],
+      "examplePinyin": [
+        "zhè ge tiáo jiàn fú hé yāo qiú 。"
+      ]
     },
     {
       "word": "要求",
@@ -985,7 +1471,13 @@
         "en": "requirement",
         "ko": "요구",
         "ja": "要求"
-      }
+      },
+      "example": [
+        "我们聊聊要求吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo yāo qiú ba 。"
+      ]
     },
     {
       "word": "通知",
@@ -997,7 +1489,13 @@
         "en": "to notify",
         "ko": "통지하다, 알리다",
         "ja": "通知する"
-      }
+      },
+      "example": [
+        "老师通知我们开会。"
+      ],
+      "examplePinyin": [
+        "lǎo shī tōng zhī wǒ men kāi huì 。"
+      ]
     },
     {
       "word": "律师",
@@ -1009,7 +1507,13 @@
         "en": "lawyer",
         "ko": "변호사",
         "ja": "弁護士"
-      }
+      },
+      "example": [
+        "那位律师很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi lǜ shī hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "满意",
@@ -1021,7 +1525,13 @@
         "en": "to be satisfied",
         "ko": "만족하다",
         "ja": "満足する"
-      }
+      },
+      "example": [
+        "我对结果很满意。"
+      ],
+      "examplePinyin": [
+        "wǒ duì jié guǒ hěn mǎn yì 。"
+      ]
     },
     {
       "word": "专业",
@@ -1033,7 +1543,13 @@
         "en": "major, specialty",
         "ko": "전공, 전문",
         "ja": "専門"
-      }
+      },
+      "example": [
+        "这个专业对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge zhuān yè duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "另外",
@@ -1045,7 +1561,13 @@
         "en": "besides, in addition",
         "ko": "게다가, 그 밖에",
         "ja": "その他に、さらに"
-      }
+      },
+      "example": [
+        "另外，我还想问一个问题。"
+      ],
+      "examplePinyin": [
+        "lìng wài ， wǒ hái xiǎng wèn yí gè wèn tí 。"
+      ]
     },
     {
       "word": "收入",
@@ -1057,7 +1579,13 @@
         "en": "income",
         "ko": "수입",
         "ja": "収入"
-      }
+      },
+      "example": [
+        "我们聊聊收入吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo shōu rù ba 。"
+      ]
     },
     {
       "word": "咱们",
@@ -1069,7 +1597,13 @@
         "en": "we, us",
         "ko": "우리 (듣는 사람 포함)",
         "ja": "私たち（聞き手含む）"
-      }
+      },
+      "example": [
+        "这个咱们对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge zán men duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "安排",
@@ -1081,7 +1615,13 @@
         "en": "to arrange",
         "ko": "안배하다, 계획하다",
         "ja": "手配する、計画する"
-      }
+      },
+      "example": [
+        "我来安排明天的行程。"
+      ],
+      "examplePinyin": [
+        "wǒ lái ān pái míng tiān de xíng chéng 。"
+      ]
     },
     {
       "word": "首先",
@@ -1093,7 +1633,13 @@
         "en": "first",
         "ko": "첫째, 먼저",
         "ja": "まず、最初に"
-      }
+      },
+      "example": [
+        "首先，我们先点菜吧。"
+      ],
+      "examplePinyin": [
+        "shǒu xiān ， wǒ men xiān diǎn cài ba 。"
+      ]
     },
     {
       "word": "正式",
@@ -1105,7 +1651,13 @@
         "en": "formal",
         "ko": "정식, 공식적인",
         "ja": "正式な"
-      }
+      },
+      "example": [
+        "他下周正式开始工作。"
+      ],
+      "examplePinyin": [
+        "tā xià zhōu zhèng shì kāi shǐ gōng zuò 。"
+      ]
     },
     {
       "word": "留",
@@ -1117,7 +1669,13 @@
         "en": "to leave",
         "ko": "남기다, 머무르다",
         "ja": "残す、留める"
-      }
+      },
+      "example": [
+        "我想留一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng liú yí xià 。"
+      ]
     },
     {
       "word": "其次",
@@ -1129,7 +1687,13 @@
         "en": "second, next",
         "ko": "둘째, 다음으로",
         "ja": "次に、第二に"
-      }
+      },
+      "example": [
+        "其次，你要多练听力。"
+      ],
+      "examplePinyin": [
+        "qí cì ， nǐ yào duō liàn tīng lì 。"
+      ]
     },
     {
       "word": "诚实",
@@ -1141,7 +1705,13 @@
         "en": "honest",
         "ko": "정직하다",
         "ja": "誠実である"
-      }
+      },
+      "example": [
+        "他今天看起来很诚实。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn chéng shí 。"
+      ]
     },
     {
       "word": "顺利",
@@ -1153,7 +1723,13 @@
         "en": "smooth",
         "ko": "순조롭다, 잘 되다",
         "ja": "順調である"
-      }
+      },
+      "example": [
+        "今天的考试很顺利。"
+      ],
+      "examplePinyin": [
+        "jīn tiān de kǎo shì hěn shùn lì 。"
+      ]
     },
     {
       "word": "注意",
@@ -1165,7 +1741,13 @@
         "en": "to pay attention to",
         "ko": "주의하다",
         "ja": "注意する"
-      }
+      },
+      "example": [
+        "过马路要注意安全。"
+      ],
+      "examplePinyin": [
+        "guò mǎ lù yào zhù yì ān quán 。"
+      ]
     },
     {
       "word": "改变",
@@ -1177,7 +1759,13 @@
         "en": "to change",
         "ko": "바꾸다, 변화하다",
         "ja": "変える、変化する"
-      }
+      },
+      "example": [
+        "我想改变一下计划。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng gǎi biàn yí xià jì huà 。"
+      ]
     },
     {
       "word": "感觉",
@@ -1189,7 +1777,13 @@
         "en": "feeling",
         "ko": "느낌, 감정",
         "ja": "感じ、感情"
-      }
+      },
+      "example": [
+        "这个感觉对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge gǎn jué duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "判断",
@@ -1201,7 +1795,13 @@
         "en": "to judge",
         "ko": "판단하다",
         "ja": "判断する"
-      }
+      },
+      "example": [
+        "现在还不好判断。"
+      ],
+      "examplePinyin": [
+        "xiàn zài hái bù hǎo pàn duàn 。"
+      ]
     },
     {
       "word": "顾客",
@@ -1213,7 +1813,13 @@
         "en": "customer",
         "ko": "고객",
         "ja": "顧客"
-      }
+      },
+      "example": [
+        "那位顾客很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi gù kè hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "准时",
@@ -1225,7 +1831,13 @@
         "en": "punctual",
         "ko": "시간을 지키다, 정각",
         "ja": "時間を守る、正確な"
-      }
+      },
+      "example": [
+        "他今天看起来很准时。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn zhǔn shí 。"
+      ]
     },
     {
       "word": "不管",
@@ -1237,7 +1849,13 @@
         "en": "no matter",
         "ko": "~에 관계없이",
         "ja": "〜に関わらず"
-      }
+      },
+      "example": [
+        "不管多忙，我都会来。"
+      ],
+      "examplePinyin": [
+        "bù guǎn duō máng ， wǒ dōu huì lái 。"
+      ]
     },
     {
       "word": "与",
@@ -1249,7 +1867,13 @@
         "en": "with",
         "ko": "~와/과",
         "ja": "〜と"
-      }
+      },
+      "example": [
+        "我想与朋友一起去。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng yǔ péng yǒu yì qǐ qù 。"
+      ]
     },
     {
       "word": "约会",
@@ -1261,7 +1885,13 @@
         "en": "to date",
         "ko": "약속, 데이트",
         "ja": "デート、約束"
-      }
+      },
+      "example": [
+        "我想约会一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng yuē huì yí xià 。"
+      ]
     },
     {
       "word": "提",
@@ -1273,7 +1903,13 @@
         "en": "to mention",
         "ko": "언급하다",
         "ja": "言及する"
-      }
+      },
+      "example": [
+        "我想提一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng tí yí xià 。"
+      ]
     },
     {
       "word": "以为",
@@ -1285,7 +1921,13 @@
         "en": "to think, to believe",
         "ko": "~인 줄 알다",
         "ja": "〜と思う"
-      }
+      },
+      "example": [
+        "我想以为一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng yǐ wéi yí xià 。"
+      ]
     },
     {
       "word": "份",
@@ -1297,7 +1939,13 @@
         "en": "measure word used for jobs among other things",
         "ko": "일자리 등에 쓰는 양사",
         "ja": "仕事などに用いる量詞"
-      }
+      },
+      "example": [
+        "我买了一份新的。"
+      ],
+      "examplePinyin": [
+        "wǒ mǎi le yí fèn xīn de 。"
+      ]
     },
     {
       "word": "完全",
@@ -1309,7 +1957,13 @@
         "en": "completely",
         "ko": "완전히",
         "ja": "完全に"
-      }
+      },
+      "example": [
+        "我完全同意你的看法。"
+      ],
+      "examplePinyin": [
+        "wǒ wán quán tóng yì nǐ de kàn fǎ 。"
+      ]
     },
     {
       "word": "赚",
@@ -1321,7 +1975,13 @@
         "en": "to earn",
         "ko": "벌다",
         "ja": "稼ぐ"
-      }
+      },
+      "example": [
+        "我想赚一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng zhuàn yí xià 。"
+      ]
     },
     {
       "word": "着急",
@@ -1333,7 +1993,13 @@
         "en": "to be in a hurry; anxious",
         "ko": "조급해하다; 초조해하다",
         "ja": "焦る、急ぐ"
-      }
+      },
+      "example": [
+        "我想着急一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng zháo jí yí xià 。"
+      ]
     },
     {
       "word": "重要",
@@ -1345,7 +2011,13 @@
         "en": "important",
         "ko": "중요한",
         "ja": "重要な"
-      }
+      },
+      "example": [
+        "这件事对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn shì duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "调查",
@@ -1357,7 +2029,13 @@
         "en": "to survey, to investigate",
         "ko": "조사하다",
         "ja": "調査する"
-      }
+      },
+      "example": [
+        "警察正在调查这件事。"
+      ],
+      "examplePinyin": [
+        "jǐng chá zhèng zài diào chá zhè jiàn shì 。"
+      ]
     },
     {
       "word": "原来",
@@ -1369,7 +2047,13 @@
         "en": "original; formerly; as it turns out",
         "ko": "원래; 알고 보니",
         "ja": "もともと、実は"
-      }
+      },
+      "example": [
+        "原来你也在这里。"
+      ],
+      "examplePinyin": [
+        "yuán lái nǐ yě zài zhè lǐ 。"
+      ]
     },
     {
       "word": "计划",
@@ -1381,7 +2065,13 @@
         "en": "plan; to intend to",
         "ko": "계획; 계획하다",
         "ja": "計画、計画する"
-      }
+      },
+      "example": [
+        "我计划周末去旅行。"
+      ],
+      "examplePinyin": [
+        "wǒ jì huà zhōu mò qù lǚ xíng 。"
+      ]
     },
     {
       "word": "提前",
@@ -1393,7 +2083,13 @@
         "en": "to do something in advance or ahead of time",
         "ko": "앞당기다; 미리 하다",
         "ja": "前倒しする、事前に行う"
-      }
+      },
+      "example": [
+        "我想提前一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng tí qián yí xià 。"
+      ]
     },
     {
       "word": "保证",
@@ -1405,7 +2101,13 @@
         "en": "to guarantee",
         "ko": "보장하다; 반드시 ~하다",
         "ja": "保証する"
-      }
+      },
+      "example": [
+        "我想保证一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng bǎo zhèng yí xià 。"
+      ]
     },
     {
       "word": "提醒",
@@ -1417,7 +2119,13 @@
         "en": "to remind",
         "ko": "상기시키다",
         "ja": "注意を促す、思い出させる"
-      }
+      },
+      "example": [
+        "你明天提醒我一下。"
+      ],
+      "examplePinyin": [
+        "nǐ míng tiān tí xǐng wǒ yí xià 。"
+      ]
     },
     {
       "word": "乱",
@@ -1429,7 +2137,13 @@
         "en": "confused; disorderly",
         "ko": "어지러운; 혼란스러운",
         "ja": "乱れている、混乱した"
-      }
+      },
+      "example": [
+        "房间有点乱，我得收拾一下。"
+      ],
+      "examplePinyin": [
+        "fáng jiān yǒu diǎn luàn ， wǒ dé shōu shí yí xià 。"
+      ]
     },
     {
       "word": "生意",
@@ -1441,7 +2155,13 @@
         "en": "business, trade",
         "ko": "사업; 장사",
         "ja": "商売、取引"
-      }
+      },
+      "example": [
+        "这个生意对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge shēng yì duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "谈",
@@ -1453,7 +2173,13 @@
         "en": "to talk, to discuss",
         "ko": "이야기하다; 논의하다",
         "ja": "話す、相談する"
-      }
+      },
+      "example": [
+        "我们找个时间谈一谈。"
+      ],
+      "examplePinyin": [
+        "wǒ men zhǎo gè shí jiān tán yi tán 。"
+      ]
     },
     {
       "word": "并",
@@ -1465,7 +2191,13 @@
         "en": "used before a negative for emphasis",
         "ko": "부정어 앞에서 강조하는 부사",
         "ja": "否定語の前で強調する副詞"
-      }
+      },
+      "example": [
+        "我并不觉得麻烦。"
+      ],
+      "examplePinyin": [
+        "wǒ bìng bù jué de má fán 。"
+      ]
     },
     {
       "word": "积累",
@@ -1477,7 +2209,13 @@
         "en": "to accumulate",
         "ko": "쌓다; 축적하다",
         "ja": "積み重ねる、蓄積する"
-      }
+      },
+      "example": [
+        "工作中要慢慢积累经验。"
+      ],
+      "examplePinyin": [
+        "gōng zuò zhōng yào màn màn jī lěi jīng yàn 。"
+      ]
     },
     {
       "word": "经验",
@@ -1489,7 +2227,13 @@
         "en": "experience",
         "ko": "경험",
         "ja": "経験"
-      }
+      },
+      "example": [
+        "我们聊聊经验吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jīng yàn ba 。"
+      ]
     },
     {
       "word": "一切",
@@ -1501,7 +2245,13 @@
         "en": "all, every",
         "ko": "모든 것",
         "ja": "すべて"
-      }
+      },
+      "example": [
+        "一切都会好起来的。"
+      ],
+      "examplePinyin": [
+        "yí qiè dōu huì hǎo qǐ lái de 。"
+      ]
     },
     {
       "word": "按照",
@@ -1513,7 +2263,13 @@
         "en": "according to",
         "ko": "~에 따라",
         "ja": "〜に従って"
-      }
+      },
+      "example": [
+        "请按照这个地址寄过去。"
+      ],
+      "examplePinyin": [
+        "qǐng àn zhào zhè ge dì zhǐ jì guò qù 。"
+      ]
     },
     {
       "word": "成功",
@@ -1525,7 +2281,13 @@
         "en": "successful",
         "ko": "성공적인",
         "ja": "成功した"
-      }
+      },
+      "example": [
+        "这次聚会很成功。"
+      ],
+      "examplePinyin": [
+        "zhè cì jù huì hěn chéng gōng 。"
+      ]
     },
     {
       "word": "感谢",
@@ -1537,7 +2299,13 @@
         "en": "to thank",
         "ko": "감사하다",
         "ja": "感謝する"
-      }
+      },
+      "example": [
+        "我真的很感谢你。"
+      ],
+      "examplePinyin": [
+        "wǒ zhēn de hěn gǎn xiè nǐ 。"
+      ]
     },
     {
       "word": "消息",
@@ -1549,7 +2317,13 @@
         "en": "news",
         "ko": "소식",
         "ja": "知らせ、ニュース"
-      }
+      },
+      "example": [
+        "这个消息对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge xiāo xī duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "按时",
@@ -1561,7 +2335,13 @@
         "en": "on time, on schedule",
         "ko": "제시간에",
         "ja": "時間どおりに"
-      }
+      },
+      "example": [
+        "他每天按时吃药。"
+      ],
+      "examplePinyin": [
+        "tā měi tiān àn shí chī yào 。"
+      ]
     },
     {
       "word": "奖金",
@@ -1573,7 +2353,13 @@
         "en": "money award, bonus",
         "ko": "상금; 보너스",
         "ja": "賞金、ボーナス"
-      }
+      },
+      "example": [
+        "这个奖金对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge jiǎng jīn duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "工资",
@@ -1585,7 +2371,13 @@
         "en": "pay, salary",
         "ko": "임금; 월급",
         "ja": "給料"
-      }
+      },
+      "example": [
+        "这个工资对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge gōng zī duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "方法",
@@ -1597,7 +2389,13 @@
         "en": "method, way",
         "ko": "방법",
         "ja": "方法"
-      }
+      },
+      "example": [
+        "这个方法对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge fāng fǎ duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "办法",
@@ -1609,7 +2407,13 @@
         "en": "method, way",
         "ko": "방법; 방안",
         "ja": "方法、手段"
-      }
+      },
+      "example": [
+        "这个办法对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge bàn fǎ duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "知识",
@@ -1621,7 +2425,13 @@
         "en": "knowledge",
         "ko": "지식",
         "ja": "知識"
-      }
+      },
+      "example": [
+        "这个知识对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge zhī shi duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "不得不",
@@ -1633,7 +2443,13 @@
         "en": "to have to, to have no choice but",
         "ko": "어쩔 수 없이 ~해야 하다",
         "ja": "〜せざるを得ない"
-      }
+      },
+      "example": [
+        "我今天不得不加班。"
+      ],
+      "examplePinyin": [
+        "wǒ jīn tiān bù dé bù jiā bān 。"
+      ]
     },
     {
       "word": "甚至",
@@ -1645,7 +2461,13 @@
         "en": "even, so far as to",
         "ko": "심지어",
         "ja": "さらには、〜さえ"
-      }
+      },
+      "example": [
+        "他忙得甚至没时间吃饭。"
+      ],
+      "examplePinyin": [
+        "tā máng dé shèn zhì méi shí jiān chī fàn 。"
+      ]
     },
     {
       "word": "责任",
@@ -1657,7 +2479,13 @@
         "en": "responsibility, duty",
         "ko": "책임",
         "ja": "責任"
-      }
+      },
+      "example": [
+        "我们聊聊责任吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo zé rèn ba 。"
+      ]
     },
     {
       "word": "家具",
@@ -1669,7 +2497,13 @@
         "en": "n. furniture",
         "ko": "명. 가구",
         "ja": "名. 家具"
-      }
+      },
+      "example": [
+        "我把家具放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ jiā jù fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "沙发",
@@ -1681,7 +2515,13 @@
         "en": "n. sofa",
         "ko": "명. 소파",
         "ja": "名. ソファ"
-      }
+      },
+      "example": [
+        "我把沙发放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ shā fā fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "打折",
@@ -1693,7 +2533,13 @@
         "en": "v. to give a discount",
         "ko": "동. 할인하다",
         "ja": "動. 割引する"
-      }
+      },
+      "example": [
+        "这家店今天打折。"
+      ],
+      "examplePinyin": [
+        "zhè jiā diàn jīn tiān dǎ zhé 。"
+      ]
     },
     {
       "word": "价格",
@@ -1705,7 +2551,13 @@
         "en": "n. price",
         "ko": "명. 가격",
         "ja": "名. 価格"
-      }
+      },
+      "example": [
+        "我们聊聊价格吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jià gé ba 。"
+      ]
     },
     {
       "word": "质量",
@@ -1717,7 +2569,13 @@
         "en": "n. quality",
         "ko": "명. 품질",
         "ja": "名. 品質"
-      }
+      },
+      "example": [
+        "我们聊聊质量吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo zhì liàng ba 。"
+      ]
     },
     {
       "word": "肯定",
@@ -1729,7 +2587,13 @@
         "en": "adv. surely, certainly",
         "ko": "부. 틀림없이, 분명히",
         "ja": "副. きっと, 間違いなく"
-      }
+      },
+      "example": [
+        "他肯定会同意的。"
+      ],
+      "examplePinyin": [
+        "tā kěn dìng huì tóng yì de 。"
+      ]
     },
     {
       "word": "流行",
@@ -1741,7 +2605,13 @@
         "en": "v. to be popular",
         "ko": "동. 유행하다",
         "ja": "動. 流行する"
-      }
+      },
+      "example": [
+        "这种颜色今年很流行。"
+      ],
+      "examplePinyin": [
+        "zhè zhǒng yán sè jīn nián hěn liú xíng 。"
+      ]
     },
     {
       "word": "顺便",
@@ -1753,7 +2623,13 @@
         "en": "adv. in passing",
         "ko": "부. 하는 김에, 겸사겸사",
         "ja": "副. ついでに"
-      }
+      },
+      "example": [
+        "我顺便买点水果。"
+      ],
+      "examplePinyin": [
+        "wǒ shùn biàn mǎi diǎn shuǐ guǒ 。"
+      ]
     },
     {
       "word": "台",
@@ -1765,7 +2641,13 @@
         "en": "m. used for machines",
         "ko": "양. 기계류를 세는 단위",
         "ja": "量. 機械などを数える量詞"
-      }
+      },
+      "example": [
+        "我买了一台新的。"
+      ],
+      "examplePinyin": [
+        "wǒ mǎi le yì tái xīn de 。"
+      ]
     },
     {
       "word": "光",
@@ -1777,7 +2659,13 @@
         "en": "adv. only, merely",
         "ko": "부. 단지, ~만",
         "ja": "副. ただ, だけ"
-      }
+      },
+      "example": [
+        "光说不做没有用。"
+      ],
+      "examplePinyin": [
+        "guāng shuō bú zuò méi yǒu yòng 。"
+      ]
     },
     {
       "word": "实在",
@@ -1789,7 +2677,13 @@
         "en": "adv. really",
         "ko": "부. 정말, 참으로",
         "ja": "副. 本当に"
-      }
+      },
+      "example": [
+        "这道菜实在太辣了。"
+      ],
+      "examplePinyin": [
+        "zhè dào cài shí zài tài là le 。"
+      ]
     },
     {
       "word": "制冷",
@@ -1801,7 +2695,13 @@
         "en": "v. to refrigerate",
         "ko": "동. 냉각하다, 냉방하다",
         "ja": "動. 冷却する"
-      }
+      },
+      "example": [
+        "这台空调制冷很快。"
+      ],
+      "examplePinyin": [
+        "zhè tái kōng tiáo zhì lěng hěn kuài 。"
+      ]
     },
     {
       "word": "效果",
@@ -1813,7 +2713,13 @@
         "en": "n. effect",
         "ko": "명. 효과",
         "ja": "名. 効果"
-      }
+      },
+      "example": [
+        "我们聊聊效果吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo xiào guǒ ba 。"
+      ]
     },
     {
       "word": "现金",
@@ -1825,7 +2731,13 @@
         "en": "n. cash",
         "ko": "명. 현금",
         "ja": "名. 現金"
-      }
+      },
+      "example": [
+        "这个现金对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge xiàn jīn duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "邀请",
@@ -1837,7 +2749,13 @@
         "en": "v. to invite",
         "ko": "동. 초대하다",
         "ja": "動. 招待する"
-      }
+      },
+      "example": [
+        "我想邀请一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng yāo qǐng yí xià 。"
+      ]
     },
     {
       "word": "葡萄",
@@ -1849,7 +2767,13 @@
         "en": "n. grape",
         "ko": "명. 포도",
         "ja": "名. ぶどう"
-      }
+      },
+      "example": [
+        "我想吃一点葡萄。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn pú táo 。"
+      ]
     },
     {
       "word": "艺术",
@@ -1861,7 +2785,13 @@
         "en": "n. art",
         "ko": "명. 예술",
         "ja": "名. 芸術"
-      }
+      },
+      "example": [
+        "我们聊聊艺术吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo yì shù ba 。"
+      ]
     },
     {
       "word": "广告",
@@ -1873,7 +2803,13 @@
         "en": "n. advertisement",
         "ko": "명. 광고",
         "ja": "名. 広告"
-      }
+      },
+      "example": [
+        "这个广告对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge guǎng gào duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "味道",
@@ -1885,7 +2821,13 @@
         "en": "n. taste",
         "ko": "명. 맛",
         "ja": "名. 味"
-      }
+      },
+      "example": [
+        "我们聊聊味道吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo wèi dào ba 。"
+      ]
     },
     {
       "word": "优点",
@@ -1897,7 +2839,13 @@
         "en": "n. merit",
         "ko": "명. 장점",
         "ja": "名. 長所"
-      }
+      },
+      "example": [
+        "我们聊聊优点吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo yōu diǎn ba 。"
+      ]
     },
     {
       "word": "实际",
@@ -1909,7 +2857,13 @@
         "en": "n. reality",
         "ko": "명. 실제, 현실",
         "ja": "名. 実際, 現実"
-      }
+      },
+      "example": [
+        "我们聊聊实际吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo shí jì ba 。"
+      ]
     },
     {
       "word": "考虑",
@@ -1921,7 +2875,13 @@
         "en": "v. to consider",
         "ko": "동. 고려하다",
         "ja": "動. 考える, 考慮する"
-      }
+      },
+      "example": [
+        "你再考虑一下吧。"
+      ],
+      "examplePinyin": [
+        "nǐ zài kǎo lǜ yí xià ba 。"
+      ]
     },
     {
       "word": "标准",
@@ -1933,7 +2893,13 @@
         "en": "n. standard",
         "ko": "명. 기준",
         "ja": "名. 基準"
-      }
+      },
+      "example": [
+        "我们聊聊标准吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo biāo zhǔn ba 。"
+      ]
     },
     {
       "word": "样子",
@@ -1945,7 +2911,13 @@
         "en": "n. look, appearance",
         "ko": "명. 모양, 외관",
         "ja": "名. 様子, 見た目"
-      }
+      },
+      "example": [
+        "我们聊聊样子吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo yàng zi ba 。"
+      ]
     },
     {
       "word": "年龄",
@@ -1957,7 +2929,13 @@
         "en": "n. age",
         "ko": "명. 나이",
         "ja": "名. 年齢"
-      }
+      },
+      "example": [
+        "我们聊聊年龄吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo nián líng ba 。"
+      ]
     },
     {
       "word": "浪费",
@@ -1969,7 +2947,13 @@
         "en": "v. to waste",
         "ko": "동. 낭비하다",
         "ja": "動. 無駄にする"
-      }
+      },
+      "example": [
+        "我想浪费一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng làng fèi yí xià 。"
+      ]
     },
     {
       "word": "购物",
@@ -1981,7 +2965,13 @@
         "en": "v. to shop, to buy things",
         "ko": "동. 쇼핑하다, 물건을 사다",
         "ja": "動. 買い物をする"
-      }
+      },
+      "example": [
+        "我想购物一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng gòu wù yí xià 。"
+      ]
     },
     {
       "word": "尤其",
@@ -1993,7 +2983,13 @@
         "en": "adv. especially",
         "ko": "부. 특히",
         "ja": "副. 特に"
-      }
+      },
+      "example": [
+        "我尤其喜欢这首歌。"
+      ],
+      "examplePinyin": [
+        "wǒ yóu qí xǐ huan zhè shǒu gē 。"
+      ]
     },
     {
       "word": "受到",
@@ -2005,7 +3001,13 @@
         "en": "v. to receive",
         "ko": "동. 받다",
         "ja": "動. 受ける"
-      }
+      },
+      "example": [
+        "这个节目受到很多人欢迎。"
+      ],
+      "examplePinyin": [
+        "zhè ge jié mù shòu dào hěn duō rén huān yíng 。"
+      ]
     },
     {
       "word": "任何",
@@ -2017,7 +3019,13 @@
         "en": "pron. any, whatever",
         "ko": "대. 어떤, 어떠한",
         "ja": "代. どんな, いかなる"
-      }
+      },
+      "example": [
+        "你有任何问题都可以问我。"
+      ],
+      "examplePinyin": [
+        "nǐ yǒu rèn hé wèn tí dōu kě yǐ wèn wǒ 。"
+      ]
     },
     {
       "word": "寄",
@@ -2029,7 +3037,13 @@
         "en": "v. to mail, to send",
         "ko": "동. 부치다, 보내다",
         "ja": "動. 郵送する, 送る"
-      }
+      },
+      "example": [
+        "我明天把东西寄给你。"
+      ],
+      "examplePinyin": [
+        "wǒ míng tiān bǎ dōng xī jì gěi nǐ 。"
+      ]
     },
     {
       "word": "准备",
@@ -2041,7 +3055,13 @@
         "en": "v. to prepare",
         "ko": "동. 준비하다",
         "ja": "動. 準備する"
-      }
+      },
+      "example": [
+        "我正在准备晚饭。"
+      ],
+      "examplePinyin": [
+        "wǒ zhèng zài zhǔn bèi wǎn fàn 。"
+      ]
     },
     {
       "word": "果汁",
@@ -2053,7 +3073,13 @@
         "en": "fruit juice",
         "ko": "과일 주스",
         "ja": "果汁、フルーツジュース"
-      }
+      },
+      "example": [
+        "我想吃一点果汁。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn guǒ zhī 。"
+      ]
     },
     {
       "word": "售货员",
@@ -2065,7 +3091,13 @@
         "en": "salesperson",
         "ko": "판매원",
         "ja": "販売員"
-      }
+      },
+      "example": [
+        "那位售货员很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi shòu huò yuán hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "袜子",
@@ -2077,7 +3109,13 @@
         "en": "socks",
         "ko": "양말",
         "ja": "靴下"
-      }
+      },
+      "example": [
+        "这个袜子对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge wà zi duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "打扰",
@@ -2089,7 +3127,13 @@
         "en": "to disturb, to bother",
         "ko": "방해하다, 귀찮게 하다",
         "ja": "邪魔する、迷惑をかける"
-      }
+      },
+      "example": [
+        "我想打扰一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng dǎ rǎo yí xià 。"
+      ]
     },
     {
       "word": "竟然",
@@ -2101,7 +3145,13 @@
         "en": "unexpectedly, actually",
         "ko": "뜻밖에도, 의외로",
         "ja": "意外にも、なんと"
-      }
+      },
+      "example": [
+        "他竟然忘了带钥匙。"
+      ],
+      "examplePinyin": [
+        "tā jìng rán wàng le dài yào shi 。"
+      ]
     },
     {
       "word": "西红柿",
@@ -2113,7 +3163,13 @@
         "en": "tomato",
         "ko": "토마토",
         "ja": "トマト"
-      }
+      },
+      "example": [
+        "我想吃一点西红柿。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn xī hóng shì 。"
+      ]
     },
     {
       "word": "百分之",
@@ -2125,7 +3181,13 @@
         "en": "percent",
         "ko": "퍼센트",
         "ja": "パーセント"
-      }
+      },
+      "example": [
+        "这件衣服便宜了百分之二十。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn yī fu pián yi le bǎi fēn zhī èr shí 。"
+      ]
     },
     {
       "word": "倍",
@@ -2137,7 +3199,13 @@
         "en": "times, -fold",
         "ko": "배",
         "ja": "倍"
-      }
+      },
+      "example": [
+        "今天的人比昨天多一倍。"
+      ],
+      "examplePinyin": [
+        "jīn tiān de rén bǐ zuó tiān duō yí bèi 。"
+      ]
     },
     {
       "word": "皮肤",
@@ -2149,7 +3217,13 @@
         "en": "skin",
         "ko": "피부",
         "ja": "皮膚"
-      }
+      },
+      "example": [
+        "他的皮肤有点不舒服。"
+      ],
+      "examplePinyin": [
+        "tā de pí fū yǒu diǎn bù shū fú 。"
+      ]
     },
     {
       "word": "好处",
@@ -2161,7 +3235,13 @@
         "en": "benefit, advantage",
         "ko": "장점, 이점",
         "ja": "利点、メリット"
-      }
+      },
+      "example": [
+        "我们聊聊好处吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo hǎo chù ba 。"
+      ]
     },
     {
       "word": "尝",
@@ -2173,7 +3253,13 @@
         "en": "to taste",
         "ko": "맛보다",
         "ja": "味見する"
-      }
+      },
+      "example": [
+        "你尝一下这个汤。"
+      ],
+      "examplePinyin": [
+        "nǐ cháng yí xià zhè ge tāng 。"
+      ]
     },
     {
       "word": "轻",
@@ -2185,7 +3271,13 @@
         "en": "light, of little weight",
         "ko": "가볍다",
         "ja": "軽い"
-      }
+      },
+      "example": [
+        "这个包很轻。"
+      ],
+      "examplePinyin": [
+        "zhè ge bāo hěn qīng 。"
+      ]
     },
     {
       "word": "方面",
@@ -2197,7 +3289,13 @@
         "en": "aspect",
         "ko": "방면, 측면",
         "ja": "方面、側面"
-      }
+      },
+      "example": [
+        "我们聊聊方面吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo fāng miàn ba 。"
+      ]
     },
     {
       "word": "值得",
@@ -2209,7 +3307,13 @@
         "en": "to be worth",
         "ko": "가치가 있다",
         "ja": "値する、価値がある"
-      }
+      },
+      "example": [
+        "这部电影值得一看。"
+      ],
+      "examplePinyin": [
+        "zhè bù diàn yǐng zhí dé yí kàn 。"
+      ]
     },
     {
       "word": "活动",
@@ -2221,7 +3325,13 @@
         "en": "activity, event",
         "ko": "행사, 활동",
         "ja": "活動、イベント"
-      }
+      },
+      "example": [
+        "我们聊聊活动吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo huó dòng ba 。"
+      ]
     },
     {
       "word": "内",
@@ -2233,7 +3343,13 @@
         "en": "in, within",
         "ko": "안, 이내",
         "ja": "内、以内"
-      }
+      },
+      "example": [
+        "请在三天内回复我。"
+      ],
+      "examplePinyin": [
+        "qǐng zài sān tiān nèi huí fù wǒ 。"
+      ]
     },
     {
       "word": "免费",
@@ -2245,7 +3361,13 @@
         "en": "to be free of charge",
         "ko": "무료이다",
         "ja": "無料である"
-      }
+      },
+      "example": [
+        "这杯咖啡是免费的。"
+      ],
+      "examplePinyin": [
+        "zhè bēi kā fēi shì miǎn fèi de 。"
+      ]
     },
     {
       "word": "修理",
@@ -2257,7 +3379,13 @@
         "en": "to repair, to mend",
         "ko": "수리하다",
         "ja": "修理する"
-      }
+      },
+      "example": [
+        "我得去修理手机。"
+      ],
+      "examplePinyin": [
+        "wǒ dé qù xiū lǐ shǒu jī 。"
+      ]
     },
     {
       "word": "支持",
@@ -2269,7 +3397,13 @@
         "en": "to support",
         "ko": "지지하다, 성원하다",
         "ja": "支持する"
-      }
+      },
+      "example": [
+        "我一直支持你的决定。"
+      ],
+      "examplePinyin": [
+        "wǒ yì zhí zhī chí nǐ de jué dìng 。"
+      ]
     },
     {
       "word": "举行",
@@ -2281,7 +3415,13 @@
         "en": "to hold an event",
         "ko": "개최하다, 열다",
         "ja": "開催する、行う"
-      }
+      },
+      "example": [
+        "会议明天举行。"
+      ],
+      "examplePinyin": [
+        "huì yì míng tiān jǔ xíng 。"
+      ]
     },
     {
       "word": "满",
@@ -2293,7 +3433,13 @@
         "en": "to reach a quota or limit",
         "ko": "차다, 일정 금액/기준에 이르다",
         "ja": "満たす、一定額に達する"
-      }
+      },
+      "example": [
+        "杯子已经满了。"
+      ],
+      "examplePinyin": [
+        "bēi zi yǐ jīng mǎn le 。"
+      ]
     },
     {
       "word": "其中",
@@ -2305,7 +3451,13 @@
         "en": "among them",
         "ko": "그중, 그 가운데",
         "ja": "その中で"
-      }
+      },
+      "example": [
+        "其中一个问题很重要。"
+      ],
+      "examplePinyin": [
+        "qí zhōng yí gè wèn tí hěn zhòng yào 。"
+      ]
     },
     {
       "word": "小说",
@@ -2317,7 +3469,13 @@
         "en": "novel, fiction",
         "ko": "소설",
         "ja": "小説"
-      }
+      },
+      "example": [
+        "这个小说对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge xiǎo shuō duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "会员卡",
@@ -2329,7 +3487,13 @@
         "en": "membership card",
         "ko": "회원 카드",
         "ja": "会員カード"
-      }
+      },
+      "example": [
+        "这个会员卡对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge huì yuán kǎ duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "所有",
@@ -2341,7 +3505,13 @@
         "en": "all",
         "ko": "모든",
         "ja": "すべての"
-      }
+      },
+      "example": [
+        "所有人都到了。"
+      ],
+      "examplePinyin": [
+        "suǒ yǒu rén dōu dào le 。"
+      ]
     },
     {
       "word": "获得",
@@ -2353,7 +3523,13 @@
         "en": "to get, to obtain",
         "ko": "얻다, 획득하다",
         "ja": "得る、獲得する"
-      }
+      },
+      "example": [
+        "他获得了第一名。"
+      ],
+      "examplePinyin": [
+        "tā huò dé le dì yī míng 。"
+      ]
     },
     {
       "word": "情况",
@@ -2365,7 +3541,13 @@
         "en": "situation, circumstances",
         "ko": "상황, 형편",
         "ja": "状況、事情"
-      }
+      },
+      "example": [
+        "我们聊聊情况吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo qíng kuàng ba 。"
+      ]
     },
     {
       "word": "例如",
@@ -2377,7 +3559,13 @@
         "en": "for example",
         "ko": "예를 들면",
         "ja": "例えば"
-      }
+      },
+      "example": [
+        "例如，你可以先从第一题开始。"
+      ],
+      "examplePinyin": [
+        "lì rú ， nǐ kě yǐ xiān cóng dì yī tí kāi shǐ 。"
+      ]
     },
     {
       "word": "举办",
@@ -2389,7 +3577,13 @@
         "en": "to hold, to conduct",
         "ko": "개최하다, 열다",
         "ja": "開催する、行う"
-      }
+      },
+      "example": [
+        "学校举办了一场比赛。"
+      ],
+      "examplePinyin": [
+        "xué xiào jǔ bàn le yì chǎng bǐ sài 。"
+      ]
     },
     {
       "word": "各",
@@ -2401,7 +3595,13 @@
         "en": "various, different",
         "ko": "각각의, 여러 가지의",
         "ja": "各、さまざまな"
-      }
+      },
+      "example": [
+        "各位请坐。"
+      ],
+      "examplePinyin": [
+        "gè wèi qǐng zuò 。"
+      ]
     },
     {
       "word": "降低",
@@ -2413,7 +3613,13 @@
         "en": "to lower, to reduce",
         "ko": "낮추다, 내리다",
         "ja": "下げる、低下させる"
-      }
+      },
+      "example": [
+        "我们要降低成本。"
+      ],
+      "examplePinyin": [
+        "wǒ men yào jiàng dī chéng běn 。"
+      ]
     },
     {
       "word": "流血",
@@ -2425,7 +3631,13 @@
         "en": "to bleed",
         "ko": "피가 나다",
         "ja": "出血する"
-      }
+      },
+      "example": [
+        "他今天要流血。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào liú xuè 。"
+      ]
     },
     {
       "word": "擦",
@@ -2437,7 +3649,13 @@
         "en": "to wipe",
         "ko": "닦다",
         "ja": "拭く"
-      }
+      },
+      "example": [
+        "我先擦一下桌子。"
+      ],
+      "examplePinyin": [
+        "wǒ xiān cā yí xià zhuō zi 。"
+      ]
     },
     {
       "word": "气候",
@@ -2449,7 +3667,13 @@
         "en": "climate",
         "ko": "기후",
         "ja": "気候"
-      }
+      },
+      "example": [
+        "我们聊聊气候吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo qì hòu ba 。"
+      ]
     },
     {
       "word": "估计",
@@ -2461,7 +3685,13 @@
         "en": "to estimate, to reckon",
         "ko": "추정하다, 짐작하다",
         "ja": "推測する、見積もる"
-      }
+      },
+      "example": [
+        "我估计他快到了。"
+      ],
+      "examplePinyin": [
+        "wǒ gū jì tā kuài dào le 。"
+      ]
     },
     {
       "word": "咳嗽",
@@ -2473,7 +3703,13 @@
         "en": "to cough",
         "ko": "기침하다",
         "ja": "咳をする"
-      }
+      },
+      "example": [
+        "他今天要咳嗽。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào ké sou 。"
+      ]
     },
     {
       "word": "严重",
@@ -2485,7 +3721,13 @@
         "en": "serious, grave",
         "ko": "심각하다",
         "ja": "深刻である、重い"
-      }
+      },
+      "example": [
+        "这个问题很严重。"
+      ],
+      "examplePinyin": [
+        "zhè ge wèn tí hěn yán zhòng 。"
+      ]
     },
     {
       "word": "窗户",
@@ -2497,7 +3739,13 @@
         "en": "window",
         "ko": "창문",
         "ja": "窓"
-      }
+      },
+      "example": [
+        "这个窗户对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge chuāng hù duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "空气",
@@ -2509,7 +3757,13 @@
         "en": "air",
         "ko": "공기",
         "ja": "空気"
-      }
+      },
+      "example": [
+        "我们聊聊空气吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo kōng qì ba 。"
+      ]
     },
     {
       "word": "抽烟",
@@ -2521,7 +3775,13 @@
         "en": "to smoke",
         "ko": "담배를 피우다",
         "ja": "タバコを吸う"
-      }
+      },
+      "example": [
+        "他今天要抽烟。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào chōu yān 。"
+      ]
     },
     {
       "word": "动作",
@@ -2533,7 +3793,13 @@
         "en": "action, movement",
         "ko": "동작, 움직임",
         "ja": "動作、動き"
-      }
+      },
+      "example": [
+        "我们聊聊动作吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo dòng zuò ba 。"
+      ]
     },
     {
       "word": "帅",
@@ -2545,7 +3811,13 @@
         "en": "handsome, cool",
         "ko": "멋있다, 잘생기다",
         "ja": "かっこいい、ハンサムである"
-      }
+      },
+      "example": [
+        "他今天看起来很帅。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn shuài 。"
+      ]
     },
     {
       "word": "出现",
@@ -2557,7 +3829,13 @@
         "en": "to appear, to emerge",
         "ko": "나타나다, 생기다",
         "ja": "現れる、発生する"
-      }
+      },
+      "example": [
+        "手机上出现了一个提醒。"
+      ],
+      "examplePinyin": [
+        "shǒu jī shàng chū xiàn le yí gè tí xǐng 。"
+      ]
     },
     {
       "word": "后悔",
@@ -2569,7 +3847,13 @@
         "en": "to regret",
         "ko": "후회하다",
         "ja": "後悔する"
-      }
+      },
+      "example": [
+        "我想后悔一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng hòu huǐ yí xià 。"
+      ]
     },
     {
       "word": "来不及",
@@ -2581,7 +3865,13 @@
         "en": "to have not enough time to, to be too late to",
         "ko": "시간이 늦어 ~할 수 없다, 늦다",
         "ja": "間に合わない、遅すぎる"
-      }
+      },
+      "example": [
+        "现在出门已经来不及了。"
+      ],
+      "examplePinyin": [
+        "xiàn zài chū mén yǐ jīng lái bù jí le 。"
+      ]
     },
     {
       "word": "反对",
@@ -2593,7 +3883,13 @@
         "en": "to oppose, to object to",
         "ko": "반대하다",
         "ja": "反対する"
-      }
+      },
+      "example": [
+        "我想反对一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng fǎn duì yí xià 。"
+      ]
     },
     {
       "word": "大夫",
@@ -2605,7 +3901,13 @@
         "en": "doctor",
         "ko": "의사",
         "ja": "医者"
-      }
+      },
+      "example": [
+        "那位大夫很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi dài fu hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "植物",
@@ -2617,7 +3919,13 @@
         "en": "plant",
         "ko": "식물",
         "ja": "植物"
-      }
+      },
+      "example": [
+        "这个植物对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge zhí wù duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "研究",
@@ -2629,7 +3937,13 @@
         "en": "to study, to do research",
         "ko": "연구하다",
         "ja": "研究する"
-      }
+      },
+      "example": [
+        "他在研究这个问题。"
+      ],
+      "examplePinyin": [
+        "tā zài yán jiū zhè ge wèn tí 。"
+      ]
     },
     {
       "word": "超过",
@@ -2641,7 +3955,13 @@
         "en": "to exceed, to surpass",
         "ko": "초과하다, 넘다",
         "ja": "超える、上回る"
-      }
+      },
+      "example": [
+        "今天的人数超过了昨天。"
+      ],
+      "examplePinyin": [
+        "jīn tiān de rén shù chāo guò le zuó tiān 。"
+      ]
     },
     {
       "word": "散步",
@@ -2653,7 +3973,13 @@
         "en": "to take a walk",
         "ko": "산책하다",
         "ja": "散歩する"
-      }
+      },
+      "example": [
+        "他今天要散步。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào sàn bù 。"
+      ]
     },
     {
       "word": "指",
@@ -2665,7 +3991,13 @@
         "en": "to refer to",
         "ko": "가리키다, 뜻하다",
         "ja": "指す、意味する"
-      }
+      },
+      "example": [
+        "我想指一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng zhǐ yí xià 。"
+      ]
     },
     {
       "word": "精神",
@@ -2677,7 +4009,13 @@
         "en": "spirit, mind",
         "ko": "정신",
         "ja": "精神、心"
-      }
+      },
+      "example": [
+        "我们聊聊精神吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jīng shén ba 。"
+      ]
     },
     {
       "word": "教授",
@@ -2689,7 +4027,13 @@
         "en": "professor",
         "ko": "교수",
         "ja": "教授"
-      }
+      },
+      "example": [
+        "那位教授很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi jiào shòu hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "数字",
@@ -2701,7 +4045,13 @@
         "en": "number",
         "ko": "숫자",
         "ja": "数字"
-      }
+      },
+      "example": [
+        "我们聊聊数字吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo shù zì ba 。"
+      ]
     },
     {
       "word": "说明",
@@ -2713,7 +4063,13 @@
         "en": "to explain, to show",
         "ko": "설명하다, 보여 주다",
         "ja": "説明する、示す"
-      }
+      },
+      "example": [
+        "请你说明一下原因。"
+      ],
+      "examplePinyin": [
+        "qǐng nǐ shuō míng yí xià yuán yīn 。"
+      ]
     },
     {
       "word": "要是",
@@ -2725,7 +4081,13 @@
         "en": "if, supposing",
         "ko": "만약, 만일",
         "ja": "もし、仮に"
-      }
+      },
+      "example": [
+        "要是你累了，就休息一下。"
+      ],
+      "examplePinyin": [
+        "yào shi nǐ lèi le ， jiù xiū xi yí xià 。"
+      ]
     },
     {
       "word": "既",
@@ -2737,7 +4099,13 @@
         "en": "used with “又”: both...and...",
         "ko": "이미, 또; “又”와 함께 쓰여 “~이기도 하고 ~이기도 하다”",
         "ja": "すでに、また; 「又」と共に使い「〜でもあり〜でもある」"
-      }
+      },
+      "example": [
+        "他既聪明又努力。"
+      ],
+      "examplePinyin": [
+        "tā jì cōng ming yòu nǔ lì 。"
+      ]
     },
     {
       "word": "减肥",
@@ -2749,7 +4117,13 @@
         "en": "to lose weight",
         "ko": "살을 빼다, 다이어트하다",
         "ja": "ダイエットする、減量する"
-      }
+      },
+      "example": [
+        "他今天要减肥。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào jiǎn féi 。"
+      ]
     },
     {
       "word": "辛苦",
@@ -2761,7 +4135,13 @@
         "en": "hard, toilsome",
         "ko": "힘들다, 고생스럽다",
         "ja": "つらい、骨が折れる"
-      }
+      },
+      "example": [
+        "你今天辛苦了。"
+      ],
+      "examplePinyin": [
+        "nǐ jīn tiān xīn kǔ le 。"
+      ]
     },
     {
       "word": "肚子",
@@ -2773,7 +4153,13 @@
         "en": "belly, stomach",
         "ko": "배, 복부",
         "ja": "お腹、腹"
-      }
+      },
+      "example": [
+        "他的肚子有点不舒服。"
+      ],
+      "examplePinyin": [
+        "tā de dù zǐ yǒu diǎn bù shū fú 。"
+      ]
     },
     {
       "word": "感情",
@@ -2785,7 +4171,13 @@
         "en": "affection, love",
         "ko": "감정, 애정",
         "ja": "感情、愛情"
-      }
+      },
+      "example": [
+        "我们聊聊感情吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo gǎn qíng ba 。"
+      ]
     },
     {
       "word": "烦恼",
@@ -2797,7 +4189,13 @@
         "en": "worried, vexed",
         "ko": "걱정스럽다, 고민스럽다",
         "ja": "悩ましい、心配である"
-      }
+      },
+      "example": [
+        "别为小事烦恼。"
+      ],
+      "examplePinyin": [
+        "bié wèi xiǎo shì fán nǎo 。"
+      ]
     },
     {
       "word": "掉",
@@ -2809,7 +4207,13 @@
         "en": "used after certain verbs, indicating the result of an action",
         "ko": "동사 뒤에서 결과를 나타냄",
         "ja": "動詞の後ろで結果を表す"
-      }
+      },
+      "example": [
+        "我不小心把手机摔掉了。"
+      ],
+      "examplePinyin": [
+        "wǒ bù xiǎo xīn bǎ shǒu jī shuāi diào le 。"
+      ]
     },
     {
       "word": "巧克力",
@@ -2821,7 +4225,13 @@
         "en": "chocolate",
         "ko": "초콜릿",
         "ja": "チョコレート"
-      }
+      },
+      "example": [
+        "我想吃一点巧克力。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn qiǎo kè lì 。"
+      ]
     },
     {
       "word": "亲戚",
@@ -2833,7 +4243,13 @@
         "en": "relative, kinsfolk",
         "ko": "친척",
         "ja": "親戚"
-      }
+      },
+      "example": [
+        "这个亲戚对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge qīn qi duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "伤心",
@@ -2845,7 +4261,13 @@
         "en": "sad, sorrowful",
         "ko": "슬프다, 마음이 아프다",
         "ja": "悲しい、心が痛む"
-      }
+      },
+      "example": [
+        "他今天看起来很伤心。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn shāng xīn 。"
+      ]
     },
     {
       "word": "使",
@@ -2857,7 +4279,13 @@
         "en": "to make, to cause",
         "ko": "~하게 하다",
         "ja": "〜させる"
-      }
+      },
+      "example": [
+        "这件事使我很开心。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn shì shǐ wǒ hěn kāi xīn 。"
+      ]
     },
     {
       "word": "心情",
@@ -2869,7 +4297,13 @@
         "en": "mood, state of mind",
         "ko": "기분, 마음 상태",
         "ja": "気分、心の状態"
-      }
+      },
+      "example": [
+        "我们聊聊心情吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo xīn qíng ba 。"
+      ]
     },
     {
       "word": "愉快",
@@ -2881,7 +4315,13 @@
         "en": "glad, cheerful",
         "ko": "즐겁다, 유쾌하다",
         "ja": "愉快である、楽しい"
-      }
+      },
+      "example": [
+        "祝你周末愉快。"
+      ],
+      "examplePinyin": [
+        "zhù nǐ zhōu mò yú kuài 。"
+      ]
     },
     {
       "word": "景色",
@@ -2893,7 +4333,13 @@
         "en": "scene, view",
         "ko": "경치, 풍경",
         "ja": "景色、眺め"
-      }
+      },
+      "example": [
+        "我们聊聊景色吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jǐng sè ba 。"
+      ]
     },
     {
       "word": "放松",
@@ -2905,7 +4351,13 @@
         "en": "to relax",
         "ko": "긴장을 풀다, 편안해지다",
         "ja": "リラックスする"
-      }
+      },
+      "example": [
+        "我想放松一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng fàng sōng yí xià 。"
+      ]
     },
     {
       "word": "压力",
@@ -2917,7 +4369,13 @@
         "en": "pressure, stress",
         "ko": "압력, 스트레스",
         "ja": "プレッシャー、ストレス"
-      }
+      },
+      "example": [
+        "我们聊聊压力吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo yā lì ba 。"
+      ]
     },
     {
       "word": "回忆",
@@ -2929,7 +4387,13 @@
         "en": "to call to mind, to recall",
         "ko": "회상하다, 떠올리다",
         "ja": "思い出す、回想する"
-      }
+      },
+      "example": [
+        "我常常回忆那段时间。"
+      ],
+      "examplePinyin": [
+        "wǒ cháng cháng huí yì nà duàn shí jiān 。"
+      ]
     },
     {
       "word": "发生",
@@ -2941,7 +4405,13 @@
         "en": "to happen, to take place",
         "ko": "발생하다, 일어나다",
         "ja": "起こる、発生する"
-      }
+      },
+      "example": [
+        "刚才发生了什么？"
+      ],
+      "examplePinyin": [
+        "gāng cái fā shēng le shén me ？"
+      ]
     },
     {
       "word": "成为",
@@ -2953,7 +4423,13 @@
         "en": "to become",
         "ko": "~이 되다",
         "ja": "〜になる"
-      }
+      },
+      "example": [
+        "他想成为一名老师。"
+      ],
+      "examplePinyin": [
+        "tā xiǎng chéng wéi yì míng lǎo shī 。"
+      ]
     },
     {
       "word": "只要",
@@ -2965,7 +4441,13 @@
         "en": "as long as, provided",
         "ko": "~하기만 하면",
         "ja": "〜さえすれば"
-      }
+      },
+      "example": [
+        "只要你愿意，我们就一起去。"
+      ],
+      "examplePinyin": [
+        "zhǐ yào nǐ yuàn yì ， wǒ men jiù yì qǐ qù 。"
+      ]
     },
     {
       "word": "师傅",
@@ -2977,7 +4459,13 @@
         "en": "polite title for a skilled worker or driver",
         "ko": "기사님, 스승/장인에 대한 공손한 호칭",
         "ja": "師傅、職人や運転手への丁寧な呼び方"
-      }
+      },
+      "example": [
+        "那位师傅很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi shī fu hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "大使馆",
@@ -2989,7 +4477,13 @@
         "en": "embassy",
         "ko": "대사관",
         "ja": "大使館"
-      }
+      },
+      "example": [
+        "我在大使馆等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài dà shǐ guǎn děng nǐ 。"
+      ]
     },
     {
       "word": "堵车",
@@ -3001,7 +4495,13 @@
         "en": "traffic jam",
         "ko": "교통이 막히다",
         "ja": "渋滞する"
-      }
+      },
+      "example": [
+        "他今天要堵车。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào dǔ chē 。"
+      ]
     },
     {
       "word": "距离",
@@ -3013,7 +4513,13 @@
         "en": "distance",
         "ko": "거리",
         "ja": "距離"
-      }
+      },
+      "example": [
+        "我们聊聊距离吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jù lí ba 。"
+      ]
     },
     {
       "word": "耐心",
@@ -3025,7 +4531,13 @@
         "en": "patience",
         "ko": "인내심",
         "ja": "忍耐、辛抱強さ"
-      }
+      },
+      "example": [
+        "我们聊聊耐心吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo nài xīn ba 。"
+      ]
     },
     {
       "word": "生命",
@@ -3037,7 +4549,13 @@
         "en": "life",
         "ko": "생명",
         "ja": "生命"
-      }
+      },
+      "example": [
+        "我们聊聊生命吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo shēng mìng ba 。"
+      ]
     },
     {
       "word": "缺少",
@@ -3049,7 +4567,13 @@
         "en": "to lack",
         "ko": "부족하다, 결핍되다",
         "ja": "欠ける、不足する"
-      }
+      },
+      "example": [
+        "这个计划缺少细节。"
+      ],
+      "examplePinyin": [
+        "zhè ge jì huà quē shǎo xì jié 。"
+      ]
     },
     {
       "word": "到处",
@@ -3061,7 +4585,13 @@
         "en": "everywhere",
         "ko": "곳곳에, 어디에나",
         "ja": "至るところに、どこでも"
-      }
+      },
+      "example": [
+        "周末街上到处都是人。"
+      ],
+      "examplePinyin": [
+        "zhōu mò jiē shàng dào chù dōu shì rén 。"
+      ]
     },
     {
       "word": "态度",
@@ -3073,7 +4603,13 @@
         "en": "attitude",
         "ko": "태도",
         "ja": "態度"
-      }
+      },
+      "example": [
+        "我们聊聊态度吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo tài dù ba 。"
+      ]
     },
     {
       "word": "因此",
@@ -3085,7 +4621,13 @@
         "en": "therefore, so",
         "ko": "그러므로, 따라서",
         "ja": "したがって、それゆえ"
-      }
+      },
+      "example": [
+        "他生病了，因此没来上课。"
+      ],
+      "examplePinyin": [
+        "tā shēng bìng le ， yīn cǐ méi lái shàng kè 。"
+      ]
     },
     {
       "word": "科学",
@@ -3097,7 +4639,13 @@
         "en": "science",
         "ko": "과학",
         "ja": "科学"
-      }
+      },
+      "example": [
+        "我们聊聊科学吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo kē xué ba 。"
+      ]
     },
     {
       "word": "证明",
@@ -3109,7 +4657,13 @@
         "en": "to prove",
         "ko": "증명하다",
         "ja": "証明する"
-      }
+      },
+      "example": [
+        "事实证明他是对的。"
+      ],
+      "examplePinyin": [
+        "shì shí zhèng míng tā shì duì de 。"
+      ]
     },
     {
       "word": "往往",
@@ -3121,7 +4675,13 @@
         "en": "often, usually",
         "ko": "왕왕, 흔히, 보통",
         "ja": "往々にして、しばしば、たいてい"
-      }
+      },
+      "example": [
+        "紧张的时候，人往往会忘词。"
+      ],
+      "examplePinyin": [
+        "jǐn zhāng de shí hòu ， rén wǎng wǎng huì wàng cí 。"
+      ]
     },
     {
       "word": "阳光",
@@ -3133,7 +4693,13 @@
         "en": "optimistic, cheerful",
         "ko": "밝고 긍정적인",
         "ja": "明るい、前向きな"
-      }
+      },
+      "example": [
+        "他今天看起来很阳光。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn yáng guāng 。"
+      ]
     },
     {
       "word": "积极",
@@ -3145,7 +4711,13 @@
         "en": "positive",
         "ko": "적극적인, 긍정적인",
         "ja": "積極的な、前向きな"
-      }
+      },
+      "example": [
+        "他今天看起来很积极。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn jī jí 。"
+      ]
     },
     {
       "word": "特点",
@@ -3157,7 +4729,13 @@
         "en": "characteristic",
         "ko": "특징",
         "ja": "特徴"
-      }
+      },
+      "example": [
+        "我们聊聊特点吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo tè diǎn ba 。"
+      ]
     },
     {
       "word": "饼干",
@@ -3169,7 +4747,13 @@
         "en": "biscuit",
         "ko": "비스킷",
         "ja": "ビスケット"
-      }
+      },
+      "example": [
+        "我想吃一点饼干。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn bǐng gān 。"
+      ]
     },
     {
       "word": "难道",
@@ -3181,7 +4765,13 @@
         "en": "used in a rhetorical question for emphasis",
         "ko": "설의문에서 강조할 때 쓰는 부사",
         "ja": "反語疑問で強調に使う副詞"
-      }
+      },
+      "example": [
+        "难道你不想试试吗？"
+      ],
+      "examplePinyin": [
+        "nán dào nǐ bù xiǎng shì shì ma ？"
+      ]
     },
     {
       "word": "得",
@@ -3193,7 +4783,13 @@
         "en": "must, have to",
         "ko": "~해야 하다",
         "ja": "〜しなければならない"
-      }
+      },
+      "example": [
+        "我得先回家一趟。"
+      ],
+      "examplePinyin": [
+        "wǒ dé xiān huí jiā yí tàng 。"
+      ]
     },
     {
       "word": "坚持",
@@ -3205,7 +4801,13 @@
         "en": "to insist, to persist",
         "ko": "견지하다, 꾸준히 하다",
         "ja": "やり通す、堅持する"
-      }
+      },
+      "example": [
+        "你再坚持一下。"
+      ],
+      "examplePinyin": [
+        "nǐ zài jiān chí yí xià 。"
+      ]
     },
     {
       "word": "放弃",
@@ -3217,7 +4819,13 @@
         "en": "to give up",
         "ko": "포기하다",
         "ja": "諦める、放棄する"
-      }
+      },
+      "example": [
+        "不要轻易放弃。"
+      ],
+      "examplePinyin": [
+        "bú yào qīng yì fàng qì 。"
+      ]
     },
     {
       "word": "主意",
@@ -3229,7 +4837,13 @@
         "en": "idea, plan",
         "ko": "생각, 방법",
         "ja": "考え、案"
-      }
+      },
+      "example": [
+        "我们聊聊主意吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo zhǔ yì ba 。"
+      ]
     },
     {
       "word": "网球",
@@ -3241,7 +4855,13 @@
         "en": "tennis",
         "ko": "테니스",
         "ja": "テニス"
-      }
+      },
+      "example": [
+        "这个网球对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge wǎng qiú duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "国际",
@@ -3253,7 +4873,13 @@
         "en": "international",
         "ko": "국제",
         "ja": "国際"
-      }
+      },
+      "example": [
+        "我们聊聊国际吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo guó jì ba 。"
+      ]
     },
     {
       "word": "轻松",
@@ -3265,7 +4891,13 @@
         "en": "relaxed, effortless",
         "ko": "가볍다, 수월하다",
         "ja": "気楽な、楽な"
-      }
+      },
+      "example": [
+        "今天的工作很轻松。"
+      ],
+      "examplePinyin": [
+        "jīn tiān de gōng zuò hěn qīng sōng 。"
+      ]
     },
     {
       "word": "赢",
@@ -3277,7 +4909,13 @@
         "en": "to win",
         "ko": "이기다",
         "ja": "勝つ"
-      }
+      },
+      "example": [
+        "我想赢一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng yíng yí xià 。"
+      ]
     },
     {
       "word": "随便",
@@ -3289,7 +4927,13 @@
         "en": "casual, at random",
         "ko": "마음대로, 아무렇게나",
         "ja": "適当に、気ままに"
-      }
+      },
+      "example": [
+        "你随便坐。"
+      ],
+      "examplePinyin": [
+        "nǐ suí biàn zuò 。"
+      ]
     },
     {
       "word": "汗",
@@ -3301,7 +4945,13 @@
         "en": "sweat, perspiration",
         "ko": "땀",
         "ja": "汗"
-      }
+      },
+      "example": [
+        "这个汗对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge hàn duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "通过",
@@ -3313,7 +4963,13 @@
         "en": "through, by means of",
         "ko": "~을 통해",
         "ja": "〜を通じて、〜によって"
-      }
+      },
+      "example": [
+        "我通过朋友认识了他。"
+      ],
+      "examplePinyin": [
+        "wǒ tōng guò péng yǒu rèn shi le tā 。"
+      ]
     },
     {
       "word": "篇",
@@ -3325,7 +4981,13 @@
         "en": "used for writings, papers or articles",
         "ko": "편, 글을 세는 양사",
         "ja": "編、文章を数える量詞"
-      }
+      },
+      "example": [
+        "我今天看了一篇文章。"
+      ],
+      "examplePinyin": [
+        "wǒ jīn tiān kàn le yì piān wén zhāng 。"
+      ]
     },
     {
       "word": "作家",
@@ -3337,7 +4999,13 @@
         "en": "writer",
         "ko": "작가",
         "ja": "作家"
-      }
+      },
+      "example": [
+        "那位作家很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi zuò jiā hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "当时",
@@ -3349,7 +5017,13 @@
         "en": "then, at that time",
         "ko": "당시, 그때",
         "ja": "当時、その時"
-      }
+      },
+      "example": [
+        "当时我喜欢在家休息。"
+      ],
+      "examplePinyin": [
+        "dāng shí wǒ xǐ huan zài jiā xiū xi 。"
+      ]
     },
     {
       "word": "可是",
@@ -3361,7 +5035,13 @@
         "en": "but, however",
         "ko": "하지만, 그러나",
         "ja": "しかし、でも"
-      }
+      },
+      "example": [
+        "我想去，可是没有时间。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng qù ， kě shì méi yǒu shí jiān 。"
+      ]
     },
     {
       "word": "正确",
@@ -3373,7 +5053,13 @@
         "en": "right, correct",
         "ko": "정확하다, 옳다",
         "ja": "正しい、正確な"
-      }
+      },
+      "example": [
+        "你的答案是正确的。"
+      ],
+      "examplePinyin": [
+        "nǐ de dá àn shì zhèng què de 。"
+      ]
     },
     {
       "word": "理想",
@@ -3385,7 +5071,13 @@
         "en": "ideal",
         "ko": "이상",
         "ja": "理想"
-      }
+      },
+      "example": [
+        "我们聊聊理想吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo lǐ xiǎng ba 。"
+      ]
     },
     {
       "word": "勇敢",
@@ -3397,7 +5089,13 @@
         "en": "brave, courageous",
         "ko": "용감하다",
         "ja": "勇敢な"
-      }
+      },
+      "example": [
+        "他今天看起来很勇敢。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn yǒng gǎn 。"
+      ]
     },
     {
       "word": "结果",
@@ -3409,7 +5107,13 @@
         "en": "result",
         "ko": "결과",
         "ja": "結果"
-      }
+      },
+      "example": [
+        "我们聊聊结果吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jié guǒ ba 。"
+      ]
     },
     {
       "word": "失败",
@@ -3421,7 +5125,13 @@
         "en": "to fail",
         "ko": "실패하다",
         "ja": "失敗する"
-      }
+      },
+      "example": [
+        "我想失败一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng shī bài yí xià 。"
+      ]
     },
     {
       "word": "过程",
@@ -3433,7 +5143,13 @@
         "en": "course, process",
         "ko": "과정",
         "ja": "過程、プロセス"
-      }
+      },
+      "example": [
+        "我们聊聊过程吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo guò chéng ba 。"
+      ]
     },
     {
       "word": "至少",
@@ -3445,7 +5161,13 @@
         "en": "at least",
         "ko": "적어도",
         "ja": "少なくとも"
-      }
+      },
+      "example": [
+        "你至少应该试一次。"
+      ],
+      "examplePinyin": [
+        "nǐ zhì shǎo yīng gāi shì yí cì 。"
+      ]
     },
     {
       "word": "总结",
@@ -3457,7 +5179,13 @@
         "en": "to sum up",
         "ko": "총괄하다, 정리하다",
         "ja": "総括する、まとめる"
-      }
+      },
+      "example": [
+        "我们先总结一下。"
+      ],
+      "examplePinyin": [
+        "wǒ men xiān zǒng jié yí xià 。"
+      ]
     },
     {
       "word": "取",
@@ -3469,7 +5197,13 @@
         "en": "to gain, to seek",
         "ko": "얻다, 구하다",
         "ja": "得る、求める"
-      }
+      },
+      "example": [
+        "我想取一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng qǔ yí xià 。"
+      ]
     },
     {
       "word": "经历",
@@ -3481,7 +5215,13 @@
         "en": "to go through, to experience",
         "ko": "겪다, 경험하다",
         "ja": "経験する、経る"
-      }
+      },
+      "example": [
+        "他经历了很多困难。"
+      ],
+      "examplePinyin": [
+        "tā jīng lì le hěn duō kùn nán 。"
+      ]
     },
     {
       "word": "许多",
@@ -3493,7 +5233,13 @@
         "en": "many, plenty of",
         "ko": "많은, 허다한",
         "ja": "多くの、たくさんの"
-      }
+      },
+      "example": [
+        "这里有许多好吃的小吃。"
+      ],
+      "examplePinyin": [
+        "zhè lǐ yǒu xǔ duō hǎo chī de xiǎo chī 。"
+      ]
     },
     {
       "word": "区别",
@@ -3505,7 +5251,13 @@
         "en": "difference, distinction",
         "ko": "차이, 구별",
         "ja": "違い、区別"
-      }
+      },
+      "example": [
+        "我们聊聊区别吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo qū bié ba 。"
+      ]
     },
     {
       "word": "暂时",
@@ -3517,7 +5269,13 @@
         "en": "temporary, for the time being",
         "ko": "일시적인, 잠시",
         "ja": "一時的な、しばらく"
-      }
+      },
+      "example": [
+        "我暂时住在朋友家。"
+      ],
+      "examplePinyin": [
+        "wǒ zàn shí zhù zài péng yǒu jiā 。"
+      ]
     },
     {
       "word": "面对",
@@ -3529,7 +5287,13 @@
         "en": "to face, to confront",
         "ko": "마주하다, 직면하다",
         "ja": "向き合う、直面する"
-      }
+      },
+      "example": [
+        "我们要面对现实。"
+      ],
+      "examplePinyin": [
+        "wǒ men yào miàn duì xiàn shí 。"
+      ]
     },
     {
       "word": "礼拜天",
@@ -3541,7 +5305,13 @@
         "en": "Sunday",
         "ko": "일요일",
         "ja": "日曜日"
-      }
+      },
+      "example": [
+        "礼拜天我喜欢在家休息。"
+      ],
+      "examplePinyin": [
+        "lǐ bài tiān wǒ xǐ huan zài jiā xiū xi 。"
+      ]
     },
     {
       "word": "空儿",
@@ -3553,7 +5323,13 @@
         "en": "free time, spare time",
         "ko": "빈 시간, 여유 시간",
         "ja": "空き時間、暇"
-      }
+      },
+      "example": [
+        "空儿我喜欢在家休息。"
+      ],
+      "examplePinyin": [
+        "kòng er wǒ xǐ huan zài jiā xiū xi 。"
+      ]
     },
     {
       "word": "母亲",
@@ -3565,7 +5341,13 @@
         "en": "mother",
         "ko": "어머니",
         "ja": "母親"
-      }
+      },
+      "example": [
+        "那位母亲很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi mǔ qīn hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "不过",
@@ -3577,7 +5359,13 @@
         "en": "but, yet",
         "ko": "하지만, 그러나",
         "ja": "しかし、ただし"
-      }
+      },
+      "example": [
+        "这件衣服好看，不过有点贵。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn yī fu hǎo kàn ， bú guò yǒu diǎn guì 。"
+      ]
     },
     {
       "word": "永远",
@@ -3589,7 +5377,13 @@
         "en": "forever",
         "ko": "영원히",
         "ja": "永遠に"
-      }
+      },
+      "example": [
+        "我永远支持你。"
+      ],
+      "examplePinyin": [
+        "wǒ yǒng yuǎn zhī chí nǐ 。"
+      ]
     },
     {
       "word": "方向",
@@ -3601,7 +5395,13 @@
         "en": "direction, orientation",
         "ko": "방향",
         "ja": "方向"
-      }
+      },
+      "example": [
+        "我们聊聊方向吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo fāng xiàng ba 。"
+      ]
     },
     {
       "word": "优秀",
@@ -3613,7 +5413,13 @@
         "en": "excellent, outstanding",
         "ko": "우수하다, 뛰어나다",
         "ja": "優秀な、優れた"
-      }
+      },
+      "example": [
+        "他今天看起来很优秀。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn yōu xiù 。"
+      ]
     },
     {
       "word": "硕士",
@@ -3625,7 +5431,13 @@
         "en": "Master, person who has a master’s degree",
         "ko": "석사, 석사 학위자",
         "ja": "修士、修士号を持つ人"
-      }
+      },
+      "example": [
+        "这个硕士对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge shuò shì duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "翻译",
@@ -3637,7 +5449,13 @@
         "en": "translator, interpreter",
         "ko": "번역가, 통역사",
         "ja": "翻訳者、通訳者"
-      }
+      },
+      "example": [
+        "那位翻译很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi fān yì hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "确实",
@@ -3649,7 +5467,13 @@
         "en": "truly, indeed",
         "ko": "확실히, 정말로",
         "ja": "確かに、本当に"
-      }
+      },
+      "example": [
+        "这件事确实不容易。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn shì què shí bù róng yì 。"
+      ]
     },
     {
       "word": "兴奋",
@@ -3661,7 +5485,13 @@
         "en": "excited",
         "ko": "흥분하다, 신나다",
         "ja": "興奮した"
-      }
+      },
+      "example": [
+        "他今天看起来很兴奋。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn xīng fèn 。"
+      ]
     },
     {
       "word": "拉",
@@ -3673,7 +5503,13 @@
         "en": "to pull, to drag",
         "ko": "끌다, 당기다",
         "ja": "引っ張る"
-      }
+      },
+      "example": [
+        "请帮我拉一下门。"
+      ],
+      "examplePinyin": [
+        "qǐng bāng wǒ lā yí xià mén 。"
+      ]
     },
     {
       "word": "建议",
@@ -3685,7 +5521,13 @@
         "en": "suggestion, advice",
         "ko": "건의, 조언",
         "ja": "提案、アドバイス"
-      }
+      },
+      "example": [
+        "我们聊聊建议吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jiàn yì ba 。"
+      ]
     },
     {
       "word": "职业",
@@ -3697,7 +5539,13 @@
         "en": "occupation, profession",
         "ko": "직업",
         "ja": "職業"
-      }
+      },
+      "example": [
+        "我们聊聊职业吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo zhí yè ba 。"
+      ]
     },
     {
       "word": "关键",
@@ -3709,7 +5557,13 @@
         "en": "hinge, crux",
         "ko": "관건, 핵심",
         "ja": "鍵、要点"
-      }
+      },
+      "example": [
+        "我们聊聊关键吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo guān jiàn ba 。"
+      ]
     },
     {
       "word": "将来",
@@ -3721,7 +5575,13 @@
         "en": "future",
         "ko": "장래, 미래",
         "ja": "将来"
-      }
+      },
+      "example": [
+        "将来我喜欢在家休息。"
+      ],
+      "examplePinyin": [
+        "jiāng lái wǒ xǐ huan zài jiā xiū xi 。"
+      ]
     },
     {
       "word": "发展",
@@ -3733,7 +5593,13 @@
         "en": "to develop, to promote",
         "ko": "발전하다, 발전시키다",
         "ja": "発展する、発展させる"
-      }
+      },
+      "example": [
+        "这个城市发展很快。"
+      ],
+      "examplePinyin": [
+        "zhè ge chéng shì fā zhǎn hěn kuài 。"
+      ]
     },
     {
       "word": "躺",
@@ -3745,7 +5611,13 @@
         "en": "to lie on one’s back",
         "ko": "눕다",
         "ja": "横になる"
-      }
+      },
+      "example": [
+        "我想躺一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng tǎng yí xià 。"
+      ]
     },
     {
       "word": "困",
@@ -3757,7 +5629,13 @@
         "en": "sleepy",
         "ko": "졸리다",
         "ja": "眠い"
-      }
+      },
+      "example": [
+        "我今天有点困。"
+      ],
+      "examplePinyin": [
+        "wǒ jīn tiān yǒu diǎn kùn 。"
+      ]
     },
     {
       "word": "经济",
@@ -3769,7 +5647,13 @@
         "en": "economy",
         "ko": "경제",
         "ja": "経済"
-      }
+      },
+      "example": [
+        "我们聊聊经济吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jīng jì ba 。"
+      ]
     },
     {
       "word": "条件",
@@ -3781,7 +5665,13 @@
         "en": "condition",
         "ko": "조건",
         "ja": "条件"
-      }
+      },
+      "example": [
+        "我们聊聊条件吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo tiáo jiàn ba 。"
+      ]
     },
     {
       "word": "富",
@@ -3793,7 +5683,13 @@
         "en": "rich, wealthy",
         "ko": "부유하다",
         "ja": "豊かな、裕福な"
-      }
+      },
+      "example": [
+        "他家以前很富。"
+      ],
+      "examplePinyin": [
+        "tā jiā yǐ qián hěn fù 。"
+      ]
     },
     {
       "word": "穷",
@@ -3805,7 +5701,13 @@
         "en": "poor, impoverished",
         "ko": "가난하다",
         "ja": "貧しい"
-      }
+      },
+      "example": [
+        "他们小时候很穷。"
+      ],
+      "examplePinyin": [
+        "tā men xiǎo shí hòu hěn qióng 。"
+      ]
     },
     {
       "word": "等",
@@ -3817,7 +5719,13 @@
         "en": "etc., and so on",
         "ko": "등, 따위",
         "ja": "など"
-      }
+      },
+      "example": [
+        "我买了苹果、葡萄等水果。"
+      ],
+      "examplePinyin": [
+        "wǒ mǎi le píng guǒ 、 pú táo děng shuǐ guǒ 。"
+      ]
     },
     {
       "word": "由于",
@@ -3829,7 +5737,13 @@
         "en": "because, since",
         "ko": "~ 때문에, ~로 인해",
         "ja": "〜のため、〜によって"
-      }
+      },
+      "example": [
+        "由于堵车，他迟到了。"
+      ],
+      "examplePinyin": [
+        "yóu yú dǔ chē ， tā chí dào le 。"
+      ]
     },
     {
       "word": "比如",
@@ -3841,7 +5755,13 @@
         "en": "for example, such as",
         "ko": "예를 들면",
         "ja": "例えば"
-      }
+      },
+      "example": [
+        "比如，你可以坐地铁去。"
+      ],
+      "examplePinyin": [
+        "bǐ rú ， nǐ kě yǐ zuò dì tiě qù 。"
+      ]
     },
     {
       "word": "橡皮",
@@ -3853,7 +5773,13 @@
         "en": "eraser, rubber",
         "ko": "지우개",
         "ja": "消しゴム"
-      }
+      },
+      "example": [
+        "这个橡皮对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge xiàng pí duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "糖",
@@ -3865,7 +5791,13 @@
         "en": "sugar, candy",
         "ko": "사탕, 설탕",
         "ja": "砂糖、キャンディー"
-      }
+      },
+      "example": [
+        "我想吃一点糖。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn táng 。"
+      ]
     },
     {
       "word": "低",
@@ -3877,7 +5809,13 @@
         "en": "low",
         "ko": "낮다",
         "ja": "低い"
-      }
+      },
+      "example": [
+        "这个价格很低。"
+      ],
+      "examplePinyin": [
+        "zhè ge jià gé hěn dī 。"
+      ]
     },
     {
       "word": "答案",
@@ -3889,7 +5827,13 @@
         "en": "answer, key",
         "ko": "답안, 해답",
         "ja": "答え、解答"
-      }
+      },
+      "example": [
+        "这个答案对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge dá àn duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "流利",
@@ -3901,7 +5845,13 @@
         "en": "fluent",
         "ko": "유창한",
         "ja": "流暢な"
-      }
+      },
+      "example": [
+        "他今天看起来很流利。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn liú lì 。"
+      ]
     },
     {
       "word": "厉害",
@@ -3913,7 +5863,13 @@
         "en": "awesome, serious",
         "ko": "대단한, 심한",
         "ja": "すごい、ひどい"
-      }
+      },
+      "example": [
+        "他今天看起来很厉害。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn lì hài 。"
+      ]
     },
     {
       "word": "语法",
@@ -3925,7 +5881,13 @@
         "en": "grammar",
         "ko": "문법",
         "ja": "文法"
-      }
+      },
+      "example": [
+        "我们聊聊语法吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo yǔ fǎ ba 。"
+      ]
     },
     {
       "word": "准确",
@@ -3937,7 +5899,13 @@
         "en": "accurate, precise",
         "ko": "정확한",
         "ja": "正確な"
-      }
+      },
+      "example": [
+        "这个消息很准确。"
+      ],
+      "examplePinyin": [
+        "zhè ge xiāo xī hěn zhǔn què 。"
+      ]
     },
     {
       "word": "词语",
@@ -3949,7 +5917,13 @@
         "en": "word, expression",
         "ko": "단어, 표현",
         "ja": "語句、表現"
-      }
+      },
+      "example": [
+        "我们聊聊词语吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo cí yǔ ba 。"
+      ]
     },
     {
       "word": "连",
@@ -3961,7 +5935,13 @@
         "en": "even",
         "ko": "~조차, ~까지도",
         "ja": "〜さえ、〜までも"
-      }
+      },
+      "example": [
+        "他连早饭都没吃。"
+      ],
+      "examplePinyin": [
+        "tā lián zǎo fàn dōu méi chī 。"
+      ]
     },
     {
       "word": "阅读",
@@ -3973,7 +5953,13 @@
         "en": "to read",
         "ko": "읽다, 독해하다",
         "ja": "読む"
-      }
+      },
+      "example": [
+        "我每天阅读半小时。"
+      ],
+      "examplePinyin": [
+        "wǒ měi tiān yuè dú bàn xiǎo shí 。"
+      ]
     },
     {
       "word": "来得及",
@@ -3985,7 +5971,13 @@
         "en": "there is still time",
         "ko": "시간이 되다, 늦지 않다",
         "ja": "まだ間に合う"
-      }
+      },
+      "example": [
+        "现在走还来得及。"
+      ],
+      "examplePinyin": [
+        "xiàn zài zǒu hái lái de jí 。"
+      ]
     },
     {
       "word": "复杂",
@@ -3997,7 +5989,13 @@
         "en": "complicated",
         "ko": "복잡한",
         "ja": "複雑な"
-      }
+      },
+      "example": [
+        "这个问题有点复杂。"
+      ],
+      "examplePinyin": [
+        "zhè ge wèn tí yǒu diǎn fù zá 。"
+      ]
     },
     {
       "word": "只好",
@@ -4009,7 +6007,13 @@
         "en": "to have no choice but to",
         "ko": "어쩔 수 없이 ~하다",
         "ja": "仕方なく〜する"
-      }
+      },
+      "example": [
+        "雨太大了，我们只好回家。"
+      ],
+      "examplePinyin": [
+        "yǔ tài dà le ， wǒ men zhǐ hǎo huí jiā 。"
+      ]
     },
     {
       "word": "填空",
@@ -4021,7 +6025,13 @@
         "en": "to fill in a blank",
         "ko": "빈칸을 채우다",
         "ja": "空欄を埋める"
-      }
+      },
+      "example": [
+        "我想填空一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng tián kòng yí xià 。"
+      ]
     },
     {
       "word": "猜",
@@ -4033,7 +6043,13 @@
         "en": "to guess",
         "ko": "추측하다, 찍다",
         "ja": "推測する、当てずっぽうで答える"
-      }
+      },
+      "example": [
+        "你猜我今天见到谁了？"
+      ],
+      "examplePinyin": [
+        "nǐ cāi wǒ jīn tiān jiàn dào shuí le ？"
+      ]
     },
     {
       "word": "否则",
@@ -4045,7 +6061,13 @@
         "en": "or, otherwise",
         "ko": "그렇지 않으면",
         "ja": "そうでなければ"
-      }
+      },
+      "example": [
+        "快点走，否则会迟到。"
+      ],
+      "examplePinyin": [
+        "kuài diǎn zǒu ， fǒu zé huì chí dào 。"
+      ]
     },
     {
       "word": "客厅",
@@ -4057,7 +6079,13 @@
         "en": "living room",
         "ko": "거실",
         "ja": "リビング、居間"
-      }
+      },
+      "example": [
+        "我在客厅等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài kè tīng děng nǐ 。"
+      ]
     },
     {
       "word": "无论",
@@ -4069,7 +6097,13 @@
         "en": "regardless of, no matter",
         "ko": "~든지, 무엇이든",
         "ja": "〜であろうと、〜にかかわらず"
-      }
+      },
+      "example": [
+        "无论多难，我都想试试。"
+      ],
+      "examplePinyin": [
+        "wú lùn duō nán ， wǒ dōu xiǎng shì shì 。"
+      ]
     },
     {
       "word": "杂志",
@@ -4081,7 +6115,13 @@
         "en": "magazine",
         "ko": "잡지",
         "ja": "雑誌"
-      }
+      },
+      "example": [
+        "这个杂志对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge zá zhì duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "著名",
@@ -4093,7 +6133,13 @@
         "en": "famous, well-known",
         "ko": "저명한, 유명한",
         "ja": "有名な、著名な"
-      }
+      },
+      "example": [
+        "他今天看起来很著名。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn zhù míng 。"
+      ]
     },
     {
       "word": "页",
@@ -4105,7 +6151,13 @@
         "en": "page",
         "ko": "쪽, 페이지",
         "ja": "ページ"
-      }
+      },
+      "example": [
+        "请翻到第十页。"
+      ],
+      "examplePinyin": [
+        "qǐng fān dào dì shí yè 。"
+      ]
     },
     {
       "word": "增加",
@@ -4117,7 +6169,13 @@
         "en": "to increase, to add",
         "ko": "늘리다, 증가하다",
         "ja": "増やす、増加する"
-      }
+      },
+      "example": [
+        "运动可以增加体力。"
+      ],
+      "examplePinyin": [
+        "yùn dòng kě yǐ zēng jiā tǐ lì 。"
+      ]
     },
     {
       "word": "文章",
@@ -4129,7 +6187,13 @@
         "en": "essay, article",
         "ko": "글, 문장, 기사",
         "ja": "文章、記事"
-      }
+      },
+      "example": [
+        "这个文章对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge wén zhāng duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "之",
@@ -4141,7 +6205,13 @@
         "en": "particle connecting a modifier and the word modified",
         "ko": "수식어와 피수식어를 연결하는 조사",
         "ja": "修飾語と被修飾語をつなぐ助詞"
-      }
+      },
+      "example": [
+        "这是生活之美。"
+      ],
+      "examplePinyin": [
+        "zhè shì shēng huó zhī měi 。"
+      ]
     },
     {
       "word": "内容",
@@ -4153,7 +6223,13 @@
         "en": "content",
         "ko": "내용",
         "ja": "内容"
-      }
+      },
+      "example": [
+        "我们聊聊内容吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo nèi róng ba 。"
+      ]
     },
     {
       "word": "然而",
@@ -4165,7 +6241,13 @@
         "en": "but, however",
         "ko": "그러나, 하지만",
         "ja": "しかし、けれども"
-      }
+      },
+      "example": [
+        "他很努力，然而结果不太理想。"
+      ],
+      "examplePinyin": [
+        "tā hěn nǔ lì ， rán ér jié guǒ bú tài lǐ xiǎng 。"
+      ]
     },
     {
       "word": "看法",
@@ -4177,7 +6259,13 @@
         "en": "viewpoint, opinion",
         "ko": "견해, 의견",
         "ja": "見方、意見"
-      }
+      },
+      "example": [
+        "我们聊聊看法吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo kàn fǎ ba 。"
+      ]
     },
     {
       "word": "相同",
@@ -4189,7 +6277,13 @@
         "en": "same",
         "ko": "같은, 동일한",
         "ja": "同じ"
-      }
+      },
+      "example": [
+        "我们的想法相同。"
+      ],
+      "examplePinyin": [
+        "wǒ men de xiǎng fǎ xiàng tóng 。"
+      ]
     },
     {
       "word": "顺序",
@@ -4201,7 +6295,13 @@
         "en": "order, sequence",
         "ko": "순서",
         "ja": "順序"
-      }
+      },
+      "example": [
+        "我们聊聊顺序吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo shùn xù ba 。"
+      ]
     },
     {
       "word": "表示",
@@ -4213,7 +6313,13 @@
         "en": "to express, to indicate",
         "ko": "나타내다, 표시하다",
         "ja": "表す、示す"
-      }
+      },
+      "example": [
+        "他点头表示同意。"
+      ],
+      "examplePinyin": [
+        "tā diǎn tóu biǎo shì tóng yì 。"
+      ]
     },
     {
       "word": "养成",
@@ -4225,7 +6331,13 @@
         "en": "to develop, to form",
         "ko": "기르다, 형성하다",
         "ja": "身につける、形成する"
-      }
+      },
+      "example": [
+        "你要养成早睡的习惯。"
+      ],
+      "examplePinyin": [
+        "nǐ yào yǎng chéng zǎo shuì de xí guàn 。"
+      ]
     },
     {
       "word": "同时",
@@ -4237,7 +6349,13 @@
         "en": "at the same time, meanwhile",
         "ko": "동시에",
         "ja": "同時に"
-      }
+      },
+      "example": [
+        "我们可以同时准备两件事。"
+      ],
+      "examplePinyin": [
+        "wǒ men kě yǐ tóng shí zhǔn bèi liǎng jiàn shì 。"
+      ]
     },
     {
       "word": "精彩",
@@ -4249,7 +6367,13 @@
         "en": "wonderful, splendid",
         "ko": "멋진, 훌륭한",
         "ja": "すばらしい、精彩な"
-      }
+      },
+      "example": [
+        "今天的比赛很精彩。"
+      ],
+      "examplePinyin": [
+        "jīn tiān de bǐ sài hěn jīng cǎi 。"
+      ]
     },
     {
       "word": "规定",
@@ -4261,7 +6385,13 @@
         "en": "rule, regulation",
         "ko": "규정, 규칙",
         "ja": "規定、規則"
-      }
+      },
+      "example": [
+        "我们聊聊规定吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo guī dìng ba 。"
+      ]
     },
     {
       "word": "死",
@@ -4273,7 +6403,13 @@
         "en": "rigid, inflexible",
         "ko": "융통성 없는, 고정된",
         "ja": "融通が利かない、固定的な"
-      }
+      },
+      "example": [
+        "规则不能定得太死。"
+      ],
+      "examplePinyin": [
+        "guī zé bù néng dìng dé tài sǐ 。"
+      ]
     },
     {
       "word": "可惜",
@@ -4285,7 +6421,13 @@
         "en": "pitiful, regretful",
         "ko": "아쉬운, 안타까운",
         "ja": "惜しい、残念な"
-      }
+      },
+      "example": [
+        "今天不能去，真可惜。"
+      ],
+      "examplePinyin": [
+        "jīn tiān bù néng qù ， zhēn kě xī 。"
+      ]
     },
     {
       "word": "全部",
@@ -4297,7 +6439,13 @@
         "en": "all, whole",
         "ko": "전부, 전체",
         "ja": "全部、全体"
-      }
+      },
+      "example": [
+        "这个全部对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge quán bù duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "也许",
@@ -4309,7 +6457,13 @@
         "en": "maybe, perhaps",
         "ko": "아마, 어쩌면",
         "ja": "もしかすると、たぶん"
-      }
+      },
+      "example": [
+        "也许他已经到了。"
+      ],
+      "examplePinyin": [
+        "yě xǔ tā yǐ jīng dào le 。"
+      ]
     },
     {
       "word": "商量",
@@ -4321,7 +6475,13 @@
         "en": "to discuss, to consult",
         "ko": "상의하다, 의논하다",
         "ja": "相談する、話し合う"
-      }
+      },
+      "example": [
+        "我们商量一下周末去哪儿。"
+      ],
+      "examplePinyin": [
+        "wǒ men shāng liáng yí xià zhōu mò qù nǎ ér 。"
+      ]
     },
     {
       "word": "并且",
@@ -4333,7 +6493,13 @@
         "en": "and",
         "ko": "그리고, 또한",
         "ja": "そして、かつ"
-      }
+      },
+      "example": [
+        "这家店便宜，并且味道很好。"
+      ],
+      "examplePinyin": [
+        "zhè jiā diàn pián yi ， bìng qiě wèi dào hěn hǎo 。"
+      ]
     },
     {
       "word": "盐",
@@ -4345,7 +6511,13 @@
         "en": "salt",
         "ko": "소금",
         "ja": "塩"
-      }
+      },
+      "example": [
+        "我想吃一点盐。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn yán 。"
+      ]
     },
     {
       "word": "勺子",
@@ -4357,7 +6529,13 @@
         "en": "spoon",
         "ko": "숟가락",
         "ja": "スプーン"
-      }
+      },
+      "example": [
+        "这个勺子对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge sháo zǐ duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "保护",
@@ -4369,7 +6547,13 @@
         "en": "to protect",
         "ko": "보호하다",
         "ja": "保護する"
-      }
+      },
+      "example": [
+        "我们要保护环境。"
+      ],
+      "examplePinyin": [
+        "wǒ men yào bǎo hù huán jìng 。"
+      ]
     },
     {
       "word": "作用",
@@ -4381,7 +6565,13 @@
         "en": "function, effect",
         "ko": "작용, 효과",
         "ja": "作用、効果"
-      }
+      },
+      "example": [
+        "我们聊聊作用吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo zuò yòng ba 。"
+      ]
     },
     {
       "word": "无法",
@@ -4393,7 +6583,13 @@
         "en": "cannot, to be unable",
         "ko": "할 수 없다, 불가능하다",
         "ja": "できない、不可能である"
-      }
+      },
+      "example": [
+        "我现在无法回答你。"
+      ],
+      "examplePinyin": [
+        "wǒ xiàn zài wú fǎ huí dá nǐ 。"
+      ]
     },
     {
       "word": "无",
@@ -4405,7 +6601,13 @@
         "en": "not to have, to be without",
         "ko": "없다, ~이 없다",
         "ja": "ない、〜がない"
-      }
+      },
+      "example": [
+        "这个房间无烟。"
+      ],
+      "examplePinyin": [
+        "zhè ge fáng jiān wú yān 。"
+      ]
     },
     {
       "word": "节",
@@ -4417,7 +6619,13 @@
         "en": "section, length",
         "ko": "수업 단위, 마디",
         "ja": "節、一区切り"
-      }
+      },
+      "example": [
+        "我下午有一节中文课。"
+      ],
+      "examplePinyin": [
+        "wǒ xià wǔ yǒu yì jié zhōng wén kè 。"
+      ]
     },
     {
       "word": "详细",
@@ -4429,7 +6637,13 @@
         "en": "detailed",
         "ko": "상세한",
         "ja": "詳しい"
-      }
+      },
+      "example": [
+        "你说得再详细一点。"
+      ],
+      "examplePinyin": [
+        "nǐ shuō dé zài xiáng xì yì diǎn 。"
+      ]
     },
     {
       "word": "解释",
@@ -4441,7 +6655,13 @@
         "en": "to explain",
         "ko": "설명하다",
         "ja": "説明する"
-      }
+      },
+      "example": [
+        "你能解释一下吗？"
+      ],
+      "examplePinyin": [
+        "nǐ néng jiě shì yí xià ma ？"
+      ]
     },
     {
       "word": "对于",
@@ -4453,7 +6673,13 @@
         "en": "for, to, with regard to",
         "ko": "~에 대해, ~에게",
         "ja": "〜に対して、〜について"
-      }
+      },
+      "example": [
+        "对于这件事，我没有意见。"
+      ],
+      "examplePinyin": [
+        "duì yú zhè jiàn shì ， wǒ méi yǒu yì jiàn 。"
+      ]
     },
     {
       "word": "叶子",
@@ -4465,7 +6691,13 @@
         "en": "leaf",
         "ko": "잎",
         "ja": "葉"
-      }
+      },
+      "example": [
+        "这个叶子对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge yè zi duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "教育",
@@ -4477,7 +6709,13 @@
         "en": "to educate",
         "ko": "교육하다",
         "ja": "教育する"
-      }
+      },
+      "example": [
+        "我想教育一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng jiào yù yí xià 。"
+      ]
     },
     {
       "word": "使用",
@@ -4489,7 +6727,13 @@
         "en": "to use",
         "ko": "사용하다",
         "ja": "使用する"
-      }
+      },
+      "example": [
+        "这个软件很好使用。"
+      ],
+      "examplePinyin": [
+        "zhè ge ruǎn jiàn hěn hǎo shǐ yòng 。"
+      ]
     },
     {
       "word": "语言",
@@ -4501,7 +6745,13 @@
         "en": "language",
         "ko": "언어",
         "ja": "言語"
-      }
+      },
+      "example": [
+        "我们聊聊语言吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo yǔ yán ba 。"
+      ]
     },
     {
       "word": "直接",
@@ -4513,7 +6763,13 @@
         "en": "direct, straight",
         "ko": "직접적인",
         "ja": "直接の、まっすぐな"
-      }
+      },
+      "example": [
+        "你直接告诉我吧。"
+      ],
+      "examplePinyin": [
+        "nǐ zhí jiē gào sù wǒ ba 。"
+      ]
     },
     {
       "word": "引起",
@@ -4525,7 +6781,13 @@
         "en": "to cause, to lead to",
         "ko": "일으키다, 초래하다",
         "ja": "引き起こす"
-      }
+      },
+      "example": [
+        "这件事引起了大家的注意。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn shì yǐn qǐ le dà jiā de zhù yì 。"
+      ]
     },
     {
       "word": "误会",
@@ -4537,7 +6799,13 @@
         "en": "misunderstanding",
         "ko": "오해",
         "ja": "誤解"
-      }
+      },
+      "example": [
+        "我们聊聊误会吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo wù huì ba 。"
+      ]
     },
     {
       "word": "友好",
@@ -4549,7 +6817,13 @@
         "en": "friendly",
         "ko": "우호적인, 친절한",
         "ja": "友好的な"
-      }
+      },
+      "example": [
+        "他今天看起来很友好。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "事半功倍",
@@ -4561,7 +6835,13 @@
         "en": "to achieve twice the result with half the effort",
         "ko": "적은 노력으로 큰 성과를 거두다",
         "ja": "半分の努力で倍の成果を得る"
-      }
+      },
+      "example": [
+        "方法对了，学习就能事半功倍。"
+      ],
+      "examplePinyin": [
+        "fāng fǎ duì le ， xué xí jiù néng shì bàn gōng bèi 。"
+      ]
     },
     {
       "word": "节约",
@@ -4573,7 +6853,13 @@
         "en": "to economize, to save",
         "ko": "절약하다",
         "ja": "節約する"
-      }
+      },
+      "example": [
+        "我们要节约用水。"
+      ],
+      "examplePinyin": [
+        "wǒ men yào jié yuē yòng shuǐ 。"
+      ]
     },
     {
       "word": "力气",
@@ -4585,7 +6871,13 @@
         "en": "physical strength, effort",
         "ko": "힘, 노력",
         "ja": "力、労力"
-      }
+      },
+      "example": [
+        "这个力气对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge lì qi duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "相反",
@@ -4597,7 +6889,13 @@
         "en": "on the contrary",
         "ko": "반대로",
         "ja": "反対に"
-      }
+      },
+      "example": [
+        "相反，我觉得这样更好。"
+      ],
+      "examplePinyin": [
+        "xiāng fǎn ， wǒ jué de zhè yàng gèng hǎo 。"
+      ]
     },
     {
       "word": "任务",
@@ -4609,7 +6907,13 @@
         "en": "task, mission",
         "ko": "임무, 과제",
         "ja": "任務、課題"
-      }
+      },
+      "example": [
+        "我们聊聊任务吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo rèn wu ba 。"
+      ]
     },
     {
       "word": "意见",
@@ -4621,7 +6925,13 @@
         "en": "opinion, suggestion",
         "ko": "의견, 건의",
         "ja": "意見、提案"
-      }
+      },
+      "example": [
+        "我们聊聊意见吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo yì jiàn ba 。"
+      ]
     },
     {
       "word": "仔细",
@@ -4633,7 +6943,13 @@
         "en": "careful, meticulous",
         "ko": "세심한, 꼼꼼한",
         "ja": "細かい、入念な"
-      }
+      },
+      "example": [
+        "你看得很仔细。"
+      ],
+      "examplePinyin": [
+        "nǐ kàn dé hěn zǐ xì 。"
+      ]
     },
     {
       "word": "达到",
@@ -4645,7 +6961,13 @@
         "en": "to reach, to attain",
         "ko": "도달하다, 달성하다",
         "ja": "達する、到達する"
-      }
+      },
+      "example": [
+        "他终于达到目标了。"
+      ],
+      "examplePinyin": [
+        "tā zhōng yú dá dào mù biāo le 。"
+      ]
     },
     {
       "word": "京剧",
@@ -4657,7 +6979,13 @@
         "en": "n. Beijing opera",
         "ko": "명. 경극",
         "ja": "名. 京劇"
-      }
+      },
+      "example": [
+        "这个京剧对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge jīng jù duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "演员",
@@ -4669,7 +6997,13 @@
         "en": "n. actor/actress",
         "ko": "명. 배우",
         "ja": "名. 俳優、女優"
-      }
+      },
+      "example": [
+        "那位演员很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi yǎn yuán hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "观众",
@@ -4681,7 +7015,13 @@
         "en": "n. audience",
         "ko": "명. 관중, 관객",
         "ja": "名. 観客"
-      }
+      },
+      "example": [
+        "那位观众很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi guān zhòng hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "厚",
@@ -4693,7 +7033,13 @@
         "en": "adj. deep, profound",
         "ko": "형. 깊은, 두터운",
         "ja": "形. 深い、厚い"
-      }
+      },
+      "example": [
+        "这本书很厚。"
+      ],
+      "examplePinyin": [
+        "zhè běn shū hěn hòu 。"
+      ]
     },
     {
       "word": "演出",
@@ -4705,7 +7051,13 @@
         "en": "v. to perform, to put on a show",
         "ko": "동. 공연하다",
         "ja": "動. 公演する、出演する"
-      }
+      },
+      "example": [
+        "今晚有一场演出。"
+      ],
+      "examplePinyin": [
+        "jīn wǎn yǒu yì chǎng yǎn chū 。"
+      ]
     },
     {
       "word": "大概",
@@ -4717,7 +7069,13 @@
         "en": "adv. roughly, approximately",
         "ko": "부. 대략, 아마",
         "ja": "副. おおよそ、たぶん"
-      }
+      },
+      "example": [
+        "他大概十分钟后到。"
+      ],
+      "examplePinyin": [
+        "tā dà gài shí fēn zhōng hòu dào 。"
+      ]
     },
     {
       "word": "来自",
@@ -4729,7 +7087,13 @@
         "en": "v. to be from",
         "ko": "동. ~에서 오다, ~출신이다",
         "ja": "動. 〜から来る、〜出身である"
-      }
+      },
+      "example": [
+        "他来自上海。"
+      ],
+      "examplePinyin": [
+        "tā lái zì shàng hǎi 。"
+      ]
     },
     {
       "word": "遍",
@@ -4741,7 +7105,13 @@
         "en": "m. denoting an action from beginning to end",
         "ko": "양. 처음부터 끝까지 한 번 하는 횟수",
         "ja": "量. 初めから終わりまで行う回数"
-      }
+      },
+      "example": [
+        "这首歌我听了三遍。"
+      ],
+      "examplePinyin": [
+        "zhè shǒu gē wǒ tīng le sān biàn 。"
+      ]
     },
     {
       "word": "偶尔",
@@ -4753,7 +7123,13 @@
         "en": "adv. occasionally, once in a while",
         "ko": "부. 가끔, 이따금",
         "ja": "副. たまに、時々"
-      }
+      },
+      "example": [
+        "我偶尔去那家餐厅。"
+      ],
+      "examplePinyin": [
+        "wǒ ǒu ěr qù nà jiā cān tīng 。"
+      ]
     },
     {
       "word": "吃惊",
@@ -4765,7 +7141,13 @@
         "en": "v. to be surprised, to be shocked",
         "ko": "동. 놀라다",
         "ja": "動. 驚く"
-      }
+      },
+      "example": [
+        "我想吃惊一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī jīng yí xià 。"
+      ]
     },
     {
       "word": "基础",
@@ -4777,7 +7159,13 @@
         "en": "n. basis, foundation",
         "ko": "명. 기초, 기반",
         "ja": "名. 基礎、土台"
-      }
+      },
+      "example": [
+        "我们聊聊基础吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jī chǔ ba 。"
+      ]
     },
     {
       "word": "表演",
@@ -4789,7 +7177,13 @@
         "en": "v. to act, to perform",
         "ko": "동. 공연하다, 연기하다",
         "ja": "動. 演じる、上演する"
-      }
+      },
+      "example": [
+        "我想表演一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng biǎo yǎn yí xià 。"
+      ]
     },
     {
       "word": "正常",
@@ -4801,7 +7195,13 @@
         "en": "adj. normal, regular",
         "ko": "형. 정상적인, 보통의",
         "ja": "形. 正常な、通常の"
-      }
+      },
+      "example": [
+        "这种情况很正常。"
+      ],
+      "examplePinyin": [
+        "zhè zhǒng qíng kuàng hěn zhèng cháng 。"
+      ]
     },
     {
       "word": "申请",
@@ -4813,7 +7213,13 @@
         "en": "v. to apply for",
         "ko": "동. 신청하다",
         "ja": "動. 申請する"
-      }
+      },
+      "example": [
+        "我想申请一个签证。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng shēn qǐng yí gè qiān zhèng 。"
+      ]
     },
     {
       "word": "有趣",
@@ -4825,7 +7231,13 @@
         "en": "adj. interesting, fun",
         "ko": "형. 재미있는",
         "ja": "形. 面白い、興味深い"
-      }
+      },
+      "example": [
+        "这个故事很有趣。"
+      ],
+      "examplePinyin": [
+        "zhè ge gù shì hěn yǒu qù 。"
+      ]
     },
     {
       "word": "开心",
@@ -4837,7 +7249,13 @@
         "en": "adj. happy, glad",
         "ko": "형. 즐거운, 기쁜",
         "ja": "形. 楽しい、うれしい"
-      }
+      },
+      "example": [
+        "今天大家都很开心。"
+      ],
+      "examplePinyin": [
+        "jīn tiān dà jiā dōu hěn kāi xīn 。"
+      ]
     },
     {
       "word": "继续",
@@ -4849,7 +7267,13 @@
         "en": "v. to go on, to continue",
         "ko": "동. 계속하다",
         "ja": "動. 続ける"
-      }
+      },
+      "example": [
+        "我们继续往前走吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men jì xù wǎng qián zǒu ba 。"
+      ]
     },
     {
       "word": "由",
@@ -4861,7 +7285,13 @@
         "en": "prep. by (sb.)",
         "ko": "전. ~가 맡아서, ~에 의해",
         "ja": "前. 〜によって、〜が担当して"
-      }
+      },
+      "example": [
+        "这件事由我来负责。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn shì yóu wǒ lái fù zé 。"
+      ]
     },
     {
       "word": "讨论",
@@ -4873,7 +7303,13 @@
         "en": "v. to discuss, to talk over",
         "ko": "동. 토론하다, 의논하다",
         "ja": "動. 討論する、話し合う"
-      }
+      },
+      "example": [
+        "我们讨论一下这个问题。"
+      ],
+      "examplePinyin": [
+        "wǒ men tǎo lùn yí xià zhè ge wèn tí 。"
+      ]
     },
     {
       "word": "大约",
@@ -4885,7 +7321,13 @@
         "en": "adv. approximately, about",
         "ko": "부. 대략, 약",
         "ja": "副. おおよそ、約"
-      }
+      },
+      "example": [
+        "我们大约六点出发。"
+      ],
+      "examplePinyin": [
+        "wǒ men dà yuē liù diǎn chū fā 。"
+      ]
     },
     {
       "word": "餐厅",
@@ -4897,7 +7339,13 @@
         "en": "n. restaurant",
         "ko": "명. 식당, 레스토랑",
         "ja": "名. レストラン、食堂"
-      }
+      },
+      "example": [
+        "我在餐厅等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài cān tīng děng nǐ 。"
+      ]
     },
     {
       "word": "纸袋",
@@ -4909,7 +7357,13 @@
         "en": "n. paper bag",
         "ko": "명. 종이봉투",
         "ja": "名. 紙袋"
-      }
+      },
+      "example": [
+        "这个纸袋对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge zhǐ dài duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "袋子",
@@ -4921,7 +7375,13 @@
         "en": "n. bag, sack",
         "ko": "명. 봉지, 자루",
         "ja": "名. 袋"
-      }
+      },
+      "example": [
+        "这个袋子对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge dài zǐ duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "互联网",
@@ -4933,7 +7393,13 @@
         "en": "n. Internet",
         "ko": "명. 인터넷",
         "ja": "名. インターネット"
-      }
+      },
+      "example": [
+        "这个互联网对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge hù lián wǎng duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "进行",
@@ -4945,7 +7411,13 @@
         "en": "v. to conduct, to carry out",
         "ko": "동. 진행하다, 실시하다",
         "ja": "動. 行う、実施する"
-      }
+      },
+      "example": [
+        "会议正在进行。"
+      ],
+      "examplePinyin": [
+        "huì yì zhèng zài jìn xíng 。"
+      ]
     },
     {
       "word": "错误",
@@ -4957,7 +7429,13 @@
         "en": "adj. wrong",
         "ko": "형. 잘못된, 틀린",
         "ja": "形. 間違った、誤った"
-      }
+      },
+      "example": [
+        "这个答案是错误的。"
+      ],
+      "examplePinyin": [
+        "zhè ge dá àn shì cuò wù de 。"
+      ]
     },
     {
       "word": "随着",
@@ -4969,7 +7447,13 @@
         "en": "prep. along with, as",
         "ko": "전. ~에 따라, ~와 함께",
         "ja": "前. 〜につれて、〜に伴って"
-      }
+      },
+      "example": [
+        "随着天气变暖，公园里人多了。"
+      ],
+      "examplePinyin": [
+        "suí zhe tiān qì biàn nuǎn ， gōng yuán lǐ rén duō le 。"
+      ]
     },
     {
       "word": "十分",
@@ -4981,7 +7465,13 @@
         "en": "adv. very, extremely",
         "ko": "부. 매우, 아주",
         "ja": "副. とても、非常に"
-      }
+      },
+      "example": [
+        "今天的演出十分精彩。"
+      ],
+      "examplePinyin": [
+        "jīn tiān de yǎn chū shí fēn jīng cǎi 。"
+      ]
     },
     {
       "word": "普遍",
@@ -4993,7 +7483,13 @@
         "en": "adj. universal, common",
         "ko": "형. 보편적인, 흔한",
         "ja": "形. 普遍的な、一般的な"
-      }
+      },
+      "example": [
+        "这种情况很普遍。"
+      ],
+      "examplePinyin": [
+        "zhè zhǒng qíng kuàng hěn pǔ biàn 。"
+      ]
     },
     {
       "word": "部分",
@@ -5005,7 +7501,13 @@
         "en": "n. part",
         "ko": "명. 부분",
         "ja": "名. 部分"
-      }
+      },
+      "example": [
+        "我们聊聊部分吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo bù fen ba 。"
+      ]
     },
     {
       "word": "稍微",
@@ -5017,7 +7519,13 @@
         "en": "adv. a little, slightly",
         "ko": "부. 조금, 약간",
         "ja": "副. 少し、わずかに"
-      }
+      },
+      "example": [
+        "请稍微等一下。"
+      ],
+      "examplePinyin": [
+        "qǐng shāo wēi děng yí xià 。"
+      ]
     },
     {
       "word": "苦",
@@ -5029,7 +7537,13 @@
         "en": "adj. bitter",
         "ko": "형. 쓴",
         "ja": "形. 苦い"
-      }
+      },
+      "example": [
+        "这个菜有点苦。"
+      ],
+      "examplePinyin": [
+        "zhè ge cài yǒu diǎn kǔ 。"
+      ]
     },
     {
       "word": "省",
@@ -5041,7 +7555,13 @@
         "en": "n. province",
         "ko": "명. 성, 행정구역",
         "ja": "名. 省"
-      }
+      },
+      "example": [
+        "这个省对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge shěng duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "出差",
@@ -5053,7 +7573,13 @@
         "en": "v. to go on a business trip",
         "ko": "동. 출장 가다",
         "ja": "動. 出張する"
-      }
+      },
+      "example": [
+        "他今天要出差。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào chū chāi 。"
+      ]
     },
     {
       "word": "毛巾",
@@ -5065,7 +7591,13 @@
         "en": "n. towel",
         "ko": "명. 수건",
         "ja": "名. タオル"
-      }
+      },
+      "example": [
+        "我把毛巾放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ máo jīn fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "牙膏",
@@ -5077,7 +7609,13 @@
         "en": "n. toothpaste",
         "ko": "명. 치약",
         "ja": "名. 歯磨き粉"
-      }
+      },
+      "example": [
+        "我把牙膏放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ yá gāo fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "重",
@@ -5089,7 +7627,13 @@
         "en": "adj. heavy, weighty",
         "ko": "형. 무거운",
         "ja": "形. 重い"
-      }
+      },
+      "example": [
+        "这个箱子很重。"
+      ],
+      "examplePinyin": [
+        "zhè ge xiāng zǐ hěn zhòng 。"
+      ]
     },
     {
       "word": "行",
@@ -5101,7 +7645,13 @@
         "en": "v. to be OK, to be all right",
         "ko": "동. 괜찮다, 문제없다",
         "ja": "動. よい、大丈夫である"
-      }
+      },
+      "example": [
+        "我想行一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng xíng yí xià 。"
+      ]
     },
     {
       "word": "污染",
@@ -5113,7 +7663,13 @@
         "en": "v. to pollute",
         "ko": "동. 오염시키다",
         "ja": "動. 汚染する"
-      }
+      },
+      "example": [
+        "不要污染河水。"
+      ],
+      "examplePinyin": [
+        "bú yào wū rǎn hé shuǐ 。"
+      ]
     },
     {
       "word": "卫生间",
@@ -5125,7 +7681,13 @@
         "en": "n. restroom, bathroom",
         "ko": "명. 화장실",
         "ja": "名. トイレ、洗面所"
-      }
+      },
+      "example": [
+        "我在卫生间等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài wèi shēng jiān děng nǐ 。"
+      ]
     },
     {
       "word": "脏",
@@ -5137,7 +7699,13 @@
         "en": "adj. dirty",
         "ko": "형. 더러운",
         "ja": "形. 汚い"
-      }
+      },
+      "example": [
+        "这件衣服脏了。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn yī fu zāng le 。"
+      ]
     },
     {
       "word": "抱歉",
@@ -5149,7 +7717,13 @@
         "en": "v. to be sorry",
         "ko": "동. 미안해하다, 죄송하다",
         "ja": "動. 申し訳なく思う"
-      }
+      },
+      "example": [
+        "抱歉，我来晚了。"
+      ],
+      "examplePinyin": [
+        "bào qiàn ， wǒ lái wǎn le 。"
+      ]
     },
     {
       "word": "空",
@@ -5161,7 +7735,13 @@
         "en": "adj. empty",
         "ko": "형. 빈",
         "ja": "形. 空の"
-      }
+      },
+      "example": [
+        "这个座位是空的。"
+      ],
+      "examplePinyin": [
+        "zhè ge zuò wèi shì kōng de 。"
+      ]
     },
     {
       "word": "盒子",
@@ -5173,7 +7753,13 @@
         "en": "n. box, case",
         "ko": "명. 상자, 케이스",
         "ja": "名. 箱、ケース"
-      }
+      },
+      "example": [
+        "我把盒子放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ hé zi fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "扔",
@@ -5185,7 +7771,13 @@
         "en": "v. to throw away",
         "ko": "동. 버리다, 던지다",
         "ja": "動. 捨てる、投げる"
-      }
+      },
+      "example": [
+        "别把垃圾扔地上。"
+      ],
+      "examplePinyin": [
+        "bié bǎ lā jī rēng dì shàng 。"
+      ]
     },
     {
       "word": "以",
@@ -5197,7 +7789,13 @@
         "en": "prep. via, by means of",
         "ko": "전. ~로, ~의 방식으로",
         "ja": "前. 〜で、〜によって"
-      }
+      },
+      "example": [
+        "我们以邮件的方式联系。"
+      ],
+      "examplePinyin": [
+        "wǒ men yǐ yóu jiàn de fāng shì lián xì 。"
+      ]
     },
     {
       "word": "速度",
@@ -5209,7 +7807,13 @@
         "en": "n. speed",
         "ko": "명. 속도",
         "ja": "名. 速度"
-      }
+      },
+      "example": [
+        "我们聊聊速度吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo sù dù ba 。"
+      ]
     },
     {
       "word": "地球",
@@ -5221,7 +7825,13 @@
         "en": "n. earth, globe",
         "ko": "명. 지구",
         "ja": "名. 地球"
-      }
+      },
+      "example": [
+        "我们聊聊地球吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo dì qiú ba 。"
+      ]
     },
     {
       "word": "既然",
@@ -5233,7 +7843,13 @@
         "en": "conj. since, as, now that",
         "ko": "접. 기왕, 이미 ~인 이상",
         "ja": "接. 〜である以上、せっかく"
-      }
+      },
+      "example": [
+        "既然来了，就一起吃饭吧。"
+      ],
+      "examplePinyin": [
+        "jì rán lái le ， jiù yì qǐ chī fàn ba 。"
+      ]
     },
     {
       "word": "停",
@@ -5245,7 +7861,13 @@
         "en": "v. to stop, to cease",
         "ko": "동. 멈추다, 중지하다",
         "ja": "動. 止まる、止める"
-      }
+      },
+      "example": [
+        "车在门口停了。"
+      ],
+      "examplePinyin": [
+        "chē zài mén kǒu tíng le 。"
+      ]
     },
     {
       "word": "得意",
@@ -5257,7 +7879,13 @@
         "en": "adj. complacent, gloating",
         "ko": "형. 우쭐한, 득의양양한",
         "ja": "形. 得意げな、うぬぼれた"
-      }
+      },
+      "example": [
+        "他考好了，有点得意。"
+      ],
+      "examplePinyin": [
+        "tā kǎo hǎo le ， yǒu diǎn dé yì 。"
+      ]
     },
     {
       "word": "目的",
@@ -5269,7 +7897,13 @@
         "en": "n. aim, purpose",
         "ko": "명. 목적",
         "ja": "名. 目的"
-      }
+      },
+      "example": [
+        "我们聊聊目的吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo mù dì ba 。"
+      ]
     },
     {
       "word": "暖",
@@ -5281,7 +7915,13 @@
         "en": "adj. warm",
         "ko": "형. 따뜻한",
         "ja": "形. 暖かい"
-      }
+      },
+      "example": [
+        "今天外面很暖。"
+      ],
+      "examplePinyin": [
+        "jīn tiān wài miàn hěn nuǎn 。"
+      ]
     },
     {
       "word": "塑料袋",
@@ -5293,7 +7933,13 @@
         "en": "n. plastic bag",
         "ko": "명. 비닐봉지, 플라스틱 봉투",
         "ja": "名. ビニール袋、プラスチック袋"
-      }
+      },
+      "example": [
+        "我把塑料袋放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ sù liào dài fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "于是",
@@ -5305,7 +7951,13 @@
         "en": "conj. hence, therefore",
         "ko": "접. 그래서, 이에",
         "ja": "接. そこで、それで"
-      }
+      },
+      "example": [
+        "雨停了，于是我们出门了。"
+      ],
+      "examplePinyin": [
+        "yǔ tíng le ， yú shì wǒ men chū mén le 。"
+      ]
     },
     {
       "word": "鼓励",
@@ -5317,7 +7969,13 @@
         "en": "v. to encourage",
         "ko": "동. 격려하다, 장려하다",
         "ja": "動. 励ます、奨励する"
-      }
+      },
+      "example": [
+        "老师经常鼓励我。"
+      ],
+      "examplePinyin": [
+        "lǎo shī jīng cháng gǔ lì wǒ 。"
+      ]
     },
     {
       "word": "拒绝",
@@ -5329,7 +7987,13 @@
         "en": "v. to refuse, to reject",
         "ko": "동. 거절하다",
         "ja": "動. 拒絶する、断る"
-      }
+      },
+      "example": [
+        "他拒绝了我的邀请。"
+      ],
+      "examplePinyin": [
+        "tā jù jué le wǒ de yāo qǐng 。"
+      ]
     },
     {
       "word": "减少",
@@ -5341,7 +8005,13 @@
         "en": "v. to reduce, to decrease",
         "ko": "동. 줄이다, 감소하다",
         "ja": "動. 減らす、減少する"
-      }
+      },
+      "example": [
+        "我们要减少浪费。"
+      ],
+      "examplePinyin": [
+        "wǒ men yào jiǎn shǎo làng fèi 。"
+      ]
     },
     {
       "word": "数量",
@@ -5353,7 +8023,13 @@
         "en": "n. quantity, amount",
         "ko": "명. 수량",
         "ja": "名. 数量"
-      }
+      },
+      "example": [
+        "我们聊聊数量吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo shù liàng ba 。"
+      ]
     },
     {
       "word": "温度",
@@ -5365,7 +8041,13 @@
         "en": "n. temperature",
         "ko": "명. 온도",
         "ja": "名. 温度"
-      }
+      },
+      "example": [
+        "我们聊聊温度吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo wēn dù ba 。"
+      ]
     },
     {
       "word": "乘坐",
@@ -5377,7 +8059,13 @@
         "en": "v. to take (a vehicle), to ride (in a vehicle)",
         "ko": "동. 타다, 탑승하다",
         "ja": "動. 乗る、乗車する"
-      }
+      },
+      "example": [
+        "我每天乘坐地铁。"
+      ],
+      "examplePinyin": [
+        "wǒ měi tiān chéng zuò dì tiě 。"
+      ]
     },
     {
       "word": "丢",
@@ -5389,7 +8077,13 @@
         "en": "v. to throw, to cast",
         "ko": "동. 버리다, 던지다",
         "ja": "動. 捨てる、投げる"
-      }
+      },
+      "example": [
+        "我把钥匙丢了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ yào shi diū le 。"
+      ]
     },
     {
       "word": "垃圾桶",
@@ -5401,7 +8095,13 @@
         "en": "n. dustbin, trash can",
         "ko": "명. 쓰레기통",
         "ja": "名. ごみ箱"
-      }
+      },
+      "example": [
+        "我把垃圾桶放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ lā jī tǒng fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "美丽",
@@ -5413,7 +8113,13 @@
         "en": "adj. beautiful",
         "ko": "형. 아름다운",
         "ja": "形. 美しい"
-      }
+      },
+      "example": [
+        "这个城市很美丽。"
+      ],
+      "examplePinyin": [
+        "zhè ge chéng shì hěn měi lì 。"
+      ]
     },
     {
       "word": "弹钢琴",
@@ -5425,7 +8131,13 @@
         "en": "to play the piano",
         "ko": "피아노를 치다",
         "ja": "ピアノを弾く"
-      }
+      },
+      "example": [
+        "他今天要弹钢琴。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào tán gāng qín 。"
+      ]
     },
     {
       "word": "棒",
@@ -5437,7 +8149,13 @@
         "en": "adj. excellent, amazing",
         "ko": "형. 훌륭한, 대단한",
         "ja": "形. すばらしい、すごい"
-      }
+      },
+      "example": [
+        "你今天表现很棒。"
+      ],
+      "examplePinyin": [
+        "nǐ jīn tiān biǎo xiàn hěn bàng 。"
+      ]
     },
     {
       "word": "孙子",
@@ -5449,7 +8167,13 @@
         "en": "n. grandson",
         "ko": "명. 손자",
         "ja": "名. 孫息子"
-      }
+      },
+      "example": [
+        "那位孙子很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi sūn zi hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "寒假",
@@ -5461,7 +8185,13 @@
         "en": "n. winter vacation",
         "ko": "명. 겨울방학",
         "ja": "名. 冬休み"
-      }
+      },
+      "example": [
+        "这个寒假对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge hán jià duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "父亲",
@@ -5473,7 +8203,13 @@
         "en": "n. father",
         "ko": "명. 아버지",
         "ja": "名. 父親"
-      }
+      },
+      "example": [
+        "那位父亲很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi fù qīn hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "闹钟",
@@ -5485,7 +8221,13 @@
         "en": "n. alarm clock",
         "ko": "명. 알람시계",
         "ja": "名. 目覚まし時計"
-      }
+      },
+      "example": [
+        "我把闹钟放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ nào zhōng fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "响",
@@ -5497,7 +8239,13 @@
         "en": "v. to sound, to ring",
         "ko": "동. 울리다, 소리 나다",
         "ja": "動. 鳴る、響く"
-      }
+      },
+      "example": [
+        "我想响一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng xiǎng yí xià 。"
+      ]
     },
     {
       "word": "醒",
@@ -5509,7 +8257,13 @@
         "en": "v. to wake up, to be awake",
         "ko": "동. 깨다, 깨어 있다",
         "ja": "動. 目が覚める、起きている"
-      }
+      },
+      "example": [
+        "我想醒一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng xǐng yí xià 。"
+      ]
     },
     {
       "word": "赶",
@@ -5521,7 +8275,13 @@
         "en": "v. to rush for, to hurry",
         "ko": "동. 서두르다, 시간에 맞추다",
         "ja": "動. 急ぐ、間に合わせる"
-      }
+      },
+      "example": [
+        "我想赶一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng gǎn yí xià 。"
+      ]
     },
     {
       "word": "厕所",
@@ -5533,7 +8293,13 @@
         "en": "n. lavatory, toilet",
         "ko": "명. 화장실",
         "ja": "名. トイレ"
-      }
+      },
+      "example": [
+        "我在厕所等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài cè suǒ děng nǐ 。"
+      ]
     },
     {
       "word": "批评",
@@ -5545,7 +8311,13 @@
         "en": "v. to criticize",
         "ko": "동. 비판하다, 꾸짖다",
         "ja": "動. 批判する、叱る"
-      }
+      },
+      "example": [
+        "老师批评了他。"
+      ],
+      "examplePinyin": [
+        "lǎo shī pī píng le tā 。"
+      ]
     },
     {
       "word": "弄",
@@ -5557,7 +8329,13 @@
         "en": "v. to do, to make",
         "ko": "동. 하다, 만들다",
         "ja": "動. する、いじる"
-      }
+      },
+      "example": [
+        "你把桌子弄干净吧。"
+      ],
+      "examplePinyin": [
+        "nǐ bǎ zhuō zi nòng gān jìng ba 。"
+      ]
     },
     {
       "word": "管理",
@@ -5569,7 +8347,13 @@
         "en": "v. to manage, to administer",
         "ko": "동. 관리하다",
         "ja": "動. 管理する"
-      }
+      },
+      "example": [
+        "他负责管理这个项目。"
+      ],
+      "examplePinyin": [
+        "tā fù zé guǎn lǐ zhè ge xiàng mù 。"
+      ]
     },
     {
       "word": "打针",
@@ -5581,7 +8365,13 @@
         "en": "v. to give or have an injection",
         "ko": "동. 주사를 맞다/놓다",
         "ja": "動. 注射をする、注射を受ける"
-      }
+      },
+      "example": [
+        "他今天要打针。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào dǎ zhēn 。"
+      ]
     },
     {
       "word": "护士",
@@ -5593,7 +8383,13 @@
         "en": "n. nurse",
         "ko": "명. 간호사",
         "ja": "名. 看護師"
-      }
+      },
+      "example": [
+        "那位护士很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi hù shì hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "表扬",
@@ -5605,7 +8401,13 @@
         "en": "v. to praise, to commend",
         "ko": "동. 칭찬하다",
         "ja": "動. 褒める、表彰する"
-      }
+      },
+      "example": [
+        "老师表扬了他。"
+      ],
+      "examplePinyin": [
+        "lǎo shī biǎo yáng le tā 。"
+      ]
     },
     {
       "word": "千万",
@@ -5617,7 +8419,13 @@
         "en": "adv. must, to be sure to",
         "ko": "부. 반드시, 꼭",
         "ja": "副. 必ず、くれぐれも"
-      }
+      },
+      "example": [
+        "你千万别忘了带护照。"
+      ],
+      "examplePinyin": [
+        "nǐ qiān wàn bié wàng le dài hù zhào 。"
+      ]
     },
     {
       "word": "怀疑",
@@ -5629,7 +8437,13 @@
         "en": "v. to suspect, to doubt",
         "ko": "동. 의심하다",
         "ja": "動. 疑う"
-      }
+      },
+      "example": [
+        "我有点怀疑这个消息。"
+      ],
+      "examplePinyin": [
+        "wǒ yǒu diǎn huái yí zhè ge xiāo xī 。"
+      ]
     },
     {
       "word": "故意",
@@ -5641,7 +8455,13 @@
         "en": "adv. intentionally, on purpose",
         "ko": "부. 고의로, 일부러",
         "ja": "副. わざと、故意に"
-      }
+      },
+      "example": [
+        "他不是故意迟到的。"
+      ],
+      "examplePinyin": [
+        "tā bú shì gù yì chí dào de 。"
+      ]
     },
     {
       "word": "敲",
@@ -5653,7 +8473,13 @@
         "en": "v. to knock, to beat, to strike",
         "ko": "동. 두드리다, 치다",
         "ja": "動. たたく、打つ"
-      }
+      },
+      "example": [
+        "有人在敲门。"
+      ],
+      "examplePinyin": [
+        "yǒu rén zài qiāo mén 。"
+      ]
     },
     {
       "word": "整理",
@@ -5665,7 +8491,13 @@
         "en": "v. to tidy up, to arrange",
         "ko": "동. 정리하다",
         "ja": "動. 整理する、片づける"
-      }
+      },
+      "example": [
+        "我正在整理房间。"
+      ],
+      "examplePinyin": [
+        "wǒ zhèng zài zhěng lǐ fáng jiān 。"
+      ]
     },
     {
       "word": "合适",
@@ -5677,7 +8509,13 @@
         "en": "adj. fit, suitable",
         "ko": "형. 알맞은, 적합한",
         "ja": "形. 適切な、ふさわしい"
-      }
+      },
+      "example": [
+        "这个时间很合适。"
+      ],
+      "examplePinyin": [
+        "zhè ge shí jiān hěn hé shì 。"
+      ]
     },
     {
       "word": "骗",
@@ -5689,7 +8527,13 @@
         "en": "v. to cheat, to deceive",
         "ko": "동. 속이다",
         "ja": "動. だます"
-      }
+      },
+      "example": [
+        "你不要骗我。"
+      ],
+      "examplePinyin": [
+        "nǐ bú yào piàn wǒ 。"
+      ]
     },
     {
       "word": "儿童",
@@ -5701,7 +8545,13 @@
         "en": "n. children",
         "ko": "명. 아동, 어린이",
         "ja": "名. 児童、子ども"
-      }
+      },
+      "example": [
+        "那位儿童很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi ér tóng hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "假",
@@ -5713,7 +8563,13 @@
         "en": "adj. false, fake",
         "ko": "형. 거짓의, 가짜의",
         "ja": "形. 偽の、うその"
-      }
+      },
+      "example": [
+        "这张票是假的。"
+      ],
+      "examplePinyin": [
+        "zhè zhāng piào shì jiǎ de 。"
+      ]
     },
     {
       "word": "左右",
@@ -5725,7 +8581,13 @@
         "en": "n. around, or so",
         "ko": "명. 정도, 쯤",
         "ja": "名. 前後、くらい"
-      }
+      },
+      "example": [
+        "左右我喜欢在家休息。"
+      ],
+      "examplePinyin": [
+        "zuǒ yòu wǒ xǐ huan zài jiā xiū xi 。"
+      ]
     },
     {
       "word": "懒",
@@ -5737,7 +8599,13 @@
         "en": "adj. lazy",
         "ko": "형. 게으른",
         "ja": "形. 怠けている"
-      }
+      },
+      "example": [
+        "他今天看起来很懒。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn lǎn 。"
+      ]
     },
     {
       "word": "笨",
@@ -5749,7 +8617,13 @@
         "en": "adj. stupid, foolish",
         "ko": "형. 어리석은, 둔한",
         "ja": "形. 愚かな、不器用な"
-      }
+      },
+      "example": [
+        "他今天看起来很笨。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn bèn 。"
+      ]
     },
     {
       "word": "粗心",
@@ -5761,7 +8635,13 @@
         "en": "adj. careless, thoughtless",
         "ko": "형. 부주의한, 덤벙대는",
         "ja": "形. 不注意な、そそっかしい"
-      }
+      },
+      "example": [
+        "他今天看起来很粗心。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn cū xīn 。"
+      ]
     },
     {
       "word": "骄傲",
@@ -5773,7 +8653,13 @@
         "en": "adj. arrogant, conceited",
         "ko": "형. 교만한, 자만하는",
         "ja": "形. 傲慢な、思い上がった"
-      }
+      },
+      "example": [
+        "他今天看起来很骄傲。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn jiāo ào 。"
+      ]
     },
     {
       "word": "害羞",
@@ -5785,7 +8671,13 @@
         "en": "v. to be shy, to be timid",
         "ko": "동. 부끄러워하다, 수줍어하다",
         "ja": "動. 恥ずかしがる、内気である"
-      }
+      },
+      "example": [
+        "他今天要害羞。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào hài xiū 。"
+      ]
     },
     {
       "word": "博士",
@@ -5797,7 +8689,13 @@
         "en": "n. doctor (academic degree)",
         "ko": "명. 박사",
         "ja": "名. 博士"
-      }
+      },
+      "example": [
+        "那位博士很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi bó shì hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "签证",
@@ -5809,7 +8707,13 @@
         "en": "n. visa",
         "ko": "명. 비자",
         "ja": "名. ビザ"
-      }
+      },
+      "example": [
+        "这个签证对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge qiān zhèng duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "报名",
@@ -5821,7 +8725,13 @@
         "en": "v. to apply, to sign up",
         "ko": "동. 신청하다, 등록하다",
         "ja": "動. 申し込む、登録する"
-      }
+      },
+      "example": [
+        "我已经报名了中文课。"
+      ],
+      "examplePinyin": [
+        "wǒ yǐ jīng bào míng le zhōng wén kè 。"
+      ]
     },
     {
       "word": "表格",
@@ -5833,7 +8743,13 @@
         "en": "n. form, table",
         "ko": "명. 양식, 표",
         "ja": "名. フォーム、表"
-      }
+      },
+      "example": [
+        "我把表格放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ biǎo gé fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "传真",
@@ -5845,7 +8761,13 @@
         "en": "v. to send by fax",
         "ko": "동. 팩스로 보내다",
         "ja": "動. ファックスで送る"
-      }
+      },
+      "example": [
+        "请把文件传真给我。"
+      ],
+      "examplePinyin": [
+        "qǐng bǎ wén jiàn chuán zhēn gěi wǒ 。"
+      ]
     },
     {
       "word": "号码",
@@ -5857,7 +8779,13 @@
         "en": "n. number",
         "ko": "명. 번호",
         "ja": "名. 番号"
-      }
+      },
+      "example": [
+        "这个号码对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge hào mǎ duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "参观",
@@ -5869,7 +8797,13 @@
         "en": "v. to visit, to look around",
         "ko": "동. 참관하다, 둘러보다",
         "ja": "動. 見学する、見て回る"
-      }
+      },
+      "example": [
+        "我们明天参观博物馆。"
+      ],
+      "examplePinyin": [
+        "wǒ men míng tiān cān guān bó wù guǎn 。"
+      ]
     },
     {
       "word": "激动",
@@ -5881,7 +8815,13 @@
         "en": "adj. excited, emotional",
         "ko": "형. 감격한, 흥분한",
         "ja": "形. 感激した、興奮した"
-      }
+      },
+      "example": [
+        "他今天看起来很激动。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn jī dòng 。"
+      ]
     },
     {
       "word": "小伙子",
@@ -5893,7 +8833,13 @@
         "en": "n. young man",
         "ko": "명. 젊은이, 청년",
         "ja": "名. 若者、青年"
-      }
+      },
+      "example": [
+        "那位小伙子很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi xiǎo huǒ zǐ hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "记者",
@@ -5905,7 +8851,13 @@
         "en": "n. journalist, reporter",
         "ko": "명. 기자",
         "ja": "名. 記者"
-      }
+      },
+      "example": [
+        "那位记者很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi jì zhě hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "代表",
@@ -5917,7 +8869,13 @@
         "en": "v. to represent, to stand for",
         "ko": "동. 대표하다, 나타내다",
         "ja": "動. 代表する、表す"
-      }
+      },
+      "example": [
+        "这句话代表我的想法。"
+      ],
+      "examplePinyin": [
+        "zhè jù huà dài biǎo wǒ de xiǎng fǎ 。"
+      ]
     },
     {
       "word": "恐怕",
@@ -5929,7 +8887,13 @@
         "en": "adv. I guess, perhaps",
         "ko": "부. 아마, 어쩌면",
         "ja": "副. おそらく、たぶん"
-      }
+      },
+      "example": [
+        "恐怕今天来不及了。"
+      ],
+      "examplePinyin": [
+        "kǒng pà jīn tiān lái bù jí le 。"
+      ]
     },
     {
       "word": "失望",
@@ -5941,7 +8905,13 @@
         "en": "v. to be disappointed",
         "ko": "동. 실망하다",
         "ja": "動. 失望する"
-      }
+      },
+      "example": [
+        "我对这个结果有点失望。"
+      ],
+      "examplePinyin": [
+        "wǒ duì zhè ge jié guǒ yǒu diǎn shī wàng 。"
+      ]
     },
     {
       "word": "郊区",
@@ -5953,7 +8923,13 @@
         "en": "n. suburb, outskirts",
         "ko": "명. 교외, 외곽",
         "ja": "名. 郊外"
-      }
+      },
+      "example": [
+        "我在郊区等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài jiāo qū děng nǐ 。"
+      ]
     },
     {
       "word": "到底",
@@ -5965,7 +8941,13 @@
         "en": "adv. on earth, after all",
         "ko": "부. 도대체, 결국",
         "ja": "副. いったい、結局"
-      }
+      },
+      "example": [
+        "你到底想吃什么？"
+      ],
+      "examplePinyin": [
+        "nǐ dào dǐ xiǎng chī shén me ？"
+      ]
     },
     {
       "word": "呀",
@@ -5977,7 +8959,13 @@
         "en": "part. used at the end of a question to soften the tone",
         "ko": "조. 의문문 끝에서 어기를 부드럽게 하는 말",
         "ja": "助. 疑問文の末尾で語気を和らげる語"
-      }
+      },
+      "example": [
+        "你怎么还没走呀？"
+      ],
+      "examplePinyin": [
+        "nǐ zěn me hái méi zǒu ya ？"
+      ]
     },
     {
       "word": "导游",
@@ -5989,7 +8977,13 @@
         "en": "n. tour guide",
         "ko": "명. 관광 가이드",
         "ja": "名. ガイド"
-      }
+      },
+      "example": [
+        "那位导游很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi dǎo yóu hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "礼貌",
@@ -6001,7 +8995,13 @@
         "en": "n. politeness",
         "ko": "명. 예의, 예절",
         "ja": "名. 礼儀、礼貌"
-      }
+      },
+      "example": [
+        "我们聊聊礼貌吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo lǐ mào ba 。"
+      ]
     },
     {
       "word": "原谅",
@@ -6013,7 +9013,13 @@
         "en": "v. to forgive",
         "ko": "동. 용서하다",
         "ja": "動. 許す"
-      }
+      },
+      "example": [
+        "请你原谅我。"
+      ],
+      "examplePinyin": [
+        "qǐng nǐ yuán liàng wǒ 。"
+      ]
     },
     {
       "word": "挂",
@@ -6025,7 +9031,13 @@
         "en": "v. to hang, to put up",
         "ko": "동. 걸다, 붙이다",
         "ja": "動. 掛ける、掲げる"
-      }
+      },
+      "example": [
+        "我把衣服挂起来了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ yī fu guà qǐ lái le 。"
+      ]
     },
     {
       "word": "同情",
@@ -6037,7 +9049,13 @@
         "en": "v. to show sympathy for",
         "ko": "동. 동정하다",
         "ja": "動. 同情する"
-      }
+      },
+      "example": [
+        "我很同情他的情况。"
+      ],
+      "examplePinyin": [
+        "wǒ hěn tóng qíng tā de qíng kuàng 。"
+      ]
     },
     {
       "word": "推",
@@ -6049,7 +9067,13 @@
         "en": "v. to put off, to postpone",
         "ko": "동. 미루다",
         "ja": "動. 延ばす、延期する"
-      }
+      },
+      "example": [
+        "请推一下门。"
+      ],
+      "examplePinyin": [
+        "qǐng tuī yí xià mén 。"
+      ]
     },
     {
       "word": "预习",
@@ -6061,7 +9085,13 @@
         "en": "v. to prepare lessons before class",
         "ko": "동. 예습하다",
         "ja": "動. 予習する"
-      }
+      },
+      "example": [
+        "上课前要预习。"
+      ],
+      "examplePinyin": [
+        "shàng kè qián yào yù xí 。"
+      ]
     },
     {
       "word": "重点",
@@ -6073,7 +9103,13 @@
         "en": "n. focal point, emphasis",
         "ko": "명. 중점, 핵심",
         "ja": "名. 重点、要点"
-      }
+      },
+      "example": [
+        "我们聊聊重点吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo zhòng diǎn ba 。"
+      ]
     },
     {
       "word": "马虎",
@@ -6085,7 +9121,13 @@
         "en": "adj. careless, slipshod",
         "ko": "형. 대충 하는, 부주의한",
         "ja": "形. いい加減な、不注意な"
-      }
+      },
+      "example": [
+        "他今天看起来很马虎。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn mǎ hǔ 。"
+      ]
     },
     {
       "word": "自信",
@@ -6097,7 +9139,13 @@
         "en": "adj. self-confident",
         "ko": "형. 자신 있는",
         "ja": "形. 自信がある"
-      }
+      },
+      "example": [
+        "他今天看起来很自信。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn zì xìn 。"
+      ]
     },
     {
       "word": "冷静",
@@ -6109,7 +9157,13 @@
         "en": "adj. calm, composed",
         "ko": "형. 냉정한, 침착한",
         "ja": "形. 冷静な、落ち着いた"
-      }
+      },
+      "example": [
+        "他今天看起来很冷静。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn lěng jìng 。"
+      ]
     },
     {
       "word": "输",
@@ -6121,7 +9175,13 @@
         "en": "v. to lose, to suffer defeat",
         "ko": "동. 지다, 패하다",
         "ja": "動. 負ける"
-      }
+      },
+      "example": [
+        "我们这次输了比赛。"
+      ],
+      "examplePinyin": [
+        "wǒ men zhè cì shū le bǐ sài 。"
+      ]
     },
     {
       "word": "重视",
@@ -6133,7 +9193,13 @@
         "en": "v. to attach importance to",
         "ko": "동. 중시하다",
         "ja": "動. 重視する"
-      }
+      },
+      "example": [
+        "公司很重视这个项目。"
+      ],
+      "examplePinyin": [
+        "gōng sī hěn zhòng shì zhè ge xiàng mù 。"
+      ]
     },
     {
       "word": "敢",
@@ -6145,7 +9211,13 @@
         "en": "v. to dare",
         "ko": "동. 감히 하다, 용기 내다",
         "ja": "動. あえてする、勇気がある"
-      }
+      },
+      "example": [
+        "我不敢一个人去。"
+      ],
+      "examplePinyin": [
+        "wǒ bù gǎn yí gè rén qù 。"
+      ]
     },
     {
       "word": "尊重",
@@ -6157,7 +9229,13 @@
         "en": "v. to respect",
         "ko": "동. 존중하다",
         "ja": "動. 尊重する"
-      }
+      },
+      "example": [
+        "我们应该尊重别人。"
+      ],
+      "examplePinyin": [
+        "wǒ men yīng gāi zūn zhòng bié rén 。"
+      ]
     },
     {
       "word": "凉快",
@@ -6169,7 +9247,13 @@
         "en": "adj. pleasantly cool",
         "ko": "형. 시원하다, 서늘하다",
         "ja": "形. 涼しい、心地よく涼しい"
-      }
+      },
+      "example": [
+        "他今天看起来很凉快。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn liáng kuai 。"
+      ]
     },
     {
       "word": "热闹",
@@ -6181,7 +9265,13 @@
         "en": "adj. busy, bustling",
         "ko": "형. 떠들썩하다, 번화하다",
         "ja": "形. にぎやかだ"
-      }
+      },
+      "example": [
+        "他今天看起来很热闹。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn rè nào 。"
+      ]
     },
     {
       "word": "云",
@@ -6193,7 +9283,13 @@
         "en": "n. cloud",
         "ko": "명. 구름",
         "ja": "名. 雲"
-      }
+      },
+      "example": [
+        "这个云对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge yún duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "广播",
@@ -6205,7 +9301,13 @@
         "en": "n. broadcast, radio program",
         "ko": "명. 방송, 라디오 프로그램",
         "ja": "名. 放送、ラジオ番組"
-      }
+      },
+      "example": [
+        "这个广播对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge guǎng bō duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "照",
@@ -6217,7 +9319,13 @@
         "en": "v. to take a picture, to photograph",
         "ko": "동. 사진을 찍다",
         "ja": "動. 写真を撮る"
-      }
+      },
+      "example": [
+        "我们一起照张照片吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men yì qǐ zhào zhāng zhào piàn ba 。"
+      ]
     },
     {
       "word": "倒",
@@ -6229,7 +9337,13 @@
         "en": "adv. yet, actually; used to indicate contrast",
         "ko": "부. 오히려, 뜻밖에도; 대조를 나타냄",
         "ja": "副. かえって、意外にも; 対比を表す"
-      }
+      },
+      "example": [
+        "这件事倒不难。"
+      ],
+      "examplePinyin": [
+        "zhè jiàn shì dǎo bù nán 。"
+      ]
     },
     {
       "word": "毛",
@@ -6241,7 +9355,13 @@
         "en": "n. hair, fur",
         "ko": "명. 털, 모발",
         "ja": "名. 毛、毛皮"
-      }
+      },
+      "example": [
+        "他的毛有点不舒服。"
+      ],
+      "examplePinyin": [
+        "tā de máo yǒu diǎn bù shū fú 。"
+      ]
     },
     {
       "word": "抱",
@@ -6253,7 +9373,13 @@
         "en": "v. to hold in the arms, to hug",
         "ko": "동. 안다, 껴안다",
         "ja": "動. 抱く、抱きしめる"
-      }
+      },
+      "example": [
+        "妈妈抱着孩子。"
+      ],
+      "examplePinyin": [
+        "mā ma bào zhe hái zi 。"
+      ]
     },
     {
       "word": "干",
@@ -6265,7 +9391,13 @@
         "en": "v. to do, to act",
         "ko": "동. 하다, 행동하다",
         "ja": "動. する、やる"
-      }
+      },
+      "example": [
+        "我想干一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng gān yí xià 。"
+      ]
     },
     {
       "word": "严格",
@@ -6277,7 +9409,13 @@
         "en": "adj. strict, rigorous",
         "ko": "형. 엄격하다",
         "ja": "形. 厳格だ、厳しい"
-      }
+      },
+      "example": [
+        "老师对我们很严格。"
+      ],
+      "examplePinyin": [
+        "lǎo shī duì wǒ men hěn yán gé 。"
+      ]
     },
     {
       "word": "难受",
@@ -6289,7 +9427,13 @@
         "en": "adj. sad, unhappy; uncomfortable",
         "ko": "형. 괴롭다, 마음이 힘들다; 불편하다",
         "ja": "形. つらい、気分が悪い、悲しい"
-      }
+      },
+      "example": [
+        "我今天胃有点难受。"
+      ],
+      "examplePinyin": [
+        "wǒ jīn tiān wèi yǒu diǎn nán shòu 。"
+      ]
     },
     {
       "word": "趟",
@@ -6301,7 +9445,13 @@
         "en": "m. time; used for a round trip",
         "ko": "양. 왕복이나 이동 횟수를 세는 말",
         "ja": "量. 往復や移動の回数を数える語"
-      }
+      },
+      "example": [
+        "我今天去了一趟邮局。"
+      ],
+      "examplePinyin": [
+        "wǒ jīn tiān qù le yí tàng yóu jú 。"
+      ]
     },
     {
       "word": "放暑假",
@@ -6313,7 +9463,13 @@
         "en": "to be on summer vacation",
         "ko": "여름방학을 하다",
         "ja": "夏休みになる、夏休みを過ごす"
-      }
+      },
+      "example": [
+        "他今天要放暑假。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào fàng shǔ jià 。"
+      ]
     },
     {
       "word": "老虎",
@@ -6325,7 +9481,13 @@
         "en": "n. tiger",
         "ko": "명. 호랑이",
         "ja": "名. トラ"
-      }
+      },
+      "example": [
+        "这个老虎对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge lǎo hǔ duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "入口",
@@ -6337,7 +9499,13 @@
         "en": "n. entrance",
         "ko": "명. 입구",
         "ja": "名. 入口"
-      }
+      },
+      "example": [
+        "我在入口等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài rù kǒu děng nǐ 。"
+      ]
     },
     {
       "word": "排队",
@@ -6349,7 +9517,13 @@
         "en": "v. to form a line, to line up",
         "ko": "동. 줄을 서다",
         "ja": "動. 列に並ぶ"
-      }
+      },
+      "example": [
+        "他今天要排队。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào pái duì 。"
+      ]
     },
     {
       "word": "活泼",
@@ -6361,7 +9535,13 @@
         "en": "adj. lively, vivacious",
         "ko": "형. 활발하다, 생기 있다",
         "ja": "形. 活発だ、生き生きしている"
-      }
+      },
+      "example": [
+        "他今天看起来很活泼。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn huó pō 。"
+      ]
     },
     {
       "word": "社会",
@@ -6373,7 +9553,13 @@
         "en": "n. society",
         "ko": "명. 사회",
         "ja": "名. 社会"
-      }
+      },
+      "example": [
+        "我们聊聊社会吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo shè huì ba 。"
+      ]
     },
     {
       "word": "竞争",
@@ -6385,7 +9571,13 @@
         "en": "v. to compete",
         "ko": "동. 경쟁하다",
         "ja": "動. 競争する"
-      }
+      },
+      "example": [
+        "我想竞争一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng jìng zhēng yí xià 。"
+      ]
     },
     {
       "word": "森林",
@@ -6397,7 +9589,13 @@
         "en": "n. forest",
         "ko": "명. 숲, 삼림",
         "ja": "名. 森林"
-      }
+      },
+      "example": [
+        "我在森林等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài sēn lín děng nǐ 。"
+      ]
     },
     {
       "word": "剩",
@@ -6409,7 +9607,13 @@
         "en": "v. to be left over, to remain",
         "ko": "동. 남다",
         "ja": "動. 残る"
-      }
+      },
+      "example": [
+        "饭还剩一点。"
+      ],
+      "examplePinyin": [
+        "fàn hái shèng yì diǎn 。"
+      ]
     },
     {
       "word": "暖和",
@@ -6421,7 +9625,13 @@
         "en": "adj. warm",
         "ko": "형. 따뜻하다",
         "ja": "形. 暖かい"
-      }
+      },
+      "example": [
+        "今天外面很暖和。"
+      ],
+      "examplePinyin": [
+        "jīn tiān wài miàn hěn nuǎn huo 。"
+      ]
     },
     {
       "word": "海洋",
@@ -6433,7 +9643,13 @@
         "en": "n. sea, ocean",
         "ko": "명. 바다, 해양",
         "ja": "名. 海洋、海"
-      }
+      },
+      "example": [
+        "我在海洋等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài hǎi yáng děng nǐ 。"
+      ]
     },
     {
       "word": "底",
@@ -6445,7 +9661,13 @@
         "en": "n. bottom, base",
         "ko": "명. 바닥, 밑",
         "ja": "名. 底、基部"
-      }
+      },
+      "example": [
+        "这个底对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge dǐ duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "美人鱼",
@@ -6457,7 +9679,13 @@
         "en": "n. mermaid",
         "ko": "명. 인어",
         "ja": "名. 人魚"
-      }
+      },
+      "example": [
+        "这个美人鱼对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge měi rén yú duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "公里",
@@ -6469,7 +9697,13 @@
         "en": "m. kilometer",
         "ko": "양. 킬로미터",
         "ja": "量. キロメートル"
-      }
+      },
+      "example": [
+        "从这里到学校有两公里。"
+      ],
+      "examplePinyin": [
+        "cóng zhè lǐ dào xué xiào yǒu liǎng gōng lǐ 。"
+      ]
     },
     {
       "word": "仍然",
@@ -6481,7 +9715,13 @@
         "en": "adv. still, yet",
         "ko": "부. 여전히, 아직도",
         "ja": "副. 依然として、なお"
-      }
+      },
+      "example": [
+        "他仍然住在北京。"
+      ],
+      "examplePinyin": [
+        "tā réng rán zhù zài běi jīng 。"
+      ]
     },
     {
       "word": "排列",
@@ -6493,7 +9733,13 @@
         "en": "v. to put in order, to arrange",
         "ko": "동. 배열하다, 정렬하다",
         "ja": "動. 配列する、並べる"
-      }
+      },
+      "example": [
+        "请把这些数字排列好。"
+      ],
+      "examplePinyin": [
+        "qǐng bǎ zhè xiē shù zì pái liè hǎo 。"
+      ]
     },
     {
       "word": "梦",
@@ -6505,7 +9751,13 @@
         "en": "n. dream",
         "ko": "명. 꿈",
         "ja": "名. 夢"
-      }
+      },
+      "example": [
+        "我们聊聊梦吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo mèng ba 。"
+      ]
     },
     {
       "word": "降落",
@@ -6517,7 +9769,13 @@
         "en": "v. to descend, to land",
         "ko": "착륙하다",
         "ja": "降下する、着陸する"
-      }
+      },
+      "example": [
+        "他今天要降落。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào jiàng luò 。"
+      ]
     },
     {
       "word": "火",
@@ -6529,7 +9787,13 @@
         "en": "adj. hot, popular",
         "ko": "인기 있다",
         "ja": "人気がある"
-      }
+      },
+      "example": [
+        "这家店最近很火。"
+      ],
+      "examplePinyin": [
+        "zhè jiā diàn zuì jìn hěn huǒ 。"
+      ]
     },
     {
       "word": "作者",
@@ -6541,7 +9805,13 @@
         "en": "n. author",
         "ko": "저자",
         "ja": "作者"
-      }
+      },
+      "example": [
+        "这个作者对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge zuò zhě duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "交通",
@@ -6553,7 +9823,13 @@
         "en": "n. traffic, communication",
         "ko": "교통, 통신",
         "ja": "交通、通信"
-      }
+      },
+      "example": [
+        "我们聊聊交通吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jiāo tōng ba 。"
+      ]
     },
     {
       "word": "技术",
@@ -6565,7 +9841,13 @@
         "en": "n. technology",
         "ko": "기술",
         "ja": "技術"
-      }
+      },
+      "example": [
+        "我们聊聊技术吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo jì shù ba 。"
+      ]
     },
     {
       "word": "是否",
@@ -6577,7 +9859,13 @@
         "en": "adv. if, whether",
         "ko": "~인지 아닌지, 여부",
         "ja": "〜かどうか"
-      }
+      },
+      "example": [
+        "我还不知道他是否同意。"
+      ],
+      "examplePinyin": [
+        "wǒ hái bù zhī dào tā shì fǒu tóng yì 。"
+      ]
     },
     {
       "word": "秒",
@@ -6589,7 +9877,13 @@
         "en": "m. second, 1/60 minute",
         "ko": "초",
         "ja": "秒"
-      }
+      },
+      "example": [
+        "请等我十秒。"
+      ],
+      "examplePinyin": [
+        "qǐng děng wǒ shí miǎo 。"
+      ]
     },
     {
       "word": "方式",
@@ -6601,7 +9895,13 @@
         "en": "n. way, mode",
         "ko": "방식",
         "ja": "方式"
-      }
+      },
+      "example": [
+        "我们聊聊方式吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo fāng shì ba 。"
+      ]
     },
     {
       "word": "受不了",
@@ -6613,7 +9913,13 @@
         "en": "cannot stand, cannot bear",
         "ko": "견딜 수 없다",
         "ja": "耐えられない"
-      }
+      },
+      "example": [
+        "我想受不了一下。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng shòu bù liǎo yí xià 。"
+      ]
     },
     {
       "word": "日记",
@@ -6625,7 +9931,13 @@
         "en": "n. diary, journal",
         "ko": "일기",
         "ja": "日記"
-      }
+      },
+      "example": [
+        "这个日记对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge rì jì duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "安全",
@@ -6637,7 +9949,13 @@
         "en": "adj. safe, secure",
         "ko": "안전하다",
         "ja": "安全な"
-      }
+      },
+      "example": [
+        "晚上开车要注意安全。"
+      ],
+      "examplePinyin": [
+        "wǎn shàng kāi chē yào zhù yì ān quán 。"
+      ]
     },
     {
       "word": "密码",
@@ -6649,7 +9967,13 @@
         "en": "n. password",
         "ko": "비밀번호",
         "ja": "パスワード"
-      }
+      },
+      "example": [
+        "我把密码放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ mì mǎ fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "允许",
@@ -6661,7 +9985,13 @@
         "en": "v. to allow, to permit",
         "ko": "허락하다",
         "ja": "許可する"
-      }
+      },
+      "example": [
+        "老师允许我们提前走。"
+      ],
+      "examplePinyin": [
+        "lǎo shī yǔn xǔ wǒ men tí qián zǒu 。"
+      ]
     },
     {
       "word": "座",
@@ -6673,7 +10003,13 @@
         "en": "m. used for bridges, mountains, buildings, etc.",
         "ko": "다리/산/건물 등에 쓰는 양사",
         "ja": "橋・山・建物などに使う量詞"
-      }
+      },
+      "example": [
+        "河上有一座桥。"
+      ],
+      "examplePinyin": [
+        "hé shàng yǒu yí zuò qiáo 。"
+      ]
     },
     {
       "word": "桥",
@@ -6685,7 +10021,13 @@
         "en": "n. bridge",
         "ko": "다리",
         "ja": "橋"
-      }
+      },
+      "example": [
+        "这个桥对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge qiáo duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "危险",
@@ -6697,7 +10039,13 @@
         "en": "adj. dangerous",
         "ko": "위험하다",
         "ja": "危険な"
-      }
+      },
+      "example": [
+        "这样做很危险。"
+      ],
+      "examplePinyin": [
+        "zhè yàng zuò hěn wēi xiǎn 。"
+      ]
     },
     {
       "word": "接着",
@@ -6709,7 +10057,13 @@
         "en": "adv. then, immediately after that",
         "ko": "이어서, 바로 그다음",
         "ja": "続いて、その次に"
-      }
+      },
+      "example": [
+        "吃完饭，接着我们去散步。"
+      ],
+      "examplePinyin": [
+        "chī wán fàn ， jiē zhe wǒ men qù sàn bù 。"
+      ]
     },
     {
       "word": "警察",
@@ -6721,7 +10075,13 @@
         "en": "n. police",
         "ko": "경찰",
         "ja": "警察"
-      }
+      },
+      "example": [
+        "那位警察很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi jǐng chá hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "抓",
@@ -6733,7 +10093,13 @@
         "en": "v. to catch, to arrest",
         "ko": "붙잡다, 체포하다",
         "ja": "捕まえる、逮捕する"
-      }
+      },
+      "example": [
+        "警察抓住了小偷。"
+      ],
+      "examplePinyin": [
+        "jǐng chá zhuā zhù le xiǎo tōu 。"
+      ]
     },
     {
       "word": "咸",
@@ -6745,7 +10111,13 @@
         "en": "adj. salty",
         "ko": "짜다",
         "ja": "塩辛い"
-      }
+      },
+      "example": [
+        "这个菜有点咸。"
+      ],
+      "examplePinyin": [
+        "zhè ge cài yǒu diǎn xián 。"
+      ]
     },
     {
       "word": "矿泉水",
@@ -6757,7 +10129,13 @@
         "en": "n. mineral water",
         "ko": "생수, 미네랄워터",
         "ja": "ミネラルウォーター"
-      }
+      },
+      "example": [
+        "我想吃一点矿泉水。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn kuàng quán shuǐ 。"
+      ]
     },
     {
       "word": "付款",
@@ -6769,7 +10147,13 @@
         "en": "to pay a sum of money",
         "ko": "돈을 지불하다",
         "ja": "支払う"
-      }
+      },
+      "example": [
+        "他今天要付款。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào fù kuǎn 。"
+      ]
     },
     {
       "word": "举",
@@ -6781,7 +10165,13 @@
         "en": "v. to give, to enumerate",
         "ko": "예를 들다, 열거하다",
         "ja": "挙げる、列挙する"
-      }
+      },
+      "example": [
+        "我举一个例子。"
+      ],
+      "examplePinyin": [
+        "wǒ jǔ yí gè lì zǐ 。"
+      ]
     },
     {
       "word": "迷路",
@@ -6793,7 +10183,13 @@
         "en": "v. to lose one's way",
         "ko": "길을 잃다",
         "ja": "道に迷う"
-      }
+      },
+      "example": [
+        "他今天要迷路。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào mí lù 。"
+      ]
     },
     {
       "word": "地址",
@@ -6805,7 +10201,13 @@
         "en": "n. address",
         "ko": "주소",
         "ja": "住所"
-      }
+      },
+      "example": [
+        "我们聊聊地址吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo dì zhǐ ba 。"
+      ]
     },
     {
       "word": "地点",
@@ -6817,7 +10219,13 @@
         "en": "n. place, site",
         "ko": "장소",
         "ja": "場所"
-      }
+      },
+      "example": [
+        "我在地点等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài dì diǎn děng nǐ 。"
+      ]
     },
     {
       "word": "世纪",
@@ -6829,7 +10237,13 @@
         "en": "n. century",
         "ko": "세기",
         "ja": "世紀"
-      }
+      },
+      "example": [
+        "世纪我喜欢在家休息。"
+      ],
+      "examplePinyin": [
+        "shì jì wǒ xǐ huan zài jiā xiū xi 。"
+      ]
     },
     {
       "word": "邮局",
@@ -6841,7 +10255,13 @@
         "en": "n. post office",
         "ko": "우체국",
         "ja": "郵便局"
-      }
+      },
+      "example": [
+        "我在邮局等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài yóu jú děng nǐ 。"
+      ]
     },
     {
       "word": "收",
@@ -6853,7 +10273,13 @@
         "en": "v. to receive",
         "ko": "받다",
         "ja": "受け取る"
-      }
+      },
+      "example": [
+        "我收到了你的短信。"
+      ],
+      "examplePinyin": [
+        "wǒ shōu dào le nǐ de duǎn xìn 。"
+      ]
     },
     {
       "word": "信封",
@@ -6865,7 +10291,13 @@
         "en": "n. envelope",
         "ko": "봉투",
         "ja": "封筒"
-      }
+      },
+      "example": [
+        "我把信封放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ xìn fēng fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "网站",
@@ -6877,7 +10309,13 @@
         "en": "n. website",
         "ko": "웹사이트",
         "ja": "ウェブサイト"
-      }
+      },
+      "example": [
+        "这个网站对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge wǎng zhàn duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "信息",
@@ -6889,7 +10327,13 @@
         "en": "n. news, information",
         "ko": "소식, 정보",
         "ja": "情報"
-      }
+      },
+      "example": [
+        "我们聊聊信息吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo xìn xī ba 。"
+      ]
     },
     {
       "word": "学期",
@@ -6901,7 +10345,13 @@
         "en": "n. term, semester",
         "ko": "학기",
         "ja": "学期"
-      }
+      },
+      "example": [
+        "学期我喜欢在家休息。"
+      ],
+      "examplePinyin": [
+        "xué qī wǒ xǐ huan zài jiā xiū xi 。"
+      ]
     },
     {
       "word": "出生",
@@ -6913,7 +10363,13 @@
         "en": "v. to be born",
         "ko": "태어나다",
         "ja": "生まれる"
-      }
+      },
+      "example": [
+        "他今天要出生。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào chū shēng 。"
+      ]
     },
     {
       "word": "性别",
@@ -6925,7 +10381,13 @@
         "en": "n. sex, gender",
         "ko": "성별",
         "ja": "性別"
-      }
+      },
+      "example": [
+        "我们聊聊性别吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo xìng bié ba 。"
+      ]
     },
     {
       "word": "道歉",
@@ -6937,7 +10399,13 @@
         "en": "v. to apologize",
         "ko": "사과하다",
         "ja": "謝る"
-      }
+      },
+      "example": [
+        "他今天要道歉。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào dào qiàn 。"
+      ]
     },
     {
       "word": "打印",
@@ -6949,7 +10417,13 @@
         "en": "v. to print out",
         "ko": "인쇄하다",
         "ja": "印刷する"
-      }
+      },
+      "example": [
+        "我去打印文件。"
+      ],
+      "examplePinyin": [
+        "wǒ qù dǎ yìn wén jiàn 。"
+      ]
     },
     {
       "word": "复印",
@@ -6961,7 +10435,13 @@
         "en": "v. to photocopy, to xerox",
         "ko": "복사하다",
         "ja": "コピーする"
-      }
+      },
+      "example": [
+        "请帮我复印一份。"
+      ],
+      "examplePinyin": [
+        "qǐng bāng wǒ fù yìn yí fèn 。"
+      ]
     },
     {
       "word": "饺子",
@@ -6973,7 +10453,13 @@
         "en": "n. jiaozi, dumpling",
         "ko": "만두",
         "ja": "餃子"
-      }
+      },
+      "example": [
+        "我想吃一点饺子。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn jiǎo zǐ 。"
+      ]
     },
     {
       "word": "刀",
@@ -6985,7 +10471,13 @@
         "en": "n. knife",
         "ko": "칼",
         "ja": "ナイフ、包丁"
-      }
+      },
+      "example": [
+        "我把刀放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ dāo fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "破",
@@ -6997,7 +10489,13 @@
         "en": "adj. broken, torn",
         "ko": "찢어진, 깨진",
         "ja": "破れた、壊れた"
-      }
+      },
+      "example": [
+        "我的包破了。"
+      ],
+      "examplePinyin": [
+        "wǒ de bāo pò le 。"
+      ]
     },
     {
       "word": "脱",
@@ -7009,7 +10507,13 @@
         "en": "v. to take off",
         "ko": "벗다",
         "ja": "脱ぐ"
-      }
+      },
+      "example": [
+        "进屋前请脱鞋。"
+      ],
+      "examplePinyin": [
+        "jìn wū qián qǐng tuō xié 。"
+      ]
     },
     {
       "word": "理发",
@@ -7021,7 +10525,13 @@
         "en": "v. to get a haircut",
         "ko": "이발하다",
         "ja": "散髪する"
-      }
+      },
+      "example": [
+        "他今天要理发。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào lǐ fā 。"
+      ]
     },
     {
       "word": "包子",
@@ -7033,7 +10543,13 @@
         "en": "n. steamed stuffed bun",
         "ko": "찐빵, 바오쯔",
         "ja": "肉まん、包子"
-      }
+      },
+      "example": [
+        "我想吃一点包子。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn bāo zǐ 。"
+      ]
     },
     {
       "word": "零钱",
@@ -7045,7 +10561,13 @@
         "en": "n. small change",
         "ko": "잔돈",
         "ja": "小銭"
-      }
+      },
+      "example": [
+        "这个零钱对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge líng qián duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "打招呼",
@@ -7057,7 +10579,13 @@
         "en": "to greet, to say hello",
         "ko": "인사하다",
         "ja": "挨拶する"
-      }
+      },
+      "example": [
+        "他今天要打招呼。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào dǎ zhāo hū 。"
+      ]
     },
     {
       "word": "戴",
@@ -7069,7 +10597,13 @@
         "en": "v. to wear (accessories)",
         "ko": "착용하다",
         "ja": "身につける"
-      }
+      },
+      "example": [
+        "他戴着眼镜。"
+      ],
+      "examplePinyin": [
+        "tā dài zhuó yǎn jìng 。"
+      ]
     },
     {
       "word": "眼镜",
@@ -7081,7 +10615,13 @@
         "en": "n. glasses, spectacles",
         "ko": "안경",
         "ja": "眼鏡"
-      }
+      },
+      "example": [
+        "我把眼镜放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ yǎn jìng fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "舞蹈",
@@ -7093,7 +10633,13 @@
         "en": "n. dance",
         "ko": "춤, 무용",
         "ja": "舞踊、ダンス"
-      }
+      },
+      "example": [
+        "我们聊聊舞蹈吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo wǔ dǎo ba 。"
+      ]
     },
     {
       "word": "国籍",
@@ -7105,7 +10651,13 @@
         "en": "n. nationality, citizenship",
         "ko": "국적",
         "ja": "国籍"
-      }
+      },
+      "example": [
+        "我们聊聊国籍吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo guó jí ba 。"
+      ]
     },
     {
       "word": "抬",
@@ -7117,7 +10669,13 @@
         "en": "v. to lift, to raise",
         "ko": "들다, 올리다",
         "ja": "持ち上げる"
-      }
+      },
+      "example": [
+        "请把桌子抬一下。"
+      ],
+      "examplePinyin": [
+        "qǐng bǎ zhuō zi tái yí xià 。"
+      ]
     },
     {
       "word": "胳膊",
@@ -7129,7 +10687,13 @@
         "en": "n. arm",
         "ko": "팔",
         "ja": "腕"
-      }
+      },
+      "example": [
+        "他的胳膊有点不舒服。"
+      ],
+      "examplePinyin": [
+        "tā de gē bo yǒu diǎn bù shū fú 。"
+      ]
     },
     {
       "word": "转",
@@ -7141,7 +10705,13 @@
         "en": "v. to turn, to shift",
         "ko": "돌리다, 바꾸다",
         "ja": "回す、移す"
-      }
+      },
+      "example": [
+        "前面路口右转。"
+      ],
+      "examplePinyin": [
+        "qián miàn lù kǒu yòu zhuǎn 。"
+      ]
     },
     {
       "word": "租",
@@ -7153,7 +10723,13 @@
         "en": "v. to rent, to lease",
         "ko": "빌리다, 임대하다",
         "ja": "借りる、賃貸する"
-      }
+      },
+      "example": [
+        "我想租一套房子。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng zū yí tào fáng zi 。"
+      ]
     },
     {
       "word": "吵",
@@ -7165,7 +10741,13 @@
         "en": "adj. noisy",
         "ko": "시끄럽다",
         "ja": "うるさい"
-      }
+      },
+      "example": [
+        "楼下太吵了。"
+      ],
+      "examplePinyin": [
+        "lóu xià tài chǎo le 。"
+      ]
     },
     {
       "word": "厨房",
@@ -7177,7 +10759,13 @@
         "en": "n. kitchen",
         "ko": "부엌",
         "ja": "台所"
-      }
+      },
+      "example": [
+        "我在厨房等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài chú fáng děng nǐ 。"
+      ]
     },
     {
       "word": "房东",
@@ -7189,7 +10777,13 @@
         "en": "n. landlord/landlady",
         "ko": "집주인",
         "ja": "大家、家主"
-      }
+      },
+      "example": [
+        "那位房东很友好。"
+      ],
+      "examplePinyin": [
+        "nà wèi fáng dōng hěn yǒu hǎo 。"
+      ]
     },
     {
       "word": "占线",
@@ -7201,7 +10795,13 @@
         "en": "v. (of a telephone line) to be busy, to be engaged",
         "ko": "통화 중이다",
         "ja": "話し中である"
-      }
+      },
+      "example": [
+        "他今天要占线。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào zhàn xiàn 。"
+      ]
     },
     {
       "word": "功夫",
@@ -7213,7 +10813,13 @@
         "en": "n. kung fu",
         "ko": "쿵푸",
         "ja": "カンフー"
-      }
+      },
+      "example": [
+        "我们聊聊功夫吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo gōng fū ba 。"
+      ]
     },
     {
       "word": "乒乓球",
@@ -7225,7 +10831,13 @@
         "en": "n. table tennis, ping-pong",
         "ko": "탁구",
         "ja": "卓球"
-      }
+      },
+      "example": [
+        "这个乒乓球对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge pīng pāng qiú duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "羽毛球",
@@ -7237,7 +10849,13 @@
         "en": "n. badminton",
         "ko": "배드민턴",
         "ja": "バドミントン"
-      }
+      },
+      "example": [
+        "这个羽毛球对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge yǔ máo qiú duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "场",
@@ -7249,7 +10867,13 @@
         "en": "m. used for sports or recreational events, etc.",
         "ko": "경기/행사 등에 쓰는 양사",
         "ja": "試合・催しなどに使う量詞"
-      }
+      },
+      "example": [
+        "我们看了一场比赛。"
+      ],
+      "examplePinyin": [
+        "wǒ men kàn le yì chǎng bǐ sài 。"
+      ]
     },
     {
       "word": "禁止",
@@ -7261,7 +10885,13 @@
         "en": "v. to prohibit, to forbid",
         "ko": "금지하다",
         "ja": "禁止する"
-      }
+      },
+      "example": [
+        "这里禁止停车。"
+      ],
+      "examplePinyin": [
+        "zhè lǐ jìn zhǐ tíng chē 。"
+      ]
     },
     {
       "word": "座位",
@@ -7273,7 +10903,13 @@
         "en": "n. seat",
         "ko": "좌석",
         "ja": "座席"
-      }
+      },
+      "example": [
+        "我们聊聊座位吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo zuò wèi ba 。"
+      ]
     },
     {
       "word": "加油站",
@@ -7285,7 +10921,13 @@
         "en": "gas station",
         "ko": "주유소",
         "ja": "ガソリンスタンド"
-      }
+      },
+      "example": [
+        "我在加油站等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài jiā yóu zhàn děng nǐ 。"
+      ]
     },
     {
       "word": "航班",
@@ -7297,7 +10939,13 @@
         "en": "scheduled flight",
         "ko": "항공편",
         "ja": "定期便、フライト"
-      }
+      },
+      "example": [
+        "我们聊聊航班吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo háng bān ba 。"
+      ]
     },
     {
       "word": "推迟",
@@ -7309,7 +10957,13 @@
         "en": "to postpone, to delay",
         "ko": "연기하다, 지연하다",
         "ja": "延期する、遅らせる"
-      }
+      },
+      "example": [
+        "会议推迟到明天。"
+      ],
+      "examplePinyin": [
+        "huì yì tuī chí dào míng tiān 。"
+      ]
     },
     {
       "word": "高速公路",
@@ -7321,7 +10975,13 @@
         "en": "expressway",
         "ko": "고속도로",
         "ja": "高速道路"
-      }
+      },
+      "example": [
+        "这个高速公路对我很重要。"
+      ],
+      "examplePinyin": [
+        "zhè ge gāo sù gōng lù duì wǒ hěn zhòng yào 。"
+      ]
     },
     {
       "word": "登机牌",
@@ -7333,7 +10993,13 @@
         "en": "boarding pass",
         "ko": "탑승권",
         "ja": "搭乗券"
-      }
+      },
+      "example": [
+        "我把登机牌放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ dēng jī pái fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "首都",
@@ -7345,7 +11011,13 @@
         "en": "capital (of a country)",
         "ko": "수도",
         "ja": "首都"
-      }
+      },
+      "example": [
+        "我在首都等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài shǒu dū děng nǐ 。"
+      ]
     },
     {
       "word": "旅行",
@@ -7357,7 +11029,13 @@
         "en": "to travel, to tour",
         "ko": "여행하다",
         "ja": "旅行する"
-      }
+      },
+      "example": [
+        "他今天要旅行。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào lǚ xíng 。"
+      ]
     },
     {
       "word": "怪",
@@ -7369,7 +11047,13 @@
         "en": "rather, quite",
         "ko": "꽤, 상당히",
         "ja": "かなり、ずいぶん"
-      }
+      },
+      "example": [
+        "今天怪冷的。"
+      ],
+      "examplePinyin": [
+        "jīn tiān guài lěng de 。"
+      ]
     },
     {
       "word": "可怜",
@@ -7381,7 +11065,13 @@
         "en": "pitiable, poor",
         "ko": "불쌍하다, 가엾다",
         "ja": "かわいそうな、気の毒な"
-      }
+      },
+      "example": [
+        "他今天看起来很可怜。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn kě lián 。"
+      ]
     },
     {
       "word": "对面",
@@ -7393,7 +11083,13 @@
         "en": "opposite, across",
         "ko": "맞은편, 건너편",
         "ja": "向かい、反対側"
-      }
+      },
+      "example": [
+        "我在对面等你。"
+      ],
+      "examplePinyin": [
+        "wǒ zài duì miàn děng nǐ 。"
+      ]
     },
     {
       "word": "烤鸭",
@@ -7405,7 +11101,13 @@
         "en": "roast duck",
         "ko": "오리구이",
         "ja": "ローストダック"
-      }
+      },
+      "example": [
+        "我想吃一点烤鸭。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn kǎo yā 。"
+      ]
     },
     {
       "word": "祝贺",
@@ -7417,7 +11119,13 @@
         "en": "to congratulate",
         "ko": "축하하다",
         "ja": "祝う、祝賀する"
-      }
+      },
+      "example": [
+        "祝贺你通过考试。"
+      ],
+      "examplePinyin": [
+        "zhù hè nǐ tōng guò kǎo shì 。"
+      ]
     },
     {
       "word": "合格",
@@ -7429,7 +11137,13 @@
         "en": "qualified, up to standard",
         "ko": "합격이다, 기준에 맞다",
         "ja": "合格している、基準に達している"
-      }
+      },
+      "example": [
+        "他今天看起来很合格。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān kàn qǐ lái hěn hé gé 。"
+      ]
     },
     {
       "word": "干杯",
@@ -7441,7 +11155,13 @@
         "en": "to drink a toast",
         "ko": "건배하다",
         "ja": "乾杯する"
-      }
+      },
+      "example": [
+        "他今天要干杯。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào gān bēi 。"
+      ]
     },
     {
       "word": "民族",
@@ -7453,7 +11173,13 @@
         "en": "nationality, ethnic group",
         "ko": "민족, 종족 집단",
         "ja": "民族、エスニックグループ"
-      }
+      },
+      "example": [
+        "我们聊聊民族吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo mín zú ba 。"
+      ]
     },
     {
       "word": "打扮",
@@ -7465,7 +11191,13 @@
         "en": "to dress up, to deck out",
         "ko": "꾸미다, 차려입다",
         "ja": "着飾る、装う"
-      }
+      },
+      "example": [
+        "他今天要打扮。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào dǎ bàn 。"
+      ]
     },
     {
       "word": "笑话",
@@ -7477,7 +11209,13 @@
         "en": "joke",
         "ko": "농담, 우스갯소리",
         "ja": "冗談、笑い話"
-      }
+      },
+      "example": [
+        "我们聊聊笑话吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo xiào huà ba 。"
+      ]
     },
     {
       "word": "存",
@@ -7489,7 +11227,13 @@
         "en": "to store, to keep",
         "ko": "보관하다, 저장하다",
         "ja": "預ける、保存する"
-      }
+      },
+      "example": [
+        "我把钱存在银行。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ qián cún zài yín háng 。"
+      ]
     },
     {
       "word": "钥匙",
@@ -7501,7 +11245,13 @@
         "en": "key",
         "ko": "열쇠",
         "ja": "鍵"
-      }
+      },
+      "example": [
+        "我把钥匙放在桌上了。"
+      ],
+      "examplePinyin": [
+        "wǒ bǎ yào shi fàng zài zhuō shàng le 。"
+      ]
     },
     {
       "word": "究竟",
@@ -7513,7 +11263,13 @@
         "en": "exactly (used in questions for emphasis)",
         "ko": "도대체, 정확히",
         "ja": "いったい、結局"
-      }
+      },
+      "example": [
+        "这究竟是怎么回事？"
+      ],
+      "examplePinyin": [
+        "zhè jiū jìng shì zěn me huí shì ？"
+      ]
     },
     {
       "word": "棵",
@@ -7525,7 +11281,13 @@
         "en": "measure word for plants",
         "ko": "그루, 포기",
         "ja": "本、株（植物を数える量詞）"
-      }
+      },
+      "example": [
+        "院子里有一棵树。"
+      ],
+      "examplePinyin": [
+        "yuàn zi lǐ yǒu yì kē shù 。"
+      ]
     },
     {
       "word": "汤",
@@ -7537,7 +11299,13 @@
         "en": "soup",
         "ko": "국, 탕",
         "ja": "スープ"
-      }
+      },
+      "example": [
+        "我想吃一点汤。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn tāng 。"
+      ]
     },
     {
       "word": "对话",
@@ -7549,7 +11317,13 @@
         "en": "to have a dialogue",
         "ko": "대화하다",
         "ja": "対話する、会話する"
-      }
+      },
+      "example": [
+        "我们用普通话对话吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men yòng pǔ tōng huà duì huà ba 。"
+      ]
     },
     {
       "word": "普通话",
@@ -7561,7 +11335,13 @@
         "en": "Mandarin Chinese",
         "ko": "표준 중국어, 보통화",
         "ja": "普通話、標準中国語"
-      }
+      },
+      "example": [
+        "我们聊聊普通话吧。"
+      ],
+      "examplePinyin": [
+        "wǒ men liáo liáo pǔ tōng huà ba 。"
+      ]
     },
     {
       "word": "小吃",
@@ -7573,7 +11353,13 @@
         "en": "small and cheap dishes",
         "ko": "간단하고 값싼 음식, 간식거리",
         "ja": "軽食、安くて小さな料理"
-      }
+      },
+      "example": [
+        "我想吃一点小吃。"
+      ],
+      "examplePinyin": [
+        "wǒ xiǎng chī yì diǎn xiǎo chī 。"
+      ]
     },
     {
       "word": "收拾",
@@ -7585,7 +11371,13 @@
         "en": "to put in order, to pack",
         "ko": "정리하다, 챙기다",
         "ja": "片づける、荷造りする"
-      }
+      },
+      "example": [
+        "我先收拾一下房间。"
+      ],
+      "examplePinyin": [
+        "wǒ xiān shōu shí yí xià fáng jiān 。"
+      ]
     },
     {
       "word": "出发",
@@ -7597,7 +11389,13 @@
         "en": "to depart, to set off",
         "ko": "출발하다",
         "ja": "出発する"
-      }
+      },
+      "example": [
+        "他今天要出发。"
+      ],
+      "examplePinyin": [
+        "tā jīn tiān yào chū fā 。"
+      ]
     },
     {
       "word": "辣",
@@ -7609,7 +11407,13 @@
         "en": "hot, spicy",
         "ko": "맵다",
         "ja": "辛い"
-      }
+      },
+      "example": [
+        "这个菜有点辣。"
+      ],
+      "examplePinyin": [
+        "zhè ge cài yǒu diǎn là 。"
+      ]
     },
     {
       "word": "香",
@@ -7621,7 +11425,13 @@
         "en": "fragrant, scented",
         "ko": "향기롭다, 고소하다",
         "ja": "香りがよい"
-      }
+      },
+      "example": [
+        "这个菜有点香。"
+      ],
+      "examplePinyin": [
+        "zhè ge cài yǒu diǎn xiāng 。"
+      ]
     },
     {
       "word": "酸",
@@ -7633,7 +11443,13 @@
         "en": "sour, tart",
         "ko": "시다, 새콤하다",
         "ja": "酸っぱい"
-      }
+      },
+      "example": [
+        "这个菜有点酸。"
+      ],
+      "examplePinyin": [
+        "zhè ge cài yǒu diǎn suān 。"
+      ]
     }
   ]
 }

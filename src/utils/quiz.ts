@@ -10,6 +10,8 @@ export type QuizQuestion = {
   step: number;
   lessonId: number;
   answer: string;
+  exampleSentence: string;
+  examplePinyin: string;
   options: string[];
 };
 
@@ -52,6 +54,8 @@ export function createQuizQuestion(
     step: entry.step,
     lessonId: entry.lessonId,
     answer,
+    exampleSentence: getExampleSentence(entry),
+    examplePinyin: getExamplePinyin(entry),
     options: stableShuffle([answer, ...distractors], entry.id).slice(0, optionCount),
   };
 }
@@ -145,6 +149,16 @@ function hasSharedPos(targetPos: Set<string>, candidatePos: string): boolean {
     if (targetPos.has(token)) return true;
   }
   return false;
+}
+
+function getExampleSentence(entry: ChineseVocabEntry): string {
+  const existingExample = entry.example.find((example) => example.trim().length > 0);
+  return existingExample ?? `我刚刚学会了「${entry.word}」这个词。`;
+}
+
+function getExamplePinyin(entry: ChineseVocabEntry): string {
+  const existingExamplePinyin = entry.examplePinyin.find((examplePinyin) => examplePinyin.trim().length > 0);
+  return existingExamplePinyin ?? "";
 }
 
 function stableShuffle(values: string[], seed: string): string[] {

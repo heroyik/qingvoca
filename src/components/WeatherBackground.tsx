@@ -27,7 +27,18 @@ const WEATHER_DIM: Record<WeatherType, string> = {
   RAIN: "rgba(17, 24, 39, 0.26)",
   SNOW: "rgba(226, 238, 247, 0.14)",
   THUNDER: "rgba(8, 13, 24, 0.38)",
+  WIND: "rgba(255, 255, 255, 0.08)",
   LOADING: "rgba(17, 24, 39, 0.08)",
+};
+
+const WEATHER_META: Record<WeatherType, { label: string; icon: string }> = {
+  CLEAR: { label: "Sunny", icon: "☀️" },
+  CLOUDY: { label: "Cloudy", icon: "☁️" },
+  RAIN: { label: "Rainy", icon: "🌧️" },
+  SNOW: { label: "Snowy", icon: "❄️" },
+  THUNDER: { label: "Thunder", icon: "⛈️" },
+  WIND: { label: "Windy", icon: "💨" },
+  LOADING: { label: "Weather", icon: "⌁" },
 };
 
 function statusLabel(step: UpdateStep) {
@@ -90,7 +101,7 @@ function WeatherProgress({ step, timeOfDay, onRetry }: { step: UpdateStep; timeO
 }
 
 export function WeatherBackground() {
-  const { type, timeOfDay, sunrise, sunset, maxTemp, minTemp, locationName, updateStep, refresh } = useWeather();
+  const { type, timeOfDay, sunrise, sunset, maxTemp, minTemp, windSpeed, locationName, moonPhase, updateStep, refresh } = useWeather();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particles = useRef<Particle[]>([]);
   const frameId = useRef<number>(0);
@@ -142,6 +153,17 @@ export function WeatherBackground() {
             w: 180 + Math.random() * 160,
             h: 55 + Math.random() * 45,
             vx: Math.random() > 0.5 ? 1 : -1,
+          });
+        }
+      } else if (type === "WIND") {
+        for (let i = 0; i < 76; i += 1) {
+          particles.current.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            speed: Math.random() * 4 + 3.5,
+            size: Math.random() * 34 + 28,
+            opacity: Math.random() * 0.24 + 0.16,
+            vx: Math.random() * 0.8 + 0.9,
           });
         }
       }
@@ -198,6 +220,29 @@ export function WeatherBackground() {
           if (particle.x - particle.w / 2 > canvas.width) particle.x = -particle.w / 2;
           if (particle.x + particle.w / 2 < 0) particle.x = canvas.width + particle.w / 2;
         });
+      } else if (type === "WIND") {
+        particles.current.forEach((particle) => {
+          ctx.globalAlpha = particle.opacity;
+          ctx.strokeStyle = "rgba(255,255,255,0.62)";
+          ctx.lineWidth = 1.4;
+          ctx.beginPath();
+          ctx.moveTo(particle.x, particle.y);
+          ctx.bezierCurveTo(
+            particle.x + particle.size * 0.32,
+            particle.y - 7,
+            particle.x + particle.size * 0.68,
+            particle.y + 7,
+            particle.x + particle.size,
+            particle.y,
+          );
+          ctx.stroke();
+          particle.x += particle.speed * (particle.vx ?? 1);
+          particle.y += Math.sin(particle.x * 0.012) * 0.35;
+          if (particle.x > canvas.width + particle.size) {
+            particle.x = -particle.size;
+            particle.y = Math.random() * canvas.height;
+          }
+        });
       }
       ctx.globalAlpha = 1;
       frameId.current = window.requestAnimationFrame(animate);
@@ -228,11 +273,17 @@ export function WeatherBackground() {
   const isNight = timeOfDay === "night";
   const badgeColor = isNight ? "rgba(255,255,255,0.76)" : "rgba(15,23,42,0.62)";
   const badgeBg = isNight ? "rgba(255,255,255,0.10)" : "rgba(255,255,255,0.46)";
+  const weatherMeta = WEATHER_META[type];
+  const weatherLabel = isNight && type === "CLEAR" ? moonPhase.label : weatherMeta.label;
+  const weatherIcon = isNight ? moonPhase.emoji : weatherMeta.icon;
 
   return (
     <>
       <div className="weather-scene" aria-hidden="true" style={{ background: SKY[timeOfDay] }}>
         <div className="weather-scene-light" />
+        <div className={`weather-celestial ${isNight ? `weather-moon weather-moon-${moonPhase.name}` : "weather-sun"}`}>
+          {isNight && <span>{moonPhase.emoji}</span>}
+        </div>
         <div className="weather-mountains weather-mountains-far" />
         <div className="weather-mountains weather-mountains-near" />
         <div className="weather-water" />
@@ -246,6 +297,11 @@ export function WeatherBackground() {
       <div className="weather-badges" style={{ color: badgeColor }}>
         {locationName && <div style={{ background: badgeBg }}>📍 {locationName}</div>}
         <div style={{ background: badgeBg }}>
+          <span>{weatherIcon}</span>
+          <span>{weatherLabel}</span>
+          {type === "WIND" && windSpeed !== undefined && <span>{Math.round(windSpeed)} km/h</span>}
+        </div>
+        <div className="weather-date-badge" style={{ background: badgeBg }}>
           <span>{dates.solar}</span>
           <span className="weather-lunar">Lunar {dates.lunar}</span>
         </div>

@@ -24,7 +24,7 @@ for (const [fileName, content, markers] of [
   [
     "GamificationContext.tsx",
     contextFile,
-    ["onAuthStateChanged", "signInWithPopup", "signOut", "onSnapshot", "setDoc", "serverTimestamp"],
+    ["onAuthStateChanged", "signInWithPopup", "signOut", "enqueueUserStats", "useFirestoreSync", "canUseFirestore"],
   ],
   ["useGamification.ts", hookFile, ["useGamification"]],
   ["page.tsx", pageFile, ["Leaderboard", "signInWithGoogle", "signOutUser", "isOfflineMode"]],

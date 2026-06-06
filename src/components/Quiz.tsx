@@ -191,12 +191,12 @@ export default function Quiz({
   return (
     <main className="container min-h-screen pb-120 pt-68">
       <header className="sticky-header xh-header">
-        <div className="header-left">
-          <Link href="/" className="qv-wordmark no-underline font-900" aria-label="QingVoca">
+        <div className="header-left flex items-baseline gap-4">
+          <Link href="/" className="qv-wordmark no-underline font-22 font-900 leading-1-1" aria-label="QingVoca">
             <span className="qv-wordmark-qing">Qing</span>
             <span className="qv-wordmark-voca">Voca</span>
           </Link>
-          <span className="version-badge ml-8">{unitTitle ?? unitId}</span>
+          <span className="version-badge">{unitTitle ?? unitId}</span>
         </div>
         <div className="header-right font-14 font-900">
           {currentIndex + 1}/{questions.length}
@@ -260,11 +260,21 @@ export default function Quiz({
       {selectedOption && (
         <div className={`feedback-bar ${answerState === "correct" ? "correct" : "incorrect"} ${lastComboCount >= 3 ? "combo" : ""}`}>
           <div>
-            <h2 className="font-18 font-900 m-0">{answerState === "correct" ? t("correct", locale) : t("answerLabel", locale)}</h2>
-            {answerState === "correct" && lastComboCount >= 2 && (
-              <p className="combo-callout">
-                {lastComboCount >= 3 ? `🔥 ${lastComboCount} COMBO! 太棒了!` : "✨ 2 COMBO!"}
-              </p>
+            <h2 className="feedback-title">
+              {answerState === "correct" ? t("correct", locale) : t("answerLabel", locale)}
+              {answerState === "correct" && lastComboCount >= 2 && (
+                <span className="combo-callout">
+                  {lastComboCount >= 3 ? `🔥 ${lastComboCount} COMBO! 太棒了!` : "✨ 2 COMBO!"}
+                </span>
+              )}
+            </h2>
+            {answerState === "correct" && (
+              <div className="correct-example-block">
+                <p className="correct-example">{currentQuestion.exampleSentence}</p>
+                {stats.settings.showPinyin && currentQuestion.examplePinyin && (
+                  <p className="correct-example-pinyin">{currentQuestion.examplePinyin}</p>
+                )}
+              </div>
             )}
             {answerState === "wrong" && <p className="correct-solution">{currentQuestion.answer}</p>}
           </div>

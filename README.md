@@ -3,7 +3,7 @@
 > **중국어 HSK4 어휘 학습 앱**  
 > 636개 HSK4 단어를 게임처럼 학습하는 스텝 기반 퀴즈 앱
 
-Current version: **1.0.2**
+Current version: **1.1.0**
 
 ---
 
@@ -22,9 +22,9 @@ QingVoca features a **modern Chinese aesthetic** with a red and rose gold color 
 - **Step-based progression** — Words are grouped into 20 Steps, each covering 1 original lesson. Clear one, unlock the next. Simple.
 - **Quiz engine** — Multiple-choice questions with randomized question order and smart same-part-of-speech distractors pulled from the full HSK4 pool. No easy outs.
 - **Gamification** — Earn XP, collect gems, build streaks, and climb the leaderboard. Because motivation is a feature.
-- **Offline-first, quota-safe sync** — Service worker + Firestore local cache keep study flows available offline, while leaderboard and admin reads are cached or loaded only when needed.
+- **Offline-first, quota-safe sync** — Service worker + Firestore local cache keep study flows available offline, while local progress is queued and synced later when Firestore is available.
 - **Kamivoca-style mobile UX** — LEARN, REVIEW, LEADER, and ME tabs use compact mobile-first cards, path nodes, ranking rows, profile stats, and review controls inspired by Kamivoca.
-- **Live LEARN weather** — Optional location-based weather scenery on the LEARN path, with rain, snow, clouds, thunder, time-of-day color, and cached weather data.
+- **Live LEARN weather** — Optional location-based weather scenery on the LEARN path, with sunny, cloudy, rainy, snowy, windy, thunder, time-of-day color, moon phase at night, and cached weather data.
 - **Multi-locale UI** — Entire interface (labels, buttons, messages) in English, Korean, or Japanese. Locale persists via localStorage.
 - **Chinese speech** — Tap the speaker icon and hear the word pronounced via the Web Speech API.
 - **Chinese feedback** — Correct and wrong answers can speak natural Chinese encouragement directly.
@@ -113,7 +113,7 @@ Step 2  →  Lesson 2  (30 words)
 Step 20 →  Lesson 20 (30 words)
 ```
 
-A Kamivoca-style snake path connects all 20 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into the review flow. The path can also render a cached, location-aware weather backdrop using Open-Meteo data; use `?weather=RAIN`, `?weather=SNOW&time=night`, and similar URL overrides for visual testing.
+A Kamivoca-style snake path connects all 20 steps visually, with tiered colors (red → navy → gold) for beginner, intermediate, and advanced levels. Each node shows its current state: locked, current, completed, or mastered. The current node gets a START indicator, and units with mistakes show a small review badge that jumps straight into the review flow. The path can also render a cached, location-aware weather backdrop using Open-Meteo data; use `?weather=CLEAR`, `?weather=CLOUDY`, `?weather=RAIN`, `?weather=SNOW`, `?weather=WIND`, `?weather=THUNDER`, and `&time=night` URL overrides for visual testing.
 
 ### 🎮 Gamification
 
@@ -142,6 +142,7 @@ Features:
 - **Pinyin display** — Toggle on/off in ME; OFF hides pinyin across quiz, review, Wall of Pain, and list previews
 - **Audio playback** — Hear the Chinese word via Web Speech API, controlled separately from answer feedback
 - **Combo feedback** — Consecutive correct answers trigger combo UI, stronger haptics, and natural Chinese feedback when Chinese feedback is enabled
+- **Example feedback** — Correct answers show a short spoken-style Chinese example sentence with pinyin when example data is available
 - **Instant feedback** — Correct/wrong indicators with word highlighting
 - **Full locale support** — All UI labels, buttons, and messages in ko/ja/en
 
@@ -422,6 +423,7 @@ QingVoca keeps Firestore usage intentionally low:
 - The Wall of Pain uses the same cache-first pattern and writes aggregate mistake increments with `increment(1)`.
 - Admin vocabulary collections are fetched only when the admin editor opens; regular study sessions do not read them.
 - If Firestore returns `resource-exhausted`, the app marks Firestore quota as blocked for the current browser session and falls back to local/demo data instead of retrying.
+- Local-first progress changes are queued in localStorage and can be flushed manually from the ME tab with **Sync now**. The button always reports the outcome in the current UI locale.
 
 ### Step 8 — Configure Environment Variables
 
@@ -509,7 +511,8 @@ Each vocabulary entry looks like this:
   "step": 1,
   "pos": "verb",
   "hsk": "HSK4",
-  "example": ["我安排了明天的会议。"]
+  "example": ["我安排了明天的会议。"],
+  "examplePinyin": ["wǒ ān pái le míng tiān de huì yì."]
 }
 ```
 
@@ -527,6 +530,7 @@ Progress is persisted to localStorage with the `qingvoca:zh:*` namespace:
 | `qingvoca:zh:locale` | Selected display locale (ko/ja/en); if absent, device locale maps ko→ko, ja→ja, other→en |
 | `qingvoca:zh:theme` | Dark/light mode preference |
 | `qingvoca:weather:cache` | Cached LEARN weather data |
+| `qingvoca:firestore:sync-queue` | Local-first Firestore sync queue for pending progress changes |
 
 Session storage also keeps short-lived Firestore safety state:
 
@@ -550,9 +554,10 @@ The app works fully offline thanks to:
 When offline:
 - ✅ Quizzes work (vocab data is cached)
 - ✅ Progress saves to localStorage
+- ✅ Progress changes are queued for later Firestore sync
 - ✅ Local admin edits work
 - ❌ Leaderboard updates
-- ❌ Cloud sync of progress
+- ❌ Immediate cloud sync of progress
 - ❌ Google sign-in
 
 ---

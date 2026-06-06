@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, getDocsFromCache, limit, orderBy, query } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { canUseFirestore, markFirestoreFailure, markFirestoreSuccess } from "@/utils/firestoreAvailability";
 
 type LeaderboardEntry = {
   id: string;
@@ -27,8 +28,7 @@ const DEMO_USERS: LeaderboardEntry[] = [
   { id: "demo-de-01", displayName: "Lukas Müller", photoURL: "https://api.dicebear.com/7.x/avataaars/svg?seed=lukas-mueller&backgroundColor=00cec9", xp: 870, gems: 40 },
 ];
 const LEADERBOARD_CACHE_KEY = "qingvoca:leaderboard:cache";
-const FIRESTORE_QUOTA_BLOCKED_KEY = "qingvoca:firestore:quota-blocked";
-const LEADERBOARD_CACHE_TTL_MS = 10 * 60 * 1000;
+const LEADERBOARD_CACHE_TTL_MS = 30 * 60 * 1000;
 
 function getInitial(name?: string) {
   return (name?.trim().charAt(0) || "Q").toUpperCase();
@@ -39,10 +39,6 @@ function getAvatarColor(seed: string) {
   let hash = 0;
   for (const char of seed) hash = (hash + char.charCodeAt(0)) % colors.length;
   return colors[hash];
-}
-
-function isResourceExhausted(error: unknown) {
-  return Boolean(error && typeof error === "object" && "code" in error && (error as { code?: string }).code === "resource-exhausted");
 }
 
 function readCachedLeaders() {
@@ -63,30 +59,15 @@ function writeCachedLeaders(leaders: LeaderboardEntry[]) {
   } catch {}
 }
 
-function markQuotaBlocked() {
-  try {
-    window.sessionStorage.setItem(FIRESTORE_QUOTA_BLOCKED_KEY, "1");
-  } catch {}
-}
-
-function isQuotaBlocked() {
-  try {
-    return window.sessionStorage.getItem(FIRESTORE_QUOTA_BLOCKED_KEY) === "1";
-  } catch {
-    return false;
-  }
-}
-
 export default function Leaderboard() {
-  const [leaders, setLeaders] = useState<LeaderboardEntry[]>(() => readCachedLeaders() ?? []);
-  const [loading, setLoading] = useState(() => Boolean(db) && !readCachedLeaders() && !isQuotaBlocked());
+  const [leaders, setLeaders] = useState<LeaderboardEntry[]>(() => readCachedLeaders() ?? DEMO_USERS);
   const [brokenImageIds, setBrokenImageIds] = useState<Set<string>>(() => new Set());
 
   useEffect(() => {
     let isCancelled = false;
 
     const firestore = db;
-    if (!firestore || readCachedLeaders() || isQuotaBlocked()) return undefined;
+    if (!firestore || readCachedLeaders() || !canUseFirestore()) return undefined;
 
     const loadLeaders = async () => {
       const leadersQuery = query(collection(firestore, "users"), orderBy("xp", "desc"), limit(10));
@@ -97,7 +78,6 @@ export default function Leaderboard() {
           const cachedLeaders = cacheSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as LeaderboardEntry[];
           setLeaders(cachedLeaders);
           writeCachedLeaders(cachedLeaders);
-          setLoading(false);
           return;
         }
       } catch {}
@@ -109,11 +89,9 @@ export default function Leaderboard() {
           setLeaders(nextLeaders);
           writeCachedLeaders(nextLeaders);
         }
+        markFirestoreSuccess();
       } catch (error) {
-        if (isResourceExhausted(error)) markQuotaBlocked();
-        if (!isCancelled) setLeaders([]);
-      } finally {
-        if (!isCancelled) setLoading(false);
+        markFirestoreFailure(error);
       }
     };
 
@@ -124,11 +102,7 @@ export default function Leaderboard() {
     };
   }, []);
 
-  if (loading) return <div className="flex-center p-40 text-secondary">Loading Rankings...</div>;
-
-  // Use demo users when no real Firestore data is available
-  const displayLeaders = leaders.length > 0 ? leaders : DEMO_USERS;
-  const visibleLeaders = displayLeaders.filter((entry) => (entry.xp ?? 0) > 0);
+  const visibleLeaders = leaders.filter((entry) => (entry.xp ?? 0) > 0);
 
   return (
     <div className="p-20 max-w-600 mx-auto">

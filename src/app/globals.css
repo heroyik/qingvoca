@@ -685,13 +685,46 @@ button {
   color: #991b1b;
 }
 
+.feedback-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
 .combo-callout {
-  margin: 6px 0 0;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
   color: var(--xh-gold);
   font-size: 14px;
   font-weight: 900;
   letter-spacing: 0;
   animation: combo-pop 0.32s ease-out both;
+}
+
+.correct-example-block {
+  margin: 8px 0 0;
+}
+
+.correct-example {
+  margin: 0;
+  color: #166534;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.correct-example-pinyin {
+  margin: 3px 0 0;
+  color: rgba(22, 101, 52, 0.76);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 @keyframes combo-pop {
@@ -1955,6 +1988,37 @@ button {
   mix-blend-mode: screen;
 }
 
+.weather-celestial {
+  position: absolute;
+  top: 92px;
+  left: max(24px, calc((100vw - 600px) / 2 + 24px));
+  z-index: 1;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.weather-sun {
+  background: radial-gradient(circle at 38% 34%, #fff8d8 0%, #f8d36f 42%, rgba(248, 211, 111, 0.12) 70%, transparent 100%);
+  box-shadow:
+    0 0 36px rgba(250, 204, 21, 0.46),
+    0 0 90px rgba(249, 115, 22, 0.18);
+}
+
+.weather-moon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 58px;
+  background: radial-gradient(circle at 38% 32%, rgba(255, 255, 255, 0.2), rgba(219, 234, 254, 0.05) 68%, transparent 100%);
+  filter: drop-shadow(0 0 28px rgba(219, 234, 254, 0.42));
+}
+
+.weather-moon span {
+  line-height: 1;
+}
+
 .weather-mountains {
   position: absolute;
   left: -12%;
@@ -2048,7 +2112,7 @@ button {
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
-.weather-badges > div:nth-child(2) {
+.weather-date-badge {
   flex-direction: column;
   align-items: flex-end;
   gap: 0;
@@ -2742,6 +2806,58 @@ button {
   margin: 0 auto;
 }
 
+.review-empty-state {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.review-empty-state-compact {
+  min-height: 0;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 18px 12px 10px;
+}
+
+.review-empty-icon {
+  font-size: 64px;
+  line-height: 1;
+}
+
+.review-empty-state-compact .review-empty-icon {
+  font-size: 34px;
+}
+
+.review-empty-title {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.review-empty-state-compact .review-empty-title {
+  font-size: 24px;
+}
+
+.review-empty-copy {
+  margin: 0;
+  padding: 0 20px;
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.review-empty-state-compact .review-empty-copy {
+  font-size: 14px;
+  line-height: 1.35;
+}
+
 .review-card {
   background: var(--bg-soft);
   border: 2px solid var(--border-light);
@@ -2847,6 +2963,84 @@ button {
   margin: 24px 0;
   border-top: 1px solid rgba(201, 169, 110, 0.24);
   border-bottom: 1px solid rgba(201, 169, 110, 0.24);
+}
+
+.settings-item.sync-status-row {
+  margin-top: 18px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "copy actions"
+    "message message";
+  align-items: center;
+  gap: 12px 16px;
+}
+
+.sync-status-copy {
+  grid-area: copy;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sync-status-actions {
+  grid-area: actions;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sync-now-button {
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 2px solid var(--border-light);
+  background: var(--bg-soft);
+  color: var(--text-main);
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.sync-now-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.sync-status-message {
+  grid-area: message;
+  display: block;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(75, 139, 104, 0.08);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+  .settings-item.sync-status-row {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "actions"
+      "message";
+  }
+
+  .sync-status-actions {
+    justify-content: flex-start;
+  }
+
+  .sync-now-button {
+    min-width: 112px;
+  }
 }
 
 .profile-locale-buttons {

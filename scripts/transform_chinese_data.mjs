@@ -114,7 +114,12 @@ function transformWords(words) {
         jlpt: DATASET_LEVEL,
         band,
         opic: band,
-        example: [],
+        example: Array.isArray(entry.example)
+          ? entry.example.map((example) => String(example).trim()).filter(Boolean)
+          : [],
+        examplePinyin: Array.isArray(entry.examplePinyin)
+          ? entry.examplePinyin.map((examplePinyin) => String(examplePinyin).trim()).filter(Boolean)
+          : [],
       };
     });
 }

@@ -1,4 +1,4 @@
-const CACHE_VERSION = "qingvoca-v1-0-0-offline-1";
+const CACHE_VERSION = "qingvoca-v1-1-0-offline-1";
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const BASE_PATH = "/qingvoca";
@@ -8,7 +8,9 @@ const PRECACHE_ROUTES = [
   `${BASE_PATH}`,
   `${BASE_PATH}/`,
   `${BASE_PATH}/quiz/review`,
+  `${BASE_PATH}/quiz/review/`,
   ...Array.from({ length: 20 }, (_, index) => `${BASE_PATH}/quiz/unit-${index + 1}`),
+  ...Array.from({ length: 20 }, (_, index) => `${BASE_PATH}/quiz/unit-${index + 1}/`),
 ];
 
 async function getOfflineUrls() {
@@ -66,7 +68,7 @@ async function cacheFirst(request) {
 async function matchShellRoute(pathname) {
   const shellCache = await caches.open(SHELL_CACHE);
   const normalized = pathname.replace(/\/+$/, "") || BASE_PATH;
-  const candidates = [pathname, normalized, `${normalized}/`, `${normalized}.html`, `${normalized}/index.html`];
+  const candidates = [normalized, `${normalized}.html`, pathname, `${normalized}/`, `${normalized}/index.html`];
 
   for (const candidate of candidates) {
     const cached = await shellCache.match(candidate);

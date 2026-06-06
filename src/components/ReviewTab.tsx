@@ -8,6 +8,7 @@ import { useGamification } from "@/hooks/useGamification";
 import { db } from "@/lib/firebase";
 import type { SupportedLocale } from "@/types/chinese-vocab";
 import { DEFAULT_LOCALE } from "@/types/chinese-vocab";
+import { canUseFirestore, markFirestoreFailure, markFirestoreSuccess } from "@/utils/firestoreAvailability";
 import { filterDeletedWords, normalizeDisplayFurigana, normalizeVocabWordKey } from "@/utils/vocab";
 import { getDisplayMeaning } from "@/types/chinese-vocab";
 import { t } from "@/utils/ui";
@@ -31,26 +32,7 @@ type GlobalMistakeEntry = {
 
 const GLOBAL_MISTAKES_COLLECTION = "zhGlobalMistakes";
 const GLOBAL_MISTAKES_CACHE_KEY = "qingvoca:wall-of-pain:cache";
-const FIRESTORE_QUOTA_BLOCKED_KEY = "qingvoca:firestore:quota-blocked";
-const GLOBAL_MISTAKES_CACHE_TTL_MS = 10 * 60 * 1000;
-
-function isResourceExhausted(error: unknown) {
-  return Boolean(error && typeof error === "object" && "code" in error && (error as { code?: string }).code === "resource-exhausted");
-}
-
-function isQuotaBlocked() {
-  try {
-    return window.sessionStorage.getItem(FIRESTORE_QUOTA_BLOCKED_KEY) === "1";
-  } catch {
-    return false;
-  }
-}
-
-function markQuotaBlocked() {
-  try {
-    window.sessionStorage.setItem(FIRESTORE_QUOTA_BLOCKED_KEY, "1");
-  } catch {}
-}
+const GLOBAL_MISTAKES_CACHE_TTL_MS = 30 * 60 * 1000;
 
 function readCachedGlobalMistakes() {
   try {
@@ -118,11 +100,12 @@ export default function ReviewTab({ locale = DEFAULT_LOCALE }: ReviewTabProps) {
         vocabEntry: vocabByWordKey.get(globalEntry.wordKey ?? normalizeVocabWordKey(globalEntry.word)),
       }));
   }, [globalDeletedWordKeys, globalMistakes, vocabEntries]);
+  const hasWallOfPainEntries = wallOfPainEntries.length > 0;
 
   useEffect(() => {
     let isCancelled = false;
     const firestore = db;
-    if (!firestore || readCachedGlobalMistakes() || isQuotaBlocked()) return undefined;
+    if (!firestore || readCachedGlobalMistakes() || !canUseFirestore()) return undefined;
 
     const loadGlobalMistakes = async () => {
       const topMistakesQuery = query(collection(firestore, GLOBAL_MISTAKES_COLLECTION), orderBy("count", "desc"), limit(10));
@@ -144,8 +127,9 @@ export default function ReviewTab({ locale = DEFAULT_LOCALE }: ReviewTabProps) {
           setGlobalMistakes(entries);
           writeCachedGlobalMistakes(entries);
         }
+        markFirestoreSuccess();
       } catch (error) {
-        if (isResourceExhausted(error)) markQuotaBlocked();
+        markFirestoreFailure(error);
       }
     };
 
@@ -158,10 +142,10 @@ export default function ReviewTab({ locale = DEFAULT_LOCALE }: ReviewTabProps) {
   return (
     <div className="review-content">
       {reviewEntries.length === 0 ? (
-        <div className="flex-center min-h-60 flex-col gap-16">
-          <div className="font-64">✨</div>
-          <h2 className="text-title">All Clear!</h2>
-          <p className="text-subtitle text-center px-20">
+        <div className={`review-empty-state ${hasWallOfPainEntries ? "review-empty-state-compact" : ""}`}>
+          <div className="review-empty-icon">✨</div>
+          <h2 className="review-empty-title">All Clear!</h2>
+          <p className="review-empty-copy">
             {t("noReviewWordsHint", locale)}
           </p>
         </div>
@@ -234,7 +218,7 @@ export default function ReviewTab({ locale = DEFAULT_LOCALE }: ReviewTabProps) {
         </div>
       )}
 
-      <div className="review-card-modern" style={{ marginTop: 24 }}>
+      <div className="review-card-modern" style={{ marginTop: hasWallOfPainEntries && reviewEntries.length === 0 ? 12 : 24 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
           <h2 className="text-title m-0" style={{ letterSpacing: 0 }}>
             Wall of Pain

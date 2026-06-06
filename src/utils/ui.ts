@@ -54,6 +54,23 @@ export type UiStringKey =
   | "signInWithGoogle"
   | "offlineModeMessage"
   | "signInPrompt"
+  | "cloudSyncTitle"
+  | "cloudSyncDescription"
+  | "syncNow"
+  | "syncing"
+  | "syncStatusPaused"
+  | "syncStatusPending"
+  | "syncStatusSynced"
+  | "syncStatusLocalReady"
+  | "syncMessageSignIn"
+  | "syncMessageOffline"
+  | "syncMessageSyncing"
+  | "syncMessageAlreadySynced"
+  | "syncMessageComplete"
+  | "syncMessagePartial"
+  | "syncMessagePending"
+  | "syncMessageFailedPending"
+  | "syncMessageFailed"
   | "learningPoints"
   | "noQuizWords"
   | "goHome"
@@ -143,6 +160,23 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     signInWithGoogle: "Google 로그인",
     offlineModeMessage: "Firebase env 미설정: 로컬 진행도 모드",
     signInPrompt: "Google 로그인으로 진행도를 동기화할 수 있습니다.",
+    cloudSyncTitle: "클라우드 동기화",
+    cloudSyncDescription: "먼저 로컬에 저장하고, Firestore가 가능할 때만 클라우드에 동기화합니다.",
+    syncNow: "지금 동기화",
+    syncing: "동기화 중",
+    syncStatusPaused: "일시 중지",
+    syncStatusPending: "동기화 대기",
+    syncStatusSynced: "동기화됨",
+    syncStatusLocalReady: "로컬 준비",
+    syncMessageSignIn: "클라우드 동기화를 하려면 로그인하세요.",
+    syncMessageOffline: "오프라인 상태라 클라우드 동기화를 잠시 멈췄습니다.",
+    syncMessageSyncing: "{count}개 변경 사항을 동기화 중입니다...",
+    syncMessageAlreadySynced: "이미 동기화되었습니다. 대기 중인 변경 사항이 없습니다.",
+    syncMessageComplete: "동기화 완료. 모든 변경 사항이 클라우드에 저장되었습니다.",
+    syncMessagePartial: "일부만 동기화되었습니다. {count}개 변경 사항이 아직 대기 중입니다.",
+    syncMessagePending: "아직 동기화 대기 중입니다. {count}개 변경 사항은 나중에 다시 시도합니다.",
+    syncMessageFailedPending: "동기화에 실패했습니다. {count}개 변경 사항은 나중에 다시 시도합니다.",
+    syncMessageFailed: "동기화에 실패했습니다. 다시 시도해 주세요.",
     learningPoints: "학습 포인트:",
     noQuizWords: "퀴즈 단어 없음",
     goHome: "메인으로",
@@ -231,6 +265,23 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     signInWithGoogle: "Google ログイン",
     offlineModeMessage: "Firebase env 未設定: ローカル進行度モード",
     signInPrompt: "Google ログインで進行度を同期できます。",
+    cloudSyncTitle: "クラウド同期",
+    cloudSyncDescription: "まずローカルに保存し、Firestoreが利用できる時だけクラウドへ同期します。",
+    syncNow: "今すぐ同期",
+    syncing: "同期中",
+    syncStatusPaused: "一時停止",
+    syncStatusPending: "同期待ち",
+    syncStatusSynced: "同期済み",
+    syncStatusLocalReady: "ローカル準備完了",
+    syncMessageSignIn: "クラウド同期するにはログインしてください。",
+    syncMessageOffline: "オフラインのためクラウド同期は一時停止中です。",
+    syncMessageSyncing: "{count}件の変更を同期中です...",
+    syncMessageAlreadySynced: "すでに同期済みです。待機中の変更はありません。",
+    syncMessageComplete: "同期完了。すべての変更をクラウドに保存しました。",
+    syncMessagePartial: "一部のみ同期しました。{count}件の変更がまだ待機中です。",
+    syncMessagePending: "まだ同期待ちです。{count}件の変更は後で再試行します。",
+    syncMessageFailedPending: "同期に失敗しました。{count}件の変更は後で再試行します。",
+    syncMessageFailed: "同期に失敗しました。もう一度お試しください。",
     learningPoints: "学習ポイント:",
     noQuizWords: "クイズ単語なし",
     goHome: "ホームへ",
@@ -319,6 +370,23 @@ const UI_STRINGS: Record<SupportedLocale, Record<UiStringKey, string>> = {
     signInWithGoogle: "Google Sign in",
     offlineModeMessage: "Firebase env not set: local progress mode",
     signInPrompt: "Sign in with Google to sync your progress.",
+    cloudSyncTitle: "Cloud sync",
+    cloudSyncDescription: "Saved locally first; cloud sync runs only when Firestore is available.",
+    syncNow: "Sync now",
+    syncing: "Syncing",
+    syncStatusPaused: "Sync paused",
+    syncStatusPending: "Sync pending",
+    syncStatusSynced: "Synced",
+    syncStatusLocalReady: "Local ready",
+    syncMessageSignIn: "Sign in to sync progress to cloud.",
+    syncMessageOffline: "Cloud sync is paused while offline.",
+    syncMessageSyncing: "Syncing {count} pending change(s)...",
+    syncMessageAlreadySynced: "Already synced. No pending changes.",
+    syncMessageComplete: "Sync complete. All changes are saved to cloud.",
+    syncMessagePartial: "Partially synced. {count} change(s) still pending.",
+    syncMessagePending: "Sync is still pending. {count} change(s) will retry later.",
+    syncMessageFailedPending: "Sync failed. {count} change(s) will retry later.",
+    syncMessageFailed: "Sync failed. Please try again.",
     learningPoints: "XP:",
     noQuizWords: "No quiz words",
     goHome: "GO HOME",

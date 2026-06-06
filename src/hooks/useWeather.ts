@@ -2,16 +2,33 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-export type WeatherType = "CLEAR" | "CLOUDY" | "RAIN" | "SNOW" | "THUNDER" | "LOADING";
+export type WeatherType = "CLEAR" | "CLOUDY" | "RAIN" | "SNOW" | "THUNDER" | "WIND" | "LOADING";
 export type TimeOfDay = "dawn" | "day" | "dusk" | "night";
 export type UpdateStep = "IDLE" | "GEOLOCATING" | "FETCHING_WEATHER" | "FETCHING_LOCATION" | "COMPLETED" | "FAILED" | "DENIED";
+export type MoonPhaseName =
+  | "new"
+  | "waxing-crescent"
+  | "first-quarter"
+  | "waxing-gibbous"
+  | "full"
+  | "waning-gibbous"
+  | "last-quarter"
+  | "waning-crescent";
+
+export interface MoonPhase {
+  name: MoonPhaseName;
+  label: string;
+  emoji: string;
+}
 
 export interface WeatherData {
   type: WeatherType;
   temperature?: number;
   maxTemp?: number;
   minTemp?: number;
+  windSpeed?: number;
   timeOfDay: TimeOfDay;
+  moonPhase: MoonPhase;
   sunrise?: string;
   sunset?: string;
   locationName?: string;
@@ -20,8 +37,9 @@ export interface WeatherData {
 }
 
 const WEATHER_CACHE_KEY = "qingvoca:weather:cache";
-const VALID_WEATHER_TYPES: WeatherType[] = ["CLEAR", "CLOUDY", "RAIN", "SNOW", "THUNDER"];
+const VALID_WEATHER_TYPES: WeatherType[] = ["CLEAR", "CLOUDY", "RAIN", "SNOW", "THUNDER", "WIND"];
 const VALID_TIMES: TimeOfDay[] = ["dawn", "day", "dusk", "night"];
+const WINDY_THRESHOLD_KMH = 22;
 
 function parseISOToMinutes(iso: string): number {
   const timePart = iso.split("T")[1];
@@ -54,6 +72,25 @@ function formatHHMM(iso: string): string {
   return iso.split("T")[1] || "";
 }
 
+function calcMoonPhase(date = new Date()): MoonPhase {
+  const synodicMonth = 29.530588853;
+  const knownNewMoon = Date.UTC(2000, 0, 6, 18, 14);
+  const daysSinceKnownNewMoon = (date.getTime() - knownNewMoon) / 86400000;
+  const age = ((daysSinceKnownNewMoon % synodicMonth) + synodicMonth) % synodicMonth;
+  const phaseIndex = Math.floor((age / synodicMonth) * 8 + 0.5) % 8;
+  const phases: MoonPhase[] = [
+    { name: "new", label: "New Moon", emoji: "🌑" },
+    { name: "waxing-crescent", label: "Waxing Crescent", emoji: "🌒" },
+    { name: "first-quarter", label: "First Quarter", emoji: "🌓" },
+    { name: "waxing-gibbous", label: "Waxing Gibbous", emoji: "🌔" },
+    { name: "full", label: "Full Moon", emoji: "🌕" },
+    { name: "waning-gibbous", label: "Waning Gibbous", emoji: "🌖" },
+    { name: "last-quarter", label: "Last Quarter", emoji: "🌗" },
+    { name: "waning-crescent", label: "Waning Crescent", emoji: "🌘" },
+  ];
+  return phases[phaseIndex];
+}
+
 function readCachedWeather(): Partial<WeatherData> | null {
   try {
     const cached = window.localStorage.getItem(WEATHER_CACHE_KEY);
@@ -63,11 +100,12 @@ function readCachedWeather(): Partial<WeatherData> | null {
   }
 }
 
-function mapWeatherCode(code: number): WeatherType {
-  if ((code >= 1 && code <= 3) || (code >= 45 && code <= 48)) return "CLOUDY";
-  if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return "RAIN";
-  if ((code >= 71 && code <= 77) || (code >= 85 && code <= 86)) return "SNOW";
+function mapWeatherCode(code: number, windSpeed?: number): WeatherType {
   if (code >= 95) return "THUNDER";
+  if ((code >= 71 && code <= 77) || (code >= 85 && code <= 86)) return "SNOW";
+  if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return "RAIN";
+  if (typeof windSpeed === "number" && windSpeed >= WINDY_THRESHOLD_KMH) return "WIND";
+  if ((code >= 1 && code <= 3) || (code >= 45 && code <= 48)) return "CLOUDY";
   return "CLEAR";
 }
 
@@ -75,6 +113,7 @@ export function useWeather(): WeatherData {
   const [weather, setWeather] = useState<WeatherData>({
     type: "LOADING",
     timeOfDay: "day",
+    moonPhase: calcMoonPhase(),
     updateStep: "IDLE",
     refresh: () => {},
   });
@@ -87,11 +126,11 @@ export function useWeather(): WeatherData {
     const resolvedTime = overrideTime && VALID_TIMES.includes(overrideTime) ? overrideTime : cached?.timeOfDay ?? fallbackTimeOfDay();
 
     if (overrideWeather && VALID_WEATHER_TYPES.includes(overrideWeather)) {
-      setWeather({ ...cached, type: overrideWeather, timeOfDay: resolvedTime, updateStep: "IDLE", refresh: () => {} });
+      setWeather({ ...cached, type: overrideWeather, timeOfDay: resolvedTime, moonPhase: calcMoonPhase(), updateStep: "IDLE", refresh: () => {} });
       return;
     }
     if (overrideTime && VALID_TIMES.includes(overrideTime)) {
-      setWeather({ ...cached, type: cached?.type ?? "CLEAR", timeOfDay: overrideTime, updateStep: "IDLE", refresh: () => {} });
+      setWeather({ ...cached, type: cached?.type ?? "CLEAR", timeOfDay: overrideTime, moonPhase: calcMoonPhase(), updateStep: "IDLE", refresh: () => {} });
       return;
     }
 
@@ -110,12 +149,15 @@ export function useWeather(): WeatherData {
         const [data, locData] = await Promise.all([weatherPromise, locationPromise]);
         const sunriseISO = data.daily?.sunrise?.[0] ?? "";
         const sunsetISO = data.daily?.sunset?.[0] ?? "";
+        const windSpeed = data.current_weather?.windspeed;
         const updatedWeather: WeatherData = {
-          type: mapWeatherCode(Number(data.current_weather?.weathercode ?? 0)),
+          type: mapWeatherCode(Number(data.current_weather?.weathercode ?? 0), windSpeed),
           temperature: data.current_weather?.temperature,
+          windSpeed,
           maxTemp: data.daily?.temperature_2m_max?.[0],
           minTemp: data.daily?.temperature_2m_min?.[0],
           timeOfDay: sunriseISO && sunsetISO ? calcTimeOfDay(sunriseISO, sunsetISO) : fallbackTimeOfDay(),
+          moonPhase: calcMoonPhase(),
           sunrise: sunriseISO ? formatHHMM(sunriseISO) : undefined,
           sunset: sunsetISO ? formatHHMM(sunsetISO) : undefined,
           locationName: locData.city || locData.locality || locData.principalSubdivision || undefined,
@@ -128,22 +170,22 @@ export function useWeather(): WeatherData {
         window.setTimeout(() => setWeather((current) => ({ ...current, updateStep: "IDLE" })), 5000);
       } catch (error) {
         console.warn("[weather] failed to fetch weather", error);
-        setWeather({ ...cached, type: cached?.type ?? "CLEAR", timeOfDay: resolvedTime, updateStep: "FAILED", refresh: () => {} });
+        setWeather({ ...cached, type: cached?.type ?? "CLEAR", timeOfDay: resolvedTime, moonPhase: calcMoonPhase(), updateStep: "FAILED", refresh: () => {} });
         window.setTimeout(() => setWeather((current) => ({ ...current, updateStep: "IDLE" })), 8000);
       }
     };
 
     if (!("geolocation" in navigator)) {
-      setWeather({ ...cached, type: cached?.type ?? "CLEAR", timeOfDay: resolvedTime, updateStep: "FAILED", refresh: () => {} });
+      setWeather({ ...cached, type: cached?.type ?? "CLEAR", timeOfDay: resolvedTime, moonPhase: calcMoonPhase(), updateStep: "FAILED", refresh: () => {} });
       return;
     }
 
-    setWeather({ ...cached, type: cached?.type ?? "LOADING", timeOfDay: resolvedTime, updateStep: "GEOLOCATING", refresh: () => {} });
+    setWeather({ ...cached, type: cached?.type ?? "LOADING", timeOfDay: resolvedTime, moonPhase: calcMoonPhase(), updateStep: "GEOLOCATING", refresh: () => {} });
     navigator.geolocation.getCurrentPosition(
       (position) => void fetchWeather(position.coords.latitude, position.coords.longitude),
       (error) => {
         const updateStep: UpdateStep = error.code === 1 ? "DENIED" : "FAILED";
-        setWeather({ ...cached, type: cached?.type ?? "CLEAR", timeOfDay: resolvedTime, updateStep, refresh: () => {} });
+        setWeather({ ...cached, type: cached?.type ?? "CLEAR", timeOfDay: resolvedTime, moonPhase: calcMoonPhase(), updateStep, refresh: () => {} });
         window.setTimeout(() => setWeather((current) => ({ ...current, updateStep: "IDLE" })), 8000);
       },
       { timeout: 10000 },

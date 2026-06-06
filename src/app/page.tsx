@@ -12,10 +12,26 @@ import { isAdmin, APP_NAME, APP_VERSION } from "@/lib/constants";
 import { createHomeStepCards, LOCALE_OPTIONS } from "@/utils/learningExperience";
 import { getUnits, getTotalWordCount, normalizeVocabWordKey } from "@/utils/vocab";
 import { loadLocale, saveLocale } from "@/utils/locale";
+import { readFirestoreSyncState } from "@/utils/firestoreAvailability";
+import { getQueueSummary } from "@/utils/firestoreSyncQueue";
 import { t, tpl } from "@/utils/ui";
 import type { SupportedLocale } from "@/types/chinese-vocab";
 
 type HomeTab = "learn" | "leader" | "review" | "profile" | "edit";
+type SyncStatusKey = "syncStatusPaused" | "syncStatusPending" | "syncStatusSynced" | "syncStatusLocalReady";
+type SyncMessageState = {
+  key:
+    | "syncMessageSignIn"
+    | "syncMessageOffline"
+    | "syncMessageSyncing"
+    | "syncMessageAlreadySynced"
+    | "syncMessageComplete"
+    | "syncMessagePartial"
+    | "syncMessagePending"
+    | "syncMessageFailedPending"
+    | "syncMessageFailed";
+  count?: number;
+} | null;
 
 const WeatherBackground = dynamic(
   () => import("@/components/WeatherBackground").then((module) => module.WeatherBackground),
@@ -113,16 +129,71 @@ const getXpTitleAccent = (totalXp: number) => {
 
 export default function Home() {
   const router = useRouter();
-  const { isAuthResolved, isOfflineMode, signInWithGoogle, signOutUser, stats, updateSettings, user, vocabEntries, theme, setTheme } =
+  const { isAuthResolved, isOfflineMode, signInWithGoogle, signOutUser, stats, syncNow, updateSettings, user, vocabEntries, theme, setTheme } =
     useGamification();
   const entries = vocabEntries;
   const [activeTab, setActiveTab] = useState<HomeTab>("learn");
   const [locale, setLocaleState] = useState<SupportedLocale>("ko");
+  const [isOfflineReady, setIsOfflineReady] = useState(false);
+  const [syncStatus, setSyncStatus] = useState<{ pending: number; labelKey: SyncStatusKey }>({
+    pending: 0,
+    labelKey: "syncStatusLocalReady",
+  });
+  const [isSyncing, setIsSyncing] = useState(false);
+  const [syncMessage, setSyncMessage] = useState<SyncMessageState>(null);
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
       setLocaleState(loadLocale(window.localStorage));
     }, 0);
     return () => window.clearTimeout(timeoutId);
+  }, []);
+  useEffect(() => {
+    const refreshSyncStatus = () => {
+      const summary = getQueueSummary();
+      const state = readFirestoreSyncState();
+      const pending = summary.total;
+      const labelKey =
+        pending > 0
+          ? state.status === "quotaBlocked" || state.status === "cooldown"
+            ? "syncStatusPaused"
+            : "syncStatusPending"
+          : state.lastSuccessfulSyncAt
+            ? "syncStatusSynced"
+            : "syncStatusLocalReady";
+      setSyncStatus({ pending, labelKey });
+      if (pending === 0) {
+        setSyncMessage((current) => {
+          if (
+            current?.key === "syncMessageSyncing" ||
+            current?.key === "syncMessagePending" ||
+            current?.key === "syncMessagePartial" ||
+            current?.key === "syncMessageFailedPending"
+          ) {
+            return { key: "syncMessageComplete" };
+          }
+          return current;
+        });
+      }
+    };
+
+    refreshSyncStatus();
+    window.addEventListener("qingvoca:firestore-sync-queue-changed", refreshSyncStatus);
+    window.addEventListener("online", refreshSyncStatus);
+    window.addEventListener("offline", refreshSyncStatus);
+    return () => {
+      window.removeEventListener("qingvoca:firestore-sync-queue-changed", refreshSyncStatus);
+      window.removeEventListener("online", refreshSyncStatus);
+      window.removeEventListener("offline", refreshSyncStatus);
+    };
+  }, []);
+  useEffect(() => {
+    const refreshOfflineReady = () => {
+      setIsOfflineReady(document.documentElement.dataset.offlineReady === "true");
+    };
+    refreshOfflineReady();
+    const observer = new MutationObserver(refreshOfflineReady);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-offline-ready"] });
+    return () => observer.disconnect();
   }, []);
   const setLocale = (newLocale: SupportedLocale) => {
     setLocaleState(newLocale);
@@ -164,6 +235,9 @@ export default function Home() {
     .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x.toFixed(2)} ${point.y.toFixed(2)}`)
     .join(" ");
   const snakePathHeight = SNAKE_NODE_CENTER_Y * 2 + Math.max(cards.length - 1, 0) * SNAKE_NODE_STEP_Y;
+  const syncMessageText = syncMessage
+    ? tpl(t(syncMessage.key, locale), { count: syncMessage.count ?? 0 })
+    : "";
 
   return (
     <main className="container min-h-screen pb-80 pt-68">
@@ -176,6 +250,16 @@ export default function Home() {
           <span className="version-badge">{APP_VERSION}</span>
         </div>
         <div className="header-right flex items-center gap-12">
+          {isOfflineMode && (
+            <div className="offline-header-chip" title="Offline mode is active">
+              OFFLINE
+            </div>
+          )}
+          {!isOfflineMode && isOfflineReady && (
+            <div className="offline-ready-chip" title="Offline cache is ready">
+              OFFLINE ready!
+            </div>
+          )}
           <button
             type="button"
             className="vocab-stash-pill mt-0 flex items-center gap-2 py-4 px-10 h-32 cursor-pointer"
@@ -249,7 +333,7 @@ export default function Home() {
                 }, 0) ?? 0;
               const showFailBadge = failCount > 0;
               const buttonState = isLocked ? "locked" : isMastered ? "mastered" : isCompleted ? "completed" : isCurrent ? "current" : "available";
-              const offset = getSnakeOffset(index);
+              const offset = getSnakeOffset(index).toFixed(4);
               const redGoldLessonId = unit?.lessonIds[0] ?? card.step;
 
               return (
@@ -374,6 +458,57 @@ export default function Home() {
                 <span className="font-12 font-800 text-secondary uppercase">Mastery</span>
                 <span className="font-24 font-900" style={{ color: "var(--xh-gold)" }}>👑 {stats.masteredUnits.length}</span>
               </div>
+            </div>
+
+            <div className="settings-item sync-status-row">
+              <div className="sync-status-copy">
+                <span className="font-16 font-700">{t("cloudSyncTitle", locale)}</span>
+                <span className="font-12 text-secondary">{t("cloudSyncDescription", locale)}</span>
+              </div>
+              <div className="sync-status-actions">
+                <span className="offline-ready-chip">
+                  {t(syncStatus.labelKey, locale)}{syncStatus.pending > 0 ? ` · ${syncStatus.pending}` : ""}
+                </span>
+                <button
+                  type="button"
+                  className="sync-now-button"
+                  disabled={isSyncing}
+                  onClick={async () => {
+                    setIsSyncing(true);
+                    try {
+                      const before = getQueueSummary().total;
+                      if (!user) {
+                        setSyncMessage({ key: "syncMessageSignIn" });
+                      } else if (isOfflineMode) {
+                        setSyncMessage({ key: "syncMessageOffline" });
+                      } else {
+                        setSyncMessage(before > 0 ? { key: "syncMessageSyncing", count: before } : { key: "syncMessageAlreadySynced" });
+                      }
+                      await syncNow();
+                      const after = getQueueSummary().total;
+                      if (!user) {
+                        setSyncMessage({ key: "syncMessageSignIn" });
+                      } else if (isOfflineMode) {
+                        setSyncMessage({ key: "syncMessageOffline" });
+                      } else if (after === 0) {
+                        setSyncMessage(before > 0 ? { key: "syncMessageComplete" } : { key: "syncMessageAlreadySynced" });
+                      } else if (after < before) {
+                        setSyncMessage({ key: "syncMessagePartial", count: after });
+                      } else {
+                        setSyncMessage({ key: "syncMessagePending", count: after });
+                      }
+                    } catch {
+                      const pending = getQueueSummary().total;
+                      setSyncMessage(pending > 0 ? { key: "syncMessageFailedPending", count: pending } : { key: "syncMessageFailed" });
+                    } finally {
+                      setIsSyncing(false);
+                    }
+                  }}
+                >
+                  {isSyncing ? t("syncing", locale) : t("syncNow", locale)}
+                </button>
+              </div>
+              {syncMessageText && <span className="sync-status-message">{syncMessageText}</span>}
             </div>
 
             {user ? (

@@ -41,6 +41,7 @@ export type ChineseVocabEntry = {
   band: ChineseDifficultyBand;
   opic: ChineseDifficultyBand;
   example: string[];
+  examplePinyin: string[];
 };
 
 export const DEFAULT_LOCALE: SupportedLocale = "ko";
