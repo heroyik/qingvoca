@@ -15,6 +15,7 @@ interface QuizProps {
   allWords: ChineseVocabEntry[];
   unitTitle?: string;
   isReview?: boolean;
+  clearMistakesOnCorrect?: boolean;
   locale?: SupportedLocale;
 }
 
@@ -45,6 +46,7 @@ export default function Quiz({
   allWords,
   unitTitle,
   isReview = false,
+  clearMistakesOnCorrect = true,
   locale = DEFAULT_LOCALE,
 }: QuizProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -112,7 +114,7 @@ export default function Quiz({
       setScore((value) => value + 1);
       addXP(getComboXp(nextCombo));
       addGem(1);
-      clearMistake(currentQuestion.id);
+      if (clearMistakesOnCorrect) clearMistake(currentQuestion.id);
     } else {
       setComboCount(0);
       setLastComboCount(0);

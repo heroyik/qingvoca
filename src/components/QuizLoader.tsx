@@ -51,5 +51,15 @@ export default function QuizLoader({ unitId }: QuizLoaderProps) {
     );
   }
 
-  return <Quiz unitId={unit.id} unitWords={unitWords ?? []} allWords={entries} unitTitle={unit.title} isReview={mode === "mistakes"} locale={locale} />;
+  return (
+    <Quiz
+      unitId={unit.id}
+      unitWords={unitWords ?? []}
+      allWords={entries}
+      unitTitle={unit.title}
+      isReview={mode === "mistakes"}
+      clearMistakesOnCorrect={mode !== "mistakes"}
+      locale={locale}
+    />
+  );
 }
