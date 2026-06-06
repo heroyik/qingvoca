@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { collection, getDocs, getDocsFromCache, limit, orderBy, query } from "firebase/firestore";
+import { useGamification } from "@/hooks/useGamification";
 import { db } from "@/lib/firebase";
 import { canUseFirestore, markFirestoreFailure, markFirestoreSuccess } from "@/utils/firestoreAvailability";
 
@@ -59,15 +60,37 @@ function writeCachedLeaders(leaders: LeaderboardEntry[]) {
   } catch {}
 }
 
-function fillLeaderboardSlots(realLeaders: LeaderboardEntry[]) {
-  const visibleRealLeaders = realLeaders.filter((entry) => (entry.xp ?? 0) > 0);
+function upsertCurrentLeader(leaders: LeaderboardEntry[], currentLeader: LeaderboardEntry | null) {
+  if (!currentLeader || currentLeader.xp <= 0) return leaders;
+  const withoutCurrent = leaders.filter((entry) => entry.id !== currentLeader.id);
+  return [currentLeader, ...withoutCurrent];
+}
+
+function fillLeaderboardSlots(realLeaders: LeaderboardEntry[], currentLeader: LeaderboardEntry | null = null) {
+  const visibleRealLeaders = upsertCurrentLeader(realLeaders, currentLeader)
+    .filter((entry) => (entry.xp ?? 0) > 0)
+    .sort((a, b) => (b.xp ?? 0) - (a.xp ?? 0));
   const usedIds = new Set(visibleRealLeaders.map((entry) => entry.id));
   const fillerLeaders = DEMO_USERS.filter((entry) => !usedIds.has(entry.id)).slice(0, Math.max(0, 10 - visibleRealLeaders.length));
   return [...visibleRealLeaders, ...fillerLeaders];
 }
 
 export default function Leaderboard() {
-  const [leaders, setLeaders] = useState<LeaderboardEntry[]>(() => fillLeaderboardSlots(readCachedLeaders() ?? []));
+  const { stats, user } = useGamification();
+  const currentLeader: LeaderboardEntry | null = useMemo(
+    () =>
+      user
+        ? {
+            id: user.uid,
+            displayName: user.displayName || user.email || stats.displayName || "QingVoca Learner",
+            photoURL: user.photoURL ?? undefined,
+            xp: stats.xp,
+            gems: stats.gems,
+          }
+        : null,
+    [stats.displayName, stats.gems, stats.xp, user],
+  );
+  const [leaders, setLeaders] = useState<LeaderboardEntry[]>(() => readCachedLeaders() ?? []);
   const [brokenImageIds, setBrokenImageIds] = useState<Set<string>>(() => new Set());
 
   useEffect(() => {
@@ -83,9 +106,8 @@ export default function Leaderboard() {
         const cacheSnapshot = await getDocsFromCache(leadersQuery);
         if (!isCancelled && !cacheSnapshot.empty) {
           const cachedLeaders = cacheSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as LeaderboardEntry[];
-          const filledLeaders = fillLeaderboardSlots(cachedLeaders);
-          setLeaders(filledLeaders);
-          writeCachedLeaders(filledLeaders);
+          setLeaders(cachedLeaders);
+          writeCachedLeaders(cachedLeaders);
           return;
         }
       } catch {}
@@ -93,10 +115,9 @@ export default function Leaderboard() {
       try {
         const snapshot = await getDocs(leadersQuery);
         const nextLeaders = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as LeaderboardEntry[];
-        const filledLeaders = fillLeaderboardSlots(nextLeaders);
         if (!isCancelled) {
-          setLeaders(filledLeaders);
-          writeCachedLeaders(filledLeaders);
+          setLeaders(nextLeaders);
+          writeCachedLeaders(nextLeaders);
         }
         markFirestoreSuccess();
       } catch (error) {
@@ -111,7 +132,7 @@ export default function Leaderboard() {
     };
   }, []);
 
-  const visibleLeaders = leaders.filter((entry) => (entry.xp ?? 0) > 0);
+  const visibleLeaders = useMemo(() => fillLeaderboardSlots(leaders, currentLeader), [currentLeader, leaders]);
 
   return (
     <div className="p-20 max-w-600 mx-auto">
