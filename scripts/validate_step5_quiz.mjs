@@ -25,8 +25,8 @@ function isConfusingDistractor(answer, candidate) {
   const normalizedCandidate = normalizeMeaningForSimilarity(candidate);
   if (!normalizedAnswer || !normalizedCandidate) return false;
   if (normalizedAnswer === normalizedCandidate) return true;
-  if (normalizedAnswer.length >= 3 && normalizedCandidate.includes(normalizedAnswer)) return true;
-  if (normalizedCandidate.length >= 3 && normalizedAnswer.includes(normalizedCandidate)) return true;
+  if (normalizedAnswer.length >= 2 && normalizedCandidate.includes(normalizedAnswer)) return true;
+  if (normalizedCandidate.length >= 2 && normalizedAnswer.includes(normalizedCandidate)) return true;
   return false;
 }
 
