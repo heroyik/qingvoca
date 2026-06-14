@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ChangeEvent, type MouseEvent } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore, type ChangeEvent, type MouseEvent } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { HomeIcon, TrophyIcon, BookOpenIcon, PencilSquareIcon, UserIcon } from "@heroicons/react/24/solid";
@@ -51,6 +51,10 @@ const SNAKE_PATH_CENTER_X = SNAKE_PATH_WIDTH / 2;
 const SNAKE_NODE_CENTER_Y = 44;
 const SNAKE_NODE_STEP_Y = 240;
 const REDGOLD_LESSON_BASE_URL = "https://heroyik.github.io/redgold/";
+const GITHUB_PAGES_HOST = "heroyik.github.io";
+const GITLAB_PAGES_URL = "https://heroyik.gitlab.io/qingvoca/";
+const subscribeToLocation = () => () => {};
+const getIsGitHubPages = () => typeof window !== "undefined" && window.location.hostname === GITHUB_PAGES_HOST;
 const getSnakeOffset = (index: number) => Math.sin(index * 1.2) * 60;
 const getRedGoldLessonUrl = (lessonId: number) => `${REDGOLD_LESSON_BASE_URL}?lesson=${lessonId}`;
 
@@ -141,6 +145,18 @@ export default function Home() {
   });
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncMessage, setSyncMessage] = useState<SyncMessageState>(null);
+  const isGitHubPages = useSyncExternalStore(subscribeToLocation, getIsGitHubPages, () => false);
+  useEffect(() => {
+    if (!isGitHubPages) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      window.location.replace(GITLAB_PAGES_URL);
+    }, 1200);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [isGitHubPages]);
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
       setLocaleState(loadLocale(window.localStorage));
@@ -238,6 +254,23 @@ export default function Home() {
   const syncMessageText = syncMessage
     ? tpl(t(syncMessage.key, locale), { count: syncMessage.count ?? 0 })
     : "";
+
+  if (isGitHubPages) {
+    return (
+      <main className="container min-h-screen flex-center text-center">
+        <section className="max-w-420 p-24">
+          <p className="font-700 text-muted m-0 mb-8">QingVoca moved</p>
+          <h1 className="font-32 font-900 m-0 mb-12">Heading to GitLab.</h1>
+          <p className="text-muted leading-1-6 m-0 mb-20">
+            GitHub Pages is now a doorway. The live app is at heroyik.gitlab.io/qingvoca.
+          </p>
+          <a className="btn-primary" href={GITLAB_PAGES_URL}>
+            Open QingVoca
+          </a>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main className="container min-h-screen pb-80 pt-68">
