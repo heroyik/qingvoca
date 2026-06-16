@@ -316,7 +316,46 @@ export default function Home() {
       {activeTab === "learn" && (
         <section className="learn-container">
           <WeatherBackground />
-          <div className="unit-list">
+          <section className="qv-landing-hero" aria-labelledby="qv-landing-title">
+            <div className="qv-landing-mark" aria-hidden="true">清</div>
+            <p className="qv-landing-kicker">HSK4 Chinese trainer</p>
+            <h2 id="qv-landing-title">QingVoca turns vocab reps into a clean daily climb.</h2>
+            <p className="qv-landing-copy">
+              Work through {cards.length} lesson steps, drill {totalWords.toLocaleString()} words, and jump back to the original RedGold context when a word needs more than flashcard memory.
+            </p>
+            <div className="qv-landing-actions">
+              <button
+                type="button"
+                className="qv-landing-primary"
+                onClick={() => document.getElementById("qv-step-path")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+              >
+                Start learning
+              </button>
+              <button
+                type="button"
+                className="qv-landing-secondary"
+                onClick={() => setActiveTab("review")}
+              >
+                Review mistakes
+              </button>
+            </div>
+            <dl className="qv-landing-stats" aria-label="QingVoca study stats">
+              <div>
+                <dt>{totalWords.toLocaleString()}</dt>
+                <dd>HSK4 words</dd>
+              </div>
+              <div>
+                <dt>{cards.length}</dt>
+                <dd>lesson steps</dd>
+              </div>
+              <div>
+                <dt>{stats.xp.toLocaleString()}</dt>
+                <dd>XP earned</dd>
+              </div>
+            </dl>
+          </section>
+
+          <div id="qv-step-path" className="unit-list">
             <svg
               className="connector-svg"
               aria-hidden="true"
