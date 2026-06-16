@@ -53,6 +53,11 @@ jobs:
           NEXT_PUBLIC_ADMIN_EMAIL: ${{ vars.NEXT_PUBLIC_ADMIN_EMAIL }}
         run: npm run build
 
+      - name: Replace with redirect page
+        run: |
+          cp index.html out/index.html
+          cp -r public/assets out/
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
